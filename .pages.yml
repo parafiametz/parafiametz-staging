@@ -1,0 +1,29 @@
+content:
+  - name: aktualnosci
+    label: Aktualności i ogłoszenia
+    type: file
+    path: content/aktualnosci.json
+    format: json
+    fields:
+      - name: items
+        label: Ogłoszenia
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Tytuł
+            type: string
+            required: true
+          - name: date
+            label: Data
+            type: date
+            options:
+              time: false
+          - name: body
+            label: Treść
+            type: text
+            required: true
+          - name: published
+            label: Opublikowane
+            type: boolean
+            default: false
