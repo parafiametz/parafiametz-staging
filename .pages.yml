@@ -1,3 +1,12 @@
+media:
+  - name: images
+    label: Zdjęcia
+    input: media/images
+    output: /media/images
+    categories: [image]
+    extensions: [jpg, jpeg, png, webp]
+    rename: safe
+
 content:
   - name: aktualnosci
     label: Aktualności
@@ -32,6 +41,59 @@ content:
             label: Treść
             type: text
             required: true
+          - name: published
+            label: Opublikowane
+            type: boolean
+            default: false
+
+  - name: wydarzenia
+    label: Wydarzenia
+    type: file
+    path: content/wydarzenia.json
+    format: json
+    operations:
+      delete: false
+    fields:
+      - name: items
+        label: Wydarzenia
+        description: Dodaj wydarzenie, uzupełnij dane i włącz „Opublikowane”, gdy ma pojawić się na stronie.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title} — {date}"
+        fields:
+          - name: title
+            label: Tytuł
+            type: string
+            required: true
+          - name: date
+            label: Data
+            type: date
+            required: true
+            options:
+              time: false
+              format: yyyy-MM-dd
+          - name: time
+            label: Godzina
+            type: string
+            description: Opcjonalnie, np. 15:00.
+          - name: place
+            label: Miejsce
+            type: string
+            description: Opcjonalnie.
+          - name: body
+            label: Opis
+            type: text
+            required: true
+          - name: image
+            label: Zdjęcie
+            type: image
+            required: false
+            options:
+              media: images
+              extensions: [jpg, jpeg, png, webp]
+              rename: safe
           - name: published
             label: Opublikowane
             type: boolean
