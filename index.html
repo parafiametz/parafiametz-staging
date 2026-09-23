@@ -297,6 +297,11 @@
   #announcements .contact-card{ width:100%; }
 
   /* Editable Wydarzenia */
+  #sec-wydarzenia{
+    width:calc(100vw - 280px - 112px);
+    max-width:none;
+  }
+
   .events-list{
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
@@ -314,10 +319,11 @@
   .event-card img{
     display:block;
     width:100%;
-    max-height:320px;
-    object-fit:cover;
+    height:auto;
+    object-fit:contain;
     border-radius:9px;
     margin-bottom:16px;
+    cursor:zoom-in;
   }
   .event-meta{
     margin:0 0 10px 0;
@@ -326,6 +332,40 @@
     line-height:1.5;
   }
   .event-card p:last-child{ margin-bottom:0; }
+
+  .image-lightbox{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+    background:rgba(10,12,16,0.92);
+  }
+  .image-lightbox.open{ display:flex; }
+  .image-lightbox img{
+    max-width:min(96vw, 1600px);
+    max-height:92vh;
+    width:auto;
+    height:auto;
+    object-fit:contain;
+    box-shadow:0 18px 60px rgba(0,0,0,0.45);
+  }
+  .image-lightbox-close{
+    position:absolute;
+    top:16px;
+    right:18px;
+    width:42px;
+    height:42px;
+    border:1px solid rgba(255,255,255,0.45);
+    border-radius:50%;
+    background:rgba(0,0,0,0.35);
+    color:#fff;
+    font-size:28px;
+    line-height:1;
+    cursor:pointer;
+  }
   .events-static-title{ margin-top:28px; }
   .events-upcoming-title{ margin-top:36px; }
   #sec-wydarzenia .icon-grid{
@@ -379,6 +419,7 @@
     .hero h1{ font-size:2rem; }
     .fact-row{ flex-direction:column; }
     .icon-grid{ grid-template-columns:1fr; }
+    #sec-wydarzenia{ width:auto; }
     .events-list{ grid-template-columns:1fr; }
     #sec-wydarzenia .icon-grid{ grid-template-columns:1fr; }
     .contact-grid{ grid-template-columns:1fr; }
@@ -754,6 +795,34 @@
 </script>
 
 <script>
+const imageLightbox = document.getElementById('image-lightbox');
+const imageLightboxImg = document.getElementById('image-lightbox-img');
+const imageLightboxClose = document.querySelector('.image-lightbox-close');
+
+function openImageLightbox(src, alt) {
+  imageLightboxImg.src = src;
+  imageLightboxImg.alt = alt || '';
+  imageLightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  imageLightboxClose.focus();
+}
+
+function closeImageLightbox() {
+  imageLightbox.classList.remove('open');
+  imageLightboxImg.removeAttribute('src');
+  document.body.style.overflow = '';
+}
+
+imageLightboxClose.addEventListener('click', closeImageLightbox);
+imageLightbox.addEventListener('click', (event) => {
+  if (event.target === imageLightbox) closeImageLightbox();
+});
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && imageLightbox.classList.contains('open')) closeImageLightbox();
+});
+</script>
+
+<script>
 // Pages CMS: editable events.
 (async function loadEvents() {
   const container = document.getElementById('events');
@@ -799,6 +868,16 @@
         img.src = new URL(imagePath, document.baseURI).href;
         img.alt = item.title;
         img.loading = 'lazy';
+        img.tabIndex = 0;
+        img.setAttribute('role', 'button');
+        img.setAttribute('aria-label', 'Otwórz zdjęcie: ' + item.title);
+        img.addEventListener('click', () => openImageLightbox(img.src, img.alt));
+        img.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            openImageLightbox(img.src, img.alt);
+          }
+        });
         img.addEventListener('error', () => img.remove(), { once: true });
         article.append(img);
       }
@@ -845,6 +924,11 @@
   }
 })();
 </script>
+
+  <div id="image-lightbox" class="image-lightbox" role="dialog" aria-modal="true" aria-label="Podgląd zdjęcia">
+    <button type="button" class="image-lightbox-close" aria-label="Zamknij">×</button>
+    <img id="image-lightbox-img" alt="">
+  </div>
 
 </body>
 </html>
