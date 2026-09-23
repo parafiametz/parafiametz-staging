@@ -4,13 +4,13 @@
       "title": "Pierwsze ogloszenie testowe",
       "date": "2026-09-21",
       "body": "To jest pierwsze ogloszenie testowe by sprawdzic jak sie je dodaje, edytuje, nie usuwa ale zdejmuje ze strony i ewentualnie kompltnie kasuje",
-      "published": true
+      "published": false
     },
     {
       "title": "To jest drugie ogloszenie testowe",
       "date": "2026-09-23",
       "body": "To jest drugie ogloszenie testowe by sprawdzic kolejnosc wyswietlania na stronie, najnowsze u gory.",
-      "published": true
+      "published": false
     }
   ]
 }
