@@ -39,8 +39,26 @@ content:
               format: yyyy-MM-dd
           - name: body
             label: Treść
-            type: text
+            type: rich-text
             required: true
+            options:
+              format: html
+              switcher: true
+              media: false
+          - name: alignment
+            label: Wyrównanie treści
+            type: select
+            description: Dotyczy całej treści wpisu na stronie.
+            options:
+              values:
+                - name: left
+                  label: Do lewej
+                - name: center
+                  label: Wyśrodkowane
+                - name: right
+                  label: Do prawej
+                - name: justify
+                  label: Wyjustowane
           - name: published
             label: Opublikowane
             type: boolean
