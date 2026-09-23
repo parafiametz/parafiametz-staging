@@ -1,9 +1,9 @@
 {
   "items": [
     {
-      "title": "Przykładowe ogłoszenie ",
-      "date": "2026-09-21",
-      "body": "To jest testowe ogloszenie",
+      "title": "Przykładowe ogłoszenie 2",
+      "date": "2026-09-22",
+      "body": "To jest testowe ogloszenie number dwa",
       "published": true
     }
   ]
