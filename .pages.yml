@@ -1,14 +1,19 @@
 content:
   - name: aktualnosci
-    label: Aktualności i ogłoszenia
+    label: Aktualności
     type: file
     path: content/aktualnosci.json
     format: json
+    operations:
+      delete: false
     fields:
       - name: items
-        label: Ogłoszenia
+        label: Wpisy
         type: object
-        list: true
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
         fields:
           - name: title
             label: Tytuł
@@ -17,8 +22,11 @@ content:
           - name: date
             label: Data
             type: date
+            required: true
+            description: Nowsza data oznacza wyższą pozycję na stronie.
             options:
               time: false
+              format: yyyy-MM-dd
           - name: body
             label: Treść
             type: text
