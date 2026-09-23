@@ -8,7 +8,8 @@ content:
       delete: false
     fields:
       - name: items
-        label: Wpisy
+        label: Ogłoszenia
+        description: Aby dodać nowe ogłoszenie, kliknij przycisk „Add an item” poniżej.
         type: object
         list:
           collapsible:
