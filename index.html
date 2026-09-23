@@ -325,7 +325,8 @@
     line-height:1.5;
   }
   .event-card p:last-child{ margin-bottom:0; }
-  .events-static-title{ margin-top:34px; }
+  .events-static-title{ margin-top:28px; }
+  .events-upcoming-title{ margin-top:36px; }
   .contact-card .icon{
     width:36px; height:36px; border-radius:9px;
     background:rgba(122,22,38,0.08);
@@ -537,8 +538,6 @@
         <h2>Wydarzenia</h2>
         <p class="lede">Życie wspólnoty nie kończy się na niedzielnej Mszy świętej.</p>
 
-        <div id="events" class="events-list" aria-live="polite"><p class="note">Wczytywanie wydarzeń…</p></div>
-
         <h3 class="events-static-title">Stałe elementy życia wspólnoty</h3>
         <div class="icon-grid">
           <div class="icon-item">
@@ -555,10 +554,8 @@
           </div>
         </div>
 
-        <div class="placeholder-card" style="margin-top:22px;">
-          <span class="tag">DO UZUPEŁNIENIA</span>
-          Miejsce na konkretne, nadchodzące wydarzenie z datą — np. rekolekcje, pielgrzymkę, festyn parafialny.
-        </div>
+        <h3 class="events-upcoming-title">Nadchodzące i ostatnie wydarzenia</h3>
+        <div id="events" class="events-list" aria-live="polite"><p class="note">Wczytywanie wydarzeń…</p></div>
       </section>
 
       <!-- MISJA -->
@@ -755,39 +752,48 @@
 (async function loadEvents() {
   const container = document.getElementById('events');
   if (!container) return;
+
   try {
-    const response = await fetch('./content/wydarzenia.json', {cache: 'no-cache'});
-    if (!response.ok) throw new Error('Wydarzenia request failed');
+    const response = await fetch('./content/wydarzenia.json', { cache: 'no-store' });
+    if (!response.ok) throw new Error('Wydarzenia request failed: ' + response.status);
+
     const data = await response.json();
     const items = Array.isArray(data.items) ? data.items : [];
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
+    const todayKey = new Date().toISOString().slice(0, 10);
+
     const published = items
       .map((item, index) => ({ item, index }))
-      .filter(({ item }) => item && item.published === true && typeof item.title === 'string' && typeof item.body === 'string')
+      .filter(({ item }) =>
+        item &&
+        item.published === true &&
+        typeof item.title === 'string' &&
+        typeof item.body === 'string'
+      )
       .sort((a, b) => {
-        const ad = /^\\d{4}-\\d{2}-\\d{2}/.test(String(a.item.date || '')) ? new Date(String(a.item.date).slice(0, 10) + 'T00:00:00') : null;
-        const bd = /^\\d{4}-\\d{2}-\\d{2}/.test(String(b.item.date || '')) ? new Date(String(b.item.date).slice(0, 10) + 'T00:00:00') : null;
-        const aFuture = ad && ad >= today;
-        const bFuture = bd && bd >= today;
+        const aDate = typeof a.item.date === 'string' ? a.item.date.slice(0, 10) : '';
+        const bDate = typeof b.item.date === 'string' ? b.item.date.slice(0, 10) : '';
+        const aFuture = aDate >= todayKey;
+        const bFuture = bDate >= todayKey;
+
         if (aFuture !== bFuture) return aFuture ? -1 : 1;
-        if (aFuture && bFuture) return ad - bd || b.index - a.index;
-        if (ad && bd) return bd - ad || b.index - a.index;
-        return b.index - a.index;
+        if (aFuture && bFuture) return aDate.localeCompare(bDate) || b.index - a.index;
+        return bDate.localeCompare(aDate) || b.index - a.index;
       })
       .map(({ item }) => item);
 
     const fragment = document.createDocumentFragment();
+
     for (const item of published) {
       const article = document.createElement('article');
       article.className = 'event-card';
 
       if (typeof item.image === 'string' && item.image.trim()) {
         const img = document.createElement('img');
-        const relativeImage = item.image.trim().replace(/^\\/+/, '');
-        img.src = new URL(relativeImage, document.baseURI).href;
+        const imagePath = item.image.trim().replace(/^\/+/, '');
+        img.src = new URL(imagePath, document.baseURI).href;
         img.alt = item.title;
         img.loading = 'lazy';
+        img.addEventListener('error', () => img.remove(), { once: true });
         article.append(img);
       }
 
@@ -796,12 +802,13 @@
       article.append(title);
 
       const metaParts = [];
-      if (typeof item.date === 'string' && /^\\d{4}-\\d{2}-\\d{2}/.test(item.date)) {
+      if (typeof item.date === 'string' && /^\d{4}-\d{2}-\d{2}/.test(item.date)) {
         const day = item.date.slice(0, 10);
         metaParts.push(day.split('-').reverse().join('.'));
       }
       if (typeof item.time === 'string' && item.time.trim()) metaParts.push(item.time.trim());
       if (typeof item.place === 'string' && item.place.trim()) metaParts.push(item.place.trim());
+
       if (metaParts.length) {
         const meta = document.createElement('p');
         meta.className = 'event-meta';
@@ -814,6 +821,7 @@
       body.style.overflowWrap = 'anywhere';
       body.textContent = item.body;
       article.append(body);
+
       fragment.append(article);
     }
 
@@ -823,6 +831,7 @@
       empty.textContent = 'Obecnie brak opublikowanych wydarzeń.';
       fragment.append(empty);
     }
+
     container.replaceChildren(fragment);
   } catch (error) {
     container.textContent = 'Nie udało się wczytać wydarzeń. Odśwież stronę lub spróbuj ponownie później.';
