@@ -9,5 +9,25 @@
       "image": "/media/images/images.jpeg",
       "published": true
     }
+  ],
+  "communityItems": [
+    {
+      "title": "Katecheza dla dzieci",
+      "body": "W soboty w roku szkolnym, godz. 10:00–12:00, w Domu Polskim (czasem w kościele Sainte-Ségolène), z wyjątkiem wakacji i ferii.",
+      "icon": "book",
+      "visible": true
+    },
+    {
+      "title": "Spotkanie przy kawie",
+      "body": "Po niedzielnej Mszy świętej, w Domu Polskim — okazja do rozmowy i integracji wspólnoty.",
+      "icon": "coffee",
+      "visible": true
+    },
+    {
+      "title": "Uroczystości liturgiczne",
+      "body": "Boże Narodzenie, Wielkanoc i inne święta obchodzone są wspólnie, często z dodatkowymi nabożeństwami.",
+      "icon": "star",
+      "visible": true
+    }
   ]
 }
