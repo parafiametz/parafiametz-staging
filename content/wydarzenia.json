@@ -1,15 +1,4 @@
 {
-  "items": [
-    {
-      "title": "Testowe wydarzenie - Spotkanie z Papiezem",
-      "date": "2026-10-01",
-      "time": "10:00",
-      "place": "Katedra w Metz",
-      "body": "Spotkanie z Papiezem odbedzie sie w Metz wtedy a wtedy o tej a takiej godzienie. Osoby, ktore sie zapisaly proszone sa o spotkanie sie przed katedra wtedy a wtedy o tej a takiej godzinie by razem zajac miejsce",
-      "image": "/media/images/images.jpeg",
-      "published": true
-    }
-  ],
   "communityItems": [
     {
       "title": "Katecheza dla dzieci",
@@ -28,6 +17,17 @@
       "body": "Boże Narodzenie, Wielkanoc i inne święta obchodzone są wspólnie, często z dodatkowymi nabożeństwami.",
       "icon": "star",
       "visible": true
+    }
+  ],
+  "items": [
+    {
+      "title": "Testowe wydarzenie - Spotkanie z Papiezem",
+      "date": "2026-10-01",
+      "time": "10:00",
+      "place": "Katedra w Metz",
+      "body": "Spotkanie z Papiezem odbedzie sie w Metz wtedy a wtedy o tej a takiej godzienie. Osoby, ktore sie zapisaly proszone sa o spotkanie sie przed katedra wtedy a wtedy o tej a takiej godzinie by razem zajac miejsce",
+      "image": "/media/images/images.jpeg",
+      "published": false
     }
   ]
 }
