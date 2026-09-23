@@ -1,0 +1,10 @@
+{
+  "items": [
+    {
+      "title": "Pierwsze ogloszenie testowe",
+      "date": "2026-09-21",
+      "body": "To jest pierwsze ogloszenie testowe by sprawdzic jak sie je dodaje, edytuje, nie usuwa ale zdejmuje ze strony i ewentualnie kompltnie kasuje",
+      "published": true
+    }
+  ]
+}
