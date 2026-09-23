@@ -297,17 +297,11 @@
   #announcements .contact-card{ width:100%; }
 
   /* Editable Wydarzenia */
-  #sec-wydarzenia{
-    width:calc(100vw - 280px - 112px);
-    max-width:none;
-  }
-
   .events-list{
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns:repeat(2, minmax(0, 1fr));
     gap:18px;
     margin-top:28px;
-    width:100%;
   }
   .event-card{
     background:var(--paper);
@@ -320,10 +314,12 @@
     display:block;
     width:100%;
     height:auto;
+    max-height:360px;
     object-fit:contain;
     border-radius:9px;
     margin-bottom:16px;
     cursor:zoom-in;
+    background:rgba(255,255,255,0.35);
   }
   .event-meta{
     margin:0 0 10px 0;
@@ -338,19 +334,37 @@
     inset:0;
     z-index:9999;
     display:none;
+    overflow:auto;
+    padding:24px;
+    background:rgba(10,12,16,0.94);
+  }
+  .image-lightbox.open{
+    display:flex;
     align-items:center;
     justify-content:center;
-    padding:24px;
-    background:rgba(10,12,16,0.92);
   }
-  .image-lightbox.open{ display:flex; }
+  .image-lightbox.zoomed{
+    display:block;
+    text-align:center;
+  }
   .image-lightbox img{
-    max-width:min(96vw, 1600px);
+    display:block;
+    max-width:96vw;
     max-height:92vh;
     width:auto;
     height:auto;
+    margin:auto;
     object-fit:contain;
     box-shadow:0 18px 60px rgba(0,0,0,0.45);
+    cursor:zoom-in;
+  }
+  .image-lightbox.zoomed img{
+    max-width:none;
+    max-height:none;
+    width:auto;
+    height:auto;
+    cursor:zoom-out;
+    margin:70px auto 24px;
   }
   .image-lightbox-close{
     position:absolute;
@@ -419,7 +433,6 @@
     .hero h1{ font-size:2rem; }
     .fact-row{ flex-direction:column; }
     .icon-grid{ grid-template-columns:1fr; }
-    #sec-wydarzenia{ width:auto; }
     .events-list{ grid-template-columns:1fr; }
     #sec-wydarzenia .icon-grid{ grid-template-columns:1fr; }
     .contact-grid{ grid-template-columns:1fr; }
@@ -808,12 +821,22 @@ function openImageLightbox(src, alt) {
 }
 
 function closeImageLightbox() {
-  imageLightbox.classList.remove('open');
+  imageLightbox.classList.remove('open', 'zoomed');
   imageLightboxImg.removeAttribute('src');
   document.body.style.overflow = '';
+  imageLightbox.scrollTop = 0;
+  imageLightbox.scrollLeft = 0;
 }
 
 imageLightboxClose.addEventListener('click', closeImageLightbox);
+imageLightboxImg.addEventListener('click', (event) => {
+  event.stopPropagation();
+  const zoomed = imageLightbox.classList.toggle('zoomed');
+  if (!zoomed) {
+    imageLightbox.scrollTop = 0;
+    imageLightbox.scrollLeft = 0;
+  }
+});
 imageLightbox.addEventListener('click', (event) => {
   if (event.target === imageLightbox) closeImageLightbox();
 });
