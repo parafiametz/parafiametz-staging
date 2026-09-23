@@ -659,11 +659,17 @@
   const container = document.getElementById('announcements');
   try {
     const response = await fetch('./content/aktualnosci.json', {cache: 'no-cache'});
-    if (!response.ok) throw new Error('Announcements request failed');
+    if (!response.ok) throw new Error('Aktualności request failed');
     const data = await response.json();
     const items = Array.isArray(data.items) ? data.items : [];
-    const published = items.filter(item => item && item.published === true && typeof item.title === 'string' && typeof item.body === 'string');
-    published.sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')));
+    const published = items
+      .map((item, index) => ({ item, index }))
+      .filter(({ item }) => item && item.published === true && typeof item.title === 'string' && typeof item.body === 'string')
+      .sort((a, b) =>
+        String(b.item.date || '').localeCompare(String(a.item.date || '')) ||
+        b.index - a.index
+      )
+      .map(({ item }) => item);
     const fragment = document.createDocumentFragment();
     for (const item of published) {
       const article = document.createElement('article');
@@ -690,7 +696,7 @@
     if (!published.length) {
       const empty = document.createElement('p');
       empty.className = 'note';
-      empty.textContent = 'Obecnie brak nowych ogłoszeń.';
+      empty.textContent = 'Obecnie brak nowych aktualności.';
       fragment.append(empty);
     }
     container.replaceChildren(fragment);
