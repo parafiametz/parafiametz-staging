@@ -288,13 +288,74 @@
   }
   .contact-card:hover{ box-shadow:0 8px 24px rgba(78,14,25,0.08); border-color:var(--gold); }
 
-  /* Aktualności: centered column, left-aligned text */
+  /* Aktualności: centered, readable article column */
+  #sec-aktualnosci{
+    width:calc(100vw - 280px - 112px);
+    max-width:none;
+  }
+  #sec-aktualnosci > h2,
+  #sec-aktualnosci > .lede{
+    max-width:900px;
+    margin-left:auto;
+    margin-right:auto;
+  }
   #announcements{
-    max-width:760px;
+    max-width:900px;
     margin:28px auto 0;
     text-align:left;
   }
   #announcements .contact-card{ width:100%; }
+
+  .announcement-body{
+    margin-top:14px;
+    line-height:1.75;
+    overflow-wrap:anywhere;
+  }
+  .announcement-body > :first-child{ margin-top:0; }
+  .announcement-body > :last-child{ margin-bottom:0; }
+  .announcement-body h1,
+  .announcement-body h2,
+  .announcement-body h3{ margin-top:1.1em; }
+  .announcement-body h1{ font-size:1.75rem; }
+  .announcement-body h2{ font-size:1.45rem; }
+  .announcement-body h3{ font-size:1.2rem; }
+  .announcement-body ul,
+  .announcement-body ol{ margin:0.8em 0; padding-left:1.6em; }
+  .announcement-body ul li{ list-style:disc; }
+  .announcement-body ol li{ list-style:decimal; }
+  .announcement-body blockquote{
+    margin:1em 0;
+    padding:12px 18px;
+    border-left:3px solid var(--gold);
+    background:rgba(169,130,44,0.07);
+    color:var(--ink-soft);
+  }
+  .announcement-body a{
+    color:var(--burgundy);
+    text-decoration:underline;
+    text-underline-offset:2px;
+  }
+  .announcement-body pre{
+    white-space:pre-wrap;
+    overflow-wrap:anywhere;
+    padding:12px 14px;
+    border-radius:8px;
+    background:rgba(20,27,36,0.06);
+  }
+  .announcement-body table{
+    width:100%;
+    border-collapse:collapse;
+    margin:1em 0;
+  }
+  .announcement-body th,
+  .announcement-body td{
+    border:1px solid var(--line);
+    padding:8px 10px;
+  }
+  .announcement-body.align-left{ text-align:left; }
+  .announcement-body.align-center{ text-align:center; }
+  .announcement-body.align-right{ text-align:right; }
+  .announcement-body.align-justify{ text-align:justify; }
 
   /* Editable Wydarzenia */
   .events-list{
@@ -428,6 +489,7 @@
     nav.menu.open{ display:block; }
     .sidebar-foot{ display:none; }
     .content{ padding:32px 22px 60px 22px; }
+    #sec-aktualnosci{ width:auto; }
     .hero-inner{ padding:26px; }
     .hero{ height:320px; }
     .hero h1{ font-size:2rem; }
@@ -742,6 +804,69 @@
 
 <script>
 // Pages CMS: content is stored separately from the page design.
+function renderSafeRichText(container, value) {
+  const raw = String(value || '');
+
+  if (!/<[a-z][\s\S]*>/i.test(raw)) {
+    container.textContent = raw;
+    container.style.whiteSpace = 'pre-wrap';
+    return;
+  }
+
+  const source = new DOMParser().parseFromString('<div>' + raw + '</div>', 'text/html').body.firstElementChild;
+  const allowedTags = new Set([
+    'p', 'br', 'strong', 'b', 'em', 'i', 'u', 's',
+    'h1', 'h2', 'h3', 'ul', 'ol', 'li', 'blockquote',
+    'a', 'code', 'pre', 'hr', 'table', 'thead', 'tbody',
+    'tr', 'th', 'td'
+  ]);
+
+  function cleanNode(node) {
+    if (node.nodeType === Node.TEXT_NODE) {
+      return document.createTextNode(node.nodeValue || '');
+    }
+
+    if (node.nodeType !== Node.ELEMENT_NODE) {
+      return document.createDocumentFragment();
+    }
+
+    const tag = node.tagName.toLowerCase();
+
+    if (!allowedTags.has(tag)) {
+      const fragment = document.createDocumentFragment();
+      node.childNodes.forEach(child => fragment.append(cleanNode(child)));
+      return fragment;
+    }
+
+    const clean = document.createElement(tag);
+
+    if (tag === 'a') {
+      const href = (node.getAttribute('href') || '').trim();
+      if (/^(https?:|mailto:|tel:|#|\/|\.\/|\.\.\/)/i.test(href)) {
+        clean.setAttribute('href', href);
+        if (/^https?:/i.test(href)) {
+          clean.setAttribute('target', '_blank');
+          clean.setAttribute('rel', 'noopener noreferrer');
+        }
+      }
+    }
+
+    if (tag === 'th' || tag === 'td') {
+      for (const attr of ['colspan', 'rowspan']) {
+        const value = node.getAttribute(attr);
+        if (value && /^\d{1,2}$/.test(value)) clean.setAttribute(attr, value);
+      }
+    }
+
+    node.childNodes.forEach(child => clean.append(cleanNode(child)));
+    return clean;
+  }
+
+  const fragment = document.createDocumentFragment();
+  source.childNodes.forEach(child => fragment.append(cleanNode(child)));
+  container.replaceChildren(fragment);
+}
+
 (async function loadAnnouncements() {
   const container = document.getElementById('announcements');
   try {
@@ -773,10 +898,10 @@
         date.className = 'note';
         article.append(date);
       }
-      const body = document.createElement('p');
-      body.style.whiteSpace = 'pre-wrap';
-      body.style.overflowWrap = 'anywhere';
-      body.textContent = item.body;
+      const body = document.createElement('div');
+      const alignment = ['center', 'right', 'justify'].includes(item.alignment) ? item.alignment : 'left';
+      body.className = 'announcement-body align-' + alignment;
+      renderSafeRichText(body, item.body);
       article.append(body);
       fragment.append(article);
     }
