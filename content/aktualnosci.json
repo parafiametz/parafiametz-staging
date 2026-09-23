@@ -1,10 +1,10 @@
 {
   "items": [
     {
-      "title": "Przykładowe ogłoszenie — zastąp własnym",
+      "title": "Przykładowe ogłoszenie ",
       "date": "2026-09-21",
-      "body": "Wpisz tutaj treść ogłoszenia. Aby pokazać je na stronie, włącz „Opublikowane” i kliknij Save.",
-      "published": false
+      "body": "To jest testowe ogloszenie",
+      "published": true
     }
   ]
 }
