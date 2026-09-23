@@ -39,11 +39,12 @@ content:
               format: yyyy-MM-dd
           - name: body
             label: Treść
+            description: "Enter = nowy akapit. Shift+Enter = nowa linia. Zaznacz tekst, aby wyświetlić pasek formatowania: nagłówki, pogrubienie, kursywa, podkreślenie, listy punktowane i numerowane, cytat oraz link."
             type: rich-text
             required: true
             options:
               format: html
-              switcher: true
+              switcher: false
               media: false
           - name: alignment
             label: Wyrównanie treści
