@@ -288,6 +288,107 @@
   }
   .contact-card:hover{ box-shadow:0 8px 24px rgba(78,14,25,0.08); border-color:var(--gold); }
 
+
+  /* Consistent card hover across content sections */
+  .schedule-block,
+  .icon-item,
+  .event-card,
+  .fact-pill,
+  .priest-card{
+    transition:box-shadow 0.15s ease, border-color 0.15s ease;
+  }
+  .schedule-block:hover,
+  .icon-item:hover,
+  .event-card:hover,
+  .fact-pill:hover,
+  .priest-card:hover{
+    box-shadow:0 8px 24px rgba(78,14,25,0.08);
+    border-color:var(--gold);
+  }
+
+  /* Editable Contact layout */
+  .contact-layout{
+    display:grid;
+    grid-template-columns:minmax(0, 1fr) minmax(280px, 340px);
+    gap:28px;
+    align-items:start;
+    margin-top:26px;
+  }
+  .contact-layout.single-column{ grid-template-columns:1fr; }
+  .contact-layout .contact-grid{ margin-top:0; }
+  .priests-panel{
+    border-left:1px solid var(--line);
+    padding-left:28px;
+  }
+  .priests-panel[hidden]{ display:none; }
+  .priests-panel > h3{
+    font-size:1.35rem;
+    margin-bottom:16px;
+  }
+  .priests-list{
+    display:grid;
+    gap:16px;
+  }
+  .priest-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:20px;
+    text-align:center;
+  }
+  .priest-photo,
+  .priest-photo-placeholder{
+    width:124px;
+    height:124px;
+    border-radius:50%;
+    margin:0 auto 14px;
+    object-fit:cover;
+    border:2px solid rgba(169,130,44,0.35);
+    background:rgba(169,130,44,0.08);
+  }
+  .priest-photo-placeholder{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .priest-photo-placeholder svg{
+    width:42px;
+    height:42px;
+    stroke:var(--gold);
+  }
+  .priest-name{
+    margin:0 0 4px;
+    font-family:'Cormorant Garamond', serif;
+    font-size:1.3rem;
+    font-weight:700;
+    color:var(--burgundy-deep);
+  }
+  .priest-role{
+    margin:0 0 12px;
+    font-size:0.86rem;
+    color:var(--ink-soft);
+  }
+  .priest-contact{
+    margin:4px 0;
+    font-size:0.88rem;
+    overflow-wrap:anywhere;
+  }
+  .priest-contact a{
+    color:var(--burgundy);
+    text-decoration:none;
+  }
+  .priest-contact a:hover{ text-decoration:underline; }
+
+  @media (max-width:1100px){
+    .contact-layout{ grid-template-columns:1fr; }
+    .priests-panel{
+      border-left:none;
+      border-top:1px solid var(--line);
+      padding-left:0;
+      padding-top:24px;
+    }
+  }
+
   /* Aktualności: centered, readable article column */
   #sec-aktualnosci{
     width:calc(100vw - 280px - 112px);
@@ -613,38 +714,39 @@
       <!-- MSZE -->
       <section id="sec-msze">
         <h2>Msze i nabożeństwa</h2>
-        <p class="lede">Miejsce sprawowania niedzielnej Mszy świętej zmienia się w zależności od pory roku — prosimy zwracać na to uwagę przy planowaniu wizyty.</p>
+        <p id="msze-lede" class="lede">Miejsce sprawowania niedzielnej Mszy świętej zmienia się w zależności od pory roku — prosimy zwracać na to uwagę przy planowaniu wizyty.</p>
 
-        <div class="schedule-block">
-          <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-          <div>
-            <h3>Niedziela i święta</h3>
-            <div class="schedule-row"><span class="when">Godzina</span>Msza święta o 9:30</div>
-            <div class="schedule-row"><span class="when">Wiosna / lato / jesień</span>Kościół Sainte-Ségolène, 14 place Jeanne d'Arc, Metz</div>
-            <div class="schedule-row"><span class="when">Zima (koniec listopada – Wielkanoc)</span>Kaplica Sainte-Croix, 3 rue du Haut-de-Sainte-Croix, Metz (wejście przez bramę 3A/B)</div>
+        <div id="mass-schedule">
+          <div class="schedule-block">
+            <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+            <div>
+              <h3>Niedziela i święta</h3>
+              <div class="schedule-row"><span class="when">Godzina</span>Msza święta o 9:30</div>
+              <div class="schedule-row"><span class="when">Wiosna / lato / jesień</span>Kościół Sainte-Ségolène, 14 place Jeanne d'Arc, Metz</div>
+              <div class="schedule-row"><span class="when">Zima (koniec listopada – Wielkanoc)</span>Kaplica Sainte-Croix, 3 rue du Haut-de-Sainte-Croix, Metz (wejście przez bramę 3A/B)</div>
+            </div>
+          </div>
+
+          <div class="schedule-block">
+            <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 3v4M5 8l2 2M19 8l-2 2M4 16h16M8 16a4 4 0 018 0"/></svg></div>
+            <div>
+              <h3>Pierwszy piątek miesiąca</h3>
+              <div class="schedule-row"><span class="when">Godzina</span>Msza święta po polsku o 19:30, po niej adoracja Najświętszego Sakramentu</div>
+            </div>
+          </div>
+
+          <div class="schedule-block">
+            <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 21c4-3 7-6.5 7-10a7 7 0 10-14 0c0 3.5 3 7 7 10z"/></svg></div>
+            <div>
+              <h3>Spowiedź</h3>
+              <div class="schedule-row">Od wtorku do soboty przed i po każdej Mszy Świętej.</div>
+              <div class="schedule-row">W każdy pierwszy piątek i pierwszą sobotę miesiąca przed i po Mszy Świętej.</div>
+              <div class="schedule-row">W każdą niedzielę przed Mszą św.</div>
+            </div>
           </div>
         </div>
 
-        <div class="schedule-block">
-          <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 3v4M5 8l2 2M19 8l-2 2M4 16h16M8 16a4 4 0 018 0"/></svg></div>
-          <div>
-            <h3>Pierwszy piątek miesiąca</h3>
-            <div class="schedule-row"><span class="when">Godzina</span>Msza święta po polsku o 19:30, po niej adoracja Najświętszego Sakramentu</div>
-          </div>
-        </div>
-
-        <div class="schedule-block">
-          <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 21c4-3 7-6.5 7-10a7 7 0 10-14 0c0 3.5 3 7 7 10z"/></svg></div>
-          <div>
-            <h3>Spowiedź</h3>
-            <div class="schedule-row">Od wtorku do soboty przed i po każdej Mszy Świętej.</div>
-            <div class="schedule-row">W każdy pierwszy piątek i pierwszą sobotę miesiąca przed i po Mszy Świętej.</div>
-            <div class="schedule-row">W każdą niedzielę przed Mszą św..</div>
-            
-          </div>
-        </div>
-
-        <p class="note">Szczegółowy, cotygodniowy harmonogram (miejsce i godziny) może ulec zmianie — prosimy o potwierdzenie w bieżących ogłoszeniach parafialnych lub telefonicznie.</p>
+        <p id="msze-note" class="note">Szczegółowy, cotygodniowy harmonogram (miejsce i godziny) może ulec zmianie — prosimy o potwierdzenie w bieżących ogłoszeniach parafialnych lub telefonicznie.</p>
       </section>
 
       <!-- AKTUALNOSCI -->
@@ -670,7 +772,7 @@
       <!-- MISJA -->
       <section id="sec-misja">
         <h2>Nasza Misja</h2>
-        <p class="lede">Polska Misja Katolicka (PMK) to sieć duszpasterstw obejmujących opieką Polaków żyjących poza granicami kraju, działająca pod nadzorem Konferencji Episkopatu Polski.</p>
+        <p class="lede">Nasza wspólnota parafialna otacza opieką duszpasterską Polaków mieszkających w Metz i okolicach.</p>
 
         <p>Misje tego typu powstawały masowo po II wojnie światowej, gdy setki tysięcy Polaków — żołnierzy, uchodźców i emigrantów — znalazło się poza krajem i potrzebowało duszpasterstwa w ojczystym języku. Dziś PMK działa w wielu krajach Europy i świata, towarzysząc kolejnym pokoleniom polskiej emigracji.</p>
 
@@ -684,28 +786,28 @@
       <!-- SAKRAMENTY -->
       <section id="sec-sakramenty">
         <h2>Sakramenty</h2>
-        <p class="lede">Sakramentów udzielamy w języku polskim — prosimy o wcześniejszy kontakt, aby ustalić termin i formalności.</p>
+        <p id="sakramenty-lede" class="lede">Sakramentów udzielamy w języku polskim — prosimy o wcześniejszy kontakt, aby ustalić termin i formalności.</p>
 
-        <div class="icon-grid">
+        <div id="sacraments-list" class="icon-grid">
           <div class="icon-item"><div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 21c4-3 7-6.5 7-10a7 7 0 10-14 0c0 3.5 3 7 7 10z"/></svg></div><div><strong>Chrzest święty</strong><p>Zgłoszenie z odpowiednim wyprzedzeniem, wraz z niezbędnymi dokumentami.</p></div></div>
           <div class="icon-item"><div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="8" r="3"/><path d="M6 21c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg></div><div><strong>Pierwsza Komunia</strong><p>Poprzedzona przygotowaniem katechetycznym dzieci.</p></div></div>
           <div class="icon-item"><div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2v4M5 8l2 2M19 8l-2 2M4 16h16M8 16a4 4 0 018 0"/></svg></div><div><strong>Bierzmowanie</strong><p>Dla młodzieży po odpowiednim przygotowaniu.</p></div></div>
           <div class="icon-item"><div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M20 12a8 8 0 11-3.5-6.6M16 3v4h4"/></svg></div><div><strong>Sakrament małżeństwa</strong><p>Wymaga wcześniejszego kontaktu z kancelarią, zwykle z kilkumiesięcznym wyprzedzeniem.</p></div></div>
-          <div class="icon-item"><div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 21c4-3 7-6.5 7-10a7 7 0 10-14 0c0 3.5 3 7 7 10z"/></svg></div><div><strong>Spowiedź święta</strong><p>- Od wtorku do soboty przed i po każdej Mszy Świętej.</p><p>- W każdy pierwszy piątek i pierwszą sobotę miesiąca przed i po Mszy Świętej.</p><p>- W każdą niedzielę przed Mszą św.</p></div></div>
+          <div class="icon-item"><div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 21c4-3 7-6.5 7-10a7 7 0 10-14 0c0 3.5 3 7 7 10z"/></svg></div><div><strong>Spowiedź święta</strong><p>Od wtorku do soboty przed i po każdej Mszy Świętej.</p><p>W każdy pierwszy piątek i pierwszą sobotę miesiąca przed i po Mszy Świętej.</p><p>W każdą niedzielę przed Mszą św.</p></div></div>
           <div class="icon-item"><div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .3 2 .6 2.9a2 2 0 01-.5 2.1L8 10a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.9.5 2.9.6a2 2 0 011.7 2z"/></svg></div><div><strong>Namaszczenie chorych</strong><p>Prosimy o kontakt telefoniczny, w tym w sytuacjach pilnych.</p></div></div>
         </div>
 
-        <p class="note">Dokładne wymagania formalne (np. świadectwa, zaświadczenia z parafii zamieszkania w Polsce) najlepiej ustalić bezpośrednio, telefonicznie lub mailowo — patrz zakładka Kontakt.</p>
+        <p id="sakramenty-note" class="note">Dokładne wymagania formalne (np. świadectwa, zaświadczenia z parafii zamieszkania w Polsce) najlepiej ustalić bezpośrednio, telefonicznie lub mailowo — patrz zakładka Kontakt.</p>
       </section>
 
       <!-- KOSCIOL -->
       <section id="sec-kosciol">
         <h2>Kościół Sainte-Ségolène</h2>
-        <p class="lede">Msze Polskiej Misji Katolickiej odprawiane są w jednym z najstarszych kościołów parafialnych Metzu.</p>
+        <p class="lede">Msze w języku polskim odprawiane są w jednym z najstarszych kościołów parafialnych Metzu.</p>
 
         <p>Kościół Sainte-Ségolène należy do parafii ufundowanych w Metzu jeszcze przed rokiem 1000 i jest jedyną świątynią w mieście poświęconą świętej kobiecie — Segolenie z Albi, wspominanej w liturgii 24 lipca. Na przestrzeni wieków budowla była wielokrotnie przebudowywana i powiększana, a obecną neogotycką fasadę nadano jej w 1898 roku. Na fasadzie można dostrzec rzeźbione przedstawienia patronki kościoła.</p>
 
-        <p>W zależności od pory roku niedzielna Msza Polskiej Misji Katolickiej odprawiana jest tutaj (wiosna–jesień) lub w pobliskiej kaplicy Sainte-Croix (zima) — szczegóły w zakładce <em>Msze i nabożeństwa</em>.</p>
+        <p>W zależności od pory roku niedzielna Msza w języku polskim odprawiana jest tutaj (wiosna–jesień) lub w pobliskiej kaplicy Sainte-Croix (zima) — szczegóły w zakładce <em>Msze i nabożeństwa</em>.</p>
 
         <div class="fact-row" style="margin-top:26px;">
           <div class="fact-pill">
@@ -726,33 +828,46 @@
       <!-- KONTAKT -->
       <section id="sec-kontakt">
         <h2>Kontakt</h2>
-        <p class="lede">Masz pytanie dotyczące Mszy, sakramentu lub życia wspólnoty? Skontaktuj się z nami.</p>
+        <p id="kontakt-lede" class="lede">Masz pytanie dotyczące Mszy, sakramentu lub życia wspólnoty? Skontaktuj się z nami.</p>
 
-        <div class="contact-grid">
-          <div class="contact-card">
-            <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .3 2 .6 2.9a2 2 0 01-.5 2.1L8 10a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.9.5 2.9.6a2 2 0 011.7 2z"/></svg></div>
-            <h3>Telefon i e-mail</h3>
-            <p style="margin:0;">+33 3 87 75 43 88<br>sainte.segolene_metz@orange.fr</p>
-            <a class="btn" href="mailto:sainte.segolene_metz@orange.fr">Napisz do nas</a>
+        <div id="contact-layout" class="contact-layout single-column">
+          <div class="contact-main">
+            <div id="contact-items" class="contact-grid">
+              <div class="contact-card">
+                <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .3 2 .6 2.9a2 2 0 01-.5 2.1L8 10a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.9.5 2.9.6a2 2 0 011.7 2z"/></svg></div>
+                <h3>Telefon i e-mail</h3>
+                <p style="margin:0; white-space:pre-line;">+33 3 87 75 43 88
+sainte.segolene_metz@orange.fr</p>
+                <a class="btn" href="mailto:sainte.segolene_metz@orange.fr">Napisz do nas</a>
+              </div>
+              <div class="contact-card">
+                <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+                <h3>Adres korespondencyjny</h3>
+                <p style="margin:0; white-space:pre-line;">14, rue des Capucins
+57000 Metz, Francja</p>
+              </div>
+              <div class="contact-card">
+                <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2v4M9 6h6l1 4H8l1-4z"/><path d="M6 21V10l6-4 6 4v11"/><path d="M10 21v-6h4v6"/></svg></div>
+                <h3>Kościół Sainte-Ségolène</h3>
+                <p style="margin:0; white-space:pre-line;">14, place Jeanne d'Arc
+57000 Metz</p>
+              </div>
+              <div class="contact-card">
+                <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg></div>
+                <h3>Kaplica Sainte-Croix (zima)</h3>
+                <p style="margin:0; white-space:pre-line;">3, rue du Haut-de-Sainte-Croix
+57000 Metz</p>
+              </div>
+            </div>
+
+            <p id="kontakt-note" class="note">Dane kontaktowe i godziny nabożeństw podajemy zgodnie z ostatnimi dostępnymi informacjami parafialnymi — w razie wątpliwości prosimy o potwierdzenie telefoniczne lub mailowe.</p>
           </div>
-          <div class="contact-card">
-            <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
-            <h3>Adres korespondencyjny</h3>
-            <p style="margin:0;">14, rue des Capucins<br>57000 Metz, Francja</p>
-          </div>
-          <div class="contact-card">
-            <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2v4M9 6h6l1 4H8l1-4z"/><path d="M6 21V10l6-4 6 4v11"/><path d="M10 21v-6h4v6"/></svg></div>
-            <h3>Kościół Sainte-Ségolène</h3>
-            <p style="margin:0;">14, place Jeanne d'Arc<br>57000 Metz</p>
-          </div>
-          <div class="contact-card">
-            <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg></div>
-            <h3>Kaplica Sainte-Croix (zima)</h3>
-            <p style="margin:0;">3, rue du Haut-de-Sainte-Croix<br>57000 Metz</p>
-          </div>
+
+          <aside id="priests-panel" class="priests-panel" hidden>
+            <h3 id="priests-title">Duszpasterze</h3>
+            <div id="priests-list" class="priests-list"></div>
+          </aside>
         </div>
-
-        <p class="note">Dane kontaktowe i godziny nabożeństw podajemy zgodnie z ostatnimi dostępnymi informacjami parafialnymi — w razie wątpliwości prosimy o potwierdzenie telefoniczne lub mailowe.</p>
       </section>
 
     </div>
@@ -1105,6 +1220,243 @@ document.addEventListener('keydown', (event) => {
   } catch (error) {
     container.textContent = 'Nie udało się wczytać wydarzeń. Odśwież stronę lub spróbuj ponownie później.';
     console.error('Loading events:', error);
+  }
+})();
+</script>
+
+
+<script>
+// Pages CMS: editable Msze, Sakramenty and Kontakt sections.
+const cmsIconSvgs = {
+  clock: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
+  sun: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 3v4M5 8l2 2M19 8l-2 2M4 16h16M8 16a4 4 0 018 0"/></svg>',
+  heart: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 21c4-3 7-6.5 7-10a7 7 0 10-14 0c0 3.5 3 7 7 10z"/></svg>',
+  baptism: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 21c4-3 7-6.5 7-10a7 7 0 10-14 0c0 3.5 3 7 7 10z"/></svg>',
+  person: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="8" r="3"/><path d="M6 21c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg>',
+  marriage: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M20 12a8 8 0 11-3.5-6.6M16 3v4h4"/></svg>',
+  phone: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .3 2 .6 2.9a2 2 0 01-.5 2.1L8 10a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.9.5 2.9.6a2 2 0 011.7 2z"/></svg>',
+  mail: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>',
+  church: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2v4M9 6h6l1 4H8l1-4z"/><path d="M6 21V10l6-4 6 4v11"/><path d="M10 21v-6h4v6"/></svg>',
+  pin: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg>'
+};
+
+function cmsIcon(name, fallback = 'church') {
+  return cmsIconSvgs[name] || cmsIconSvgs[fallback];
+}
+
+(async function loadMassSchedule() {
+  try {
+    const response = await fetch('./content/msze.json', {cache:'no-store'});
+    if (!response.ok) throw new Error('Msze request failed: ' + response.status);
+    const data = await response.json();
+
+    if (typeof data.lede === 'string') document.getElementById('msze-lede').textContent = data.lede;
+    if (typeof data.note === 'string') document.getElementById('msze-note').textContent = data.note;
+
+    const items = Array.isArray(data.items) ? data.items.filter(item => item && item.visible !== false) : [];
+    const fragment = document.createDocumentFragment();
+
+    for (const item of items) {
+      const block = document.createElement('div');
+      block.className = 'schedule-block';
+
+      const icon = document.createElement('div');
+      icon.className = 'icon';
+      icon.innerHTML = cmsIcon(item.icon, 'clock');
+
+      const content = document.createElement('div');
+      const title = document.createElement('h3');
+      title.textContent = item.title || '';
+      content.append(title);
+
+      const rows = Array.isArray(item.rows) ? item.rows : [];
+      for (const row of rows) {
+        if (!row || typeof row.text !== 'string') continue;
+        const line = document.createElement('div');
+        line.className = 'schedule-row';
+        if (typeof row.label === 'string' && row.label.trim()) {
+          const label = document.createElement('span');
+          label.className = 'when';
+          label.textContent = row.label.trim();
+          line.append(label);
+        }
+        line.append(document.createTextNode(row.text));
+        content.append(line);
+      }
+
+      block.append(icon, content);
+      fragment.append(block);
+    }
+
+    if (items.length) document.getElementById('mass-schedule').replaceChildren(fragment);
+  } catch (error) {
+    console.error('Loading Msze:', error);
+  }
+})();
+
+(async function loadSacraments() {
+  try {
+    const response = await fetch('./content/sakramenty.json', {cache:'no-store'});
+    if (!response.ok) throw new Error('Sakramenty request failed: ' + response.status);
+    const data = await response.json();
+
+    if (typeof data.lede === 'string') document.getElementById('sakramenty-lede').textContent = data.lede;
+    if (typeof data.note === 'string') document.getElementById('sakramenty-note').textContent = data.note;
+
+    const items = Array.isArray(data.items) ? data.items.filter(item => item && item.visible !== false) : [];
+    const fragment = document.createDocumentFragment();
+
+    for (const item of items) {
+      const card = document.createElement('div');
+      card.className = 'icon-item';
+
+      const icon = document.createElement('div');
+      icon.className = 'icon';
+      icon.innerHTML = cmsIcon(item.icon, 'church');
+
+      const content = document.createElement('div');
+      const title = document.createElement('strong');
+      title.textContent = item.title || '';
+
+      const body = document.createElement('div');
+      renderSafeRichText(body, typeof item.body === 'string' ? item.body : '');
+
+      content.append(title, body);
+      card.append(icon, content);
+      fragment.append(card);
+    }
+
+    if (items.length) document.getElementById('sacraments-list').replaceChildren(fragment);
+  } catch (error) {
+    console.error('Loading Sakramenty:', error);
+  }
+})();
+
+(async function loadContactPage() {
+  try {
+    const response = await fetch('./content/kontakt.json', {cache:'no-store'});
+    if (!response.ok) throw new Error('Kontakt request failed: ' + response.status);
+    const data = await response.json();
+
+    if (typeof data.lede === 'string') document.getElementById('kontakt-lede').textContent = data.lede;
+    if (typeof data.note === 'string') document.getElementById('kontakt-note').textContent = data.note;
+
+    const contactItems = Array.isArray(data.contactItems) ? data.contactItems.filter(item => item && item.visible !== false) : [];
+    if (contactItems.length) {
+      const fragment = document.createDocumentFragment();
+
+      for (const item of contactItems) {
+        const card = document.createElement('div');
+        card.className = 'contact-card';
+
+        const icon = document.createElement('div');
+        icon.className = 'icon';
+        icon.innerHTML = cmsIcon(item.icon, 'pin');
+
+        const title = document.createElement('h3');
+        title.textContent = item.title || '';
+
+        const body = document.createElement('p');
+        body.style.margin = '0';
+        body.style.whiteSpace = 'pre-line';
+        body.textContent = item.body || '';
+
+        card.append(icon, title, body);
+
+        const label = typeof item.buttonLabel === 'string' ? item.buttonLabel.trim() : '';
+        const url = typeof item.buttonUrl === 'string' ? item.buttonUrl.trim() : '';
+        if (label && /^(https?:|mailto:|tel:)/i.test(url)) {
+          const button = document.createElement('a');
+          button.className = 'btn';
+          button.href = url;
+          button.textContent = label;
+          if (/^https?:/i.test(url)) {
+            button.target = '_blank';
+            button.rel = 'noopener noreferrer';
+          }
+          card.append(button);
+        }
+
+        fragment.append(card);
+      }
+
+      document.getElementById('contact-items').replaceChildren(fragment);
+    }
+
+    const priests = Array.isArray(data.priests) ? data.priests.filter(item => item && item.visible !== false && (item.firstName || item.lastName)) : [];
+    const panel = document.getElementById('priests-panel');
+    const layout = document.getElementById('contact-layout');
+
+    if (priests.length) {
+      document.getElementById('priests-title').textContent =
+        typeof data.priestsTitle === 'string' && data.priestsTitle.trim() ? data.priestsTitle : 'Duszpasterze';
+
+      const fragment = document.createDocumentFragment();
+
+      for (const priest of priests) {
+        const card = document.createElement('article');
+        card.className = 'priest-card';
+
+        if (typeof priest.photo === 'string' && priest.photo.trim()) {
+          const img = document.createElement('img');
+          const imagePath = priest.photo.trim().replace(/^\/+/, '');
+          img.src = new URL(imagePath, document.baseURI).href;
+          img.alt = [priest.firstName, priest.lastName].filter(Boolean).join(' ');
+          img.className = 'priest-photo';
+          img.loading = 'lazy';
+          img.addEventListener('error', () => img.remove(), {once:true});
+          card.append(img);
+        } else {
+          const placeholder = document.createElement('div');
+          placeholder.className = 'priest-photo-placeholder';
+          placeholder.innerHTML = cmsIcon('person', 'person');
+          card.append(placeholder);
+        }
+
+        const name = document.createElement('h4');
+        name.className = 'priest-name';
+        name.textContent = [priest.firstName, priest.lastName].filter(Boolean).join(' ');
+        card.append(name);
+
+        if (typeof priest.role === 'string' && priest.role.trim()) {
+          const role = document.createElement('p');
+          role.className = 'priest-role';
+          role.textContent = priest.role.trim();
+          card.append(role);
+        }
+
+        if (typeof priest.phone === 'string' && priest.phone.trim()) {
+          const line = document.createElement('p');
+          line.className = 'priest-contact';
+          const link = document.createElement('a');
+          link.href = 'tel:' + priest.phone.replace(/[^+\d]/g, '');
+          link.textContent = priest.phone.trim();
+          line.append(link);
+          card.append(line);
+        }
+
+        if (typeof priest.email === 'string' && priest.email.trim()) {
+          const line = document.createElement('p');
+          line.className = 'priest-contact';
+          const link = document.createElement('a');
+          link.href = 'mailto:' + priest.email.trim();
+          link.textContent = priest.email.trim();
+          line.append(link);
+          card.append(line);
+        }
+
+        fragment.append(card);
+      }
+
+      document.getElementById('priests-list').replaceChildren(fragment);
+      panel.hidden = false;
+      layout.classList.remove('single-column');
+    } else {
+      panel.hidden = true;
+      layout.classList.add('single-column');
+    }
+  } catch (error) {
+    console.error('Loading Kontakt:', error);
   }
 })();
 </script>
