@@ -370,18 +370,6 @@ content:
             label: Nazwisko
             type: string
             required: true
-          - name: role
-            label: Funkcja
-            type: string
-            description: Opcjonalnie, np. Proboszcz.
-          - name: phone
-            label: Telefon
-            type: string
-            required: false
-          - name: email
-            label: E-mail
-            type: string
-            required: false
           - name: visible
             label: Widoczne na stronie
             type: boolean
