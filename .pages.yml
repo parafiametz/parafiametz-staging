@@ -8,6 +8,70 @@ media:
     rename: safe
 
 content:
+  - name: msze
+    label: Msze i nabożeństwa
+    type: file
+    path: content/msze.json
+    format: json
+    operations:
+      delete: false
+    fields:
+      - name: lede
+        label: Wprowadzenie
+        type: text
+        required: true
+      - name: items
+        label: Harmonogram
+        description: Edytuj, dodawaj i przeciągaj bloki, aby zmienić ich kolejność na stronie.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - name: title
+            label: Tytuł
+            type: string
+            required: true
+          - name: icon
+            label: Ikona
+            type: select
+            required: true
+            options:
+              values:
+                - name: clock
+                  label: Zegar
+                - name: sun
+                  label: Nabożeństwo / słońce
+                - name: heart
+                  label: Spowiedź / serce
+                - name: church
+                  label: Kościół
+          - name: rows
+            label: Wiersze informacji
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{label} {text}"
+            fields:
+              - name: label
+                label: Etykieta
+                type: string
+                description: Opcjonalnie, np. Godzina albo Zima.
+              - name: text
+                label: Treść
+                type: text
+                required: true
+          - name: visible
+            label: Widoczne na stronie
+            type: boolean
+            default: true
+      - name: note
+        label: Informacja pod harmonogramem
+        type: text
+        required: false
+
   - name: aktualnosci
     label: Aktualności
     type: file
@@ -159,70 +223,6 @@ content:
             label: Opublikowane
             type: boolean
             default: false
-
-  - name: msze
-    label: Msze i nabożeństwa
-    type: file
-    path: content/msze.json
-    format: json
-    operations:
-      delete: false
-    fields:
-      - name: lede
-        label: Wprowadzenie
-        type: text
-        required: true
-      - name: items
-        label: Harmonogram
-        description: Edytuj, dodawaj i przeciągaj bloki, aby zmienić ich kolejność na stronie.
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{title}"
-        fields:
-          - name: title
-            label: Tytuł
-            type: string
-            required: true
-          - name: icon
-            label: Ikona
-            type: select
-            required: true
-            options:
-              values:
-                - name: clock
-                  label: Zegar
-                - name: sun
-                  label: Nabożeństwo / słońce
-                - name: heart
-                  label: Spowiedź / serce
-                - name: church
-                  label: Kościół
-          - name: rows
-            label: Wiersze informacji
-            type: object
-            list:
-              collapsible:
-                collapsed: true
-                summary: "{label} {text}"
-            fields:
-              - name: label
-                label: Etykieta
-                type: string
-                description: Opcjonalnie, np. Godzina albo Zima.
-              - name: text
-                label: Treść
-                type: text
-                required: true
-          - name: visible
-            label: Widoczne na stronie
-            type: boolean
-            default: true
-      - name: note
-        label: Informacja pod harmonogramem
-        type: text
-        required: false
 
   - name: sakramenty
     label: Sakramenty
@@ -378,4 +378,3 @@ content:
         label: Informacja na dole
         type: text
         required: false
-
