@@ -309,8 +309,8 @@
   /* Editable Contact layout */
   .contact-layout{
     display:grid;
-    grid-template-columns:minmax(0, 1fr) minmax(280px, 340px);
-    gap:28px;
+    grid-template-columns:minmax(0, 1fr) 400px;
+    gap:48px;
     align-items:start;
     margin-top:26px;
   }
@@ -318,7 +318,9 @@
   .contact-layout .contact-grid{ margin-top:0; }
   .priests-panel{
     border-left:1px solid var(--line);
-    padding-left:28px;
+    padding-left:40px;
+    justify-self:end;
+    width:100%;
   }
   .priests-panel[hidden]{ display:none; }
   .priests-panel > h3{
@@ -338,8 +340,8 @@
   }
   .priest-photo,
   .priest-photo-placeholder{
-    width:124px;
-    height:124px;
+    width:180px;
+    height:180px;
     border-radius:50%;
     margin:0 auto 14px;
     object-fit:cover;
@@ -359,7 +361,7 @@
   .priest-name{
     margin:0 0 4px;
     font-family:'Cormorant Garamond', serif;
-    font-size:1.3rem;
+    font-size:1.6rem;
     font-weight:700;
     color:var(--burgundy-deep);
   }
