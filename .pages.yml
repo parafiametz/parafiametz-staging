@@ -352,7 +352,7 @@ content:
         list:
           collapsible:
             collapsed: true
-            summary: "{firstName} {lastName}"
+            summary: "{title} {firstName} {lastName}"
         fields:
           - name: photo
             label: Zdjęcie profilowe
@@ -362,6 +362,11 @@ content:
               media: images
               extensions: [jpg, jpeg, png, webp]
               rename: safe
+          - name: title
+            label: Tytuł przed nazwiskiem
+            type: string
+            required: false
+            description: Opcjonalnie, np. Ks., ks. dr, o., bp.
           - name: firstName
             label: Imię
             type: string
