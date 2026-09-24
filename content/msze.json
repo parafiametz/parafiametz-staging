@@ -1,0 +1,55 @@
+{
+  "lede": "Miejsce sprawowania niedzielnej Mszy świętej zmienia się w zależności od pory roku — prosimy zwracać na to uwagę przy planowaniu wizyty.",
+  "items": [
+    {
+      "title": "Niedziela i święta",
+      "icon": "clock",
+      "visible": true,
+      "rows": [
+        {
+          "label": "Godzina",
+          "text": "Msza święta o 9:30"
+        },
+        {
+          "label": "Wiosna / lato / jesień",
+          "text": "Kościół Sainte-Ségolène, 14 place Jeanne d'Arc, Metz"
+        },
+        {
+          "label": "Zima (koniec listopada – Wielkanoc)",
+          "text": "Kaplica Sainte-Croix, 3 rue du Haut-de-Sainte-Croix, Metz (wejście przez bramę 3A/B)"
+        }
+      ]
+    },
+    {
+      "title": "Pierwszy piątek miesiąca",
+      "icon": "sun",
+      "visible": true,
+      "rows": [
+        {
+          "label": "Godzina",
+          "text": "Msza święta po polsku o 19:30, po niej adoracja Najświętszego Sakramentu"
+        }
+      ]
+    },
+    {
+      "title": "Spowiedź",
+      "icon": "heart",
+      "visible": true,
+      "rows": [
+        {
+          "label": "",
+          "text": "Od wtorku do soboty przed i po każdej Mszy Świętej."
+        },
+        {
+          "label": "",
+          "text": "W każdy pierwszy piątek i pierwszą sobotę miesiąca przed i po Mszy Świętej."
+        },
+        {
+          "label": "",
+          "text": "W każdą niedzielę przed Mszą św."
+        }
+      ]
+    }
+  ],
+  "note": "Szczegółowy, cotygodniowy harmonogram (miejsce i godziny) może ulec zmianie — prosimy o potwierdzenie w bieżących ogłoszeniach parafialnych lub telefonicznie."
+}
