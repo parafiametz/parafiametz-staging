@@ -1434,7 +1434,7 @@ function cmsIcon(name, fallback = 'church') {
 
         const name = document.createElement('h4');
         name.className = 'priest-name';
-        name.textContent = [priest.firstName, priest.lastName].filter(Boolean).join(' ');
+        name.textContent = [priest.title, priest.firstName, priest.lastName].filter(value => typeof value === 'string' && value.trim()).map(value => value.trim()).join(' ');
         card.append(name);
 
         if (typeof priest.role === 'string' && priest.role.trim()) {
