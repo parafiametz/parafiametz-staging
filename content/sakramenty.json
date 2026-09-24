@@ -1,0 +1,42 @@
+{
+  "lede": "Sakramentów udzielamy w języku polskim — prosimy o wcześniejszy kontakt, aby ustalić termin i formalności.",
+  "items": [
+    {
+      "title": "Chrzest święty",
+      "icon": "baptism",
+      "body": "<p>Zgłoszenie z odpowiednim wyprzedzeniem, wraz z niezbędnymi dokumentami.</p>",
+      "visible": true
+    },
+    {
+      "title": "Pierwsza Komunia",
+      "icon": "person",
+      "body": "<p>Poprzedzona przygotowaniem katechetycznym dzieci.</p>",
+      "visible": true
+    },
+    {
+      "title": "Bierzmowanie",
+      "icon": "sun",
+      "body": "<p>Dla młodzieży po odpowiednim przygotowaniu.</p>",
+      "visible": true
+    },
+    {
+      "title": "Sakrament małżeństwa",
+      "icon": "marriage",
+      "body": "<p>Wymaga wcześniejszego kontaktu z kancelarią, zwykle z kilkumiesięcznym wyprzedzeniem.</p>",
+      "visible": true
+    },
+    {
+      "title": "Spowiedź święta",
+      "icon": "baptism",
+      "body": "<p>Od wtorku do soboty przed i po każdej Mszy Świętej.</p><p>W każdy pierwszy piątek i pierwszą sobotę miesiąca przed i po Mszy Świętej.</p><p>W każdą niedzielę przed Mszą św.</p>",
+      "visible": true
+    },
+    {
+      "title": "Namaszczenie chorych",
+      "icon": "phone",
+      "body": "<p>Prosimy o kontakt telefoniczny, w tym w sytuacjach pilnych.</p>",
+      "visible": true
+    }
+  ],
+  "note": "Dokładne wymagania formalne (np. świadectwa, zaświadczenia z parafii zamieszkania w Polsce) najlepiej ustalić bezpośrednio, telefonicznie lub mailowo — patrz zakładka Kontakt."
+}
