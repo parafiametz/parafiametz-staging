@@ -1,0 +1,40 @@
+{
+  "lede": "Masz pytanie dotyczące Mszy, sakramentu lub życia wspólnoty? Skontaktuj się z nami.",
+  "contactItems": [
+    {
+      "title": "Telefon i e-mail",
+      "icon": "phone",
+      "body": "+33 3 87 75 43 88\nsainte.segolene_metz@orange.fr",
+      "buttonLabel": "Napisz do nas",
+      "buttonUrl": "mailto:sainte.segolene_metz@orange.fr",
+      "visible": true
+    },
+    {
+      "title": "Adres korespondencyjny",
+      "icon": "mail",
+      "body": "14, rue des Capucins\n57000 Metz, Francja",
+      "buttonLabel": "",
+      "buttonUrl": "",
+      "visible": true
+    },
+    {
+      "title": "Kościół Sainte-Ségolène",
+      "icon": "church",
+      "body": "14, place Jeanne d'Arc\n57000 Metz",
+      "buttonLabel": "",
+      "buttonUrl": "",
+      "visible": true
+    },
+    {
+      "title": "Kaplica Sainte-Croix (zima)",
+      "icon": "pin",
+      "body": "3, rue du Haut-de-Sainte-Croix\n57000 Metz",
+      "buttonLabel": "",
+      "buttonUrl": "",
+      "visible": true
+    }
+  ],
+  "priestsTitle": "Duszpasterze",
+  "priests": [],
+  "note": "Dane kontaktowe i godziny nabożeństw podajemy zgodnie z ostatnimi dostępnymi informacjami parafialnymi — w razie wątpliwości prosimy o potwierdzenie telefoniczne lub mailowe."
+}
