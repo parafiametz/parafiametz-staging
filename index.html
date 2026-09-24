@@ -307,10 +307,14 @@
   }
 
   /* Editable Contact layout */
+  #sec-kontakt{
+    width:calc(100vw - 280px - 112px);
+    max-width:none;
+  }
   .contact-layout{
     display:grid;
-    grid-template-columns:minmax(0, 1fr) 400px;
-    gap:48px;
+    grid-template-columns:minmax(0, 1fr) 340px;
+    gap:36px;
     align-items:start;
     margin-top:26px;
   }
@@ -318,9 +322,10 @@
   .contact-layout .contact-grid{ margin-top:0; }
   .priests-panel{
     border-left:1px solid var(--line);
-    padding-left:40px;
+    padding-left:28px;
     justify-self:end;
-    width:100%;
+    width:340px;
+    max-width:100%;
   }
   .priests-panel[hidden]{ display:none; }
   .priests-panel > h3{
@@ -381,13 +386,15 @@
   }
   .priest-contact a:hover{ text-decoration:underline; }
 
-  @media (max-width:1100px){
-    .contact-layout{ grid-template-columns:1fr; }
+  @media (max-width:1240px) and (min-width:861px){
+    .contact-layout{
+      grid-template-columns:minmax(300px, 1fr) 320px;
+      gap:28px;
+    }
+    .contact-main .contact-grid{ grid-template-columns:1fr; }
     .priests-panel{
-      border-left:none;
-      border-top:1px solid var(--line);
-      padding-left:0;
-      padding-top:24px;
+      width:320px;
+      padding-left:24px;
     }
   }
 
@@ -593,6 +600,16 @@
     .sidebar-foot{ display:none; }
     .content{ padding:32px 22px 60px 22px; }
     #sec-aktualnosci{ width:auto; }
+    #sec-kontakt{ width:auto; }
+    .contact-layout{ grid-template-columns:1fr; gap:24px; }
+    .priests-panel{
+      width:100%;
+      justify-self:stretch;
+      border-left:none;
+      border-top:1px solid var(--line);
+      padding-left:0;
+      padding-top:24px;
+    }
     .hero-inner{ padding:26px; }
     .hero{ height:320px; }
     .hero h1{ font-size:2rem; }
