@@ -159,3 +159,235 @@ content:
             label: Opublikowane
             type: boolean
             default: false
+
+  - name: msze
+    label: Msze i nabożeństwa
+    type: file
+    path: content/msze.json
+    format: json
+    operations:
+      delete: false
+    fields:
+      - name: lede
+        label: Wprowadzenie
+        type: text
+        required: true
+      - name: items
+        label: Harmonogram
+        description: Edytuj, dodawaj i przeciągaj bloki, aby zmienić ich kolejność na stronie.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - name: title
+            label: Tytuł
+            type: string
+            required: true
+          - name: icon
+            label: Ikona
+            type: select
+            required: true
+            options:
+              values:
+                - name: clock
+                  label: Zegar
+                - name: sun
+                  label: Nabożeństwo / słońce
+                - name: heart
+                  label: Spowiedź / serce
+                - name: church
+                  label: Kościół
+          - name: rows
+            label: Wiersze informacji
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{label} {text}"
+            fields:
+              - name: label
+                label: Etykieta
+                type: string
+                description: Opcjonalnie, np. Godzina albo Zima.
+              - name: text
+                label: Treść
+                type: text
+                required: true
+          - name: visible
+            label: Widoczne na stronie
+            type: boolean
+            default: true
+      - name: note
+        label: Informacja pod harmonogramem
+        type: text
+        required: false
+
+  - name: sakramenty
+    label: Sakramenty
+    type: file
+    path: content/sakramenty.json
+    format: json
+    operations:
+      delete: false
+    fields:
+      - name: lede
+        label: Wprowadzenie
+        type: text
+        required: true
+      - name: items
+        label: Sakramenty
+        description: Edytuj, dodawaj i przeciągaj elementy, aby zmienić ich kolejność.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - name: title
+            label: Nazwa
+            type: string
+            required: true
+          - name: body
+            label: Opis
+            type: rich-text
+            required: true
+            options:
+              format: html
+              switcher: false
+              media: false
+          - name: icon
+            label: Ikona
+            type: select
+            required: true
+            options:
+              values:
+                - name: baptism
+                  label: Chrzest
+                - name: person
+                  label: Osoba / Komunia
+                - name: sun
+                  label: Bierzmowanie
+                - name: marriage
+                  label: Małżeństwo
+                - name: phone
+                  label: Kontakt / namaszczenie
+                - name: church
+                  label: Kościół
+          - name: visible
+            label: Widoczne na stronie
+            type: boolean
+            default: true
+      - name: note
+        label: Informacja pod listą
+        type: text
+        required: false
+
+  - name: kontakt
+    label: Kontakt
+    type: file
+    path: content/kontakt.json
+    format: json
+    operations:
+      delete: false
+    fields:
+      - name: lede
+        label: Wprowadzenie
+        type: text
+        required: true
+      - name: contactItems
+        label: Dane kontaktowe
+        description: Karty kontaktowe wyświetlane po lewej stronie.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - name: title
+            label: Tytuł
+            type: string
+            required: true
+          - name: body
+            label: Treść
+            type: text
+            required: true
+          - name: icon
+            label: Ikona
+            type: select
+            required: true
+            options:
+              values:
+                - name: phone
+                  label: Telefon
+                - name: mail
+                  label: E-mail / korespondencja
+                - name: church
+                  label: Kościół
+                - name: pin
+                  label: Lokalizacja
+                - name: person
+                  label: Osoba
+          - name: buttonLabel
+            label: Tekst przycisku
+            type: string
+            description: Opcjonalnie, np. Napisz do nas.
+          - name: buttonUrl
+            label: Adres przycisku
+            type: string
+            description: Opcjonalnie, np. mailto:adres@example.com albo https://...
+          - name: visible
+            label: Widoczne na stronie
+            type: boolean
+            default: true
+      - name: priestsTitle
+        label: Nagłówek sekcji duszpasterzy
+        type: string
+        required: true
+      - name: priests
+        label: Duszpasterze
+        description: Profile wyświetlane po prawej stronie strony Kontakt.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{firstName} {lastName}"
+        fields:
+          - name: photo
+            label: Zdjęcie profilowe
+            type: image
+            required: false
+            options:
+              media: images
+              extensions: [jpg, jpeg, png, webp]
+              rename: safe
+          - name: firstName
+            label: Imię
+            type: string
+            required: true
+          - name: lastName
+            label: Nazwisko
+            type: string
+            required: true
+          - name: role
+            label: Funkcja
+            type: string
+            description: Opcjonalnie, np. Proboszcz.
+          - name: phone
+            label: Telefon
+            type: string
+            required: false
+          - name: email
+            label: E-mail
+            type: string
+            required: false
+          - name: visible
+            label: Widoczne na stronie
+            type: boolean
+            default: true
+      - name: note
+        label: Informacja na dole
+        type: text
+        required: false
+
