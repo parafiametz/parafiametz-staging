@@ -4,13 +4,13 @@
       "title": "Pierwsze ogloszenie testowe",
       "date": "2026-09-20",
       "body": "<p>To jest pierwsze ogloszenie testowe by sprawdzic jak sie je dodaje, edytuje, nie usuwa ale zdejmuje ze strony i ewentualnie kompltnie kasuje</p>",
-      "published": true
+      "published": false
     },
     {
       "title": "To jest drugie ogloszenie testowe",
       "date": "2026-09-19",
       "body": "<p>To jest drugie ogloszenie testowe by sprawdzic kolejnosc wyswietlania na stronie, najnowsze u gory.</p>",
-      "published": true
+      "published": false
     },
     {
       "title": "XXV Niedziela Zwykła",
