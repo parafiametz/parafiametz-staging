@@ -990,9 +990,19 @@ sainte.segolene_metz@orange.fr</p>
 
       document.querySelector('nav.menu').classList.remove('open');
       if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
+      if (location.hash !== '#' + target) history.pushState(null, '', '#' + target);
       window.scrollTo({top:0, behavior:'smooth'});
     });
   });
+
+  function openSectionFromHash() {
+    const target = location.hash.slice(1);
+    const button = target ? document.querySelector('nav.menu button[data-section="' + target + '"]') : null;
+    if (button) button.click();
+  }
+  window.addEventListener('hashchange', openSectionFromHash);
+  window.addEventListener('popstate', openSectionFromHash);
+  if (location.hash) openSectionFromHash();
 </script>
 
 
