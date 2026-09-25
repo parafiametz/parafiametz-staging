@@ -11,9 +11,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "5 Av. André Magnan, 13100 Aix-en-Provence",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -30,10 +30,10 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "46 Rue Louis Blanc, 94140 Alfortville",
           "website": "https://parafiawalfortville.blogspot.com",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -44,9 +44,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "1 Rue des Cordeliers, 80000 Amiens",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -57,10 +57,10 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "52 Av. Laplace, 94110 Arcueil",
           "website": "https://www.residence-etudiants-jp2.com",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -71,10 +71,10 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "290 Av. Jean Jaurès, 95100 Argenteuil",
           "website": "https://www.facebook.com/p/Parafia-Polska-przy-Kosciele-Sw-Bernadetty-w-Argenteuil-100068488046409/",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -85,14 +85,14 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "11 Rue Léon Blum, 59950 Auby",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         },
         {
+          "name": "Miejsce 2",
           "address": "11 Pl. de l'Humanité, 59950 Auby",
-          "verified": false,
-          "name": "Miejsce 2"
+          "verified": false
         }
       ]
     },
@@ -103,9 +103,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "8 Rue du Maréchal Foch, 57390 Audun-le-Tiche",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -116,16 +116,16 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "46 Av. du Gros Peuplier, 93600 Aulnay-sous-Bois",
           "website": "https://aulnaysousbois.pl",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         },
         {
+          "name": "Miejsce 2",
           "address": "57 Av. de la Croix Blanche, 93600 Aulnay-sous-Bois",
           "website": "https://aulnaysousbois.pl",
-          "verified": false,
-          "name": "Miejsce 2"
+          "verified": false
         }
       ]
     },
@@ -136,9 +136,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "27 Rue Guy de la Vasselais, 28700 Auneau-Bleury-Saint-Symphorien",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -155,10 +155,10 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "80 Av. de la République, 93170 Bagnolet",
           "website": "http://www.bagnolet.paris.parafia.info.pl",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -169,9 +169,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "Rue de l'Église, 68390 Baldersheim",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -182,10 +182,10 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "40 Rue François Arago, 62620 Barlin",
           "website": "https://parafianoeux.blogspot.com/",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -202,9 +202,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "2 Rue des Martelots, 25000 Besançon",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -215,10 +215,10 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "1 Rue Mercière, 94470 Boissy-Saint-Léger",
           "website": "https://parafiawalfortville.blogspot.com",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -229,9 +229,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "Pl. Pierre Renaudel, 33800 Bordeaux",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -242,10 +242,10 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "20 Pl. Guynemer, 62700 Bruay-la-Buissière",
           "website": "https://www.tchr.fr/bruay-la-buissiere",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -256,10 +256,10 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "15 Av. du Prado, 06400 Cannes",
           "website": "https://www.nicea-parafia.pl/",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -270,9 +270,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "177 Rue Picasso, 62220 Carvin",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -295,9 +295,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "Pl. de l'Église, 37240 Ciran",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -314,10 +314,10 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "11 Grand Place, 59560 Comines",
           "website": "https://fr-fr.facebook.com/public/Polska-Parafia-Roubaix",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -328,10 +328,10 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "118 Bd John Kennedy, 91100 Corbeil-Essonnes",
           "website": "https://pmk-dammarie.eu",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -342,10 +342,10 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "48A Rue de la Frémondière, 44220 Couëron",
           "website": "http://pmk-coueron.eu",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -356,10 +356,10 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "81 Rue Adrien Châtelain, 77190 Dammarie-les-Lys",
           "website": "https://pmk-dammarie.eu",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -370,9 +370,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "63 Rue du Faubourg Raines, 21000 Dijon",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -383,10 +383,10 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "59 Cité Bruno, 62119 Dourges",
           "website": "https://www.polonia-dourges.fr/amicale-polonaise-dourges_fr.html",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -397,10 +397,10 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "Pl. Turenne, 59240 Dunkerque",
           "website": "https://fr-fr.facebook.com/public/Polska-Parafia-Roubaix",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -411,9 +411,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "18 Rue des Violettes, 27000 Évreux",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -424,10 +424,10 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "72 Rue Noël Garnier, 83600 Fréjus",
           "website": "https://paroissesaintraphael.fr/notre-dame-du-sacre-coeur",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -438,9 +438,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "1 Rue de la Merle, 57800 Freyming-Merlebach",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -457,15 +457,15 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "9 Pl. de l'Église, 83310 Grimaud",
           "website": "https://paroissesaintraphael.fr/notre-dame-du-sacre-coeur",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         },
         {
+          "name": "Miejsce 2",
           "address": "10 Rue du Gacharel, 83310 Grimaud",
-          "verified": false,
-          "name": "Miejsce 2"
+          "verified": false
         }
       ]
     },
@@ -476,9 +476,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "15 Rue François Bacquet, 59287 Guesnain",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -489,10 +489,10 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "Rue du 8 Mai 1945, 62940 Haillicourt",
           "website": "https://www.tchr.fr/bruay-la-buissiere",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -503,10 +503,10 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "19 Rue de Saint-Claude, 62440 Harnes",
           "website": "https://www.pmk-harnes.fr",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -517,10 +517,10 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "Rue des Marronniers, 62150 Houdain",
           "website": "https://www.tchr.fr/bruay-la-buissiere",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -531,10 +531,10 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "11 Rue Jules Guesde, 92130 Issy-les-Moulineaux",
           "website": "https://www.seminariumpolskie.fr",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -545,9 +545,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "1 Grand Rue, 54240 Jœuf",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -558,10 +558,10 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "Rothère, 41300 La Ferté-Imbault",
           "website": "https://www.maisonmisericordedivine.com",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -572,10 +572,10 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "Pl. Jean-Baptiste Marcet, 42150 La Ricamarie",
           "website": "http://www.ricamarie.parafia.info.pl",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -586,10 +586,10 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "107 Av. Normandie Niemen, 93150 Le Blanc-Mesnil",
           "website": "https://aulnaysousbois.pl",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -606,9 +606,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "8 Rue Guynemer, 71200 Le Creusot",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -619,9 +619,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "17 Parv. Saint-Michel, 76600 Le Havre",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -632,10 +632,10 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "43 Rue Léon Gambetta, 62790 Leforest",
           "website": "https://www.polonia-dourges.fr/amicale-polonaise-dourges_fr.html",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -646,9 +646,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "54 Rte de Béthune, 62300 Lens",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -659,9 +659,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "Rue Fernand Darchicourt, 62820 Libercourt",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -672,9 +672,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "Rue Thiers, 62800 Liévin",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -685,10 +685,10 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "47 Rue de l'Hôpital Militaire, 59800 Lille",
           "website": "https://fr-fr.facebook.com/public/Polska-Parafia-Roubaix",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -699,9 +699,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "1 Av. Mgr Théas, 65100 Lourdes",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -712,10 +712,10 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "111 Av. Jean Mermoz, 69008 Lyon",
           "website": "https://www.lyontrinite.com",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -726,9 +726,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "10 Rue de Lille, 62540 Marles-les-Mines",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -739,9 +739,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "426 Av. de Montolivet, 13012 Marseille",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -752,9 +752,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "Rue de Neuville Saint-Vaast, 62670 Mazingarbe",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -765,14 +765,14 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "5000F Rue de Dourges, 62430 Méricourt",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         },
         {
+          "name": "Miejsce 2",
           "address": "Rue de Vimy, 62680 Méricourt",
-          "verified": false,
-          "name": "Miejsce 2"
+          "verified": false
         }
       ]
     },
@@ -783,22 +783,22 @@
       "visible": true,
       "locations": [
         {
+          "name": "Kaplica Sainte-Croix",
           "address": "7 Rue du Haut de Sainte-Croix, 57000 Metz",
           "website": "https://parafiametz.fr/",
-          "verified": true,
-          "name": "Miejsce 1"
+          "verified": true
         },
         {
-          "address": "14 Rue des Capucins, 57000 Metz",
-          "website": "https://parafiametz.fr/",
-          "verified": true,
-          "name": "Miejsce 2"
-        },
-        {
+          "name": "Kościół Sainte-Ségolène",
           "address": "14 Pl. Jeanne d'Arc, 57000 Metz",
           "website": "https://parafiametz.fr/",
-          "verified": true,
-          "name": "Miejsce 3"
+          "verified": true
+        },
+        {
+          "name": "Guénange",
+          "address": "11 Saint-Benoît, 57310 Guénange",
+          "website": "https://parafiametz.fr/",
+          "verified": true
         }
       ]
     },
@@ -809,9 +809,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "Rue des Roches, 14120 Mondeville",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -822,9 +822,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "157 Rue Jean Jaurès, 84430 Mondragon",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -835,9 +835,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "256 Av. de Strasbourg, 54000 Nancy",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -848,9 +848,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "Pl. du Chanoine Heroux, 93330 Neuilly-sur-Marne",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -861,10 +861,10 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "9 Chemin du Fort du Mont Alban, 06300 Nice",
           "website": "https://www.nicea-parafia.pl/",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -875,10 +875,10 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "8 Rue du Maréchal Foch, 62530 Nœux-les-Mines",
           "website": "https://parafianoeux.blogspot.com/",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -889,9 +889,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "1 Rue Pierre Brossolette, 62590 Oignies",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -902,9 +902,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "6 Rue Robert de Courtenay, 45000 Orléans",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -915,9 +915,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "2 Rue des Patis, 95520 Osny",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -928,36 +928,36 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "11 Rue Saint-Yves, 75014 Paris",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         },
         {
+          "name": "Miejsce 2",
           "address": "263bis Rue Saint-Honoré, 75001 Paris",
           "website": "http://www.paris.parafia.info.pl",
-          "verified": false,
-          "name": "Miejsce 2"
+          "verified": false
         },
         {
+          "name": "Miejsce 3",
           "address": "34 Rue du Rendez-Vous, 75012 Paris",
-          "verified": false,
-          "name": "Miejsce 3"
+          "verified": false
         },
         {
+          "name": "Miejsce 4",
           "address": "3 Rue Rampal, 75019 Paris",
           "website": "https://www.parafiabelleville.fr",
-          "verified": false,
-          "name": "Miejsce 4"
+          "verified": false
         },
         {
+          "name": "Miejsce 5",
           "address": "22 Rue Legendre, 75017 Paris",
-          "verified": false,
-          "name": "Miejsce 5"
+          "verified": false
         },
         {
+          "name": "Miejsce 6",
           "address": "18 Rue Claude Lorrain, 75016 Paris",
-          "verified": false,
-          "name": "Miejsce 6"
+          "verified": false
         }
       ]
     },
@@ -968,9 +968,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "1 Bd Foch, 56800 Ploërmel",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -981,9 +981,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "3 Pl. Saint-Martin, 17800 Pons",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -994,9 +994,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "Rue des Capucines, 14420 Potigny",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -1007,10 +1007,10 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "17 Rue d'Ensisheim, 68840 Pulversheim",
           "website": "https://polska-misja-rixheim-mulhouse.blogspot.com",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -1021,10 +1021,10 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "30 Rue Danton, 35700 Rennes",
           "website": "https://parafiarennes.blogspot.com",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -1035,10 +1035,10 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "189 Rue de l'Île Napoléon, 68170 Rixheim",
           "website": "https://polska-misja-rixheim-mulhouse.blogspot.com",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -1049,10 +1049,10 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "21 Rue de l'Église, 42230 Roche-la-Molière",
           "website": "http://www.ricamarie.parafia.info.pl",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -1063,9 +1063,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "Pl. Jean Lagelee, 70250 Ronchamp",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -1076,10 +1076,10 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "128 Grande Rue, 59100 Roubaix",
           "website": "http://parafiaroubaix.id.st",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -1090,9 +1090,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "Pl. Antoine Blanchant, 62320 Rouvroy",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -1103,9 +1103,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "12 Rue de l'Église, 77730 Saâcy-sur-Marne",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -1116,10 +1116,10 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "53 Bd Jules Guesde, 93200 Saint-Denis",
           "website": "http://www.bagnolet.paris.parafia.info.pl",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -1130,9 +1130,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "2 Chem. des Chaux, 42000 Saint-Étienne",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -1143,16 +1143,16 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "8 Rue du Bordeau, 01630 Saint-Genis-Pouilly",
           "website": "https://polskamisja.fr",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         },
         {
+          "name": "Miejsce 2",
           "address": "25 Rue de l'Église, 01630 Saint-Genis-Pouilly",
           "website": "https://polskamisja.fr",
-          "verified": false,
-          "name": "Miejsce 2"
+          "verified": false
         }
       ]
     },
@@ -1163,9 +1163,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "Pl. de la Liberté, 34430 Saint-Jean-de-Védas",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -1176,9 +1176,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "205-207, D235, 71410 Sanvignes-les-Mines",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -1195,9 +1195,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "86 Av. de la Libération, 57350 Stiring-Wendel",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -1208,10 +1208,10 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "9 Rue du Hohwald, 67000 Strasbourg",
           "website": "https://www.polska-misja-katolicka-strasbourg.pl",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -1222,9 +1222,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "Imp. Cuneo, 83000 Toulon",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -1235,10 +1235,10 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "290 Rte de Seysses, 31100 Toulouse",
           "website": "https://parafiatuluzapl.wordpress.com/",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -1249,10 +1249,10 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "18 Rue de la Chapelle, 78510 Triel-sur-Seine",
           "website": "http://triel.parafia.fr/",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -1263,9 +1263,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "15 Rue Vauluisant, 10000 Troyes",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -1276,9 +1276,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "Rue Maurice et Gilbert Castel, 54640 Tucquegnieux",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -1295,9 +1295,9 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "927 Rue Lucien Moreau, 59119 Waziers",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     },
@@ -1308,10 +1308,10 @@
       "visible": true,
       "locations": [
         {
+          "name": "Miejsce 1",
           "address": "2 Rue Denis Papin, 68310 Wittelsheim",
           "website": "https://polska-misja-rixheim-mulhouse.blogspot.com",
-          "verified": false,
-          "name": "Miejsce 1"
+          "verified": false
         }
       ]
     }
