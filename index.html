@@ -1688,9 +1688,13 @@ loadEditableSection('./content/kosciol.json', data => {
     const ns='http://www.w3.org/2000/svg';
     const listFrag=document.createDocumentFragment();
     function project(lat,lon){
-      const x=92+(Number(lon)+5.2)/13.4*425;
-      const y=70+(51.15-Number(lat))/8.35*510;
-      return [Math.max(80,Math.min(535,x)),Math.max(55,Math.min(600,y))];
+      /* Same geographic extent as the mainland-France outline above.
+         Keeping pins and coastline on one projection prevents border drift. */
+      const west=-5.25, east=8.30, north=51.20, south=42.30;
+      const left=111, right=530, top=70, bottom=607;
+      const x=left+(Number(lon)-west)/(east-west)*(right-left);
+      const y=top+(north-Number(lat))/(north-south)*(bottom-top);
+      return [x,y];
     }
     function setActive(key,on){
       document.querySelectorAll('[data-mission-key="'+key+'"]').forEach(el=>el.classList.toggle('active',on));
