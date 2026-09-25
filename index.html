@@ -3,6 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Polska wspólnota katolicka w Metz przy parafii Sainte-Ségolène — Msze święte, ogłoszenia, wydarzenia, sakramenty i kontakt.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<link rel="canonical" href="https://parafiametz.github.io/parafiametz-staging/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:title" content="Parafia w Metz — Parafia Sainte-Ségolène">
+<meta property="og:description" content="Polska wspólnota katolicka w Metz — Msze święte, ogłoszenia, wydarzenia, sakramenty i kontakt.">
+<meta property="og:url" content="https://parafiametz.github.io/parafiametz-staging/">
 <title>Parafia w Metz — Parafia Sainte-Ségolène</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -415,6 +424,11 @@
     text-align:left;
   }
   #announcements .contact-card{ width:100%; }
+  #announcements .contact-card > h3{
+    font-size:1.55rem;
+    line-height:1.25;
+    margin-bottom:8px;
+  }
 
   .announcement-body{
     margin-top:14px;
@@ -627,7 +641,18 @@
     .content section{ animation:none; }
     .hero{ transition:none; }
   }
+
+  .announcement-body.is-collapsed{ max-height:22rem; overflow:hidden; position:relative; }
+  .announcement-body.is-collapsed::after{ content:""; position:absolute; left:0; right:0; bottom:0; height:5rem; background:linear-gradient(transparent,var(--paper)); pointer-events:none; }
+  .text-toggle,.archive-toggle{ margin-top:10px; border:0; background:none; color:var(--burgundy); font:600 .86rem 'Libre Franklin',sans-serif; cursor:pointer; padding:4px 0; }
+  .text-toggle:hover,.archive-toggle:hover{ text-decoration:underline; }
+  .past-events{ margin-top:28px; padding-top:20px; border-top:1px solid var(--line); }
+  .past-events[hidden]{ display:none; }
+  .past-events h3{ font-size:1.35rem; margin-bottom:12px; }
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Church","name":"Parafia w Metz","url":"https://parafiametz.github.io/parafiametz-staging/","address":{"@type":"PostalAddress","streetAddress":"14, place Jeanne d'Arc","postalCode":"57000","addressLocality":"Metz","addressCountry":"FR"}}
+</script>
 </head>
 <body>
 
@@ -645,9 +670,9 @@
           <div class="brand-sub">Sainte-Ségolène</div>
         </div>
       </div>
-      <button class="menu-toggle" aria-label="Rozwiń menu" onclick="document.querySelector('nav.menu').classList.toggle('open')">☰</button>
+      <button class="menu-toggle" type="button" aria-label="Rozwiń menu" aria-expanded="false" aria-controls="main-menu">☰</button>
 
-      <nav class="menu" aria-label="Menu główne">
+      <nav id="main-menu" class="menu" aria-label="Menu główne">
         <button data-section="home" class="active">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>
           Strona główna
@@ -704,30 +729,30 @@
 
       <!-- HOME -->
       <section id="sec-home" class="active">
-        <p class="lede">Od dziesięcioleci Polacy mieszkający w Metz i okolicach Lotaryngii spotykają się tutaj, by modlić się, świętować i podtrzymywać więź z Ojczyzną — w języku, który jest im najbliższy.</p>
+        <p id="home-lede" class="lede">Od dziesięcioleci Polacy mieszkający w Metz i okolicach Lotaryngii spotykają się tutaj, by modlić się, świętować i podtrzymywać więź z Ojczyzną — w języku, który jest im najbliższy.</p>
 
         <div class="fact-row">
           <div class="fact-pill">
             <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-            <div><div class="fact-label">MSZA NIEDZIELNA</div><div class="fact-value">godz. 9:30</div></div>
+            <div><div id="home-mass-label" class="fact-label">MSZA NIEDZIELNA</div><div id="home-mass-value" class="fact-value">godz. 9:30</div></div>
           </div>
           <div class="fact-pill">
             <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg></div>
-            <div><div class="fact-label">ADRES</div><div class="fact-value">14, place Jeanne d'Arc, Metz</div></div>
+            <div><div id="home-address-label" class="fact-label">ADRES</div><div id="home-address-value" class="fact-value">14, place Jeanne d'Arc, Metz</div></div>
           </div>
           <div class="fact-pill">
             <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .3 2 .6 2.9a2 2 0 01-.5 2.1L8 10a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.9.5 2.9.6a2 2 0 011.7 2z"/></svg></div>
-            <div><div class="fact-label">KONTAKT</div><div class="fact-value">+33 3 87 75 43 88</div></div>
+            <div><div id="home-contact-label" class="fact-label">KONTAKT</div><div id="home-contact-value" class="fact-value">+33 3 87 75 43 88</div></div>
           </div>
         </div>
 
-        <p>Parafia w Metz działa przy francuskiej parafii Sainte-Ségolène i od lat pozostaje duchowym domem dla polskiej diaspory w regionie. To miejsce, gdzie wiara łączy się z pielęgnowaniem języka i tradycji — od niedzielnej Eucharystii po sobotnią katechezę dla najmłodszych.</p>
+        <p id="home-paragraph1">Parafia w Metz działa przy francuskiej parafii Sainte-Ségolène i od lat pozostaje duchowym domem dla polskiej diaspory w regionie. To miejsce, gdzie wiara łączy się z pielęgnowaniem języka i tradycji — od niedzielnej Eucharystii po sobotnią katechezę dla najmłodszych.</p>
 
         <div class="callout">
-          <p>Niezależnie od tego, czy mieszkasz w Metz od lat, czy dopiero się tu osiedliłeś — jesteś tu mile widziany. Zapraszamy do wspólnej modlitwy i do włączenia się w życie naszej wspólnoty.</p>
+          <p id="home-callout">Niezależnie od tego, czy mieszkasz w Metz od lat, czy dopiero się tu osiedliłeś — jesteś tu mile widziany. Zapraszamy do wspólnej modlitwy i do włączenia się w życie naszej wspólnoty.</p>
         </div>
 
-        <p>Sprawdź godziny Mszy świętych w zakładce <em>Msze i nabożeństwa</em> lub skontaktuj się z nami bezpośrednio — chętnie odpowiemy na pytania dotyczące sakramentów, wydarzeń i życia parafialnego.</p>
+        <div id="home-paragraph2"><p>Sprawdź godziny Mszy świętych w zakładce <em>Msze i nabożeństwa</em> lub skontaktuj się z nami bezpośrednio — chętnie odpowiemy na pytania dotyczące sakramentów, wydarzeń i życia parafialnego.</p></div>
       </section>
 
       <!-- MSZE -->
@@ -771,7 +796,7 @@
       <!-- AKTUALNOSCI -->
       <section id="sec-aktualnosci">
         <h2>Aktualności</h2>
-        <p class="lede">Bieżące ogłoszenia duszpasterskie i informacje z życia misji.</p>
+        <p id="aktualnosci-lede" class="lede">Bieżące ogłoszenia duszpasterskie i informacje z życia parafii.</p>
         <div id="announcements" aria-live="polite"><p class="note">Wczytywanie ogłoszeń…</p></div>
         <noscript>Włącz JavaScript, aby wyświetlić aktualne ogłoszenia.</noscript>
       </section>
@@ -791,14 +816,14 @@
       <!-- MISJA -->
       <section id="sec-misja">
         <h2>Nasza Misja</h2>
-        <p class="lede">Nasza wspólnota parafialna otacza opieką duszpasterską Polaków mieszkających w Metz i okolicach.</p>
+        <p id="misja-lede" class="lede">Nasza wspólnota parafialna otacza opieką duszpasterską Polaków mieszkających w Metz i okolicach.</p>
 
-        <p>Misje tego typu powstawały masowo po II wojnie światowej, gdy setki tysięcy Polaków — żołnierzy, uchodźców i emigrantów — znalazło się poza krajem i potrzebowało duszpasterstwa w ojczystym języku. Dziś PMK działa w wielu krajach Europy i świata, towarzysząc kolejnym pokoleniom polskiej emigracji.</p>
+        <p id="misja-paragraph1">Misje tego typu powstawały masowo po II wojnie światowej, gdy setki tysięcy Polaków — żołnierzy, uchodźców i emigrantów — znalazło się poza krajem i potrzebowało duszpasterstwa w ojczystym języku. Dziś PMK działa w wielu krajach Europy i świata, towarzysząc kolejnym pokoleniom polskiej emigracji.</p>
 
-        <p>W Metz misja funkcjonuje przy francuskiej parafii Sainte-Ségolène, we współpracy z miejscowym duchowieństwem. Naszym zadaniem jest zapewnienie Polakom w Metz i całej Lotaryngii możliwości uczestnictwa w życiu sakramentalnym w języku polskim, a także pielęgnowanie polskiej kultury, języka i tradycji wśród dzieci i dorosłych żyjących na emigracji.</p>
+        <p id="misja-paragraph2">W Metz misja funkcjonuje przy francuskiej parafii Sainte-Ségolène, we współpracy z miejscowym duchowieństwem. Naszym zadaniem jest zapewnienie Polakom w Metz i całej Lotaryngii możliwości uczestnictwa w życiu sakramentalnym w języku polskim, a także pielęgnowanie polskiej kultury, języka i tradycji wśród dzieci i dorosłych żyjących na emigracji.</p>
 
         <div class="callout">
-          <p>Wiara i polskość idą tu w parze — Msza święta po polsku, katecheza dla najmłodszych i wspólne świętowanie tworzą miejsce, w którym można poczuć się jak w domu, mimo odległości od kraju.</p>
+          <p id="misja-callout">Wiara i polskość idą tu w parze — Msza święta po polsku, katecheza dla najmłodszych i wspólne świętowanie tworzą miejsce, w którym można poczuć się jak w domu, mimo odległości od kraju.</p>
         </div>
       </section>
 
@@ -822,24 +847,24 @@
       <!-- KOSCIOL -->
       <section id="sec-kosciol">
         <h2>Kościół Sainte-Ségolène</h2>
-        <p class="lede">Msze w języku polskim odprawiane są w jednym z najstarszych kościołów parafialnych Metzu.</p>
+        <p id="kosciol-lede" class="lede">Msze w języku polskim odprawiane są w jednym z najstarszych kościołów parafialnych Metzu.</p>
 
-        <p>Kościół Sainte-Ségolène należy do parafii ufundowanych w Metzu jeszcze przed rokiem 1000 i jest jedyną świątynią w mieście poświęconą świętej kobiecie — Segolenie z Albi, wspominanej w liturgii 24 lipca. Na przestrzeni wieków budowla była wielokrotnie przebudowywana i powiększana, a obecną neogotycką fasadę nadano jej w 1898 roku. Na fasadzie można dostrzec rzeźbione przedstawienia patronki kościoła.</p>
+        <p id="kosciol-paragraph1">Kościół Sainte-Ségolène należy do parafii ufundowanych w Metzu jeszcze przed rokiem 1000 i jest jedyną świątynią w mieście poświęconą świętej kobiecie — Segolenie z Albi, wspominanej w liturgii 24 lipca. Na przestrzeni wieków budowla była wielokrotnie przebudowywana i powiększana, a obecną neogotycką fasadę nadano jej w 1898 roku. Na fasadzie można dostrzec rzeźbione przedstawienia patronki kościoła.</p>
 
-        <p>W zależności od pory roku niedzielna Msza w języku polskim odprawiana jest tutaj (wiosna–jesień) lub w pobliskiej kaplicy Sainte-Croix (zima) — szczegóły w zakładce <em>Msze i nabożeństwa</em>.</p>
+        <div id="kosciol-paragraph2"><p>W zależności od pory roku niedzielna Msza w języku polskim odprawiana jest tutaj (wiosna–jesień) lub w pobliskiej kaplicy Sainte-Croix (zima) — szczegóły w zakładce <em>Msze i nabożeństwa</em>.</p></div>
 
         <div class="fact-row" style="margin-top:26px;">
           <div class="fact-pill">
             <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg></div>
-            <div><div class="fact-label">ADRES KOŚCIOŁA</div><div class="fact-value">14, place Jeanne d'Arc, 57000 Metz</div></div>
+            <div><div id="kosciol-address-label" class="fact-label">ADRES KOŚCIOŁA</div><div id="kosciol-address-value" class="fact-value">14, place Jeanne d'Arc, 57000 Metz</div></div>
           </div>
           <div class="fact-pill">
             <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="8" r="3"/><path d="M6 21c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg></div>
-            <div><div class="fact-label">WEZWANIE</div><div class="fact-value">Święta Segolena</div></div>
+            <div><div id="kosciol-patron-label" class="fact-label">WEZWANIE</div><div id="kosciol-patron-value" class="fact-value">Święta Segolena</div></div>
           </div>
           <div class="fact-pill">
             <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2l2.5 5 5.5.7-4 3.9 1 5.5L12 14.8 7 17.1l1-5.5-4-3.9L9.5 7z"/></svg></div>
-            <div><div class="fact-label">ODPUST</div><div class="fact-value">24 lipca</div></div>
+            <div><div id="kosciol-feast-label" class="fact-label">ODPUST</div><div id="kosciol-feast-value" class="fact-value">24 lipca</div></div>
           </div>
         </div>
       </section>
@@ -898,10 +923,44 @@ sainte.segolene_metz@orange.fr</p>
 </div>
 
 <script>
+  function cmsDateKey(value) {
+    const raw = String(value || '').trim();
+    const eu = raw.match(/^(\d{2})\/(\d{2})\/(\d{4})$/);
+    if (eu) return eu[3] + '-' + eu[2] + '-' + eu[1];
+    return /^\d{4}-\d{2}-\d{2}/.test(raw) ? raw.slice(0, 10) : '';
+  }
+
+  function cmsDisplayDate(value) {
+    const key = cmsDateKey(value);
+    return key ? key.split('-').reverse().join('.') : '';
+  }
+
+  function cmsMediaUrl(value) {
+    if (typeof value !== 'string') return '';
+    const raw = value.trim();
+    if (!raw) return '';
+    try {
+      const url = new URL(raw.replace(/^\/+/, ''), document.baseURI);
+      if (url.origin !== location.origin || !url.pathname.startsWith('/media/')) return '';
+      return url.href;
+    } catch {
+      return '';
+    }
+  }
+
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mainMenu = document.getElementById('main-menu');
+  if (menuToggle && mainMenu) {
+    menuToggle.addEventListener('click', () => {
+      const open = mainMenu.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(open));
+    });
+  }
+
   const titles = {
     home: ["Parafia w Metz", "Wspólnota wiary i polskości przy parafii Sainte-Ségolène, nad brzegiem Mozeli."],
     msze: ["Msze i nabożeństwa", "Godziny i miejsca sprawowania Mszy świętych oraz nabożeństw."],
-    aktualnosci: ["Aktualności", "Bieżące ogłoszenia i informacje z życia misji."],
+    aktualnosci: ["Aktualności", "Bieżące ogłoszenia i informacje z życia parafii."],
     wydarzenia: ["Wydarzenia", "Katecheza, spotkania i uroczystości naszej wspólnoty."],
     misja: ["Nasza Misja", "Duszpasterstwo Polaków w Metz i Lotaryngii."],
     sakramenty: ["Sakramenty", "Chrzest, Komunia, bierzmowanie, małżeństwo i spowiedź po polsku."],
@@ -930,6 +989,7 @@ sainte.segolene_metz@orange.fr</p>
       hero.classList.toggle('compact', target !== 'home');
 
       document.querySelector('nav.menu').classList.remove('open');
+      if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
       window.scrollTo({top:0, behavior:'smooth'});
     });
   });
@@ -1007,14 +1067,12 @@ function renderSafeRichText(container, value) {
     const response = await fetch('./content/aktualnosci.json', {cache: 'no-cache'});
     if (!response.ok) throw new Error('Aktualności request failed');
     const data = await response.json();
+    if (typeof data.lede === 'string' && document.getElementById('aktualnosci-lede')) document.getElementById('aktualnosci-lede').textContent = data.lede;
     const items = Array.isArray(data.items) ? data.items : [];
     const published = items
       .map((item, index) => ({ item, index }))
       .filter(({ item }) => item && item.published === true && typeof item.title === 'string' && typeof item.body === 'string')
-      .sort((a, b) =>
-        String(b.item.date || '').localeCompare(String(a.item.date || '')) ||
-        b.index - a.index
-      )
+      .sort((a, b) => cmsDateKey(b.item.date).localeCompare(cmsDateKey(a.item.date)) || b.index - a.index)
       .map(({ item }) => item);
     const fragment = document.createDocumentFragment();
     for (const item of published) {
@@ -1024,19 +1082,38 @@ function renderSafeRichText(container, value) {
       const title = document.createElement('h3');
       title.textContent = item.title;
       article.append(title);
-      if (typeof item.date === 'string' && /^\d{4}-\d{2}-\d{2}/.test(item.date)) {
-        const date = document.createElement('time');
-        const day = item.date.slice(0, 10);
-        date.dateTime = day;
-        date.textContent = day.split('-').reverse().join('.');
-        date.className = 'note';
-        article.append(date);
+      if (typeof item.date === 'string') {
+        const isoDate = cmsDateKey(item.date);
+        const displayDate = cmsDisplayDate(item.date);
+        if (displayDate) {
+          const date = document.createElement('time');
+          date.dateTime = isoDate;
+          date.textContent = displayDate;
+          date.className = 'note';
+          article.append(date);
+        }
       }
       const body = document.createElement('div');
       const alignment = ['center', 'right', 'justify'].includes(item.alignment) ? item.alignment : 'left';
       body.className = 'announcement-body align-' + alignment;
       renderSafeRichText(body, item.body);
       article.append(body);
+      requestAnimationFrame(() => {
+        if (body.scrollHeight > 430) {
+          body.classList.add('is-collapsed');
+          const toggle = document.createElement('button');
+          toggle.type = 'button';
+          toggle.className = 'text-toggle';
+          toggle.textContent = 'Czytaj więcej';
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.addEventListener('click', () => {
+            const collapsed = body.classList.toggle('is-collapsed');
+            toggle.textContent = collapsed ? 'Czytaj więcej' : 'Zwiń';
+            toggle.setAttribute('aria-expanded', String(!collapsed));
+          });
+          article.append(toggle);
+        }
+      });
       fragment.append(article);
     }
     if (!published.length) {
@@ -1044,6 +1121,25 @@ function renderSafeRichText(container, value) {
       empty.className = 'note';
       empty.textContent = 'Obecnie brak nowych aktualności.';
       fragment.append(empty);
+    }
+    if (pastCount) {
+      const toggle = document.createElement('button');
+      toggle.type = 'button';
+      toggle.className = 'archive-toggle';
+      toggle.textContent = 'Minione wydarzenia (' + pastCount + ')';
+      toggle.setAttribute('aria-expanded', 'false');
+      const past = document.createElement('div');
+      past.className = 'past-events';
+      past.hidden = true;
+      const heading = document.createElement('h3');
+      heading.textContent = 'Minione wydarzenia';
+      past.append(heading, pastFragment);
+      toggle.addEventListener('click', () => {
+        past.hidden = !past.hidden;
+        toggle.setAttribute('aria-expanded', String(!past.hidden));
+        toggle.textContent = past.hidden ? 'Minione wydarzenia (' + pastCount + ')' : 'Ukryj minione wydarzenia';
+      });
+      fragment.append(toggle, past);
     }
     container.replaceChildren(fragment);
   } catch (error) {
@@ -1153,7 +1249,6 @@ document.addEventListener('keydown', (event) => {
 
     const items = Array.isArray(data.items) ? data.items : [];
     const todayKey = new Date().toISOString().slice(0, 10);
-
     const published = items
       .map((item, index) => ({ item, index }))
       .filter(({ item }) =>
@@ -1163,8 +1258,8 @@ document.addEventListener('keydown', (event) => {
         typeof item.body === 'string'
       )
       .sort((a, b) => {
-        const aDate = typeof a.item.date === 'string' ? a.item.date.slice(0, 10) : '';
-        const bDate = typeof b.item.date === 'string' ? b.item.date.slice(0, 10) : '';
+        const aDate = cmsDateKey(a.item.date);
+        const bDate = cmsDateKey(b.item.date);
         const aFuture = aDate >= todayKey;
         const bFuture = bDate >= todayKey;
 
@@ -1175,6 +1270,8 @@ document.addEventListener('keydown', (event) => {
       .map(({ item }) => item);
 
     const fragment = document.createDocumentFragment();
+    const pastFragment = document.createDocumentFragment();
+    let pastCount = 0;
 
     for (const item of published) {
       const article = document.createElement('article');
@@ -1182,8 +1279,9 @@ document.addEventListener('keydown', (event) => {
 
       if (typeof item.image === 'string' && item.image.trim()) {
         const img = document.createElement('img');
-        const imagePath = item.image.trim().replace(/^\/+/, '');
-        img.src = new URL(imagePath, document.baseURI).href;
+        const safeImageUrl = cmsMediaUrl(item.image);
+        if (!safeImageUrl) continue;
+        img.src = safeImageUrl;
         img.alt = item.title;
         img.loading = 'lazy';
         img.tabIndex = 0;
@@ -1205,9 +1303,9 @@ document.addEventListener('keydown', (event) => {
       article.append(title);
 
       const metaParts = [];
-      if (typeof item.date === 'string' && /^\d{4}-\d{2}-\d{2}/.test(item.date)) {
-        const day = item.date.slice(0, 10);
-        metaParts.push(day.split('-').reverse().join('.'));
+      if (typeof item.date === 'string') {
+        const day = cmsDisplayDate(item.date);
+        if (day) metaParts.push(day);
       }
       if (typeof item.time === 'string' && item.time.trim()) metaParts.push(item.time.trim());
       if (typeof item.place === 'string' && item.place.trim()) metaParts.push(item.place.trim());
@@ -1225,7 +1323,8 @@ document.addEventListener('keydown', (event) => {
       body.textContent = item.body;
       article.append(body);
 
-      fragment.append(article);
+      const isPast = cmsDateKey(item.date) && cmsDateKey(item.date) < todayKey;
+      if (isPast) { pastFragment.append(article); pastCount++; } else { fragment.append(article); }
     }
 
     if (!published.length) {
@@ -1418,13 +1517,20 @@ function cmsIcon(name, fallback = 'church') {
 
         if (typeof priest.photo === 'string' && priest.photo.trim()) {
           const img = document.createElement('img');
-          const imagePath = priest.photo.trim().replace(/^\/+/, '');
-          img.src = new URL(imagePath, document.baseURI).href;
+          const safeImageUrl = cmsMediaUrl(priest.photo);
+          if (!safeImageUrl) {
+            const placeholder = document.createElement('div');
+            placeholder.className = 'priest-photo-placeholder';
+            placeholder.innerHTML = cmsIcon('person', 'person');
+            card.append(placeholder);
+          } else {
+            img.src = safeImageUrl;
           img.alt = [priest.firstName, priest.lastName].filter(Boolean).join(' ');
           img.className = 'priest-photo';
           img.loading = 'lazy';
           img.addEventListener('error', () => img.remove(), {once:true});
-          card.append(img);
+            card.append(img);
+          }
         } else {
           const placeholder = document.createElement('div');
           placeholder.className = 'priest-photo-placeholder';
@@ -1478,6 +1584,36 @@ function cmsIcon(name, fallback = 'church') {
     console.error('Loading Kontakt:', error);
   }
 })();
+</script>
+
+
+<script>
+// Pages CMS: editable Strona główna, Nasza Misja and Kościół Sainte-Ségolène.
+function setCmsText(id, value) {
+  const el=document.getElementById(id);
+  if (el && typeof value==='string') el.textContent=value;
+}
+async function loadEditableSection(path, apply) {
+  try {
+    const response=await fetch(path,{cache:'no-store'});
+    if (!response.ok) throw new Error(path+' request failed: '+response.status);
+    apply(await response.json());
+  } catch(error) { console.error('Loading editable section:',error); }
+}
+loadEditableSection('./content/strona-glowna.json', data => {
+  setCmsText('home-lede',data.lede); setCmsText('home-mass-label',data.massLabel); setCmsText('home-mass-value',data.massValue);
+  setCmsText('home-address-label',data.addressLabel); setCmsText('home-address-value',data.addressValue); setCmsText('home-contact-label',data.contactLabel); setCmsText('home-contact-value',data.contactValue);
+  setCmsText('home-paragraph1',data.paragraph1); setCmsText('home-callout',data.callout);
+  if (typeof data.paragraph2==='string') renderSafeRichText(document.getElementById('home-paragraph2'),data.paragraph2);
+});
+loadEditableSection('./content/misja.json', data => {
+  setCmsText('misja-lede',data.lede); setCmsText('misja-paragraph1',data.paragraph1); setCmsText('misja-paragraph2',data.paragraph2); setCmsText('misja-callout',data.callout);
+});
+loadEditableSection('./content/kosciol.json', data => {
+  setCmsText('kosciol-lede',data.lede); setCmsText('kosciol-paragraph1',data.paragraph1);
+  if (typeof data.paragraph2==='string') renderSafeRichText(document.getElementById('kosciol-paragraph2'),data.paragraph2);
+  setCmsText('kosciol-address-label',data.addressLabel); setCmsText('kosciol-address-value',data.addressValue); setCmsText('kosciol-patron-label',data.patronLabel); setCmsText('kosciol-patron-value',data.patronValue); setCmsText('kosciol-feast-label',data.feastLabel); setCmsText('kosciol-feast-value',data.feastValue);
+});
 </script>
 
 </body>
