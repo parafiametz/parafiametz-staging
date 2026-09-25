@@ -499,6 +499,11 @@ content:
                 collapsed: true
                 summary: "{address}"
             fields:
+              - name: name
+                label: Nazwa miejsca / kościoła
+                type: string
+                description: Np. Kościół Sainte-Ségolène albo Kaplica Sainte-Croix.
+                required: false
               - name: address
                 label: Adres
                 type: string
