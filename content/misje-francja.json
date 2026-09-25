@@ -12,7 +12,6 @@
       "locations": [
         {
           "address": "5 Av. André Magnan, 13100 Aix-en-Provence",
-          "website": "",
           "verified": false
         }
       ]
@@ -21,8 +20,7 @@
       "city": "Albertville",
       "lat": 45.68,
       "lon": 6.39,
-      "visible": true,
-      "locations": []
+      "visible": true
     },
     {
       "city": "Alfortville",
@@ -45,7 +43,6 @@
       "locations": [
         {
           "address": "1 Rue des Cordeliers, 80000 Amiens",
-          "website": "",
           "verified": false
         }
       ]
@@ -84,12 +81,10 @@
       "locations": [
         {
           "address": "11 Rue Léon Blum, 59950 Auby",
-          "website": "",
           "verified": false
         },
         {
           "address": "11 Pl. de l'Humanité, 59950 Auby",
-          "website": "",
           "verified": false
         }
       ]
@@ -102,7 +97,6 @@
       "locations": [
         {
           "address": "8 Rue du Maréchal Foch, 57390 Audun-le-Tiche",
-          "website": "",
           "verified": false
         }
       ]
@@ -133,7 +127,6 @@
       "locations": [
         {
           "address": "27 Rue Guy de la Vasselais, 28700 Auneau-Bleury-Saint-Symphorien",
-          "website": "",
           "verified": false
         }
       ]
@@ -142,8 +135,7 @@
       "city": "Auxerre",
       "lat": 47.8,
       "lon": 3.57,
-      "visible": true,
-      "locations": []
+      "visible": true
     },
     {
       "city": "Bagnolet",
@@ -166,7 +158,6 @@
       "locations": [
         {
           "address": "Rue de l'Église, 68390 Baldersheim",
-          "website": "",
           "verified": false
         }
       ]
@@ -188,8 +179,7 @@
       "city": "Bassens",
       "lat": 45.58,
       "lon": 5.94,
-      "visible": true,
-      "locations": []
+      "visible": true
     },
     {
       "city": "Besançon",
@@ -199,7 +189,6 @@
       "locations": [
         {
           "address": "2 Rue des Martelots, 25000 Besançon",
-          "website": "",
           "verified": false
         }
       ]
@@ -225,7 +214,6 @@
       "locations": [
         {
           "address": "Pl. Pierre Renaudel, 33800 Bordeaux",
-          "website": "",
           "verified": false
         }
       ]
@@ -264,7 +252,6 @@
       "locations": [
         {
           "address": "177 Rue Picasso, 62220 Carvin",
-          "website": "",
           "verified": false
         }
       ]
@@ -273,15 +260,13 @@
       "city": "Châlette-sur-Loing",
       "lat": 48.01,
       "lon": 2.74,
-      "visible": true,
-      "locations": []
+      "visible": true
     },
     {
       "city": "Chantilly",
       "lat": 49.19,
       "lon": 2.47,
-      "visible": true,
-      "locations": []
+      "visible": true
     },
     {
       "city": "Ciran",
@@ -291,7 +276,6 @@
       "locations": [
         {
           "address": "Pl. de l'Église, 37240 Ciran",
-          "website": "",
           "verified": false
         }
       ]
@@ -300,8 +284,7 @@
       "city": "Clermont-Ferrand",
       "lat": 45.78,
       "lon": 3.09,
-      "visible": true,
-      "locations": []
+      "visible": true
     },
     {
       "city": "Comines",
@@ -363,7 +346,6 @@
       "locations": [
         {
           "address": "63 Rue du Faubourg Raines, 21000 Dijon",
-          "website": "",
           "verified": false
         }
       ]
@@ -402,7 +384,6 @@
       "locations": [
         {
           "address": "18 Rue des Violettes, 27000 Évreux",
-          "website": "",
           "verified": false
         }
       ]
@@ -428,7 +409,6 @@
       "locations": [
         {
           "address": "1 Rue de la Merle, 57800 Freyming-Merlebach",
-          "website": "",
           "verified": false
         }
       ]
@@ -437,8 +417,7 @@
       "city": "Gleizé",
       "lat": 45.99,
       "lon": 4.7,
-      "visible": true,
-      "locations": []
+      "visible": true
     },
     {
       "city": "Grimaud",
@@ -453,7 +432,6 @@
         },
         {
           "address": "10 Rue du Gacharel, 83310 Grimaud",
-          "website": "",
           "verified": false
         }
       ]
@@ -466,7 +444,6 @@
       "locations": [
         {
           "address": "15 Rue François Bacquet, 59287 Guesnain",
-          "website": "",
           "verified": false
         }
       ]
@@ -531,7 +508,6 @@
       "locations": [
         {
           "address": "1 Grand Rue, 54240 Jœuf",
-          "website": "",
           "verified": false
         }
       ]
@@ -579,8 +555,7 @@
       "city": "Le Chambon-Feugerolles",
       "lat": 45.4,
       "lon": 4.33,
-      "visible": true,
-      "locations": []
+      "visible": true
     },
     {
       "city": "Le Creusot",
@@ -590,7 +565,6 @@
       "locations": [
         {
           "address": "8 Rue Guynemer, 71200 Le Creusot",
-          "website": "",
           "verified": false
         }
       ]
@@ -603,7 +577,6 @@
       "locations": [
         {
           "address": "17 Parv. Saint-Michel, 76600 Le Havre",
-          "website": "",
           "verified": false
         }
       ]
@@ -629,7 +602,6 @@
       "locations": [
         {
           "address": "54 Rte de Béthune, 62300 Lens",
-          "website": "",
           "verified": false
         }
       ]
@@ -642,7 +614,6 @@
       "locations": [
         {
           "address": "Rue Fernand Darchicourt, 62820 Libercourt",
-          "website": "",
           "verified": false
         }
       ]
@@ -655,7 +626,6 @@
       "locations": [
         {
           "address": "Rue Thiers, 62800 Liévin",
-          "website": "",
           "verified": false
         }
       ]
@@ -681,7 +651,6 @@
       "locations": [
         {
           "address": "1 Av. Mgr Théas, 65100 Lourdes",
-          "website": "",
           "verified": false
         }
       ]
@@ -707,7 +676,6 @@
       "locations": [
         {
           "address": "10 Rue de Lille, 62540 Marles-les-Mines",
-          "website": "",
           "verified": false
         }
       ]
@@ -720,7 +688,6 @@
       "locations": [
         {
           "address": "426 Av. de Montolivet, 13012 Marseille",
-          "website": "",
           "verified": false
         }
       ]
@@ -733,7 +700,6 @@
       "locations": [
         {
           "address": "Rue de Neuville Saint-Vaast, 62670 Mazingarbe",
-          "website": "",
           "verified": false
         }
       ]
@@ -746,12 +712,10 @@
       "locations": [
         {
           "address": "5000F Rue de Dourges, 62430 Méricourt",
-          "website": "",
           "verified": false
         },
         {
           "address": "Rue de Vimy, 62680 Méricourt",
-          "website": "",
           "verified": false
         }
       ]
@@ -764,18 +728,18 @@
       "locations": [
         {
           "address": "7 Rue du Haut de Sainte-Croix, 57000 Metz",
-          "website": "https://parafia57.wixsite.com/metz",
-          "verified": false
+          "website": "https://parafiametz.fr/#home",
+          "verified": true
         },
         {
           "address": "14 Rue des Capucins, 57000 Metz",
-          "website": "https://parafia57.wixsite.com/metz",
-          "verified": false
+          "website": "https://parafiametz.fr/#home",
+          "verified": true
         },
         {
           "address": "14 Pl. Jeanne d'Arc, 57000 Metz",
-          "website": "https://parafia57.wixsite.com/metz",
-          "verified": false
+          "website": "https://parafiametz.fr/#home",
+          "verified": true
         }
       ]
     },
@@ -787,7 +751,6 @@
       "locations": [
         {
           "address": "Rue des Roches, 14120 Mondeville",
-          "website": "",
           "verified": false
         }
       ]
@@ -800,7 +763,6 @@
       "locations": [
         {
           "address": "157 Rue Jean Jaurès, 84430 Mondragon",
-          "website": "",
           "verified": false
         }
       ]
@@ -813,7 +775,6 @@
       "locations": [
         {
           "address": "256 Av. de Strasbourg, 54000 Nancy",
-          "website": "",
           "verified": false
         }
       ]
@@ -826,7 +787,6 @@
       "locations": [
         {
           "address": "Pl. du Chanoine Heroux, 93330 Neuilly-sur-Marne",
-          "website": "",
           "verified": false
         }
       ]
@@ -865,7 +825,6 @@
       "locations": [
         {
           "address": "1 Rue Pierre Brossolette, 62590 Oignies",
-          "website": "",
           "verified": false
         }
       ]
@@ -878,7 +837,6 @@
       "locations": [
         {
           "address": "6 Rue Robert de Courtenay, 45000 Orléans",
-          "website": "",
           "verified": false
         }
       ]
@@ -891,7 +849,6 @@
       "locations": [
         {
           "address": "2 Rue des Patis, 95520 Osny",
-          "website": "",
           "verified": false
         }
       ]
@@ -904,7 +861,6 @@
       "locations": [
         {
           "address": "11 Rue Saint-Yves, 75014 Paris",
-          "website": "",
           "verified": false
         },
         {
@@ -914,7 +870,6 @@
         },
         {
           "address": "34 Rue du Rendez-Vous, 75012 Paris",
-          "website": "",
           "verified": false
         },
         {
@@ -924,12 +879,10 @@
         },
         {
           "address": "22 Rue Legendre, 75017 Paris",
-          "website": "",
           "verified": false
         },
         {
           "address": "18 Rue Claude Lorrain, 75016 Paris",
-          "website": "",
           "verified": false
         }
       ]
@@ -942,7 +895,6 @@
       "locations": [
         {
           "address": "1 Bd Foch, 56800 Ploërmel",
-          "website": "",
           "verified": false
         }
       ]
@@ -955,7 +907,6 @@
       "locations": [
         {
           "address": "3 Pl. Saint-Martin, 17800 Pons",
-          "website": "",
           "verified": false
         }
       ]
@@ -968,7 +919,6 @@
       "locations": [
         {
           "address": "Rue des Capucines, 14420 Potigny",
-          "website": "",
           "verified": false
         }
       ]
@@ -1033,7 +983,6 @@
       "locations": [
         {
           "address": "Pl. Jean Lagelee, 70250 Ronchamp",
-          "website": "",
           "verified": false
         }
       ]
@@ -1059,7 +1008,6 @@
       "locations": [
         {
           "address": "Pl. Antoine Blanchant, 62320 Rouvroy",
-          "website": "",
           "verified": false
         }
       ]
@@ -1072,7 +1020,6 @@
       "locations": [
         {
           "address": "12 Rue de l'Église, 77730 Saâcy-sur-Marne",
-          "website": "",
           "verified": false
         }
       ]
@@ -1098,7 +1045,6 @@
       "locations": [
         {
           "address": "2 Chem. des Chaux, 42000 Saint-Étienne",
-          "website": "",
           "verified": false
         }
       ]
@@ -1129,7 +1075,6 @@
       "locations": [
         {
           "address": "Pl. de la Liberté, 34430 Saint-Jean-de-Védas",
-          "website": "",
           "verified": false
         }
       ]
@@ -1142,7 +1087,6 @@
       "locations": [
         {
           "address": "205-207, D235, 71410 Sanvignes-les-Mines",
-          "website": "",
           "verified": false
         }
       ]
@@ -1151,8 +1095,7 @@
       "city": "Sens",
       "lat": 48.2,
       "lon": 3.28,
-      "visible": true,
-      "locations": []
+      "visible": true
     },
     {
       "city": "Stiring-Wendel",
@@ -1162,7 +1105,6 @@
       "locations": [
         {
           "address": "86 Av. de la Libération, 57350 Stiring-Wendel",
-          "website": "",
           "verified": false
         }
       ]
@@ -1188,7 +1130,6 @@
       "locations": [
         {
           "address": "Imp. Cuneo, 83000 Toulon",
-          "website": "",
           "verified": false
         }
       ]
@@ -1227,7 +1168,6 @@
       "locations": [
         {
           "address": "15 Rue Vauluisant, 10000 Troyes",
-          "website": "",
           "verified": false
         }
       ]
@@ -1240,7 +1180,6 @@
       "locations": [
         {
           "address": "Rue Maurice et Gilbert Castel, 54640 Tucquegnieux",
-          "website": "",
           "verified": false
         }
       ]
@@ -1249,8 +1188,7 @@
       "city": "Versailles",
       "lat": 48.8,
       "lon": 2.13,
-      "visible": true,
-      "locations": []
+      "visible": true
     },
     {
       "city": "Waziers",
@@ -1260,7 +1198,6 @@
       "locations": [
         {
           "address": "927 Rue Lucien Moreau, 59119 Waziers",
-          "website": "",
           "verified": false
         }
       ]
