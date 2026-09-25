@@ -1753,7 +1753,17 @@ loadEditableSection('./content/kosciol.json', data => {
       }
       infoBox.classList.add('open');
     }
-    infoClose.addEventListener('click',()=>{infoBox.classList.remove('open');document.querySelectorAll('.mission-city.active,.mission-pin.active').forEach(el=>el.classList.remove('active'));});
+    function closeMissionInfo(){
+      infoBox.classList.remove('open');
+      document.querySelectorAll('.mission-city.active,.mission-pin.active').forEach(el=>el.classList.remove('active'));
+    }
+    infoClose.addEventListener('click',closeMissionInfo);
+    document.addEventListener('pointerdown',(event)=>{
+      if(!infoBox.classList.contains('open')) return;
+      if(infoBox.contains(event.target)) return;
+      if(event.target.closest('[data-mission-key]')) return;
+      closeMissionInfo();
+    });
     items.forEach((item,index)=>{
       const key='m'+index;
       const btn=document.createElement('button');
