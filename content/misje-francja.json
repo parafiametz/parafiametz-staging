@@ -1,0 +1,596 @@
+{
+  "lede": "Mapa polskich parafii, misji i ośrodków duszpasterskich we Francji. Dane są punktem wyjścia do weryfikacji — przed podróżą warto potwierdzić aktualne godziny Mszy bezpośrednio w danej wspólnocie.",
+  "sourceLabel": "Źródło listy: PolskiFR — Kościoły",
+  "sourceUrl": "https://polskifr.fr/koscioly/",
+  "updated": "25/09/2026",
+  "items": [
+    {
+      "city": "Aix-en-Provence",
+      "lat": 43.53,
+      "lon": 5.45,
+      "visible": true
+    },
+    {
+      "city": "Albertville",
+      "lat": 45.68,
+      "lon": 6.39,
+      "visible": true
+    },
+    {
+      "city": "Alfortville",
+      "lat": 48.8,
+      "lon": 2.42,
+      "visible": true
+    },
+    {
+      "city": "Amiens",
+      "lat": 49.89,
+      "lon": 2.3,
+      "visible": true
+    },
+    {
+      "city": "Arcueil",
+      "lat": 48.81,
+      "lon": 2.33,
+      "visible": true
+    },
+    {
+      "city": "Argenteuil",
+      "lat": 48.95,
+      "lon": 2.25,
+      "visible": true
+    },
+    {
+      "city": "Auby",
+      "lat": 50.41,
+      "lon": 3.05,
+      "visible": true
+    },
+    {
+      "city": "Audun-le-Tiche",
+      "lat": 49.47,
+      "lon": 5.96,
+      "visible": true
+    },
+    {
+      "city": "Aulnay-sous-Bois",
+      "lat": 48.94,
+      "lon": 2.49,
+      "visible": true
+    },
+    {
+      "city": "Auneau-Bleury-Saint-Symphorien",
+      "lat": 48.46,
+      "lon": 1.77,
+      "visible": true
+    },
+    {
+      "city": "Auxerre",
+      "lat": 47.8,
+      "lon": 3.57,
+      "visible": true
+    },
+    {
+      "city": "Bagnolet",
+      "lat": 48.87,
+      "lon": 2.42,
+      "visible": true
+    },
+    {
+      "city": "Baldersheim",
+      "lat": 47.8,
+      "lon": 7.38,
+      "visible": true
+    },
+    {
+      "city": "Barlin",
+      "lat": 50.45,
+      "lon": 2.62,
+      "visible": true
+    },
+    {
+      "city": "Bassens",
+      "lat": 45.58,
+      "lon": 5.94,
+      "visible": true
+    },
+    {
+      "city": "Besançon",
+      "lat": 47.24,
+      "lon": 6.02,
+      "visible": true
+    },
+    {
+      "city": "Boissy-Saint-Léger",
+      "lat": 48.75,
+      "lon": 2.51,
+      "visible": true
+    },
+    {
+      "city": "Bordeaux",
+      "lat": 44.84,
+      "lon": -0.58,
+      "visible": true
+    },
+    {
+      "city": "Bruay-la-Buissière",
+      "lat": 50.48,
+      "lon": 2.55,
+      "visible": true
+    },
+    {
+      "city": "Cannes",
+      "lat": 43.55,
+      "lon": 7.02,
+      "visible": true
+    },
+    {
+      "city": "Carvin",
+      "lat": 50.49,
+      "lon": 2.96,
+      "visible": true
+    },
+    {
+      "city": "Châlette-sur-Loing",
+      "lat": 48.01,
+      "lon": 2.74,
+      "visible": true
+    },
+    {
+      "city": "Chantilly",
+      "lat": 49.19,
+      "lon": 2.47,
+      "visible": true
+    },
+    {
+      "city": "Ciran",
+      "lat": 47.06,
+      "lon": 1,
+      "visible": true
+    },
+    {
+      "city": "Clermont-Ferrand",
+      "lat": 45.78,
+      "lon": 3.09,
+      "visible": true
+    },
+    {
+      "city": "Comines",
+      "lat": 50.76,
+      "lon": 3.01,
+      "visible": true
+    },
+    {
+      "city": "Corbeil-Essonnes",
+      "lat": 48.61,
+      "lon": 2.48,
+      "visible": true
+    },
+    {
+      "city": "Couëron",
+      "lat": 47.21,
+      "lon": -1.73,
+      "visible": true
+    },
+    {
+      "city": "Dammarie-les-Lys",
+      "lat": 48.51,
+      "lon": 2.64,
+      "visible": true
+    },
+    {
+      "city": "Dijon",
+      "lat": 47.32,
+      "lon": 5.04,
+      "visible": true
+    },
+    {
+      "city": "Dourges",
+      "lat": 50.44,
+      "lon": 2.99,
+      "visible": true
+    },
+    {
+      "city": "Dunkerque",
+      "lat": 51.04,
+      "lon": 2.38,
+      "visible": true
+    },
+    {
+      "city": "Évreux",
+      "lat": 49.03,
+      "lon": 1.15,
+      "visible": true
+    },
+    {
+      "city": "Fréjus",
+      "lat": 43.43,
+      "lon": 6.74,
+      "visible": true
+    },
+    {
+      "city": "Freyming-Merlebach",
+      "lat": 49.15,
+      "lon": 6.78,
+      "visible": true
+    },
+    {
+      "city": "Gleizé",
+      "lat": 45.99,
+      "lon": 4.7,
+      "visible": true
+    },
+    {
+      "city": "Grimaud",
+      "lat": 43.27,
+      "lon": 6.52,
+      "visible": true
+    },
+    {
+      "city": "Guesnain",
+      "lat": 50.35,
+      "lon": 3.15,
+      "visible": true
+    },
+    {
+      "city": "Haillicourt",
+      "lat": 50.48,
+      "lon": 2.57,
+      "visible": true
+    },
+    {
+      "city": "Harnes",
+      "lat": 50.45,
+      "lon": 2.9,
+      "visible": true
+    },
+    {
+      "city": "Houdain",
+      "lat": 50.45,
+      "lon": 2.54,
+      "visible": true
+    },
+    {
+      "city": "Issy-les-Moulineaux",
+      "lat": 48.82,
+      "lon": 2.27,
+      "visible": true
+    },
+    {
+      "city": "Jœuf",
+      "lat": 49.23,
+      "lon": 6.01,
+      "visible": true
+    },
+    {
+      "city": "La Ferté-Imbault",
+      "lat": 47.38,
+      "lon": 1.95,
+      "visible": true
+    },
+    {
+      "city": "La Ricamarie",
+      "lat": 45.4,
+      "lon": 4.36,
+      "visible": true
+    },
+    {
+      "city": "Le Blanc-Mesnil",
+      "lat": 48.94,
+      "lon": 2.46,
+      "visible": true
+    },
+    {
+      "city": "Le Chambon-Feugerolles",
+      "lat": 45.4,
+      "lon": 4.33,
+      "visible": true
+    },
+    {
+      "city": "Le Creusot",
+      "lat": 46.81,
+      "lon": 4.43,
+      "visible": true
+    },
+    {
+      "city": "Le Havre",
+      "lat": 49.49,
+      "lon": 0.11,
+      "visible": true
+    },
+    {
+      "city": "Leforest",
+      "lat": 50.44,
+      "lon": 3.06,
+      "visible": true
+    },
+    {
+      "city": "Lens",
+      "lat": 50.43,
+      "lon": 2.83,
+      "visible": true
+    },
+    {
+      "city": "Libercourt",
+      "lat": 50.48,
+      "lon": 3.02,
+      "visible": true
+    },
+    {
+      "city": "Liévin",
+      "lat": 50.42,
+      "lon": 2.78,
+      "visible": true
+    },
+    {
+      "city": "Lille",
+      "lat": 50.63,
+      "lon": 3.06,
+      "visible": true
+    },
+    {
+      "city": "Lourdes",
+      "lat": 43.09,
+      "lon": -0.05,
+      "visible": true
+    },
+    {
+      "city": "Lyon",
+      "lat": 45.76,
+      "lon": 4.84,
+      "visible": true
+    },
+    {
+      "city": "Marles-les-Mines",
+      "lat": 50.5,
+      "lon": 2.5,
+      "visible": true
+    },
+    {
+      "city": "Marseille",
+      "lat": 43.3,
+      "lon": 5.37,
+      "visible": true
+    },
+    {
+      "city": "Mazingarbe",
+      "lat": 50.47,
+      "lon": 2.72,
+      "visible": true
+    },
+    {
+      "city": "Méricourt",
+      "lat": 50.4,
+      "lon": 2.87,
+      "visible": true
+    },
+    {
+      "city": "Metz",
+      "lat": 49.12,
+      "lon": 6.18,
+      "visible": true
+    },
+    {
+      "city": "Mondeville",
+      "lat": 49.17,
+      "lon": -0.32,
+      "visible": true
+    },
+    {
+      "city": "Mondragon",
+      "lat": 44.24,
+      "lon": 4.71,
+      "visible": true
+    },
+    {
+      "city": "Nancy",
+      "lat": 48.69,
+      "lon": 6.18,
+      "visible": true
+    },
+    {
+      "city": "Neuilly-sur-Marne",
+      "lat": 48.86,
+      "lon": 2.53,
+      "visible": true
+    },
+    {
+      "city": "Nice",
+      "lat": 43.7,
+      "lon": 7.27,
+      "visible": true
+    },
+    {
+      "city": "Nœux-les-Mines",
+      "lat": 50.48,
+      "lon": 2.66,
+      "visible": true
+    },
+    {
+      "city": "Oignies",
+      "lat": 50.46,
+      "lon": 2.99,
+      "visible": true
+    },
+    {
+      "city": "Orléans",
+      "lat": 47.9,
+      "lon": 1.91,
+      "visible": true
+    },
+    {
+      "city": "Osny",
+      "lat": 49.06,
+      "lon": 2.06,
+      "visible": true
+    },
+    {
+      "city": "Paris",
+      "lat": 48.86,
+      "lon": 2.35,
+      "visible": true
+    },
+    {
+      "city": "Ploërmel",
+      "lat": 47.93,
+      "lon": -2.4,
+      "visible": true
+    },
+    {
+      "city": "Pons",
+      "lat": 45.58,
+      "lon": -0.55,
+      "visible": true
+    },
+    {
+      "city": "Potigny",
+      "lat": 48.97,
+      "lon": -0.24,
+      "visible": true
+    },
+    {
+      "city": "Pulversheim",
+      "lat": 47.84,
+      "lon": 7.3,
+      "visible": true
+    },
+    {
+      "city": "Rennes",
+      "lat": 48.12,
+      "lon": -1.68,
+      "visible": true
+    },
+    {
+      "city": "Rixheim",
+      "lat": 47.75,
+      "lon": 7.4,
+      "visible": true
+    },
+    {
+      "city": "Roche-la-Molière",
+      "lat": 45.43,
+      "lon": 4.32,
+      "visible": true
+    },
+    {
+      "city": "Ronchamp",
+      "lat": 47.7,
+      "lon": 6.64,
+      "visible": true
+    },
+    {
+      "city": "Roubaix",
+      "lat": 50.69,
+      "lon": 3.17,
+      "visible": true
+    },
+    {
+      "city": "Rouvroy",
+      "lat": 50.39,
+      "lon": 2.9,
+      "visible": true
+    },
+    {
+      "city": "Saâcy-sur-Marne",
+      "lat": 48.96,
+      "lon": 3.21,
+      "visible": true
+    },
+    {
+      "city": "Saint-Denis",
+      "lat": 48.94,
+      "lon": 2.36,
+      "visible": true
+    },
+    {
+      "city": "Saint-Étienne",
+      "lat": 45.44,
+      "lon": 4.39,
+      "visible": true
+    },
+    {
+      "city": "Saint-Genis-Pouilly",
+      "lat": 46.24,
+      "lon": 6.02,
+      "visible": true
+    },
+    {
+      "city": "Saint-Jean-de-Védas",
+      "lat": 43.58,
+      "lon": 3.83,
+      "visible": true
+    },
+    {
+      "city": "Sanvignes-les-Mines",
+      "lat": 46.66,
+      "lon": 4.29,
+      "visible": true
+    },
+    {
+      "city": "Sens",
+      "lat": 48.2,
+      "lon": 3.28,
+      "visible": true
+    },
+    {
+      "city": "Stiring-Wendel",
+      "lat": 49.2,
+      "lon": 6.93,
+      "visible": true
+    },
+    {
+      "city": "Strasbourg",
+      "lat": 48.58,
+      "lon": 7.75,
+      "visible": true
+    },
+    {
+      "city": "Toulon",
+      "lat": 43.12,
+      "lon": 5.93,
+      "visible": true
+    },
+    {
+      "city": "Toulouse",
+      "lat": 43.6,
+      "lon": 1.44,
+      "visible": true
+    },
+    {
+      "city": "Triel-sur-Seine",
+      "lat": 48.98,
+      "lon": 2,
+      "visible": true
+    },
+    {
+      "city": "Troyes",
+      "lat": 48.3,
+      "lon": 4.07,
+      "visible": true
+    },
+    {
+      "city": "Tucquegnieux",
+      "lat": 49.31,
+      "lon": 5.9,
+      "visible": true
+    },
+    {
+      "city": "Versailles",
+      "lat": 48.8,
+      "lon": 2.13,
+      "visible": true
+    },
+    {
+      "city": "Waziers",
+      "lat": 50.39,
+      "lon": 3.11,
+      "visible": true
+    },
+    {
+      "city": "Wittelsheim",
+      "lat": 47.81,
+      "lon": 7.24,
+      "visible": true
+    }
+  ]
+}
