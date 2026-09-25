@@ -415,6 +415,57 @@ content:
         type: string
         required: true
 
+  - name: misje_francja
+    label: Polskie Misje we Francji
+    type: file
+    path: content/misje-francja.json
+    format: json
+    operations:
+      delete: false
+    fields:
+      - name: lede
+        label: Wprowadzenie
+        type: text
+        required: true
+      - name: sourceLabel
+        label: Nazwa źródła
+        type: string
+        required: false
+      - name: sourceUrl
+        label: Adres źródła
+        type: string
+        required: false
+      - name: updated
+        label: Data aktualizacji
+        type: string
+        description: Np. 25/09/2026.
+        required: false
+      - name: items
+        label: Miejscowości
+        description: Współrzędne określają pozycję punktu na mapie Francji.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{city}"
+        fields:
+          - name: city
+            label: Miejscowość
+            type: string
+            required: true
+          - name: lat
+            label: Szerokość geograficzna
+            type: number
+            required: true
+          - name: lon
+            label: Długość geograficzna
+            type: number
+            required: true
+          - name: visible
+            label: Widoczne na stronie
+            type: boolean
+            default: true
+
   - name: kontakt
     label: Kontakt
     type: file
