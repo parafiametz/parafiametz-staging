@@ -1779,7 +1779,7 @@ loadEditableSection('./content/kosciol.json', data => {
     const map=document.getElementById('france-missions-map');
     const viewport=document.getElementById('france-map-viewport');
     let mapView={x:0,y:0,w:760,h:690};
-    const minW=190;
+    const minW=55;
     function applyMapView(){
       map.setAttribute('viewBox',[mapView.x,mapView.y,mapView.w,mapView.h].join(' '));
       const scale=mapView.w/760;
@@ -1790,15 +1790,16 @@ loadEditableSection('./content/kosciol.json', data => {
         /* Keep a minimum SVG radius on mobile; CSS scaling compensates visually
            without shrinking the hit target into sub-pixel territory. */
         if(circle){
-          const r=Math.max(2.4,4.2*scale);
+          /* Keep pins roughly constant on-screen while allowing deep city-level zoom. */
+          const r=Math.max(.72,4.2*scale);
           circle.setAttribute('r',r.toFixed(3));
-          circle.style.strokeWidth=Math.max(1.2,1.6*scale).toFixed(2)+'px';
+          circle.style.strokeWidth=Math.max(.38,1.6*scale).toFixed(2)+'px';
         }
         if(label){
-          label.setAttribute('x',(x+Math.max(6,9*scale)).toFixed(3));
-          label.setAttribute('y',(y-Math.max(6,9*scale)).toFixed(3));
-          label.style.fontSize=Math.max(8,12*scale).toFixed(2)+'px';
-          label.style.strokeWidth=Math.max(2.5,4*scale).toFixed(2)+'px';
+          label.setAttribute('x',(x+Math.max(1.6,9*scale)).toFixed(3));
+          label.setAttribute('y',(y-Math.max(1.6,9*scale)).toFixed(3));
+          label.style.fontSize=Math.max(2.1,12*scale).toFixed(2)+'px';
+          label.style.strokeWidth=Math.max(.7,4*scale).toFixed(2)+'px';
         }
       });
     }
