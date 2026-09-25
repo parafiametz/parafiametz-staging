@@ -1,0 +1,59 @@
+name: Validate site content
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate JSON and CMS content
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json, pathlib, re, sys
+          root = pathlib.Path(".")
+          errors = []
+
+          for path in sorted((root / "content").glob("*.json")):
+              try:
+                  json.loads(path.read_text(encoding="utf-8"))
+              except Exception as exc:
+                  errors.append(f"{path}: invalid JSON: {exc}")
+
+          def date_ok(v):
+              return isinstance(v, str) and bool(re.fullmatch(r"(?:\d{4}-\d{2}-\d{2}|\d{2}/\d{2}/\d{4})", v.strip()))
+
+          for name in ("aktualnosci.json", "wydarzenia.json"):
+              path = root / "content" / name
+              if not path.exists():
+                  continue
+              data = json.loads(path.read_text(encoding="utf-8"))
+              for i, item in enumerate(data.get("items", []), 1):
+                  if not isinstance(item, dict):
+                      errors.append(f"{path}: item {i} is not an object")
+                      continue
+                  if item.get("published") is True:
+                      for field in ("title", "body"):
+                          if not isinstance(item.get(field), str) or not item[field].strip():
+                              errors.append(f"{path}: published item {i} has no {field}")
+                      if not date_ok(item.get("date")):
+                          errors.append(f"{path}: published item {i} has invalid date")
+                  image = item.get("image")
+                  if isinstance(image, str) and image.strip():
+                      rel = image.strip().lstrip("/")
+                      if not rel.startswith("media/") or not (root / rel).is_file():
+                          errors.append(f"{path}: item {i} references missing/invalid image {image}")
+
+          if errors:
+              print("\n".join("ERROR: " + e for e in errors))
+              sys.exit(1)
+          print("Content validation passed.")
+          PY
