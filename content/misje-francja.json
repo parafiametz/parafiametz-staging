@@ -8,589 +8,1275 @@
       "city": "Aix-en-Provence",
       "lat": 43.53,
       "lon": 5.45,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "5 Av. André Magnan, 13100 Aix-en-Provence",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Albertville",
       "lat": 45.68,
       "lon": 6.39,
-      "visible": true
+      "visible": true,
+      "locations": []
     },
     {
       "city": "Alfortville",
       "lat": 48.8,
       "lon": 2.42,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "46 Rue Louis Blanc, 94140 Alfortville",
+          "website": "https://parafiawalfortville.blogspot.com",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Amiens",
       "lat": 49.89,
       "lon": 2.3,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "1 Rue des Cordeliers, 80000 Amiens",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Arcueil",
       "lat": 48.81,
       "lon": 2.33,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "52 Av. Laplace, 94110 Arcueil",
+          "website": "https://www.residence-etudiants-jp2.com",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Argenteuil",
       "lat": 48.95,
       "lon": 2.25,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "290 Av. Jean Jaurès, 95100 Argenteuil",
+          "website": "https://www.facebook.com/p/Parafia-Polska-przy-Kosciele-Sw-Bernadetty-w-Argenteuil-100068488046409/",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Auby",
       "lat": 50.41,
       "lon": 3.05,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "11 Rue Léon Blum, 59950 Auby",
+          "website": "",
+          "verified": false
+        },
+        {
+          "address": "11 Pl. de l'Humanité, 59950 Auby",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Audun-le-Tiche",
       "lat": 49.47,
       "lon": 5.96,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "8 Rue du Maréchal Foch, 57390 Audun-le-Tiche",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Aulnay-sous-Bois",
       "lat": 48.94,
       "lon": 2.49,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "46 Av. du Gros Peuplier, 93600 Aulnay-sous-Bois",
+          "website": "https://aulnaysousbois.pl",
+          "verified": false
+        },
+        {
+          "address": "57 Av. de la Croix Blanche, 93600 Aulnay-sous-Bois",
+          "website": "https://aulnaysousbois.pl",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Auneau-Bleury-Saint-Symphorien",
       "lat": 48.46,
       "lon": 1.77,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "27 Rue Guy de la Vasselais, 28700 Auneau-Bleury-Saint-Symphorien",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Auxerre",
       "lat": 47.8,
       "lon": 3.57,
-      "visible": true
+      "visible": true,
+      "locations": []
     },
     {
       "city": "Bagnolet",
       "lat": 48.87,
       "lon": 2.42,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "80 Av. de la République, 93170 Bagnolet",
+          "website": "http://www.bagnolet.paris.parafia.info.pl",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Baldersheim",
       "lat": 47.8,
       "lon": 7.38,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "Rue de l'Église, 68390 Baldersheim",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Barlin",
       "lat": 50.45,
       "lon": 2.62,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "40 Rue François Arago, 62620 Barlin",
+          "website": "https://parafianoeux.blogspot.com/",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Bassens",
       "lat": 45.58,
       "lon": 5.94,
-      "visible": true
+      "visible": true,
+      "locations": []
     },
     {
       "city": "Besançon",
       "lat": 47.24,
       "lon": 6.02,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "2 Rue des Martelots, 25000 Besançon",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Boissy-Saint-Léger",
       "lat": 48.75,
       "lon": 2.51,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "1 Rue Mercière, 94470 Boissy-Saint-Léger",
+          "website": "https://parafiawalfortville.blogspot.com",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Bordeaux",
       "lat": 44.84,
       "lon": -0.58,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "Pl. Pierre Renaudel, 33800 Bordeaux",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Bruay-la-Buissière",
       "lat": 50.48,
       "lon": 2.55,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "20 Pl. Guynemer, 62700 Bruay-la-Buissière",
+          "website": "https://www.tchr.fr/bruay-la-buissiere",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Cannes",
       "lat": 43.55,
       "lon": 7.02,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "15 Av. du Prado, 06400 Cannes",
+          "website": "https://www.nicea-parafia.pl/",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Carvin",
       "lat": 50.49,
       "lon": 2.96,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "177 Rue Picasso, 62220 Carvin",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Châlette-sur-Loing",
       "lat": 48.01,
       "lon": 2.74,
-      "visible": true
+      "visible": true,
+      "locations": []
     },
     {
       "city": "Chantilly",
       "lat": 49.19,
       "lon": 2.47,
-      "visible": true
+      "visible": true,
+      "locations": []
     },
     {
       "city": "Ciran",
       "lat": 47.06,
       "lon": 1,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "Pl. de l'Église, 37240 Ciran",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Clermont-Ferrand",
       "lat": 45.78,
       "lon": 3.09,
-      "visible": true
+      "visible": true,
+      "locations": []
     },
     {
       "city": "Comines",
       "lat": 50.76,
       "lon": 3.01,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "11 Grand Place, 59560 Comines",
+          "website": "https://fr-fr.facebook.com/public/Polska-Parafia-Roubaix",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Corbeil-Essonnes",
       "lat": 48.61,
       "lon": 2.48,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "118 Bd John Kennedy, 91100 Corbeil-Essonnes",
+          "website": "https://pmk-dammarie.eu",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Couëron",
       "lat": 47.21,
       "lon": -1.73,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "48A Rue de la Frémondière, 44220 Couëron",
+          "website": "http://pmk-coueron.eu",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Dammarie-les-Lys",
       "lat": 48.51,
       "lon": 2.64,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "81 Rue Adrien Châtelain, 77190 Dammarie-les-Lys",
+          "website": "https://pmk-dammarie.eu",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Dijon",
       "lat": 47.32,
       "lon": 5.04,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "63 Rue du Faubourg Raines, 21000 Dijon",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Dourges",
       "lat": 50.44,
       "lon": 2.99,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "59 Cité Bruno, 62119 Dourges",
+          "website": "https://www.polonia-dourges.fr/amicale-polonaise-dourges_fr.html",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Dunkerque",
       "lat": 51.04,
       "lon": 2.38,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "Pl. Turenne, 59240 Dunkerque",
+          "website": "https://fr-fr.facebook.com/public/Polska-Parafia-Roubaix",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Évreux",
       "lat": 49.03,
       "lon": 1.15,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "18 Rue des Violettes, 27000 Évreux",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Fréjus",
       "lat": 43.43,
       "lon": 6.74,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "72 Rue Noël Garnier, 83600 Fréjus",
+          "website": "https://paroissesaintraphael.fr/notre-dame-du-sacre-coeur",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Freyming-Merlebach",
       "lat": 49.15,
       "lon": 6.78,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "1 Rue de la Merle, 57800 Freyming-Merlebach",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Gleizé",
       "lat": 45.99,
       "lon": 4.7,
-      "visible": true
+      "visible": true,
+      "locations": []
     },
     {
       "city": "Grimaud",
       "lat": 43.27,
       "lon": 6.52,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "9 Pl. de l'Église, 83310 Grimaud",
+          "website": "https://paroissesaintraphael.fr/notre-dame-du-sacre-coeur",
+          "verified": false
+        },
+        {
+          "address": "10 Rue du Gacharel, 83310 Grimaud",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Guesnain",
       "lat": 50.35,
       "lon": 3.15,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "15 Rue François Bacquet, 59287 Guesnain",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Haillicourt",
       "lat": 50.48,
       "lon": 2.57,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "Rue du 8 Mai 1945, 62940 Haillicourt",
+          "website": "https://www.tchr.fr/bruay-la-buissiere",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Harnes",
       "lat": 50.45,
       "lon": 2.9,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "19 Rue de Saint-Claude, 62440 Harnes",
+          "website": "https://www.pmk-harnes.fr",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Houdain",
       "lat": 50.45,
       "lon": 2.54,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "Rue des Marronniers, 62150 Houdain",
+          "website": "https://www.tchr.fr/bruay-la-buissiere",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Issy-les-Moulineaux",
       "lat": 48.82,
       "lon": 2.27,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "11 Rue Jules Guesde, 92130 Issy-les-Moulineaux",
+          "website": "https://www.seminariumpolskie.fr",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Jœuf",
       "lat": 49.23,
       "lon": 6.01,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "1 Grand Rue, 54240 Jœuf",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "La Ferté-Imbault",
       "lat": 47.38,
       "lon": 1.95,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "Rothère, 41300 La Ferté-Imbault",
+          "website": "https://www.maisonmisericordedivine.com",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "La Ricamarie",
       "lat": 45.4,
       "lon": 4.36,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "Pl. Jean-Baptiste Marcet, 42150 La Ricamarie",
+          "website": "http://www.ricamarie.parafia.info.pl",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Le Blanc-Mesnil",
       "lat": 48.94,
       "lon": 2.46,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "107 Av. Normandie Niemen, 93150 Le Blanc-Mesnil",
+          "website": "https://aulnaysousbois.pl",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Le Chambon-Feugerolles",
       "lat": 45.4,
       "lon": 4.33,
-      "visible": true
+      "visible": true,
+      "locations": []
     },
     {
       "city": "Le Creusot",
       "lat": 46.81,
       "lon": 4.43,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "8 Rue Guynemer, 71200 Le Creusot",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Le Havre",
       "lat": 49.49,
       "lon": 0.11,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "17 Parv. Saint-Michel, 76600 Le Havre",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Leforest",
       "lat": 50.44,
       "lon": 3.06,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "43 Rue Léon Gambetta, 62790 Leforest",
+          "website": "https://www.polonia-dourges.fr/amicale-polonaise-dourges_fr.html",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Lens",
       "lat": 50.43,
       "lon": 2.83,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "54 Rte de Béthune, 62300 Lens",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Libercourt",
       "lat": 50.48,
       "lon": 3.02,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "Rue Fernand Darchicourt, 62820 Libercourt",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Liévin",
       "lat": 50.42,
       "lon": 2.78,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "Rue Thiers, 62800 Liévin",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Lille",
       "lat": 50.63,
       "lon": 3.06,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "47 Rue de l'Hôpital Militaire, 59800 Lille",
+          "website": "https://fr-fr.facebook.com/public/Polska-Parafia-Roubaix",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Lourdes",
       "lat": 43.09,
       "lon": -0.05,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "1 Av. Mgr Théas, 65100 Lourdes",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Lyon",
       "lat": 45.76,
       "lon": 4.84,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "111 Av. Jean Mermoz, 69008 Lyon",
+          "website": "https://www.lyontrinite.com",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Marles-les-Mines",
       "lat": 50.5,
       "lon": 2.5,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "10 Rue de Lille, 62540 Marles-les-Mines",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Marseille",
       "lat": 43.3,
       "lon": 5.37,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "426 Av. de Montolivet, 13012 Marseille",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Mazingarbe",
       "lat": 50.47,
       "lon": 2.72,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "Rue de Neuville Saint-Vaast, 62670 Mazingarbe",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Méricourt",
       "lat": 50.4,
       "lon": 2.87,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "5000F Rue de Dourges, 62430 Méricourt",
+          "website": "",
+          "verified": false
+        },
+        {
+          "address": "Rue de Vimy, 62680 Méricourt",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Metz",
       "lat": 49.12,
       "lon": 6.18,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "7 Rue du Haut de Sainte-Croix, 57000 Metz",
+          "website": "https://parafia57.wixsite.com/metz",
+          "verified": false
+        },
+        {
+          "address": "14 Rue des Capucins, 57000 Metz",
+          "website": "https://parafia57.wixsite.com/metz",
+          "verified": false
+        },
+        {
+          "address": "14 Pl. Jeanne d'Arc, 57000 Metz",
+          "website": "https://parafia57.wixsite.com/metz",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Mondeville",
       "lat": 49.17,
       "lon": -0.32,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "Rue des Roches, 14120 Mondeville",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Mondragon",
       "lat": 44.24,
       "lon": 4.71,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "157 Rue Jean Jaurès, 84430 Mondragon",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Nancy",
       "lat": 48.69,
       "lon": 6.18,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "256 Av. de Strasbourg, 54000 Nancy",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Neuilly-sur-Marne",
       "lat": 48.86,
       "lon": 2.53,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "Pl. du Chanoine Heroux, 93330 Neuilly-sur-Marne",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Nice",
       "lat": 43.7,
       "lon": 7.27,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "9 Chemin du Fort du Mont Alban, 06300 Nice",
+          "website": "https://www.nicea-parafia.pl/",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Nœux-les-Mines",
       "lat": 50.48,
       "lon": 2.66,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "8 Rue du Maréchal Foch, 62530 Nœux-les-Mines",
+          "website": "https://parafianoeux.blogspot.com/",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Oignies",
       "lat": 50.46,
       "lon": 2.99,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "1 Rue Pierre Brossolette, 62590 Oignies",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Orléans",
       "lat": 47.9,
       "lon": 1.91,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "6 Rue Robert de Courtenay, 45000 Orléans",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Osny",
       "lat": 49.06,
       "lon": 2.06,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "2 Rue des Patis, 95520 Osny",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Paris",
       "lat": 48.86,
       "lon": 2.35,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "11 Rue Saint-Yves, 75014 Paris",
+          "website": "",
+          "verified": false
+        },
+        {
+          "address": "263bis Rue Saint-Honoré, 75001 Paris",
+          "website": "http://www.paris.parafia.info.pl",
+          "verified": false
+        },
+        {
+          "address": "34 Rue du Rendez-Vous, 75012 Paris",
+          "website": "",
+          "verified": false
+        },
+        {
+          "address": "3 Rue Rampal, 75019 Paris",
+          "website": "https://www.parafiabelleville.fr",
+          "verified": false
+        },
+        {
+          "address": "22 Rue Legendre, 75017 Paris",
+          "website": "",
+          "verified": false
+        },
+        {
+          "address": "18 Rue Claude Lorrain, 75016 Paris",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Ploërmel",
       "lat": 47.93,
       "lon": -2.4,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "1 Bd Foch, 56800 Ploërmel",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Pons",
       "lat": 45.58,
       "lon": -0.55,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "3 Pl. Saint-Martin, 17800 Pons",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Potigny",
       "lat": 48.97,
       "lon": -0.24,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "Rue des Capucines, 14420 Potigny",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Pulversheim",
       "lat": 47.84,
       "lon": 7.3,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "17 Rue d'Ensisheim, 68840 Pulversheim",
+          "website": "https://polska-misja-rixheim-mulhouse.blogspot.com",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Rennes",
       "lat": 48.12,
       "lon": -1.68,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "30 Rue Danton, 35700 Rennes",
+          "website": "https://parafiarennes.blogspot.com",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Rixheim",
       "lat": 47.75,
       "lon": 7.4,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "189 Rue de l'Île Napoléon, 68170 Rixheim",
+          "website": "https://polska-misja-rixheim-mulhouse.blogspot.com",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Roche-la-Molière",
       "lat": 45.43,
       "lon": 4.32,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "21 Rue de l'Église, 42230 Roche-la-Molière",
+          "website": "http://www.ricamarie.parafia.info.pl",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Ronchamp",
       "lat": 47.7,
       "lon": 6.64,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "Pl. Jean Lagelee, 70250 Ronchamp",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Roubaix",
       "lat": 50.69,
       "lon": 3.17,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "128 Grande Rue, 59100 Roubaix",
+          "website": "http://parafiaroubaix.id.st",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Rouvroy",
       "lat": 50.39,
       "lon": 2.9,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "Pl. Antoine Blanchant, 62320 Rouvroy",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Saâcy-sur-Marne",
       "lat": 48.96,
       "lon": 3.21,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "12 Rue de l'Église, 77730 Saâcy-sur-Marne",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Saint-Denis",
       "lat": 48.94,
       "lon": 2.36,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "53 Bd Jules Guesde, 93200 Saint-Denis",
+          "website": "http://www.bagnolet.paris.parafia.info.pl",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Saint-Étienne",
       "lat": 45.44,
       "lon": 4.39,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "2 Chem. des Chaux, 42000 Saint-Étienne",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Saint-Genis-Pouilly",
       "lat": 46.24,
       "lon": 6.02,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "8 Rue du Bordeau, 01630 Saint-Genis-Pouilly",
+          "website": "https://polskamisja.fr",
+          "verified": false
+        },
+        {
+          "address": "25 Rue de l'Église, 01630 Saint-Genis-Pouilly",
+          "website": "https://polskamisja.fr",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Saint-Jean-de-Védas",
       "lat": 43.58,
       "lon": 3.83,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "Pl. de la Liberté, 34430 Saint-Jean-de-Védas",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Sanvignes-les-Mines",
       "lat": 46.66,
       "lon": 4.29,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "205-207, D235, 71410 Sanvignes-les-Mines",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Sens",
       "lat": 48.2,
       "lon": 3.28,
-      "visible": true
+      "visible": true,
+      "locations": []
     },
     {
       "city": "Stiring-Wendel",
       "lat": 49.2,
       "lon": 6.93,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "86 Av. de la Libération, 57350 Stiring-Wendel",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Strasbourg",
       "lat": 48.58,
       "lon": 7.75,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "9 Rue du Hohwald, 67000 Strasbourg",
+          "website": "https://www.polska-misja-katolicka-strasbourg.pl",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Toulon",
       "lat": 43.12,
       "lon": 5.93,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "Imp. Cuneo, 83000 Toulon",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Toulouse",
       "lat": 43.6,
       "lon": 1.44,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "290 Rte de Seysses, 31100 Toulouse",
+          "website": "https://parafiatuluzapl.wordpress.com/",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Triel-sur-Seine",
       "lat": 48.98,
       "lon": 2,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "18 Rue de la Chapelle, 78510 Triel-sur-Seine",
+          "website": "http://triel.parafia.fr/",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Troyes",
       "lat": 48.3,
       "lon": 4.07,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "15 Rue Vauluisant, 10000 Troyes",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Tucquegnieux",
       "lat": 49.31,
       "lon": 5.9,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "Rue Maurice et Gilbert Castel, 54640 Tucquegnieux",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Versailles",
       "lat": 48.8,
       "lon": 2.13,
-      "visible": true
+      "visible": true,
+      "locations": []
     },
     {
       "city": "Waziers",
       "lat": 50.39,
       "lon": 3.11,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "927 Rue Lucien Moreau, 59119 Waziers",
+          "website": "",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Wittelsheim",
       "lat": 47.81,
       "lon": 7.24,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "2 Rue Denis Papin, 68310 Wittelsheim",
+          "website": "https://polska-misja-rixheim-mulhouse.blogspot.com",
+          "verified": false
+        }
+      ]
     }
   ]
 }
