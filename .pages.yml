@@ -485,6 +485,27 @@ content:
             label: Widoczne na stronie
             type: boolean
             default: true
+          - name: locations
+            label: Kościoły / miejsca Mszy
+            description: Adresy i strony internetowe wyświetlane po kliknięciu miejscowości.
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{address}"
+            fields:
+              - name: address
+                label: Adres
+                type: string
+                required: true
+              - name: website
+                label: Strona internetowa
+                type: string
+                required: false
+              - name: verified
+                label: Dane zweryfikowane
+                type: boolean
+                default: false
 
   - name: kontakt
     label: Kontakt
