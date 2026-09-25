@@ -683,7 +683,7 @@
   .france-map{width:min(100%,1050px);max-width:none;height:auto;overflow:visible}
   .france-outline{fill:rgba(255,255,255,.22);stroke:var(--gold);stroke-width:2.4;vector-effect:non-scaling-stroke}
   .mission-pin{cursor:pointer;outline:none}
-  .mission-pin circle{fill:var(--burgundy);stroke:var(--paper);stroke-width:1.6;transform-box:fill-box;transform-origin:center;transition:transform .14s ease,fill .14s ease}
+  .mission-pin circle{fill:var(--burgundy);stroke:var(--paper);stroke-width:1.6;vector-effect:non-scaling-stroke;transform-box:fill-box;transform-origin:center;transition:transform .14s ease,fill .14s ease}
   .mission-pin:hover circle,.mission-pin:focus circle,.mission-pin.active circle{transform:scale(1.8);fill:var(--gold)}
   .mission-pin text{font:600 12px 'Libre Franklin',sans-serif;fill:var(--burgundy-deep);paint-order:stroke;stroke:var(--paper);stroke-width:4px;stroke-linejoin:round;opacity:0;pointer-events:none;transition:opacity .12s}
   .mission-pin:hover text,.mission-pin:focus text,.mission-pin.active text{opacity:1}
@@ -1787,12 +1787,18 @@ loadEditableSection('./content/kosciol.json', data => {
         const circle=pin.querySelector('circle');
         const label=pin.querySelector('text');
         const x=Number(pin.dataset.x), y=Number(pin.dataset.y);
-        if(circle) circle.setAttribute('r',(4.2*scale).toFixed(3));
+        /* Keep a minimum SVG radius on mobile; CSS scaling compensates visually
+           without shrinking the hit target into sub-pixel territory. */
+        if(circle){
+          const r=Math.max(2.4,4.2*scale);
+          circle.setAttribute('r',r.toFixed(3));
+          circle.style.strokeWidth=Math.max(1.2,1.6*scale).toFixed(2)+'px';
+        }
         if(label){
-          label.setAttribute('x',(x+9*scale).toFixed(3));
-          label.setAttribute('y',(y-9*scale).toFixed(3));
-          label.style.fontSize=(12*scale).toFixed(2)+'px';
-          label.style.strokeWidth=(4*scale).toFixed(2)+'px';
+          label.setAttribute('x',(x+Math.max(6,9*scale)).toFixed(3));
+          label.setAttribute('y',(y-Math.max(6,9*scale)).toFixed(3));
+          label.style.fontSize=Math.max(8,12*scale).toFixed(2)+'px';
+          label.style.strokeWidth=Math.max(2.5,4*scale).toFixed(2)+'px';
         }
       });
     }
