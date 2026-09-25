@@ -1780,7 +1780,22 @@ loadEditableSection('./content/kosciol.json', data => {
     const viewport=document.getElementById('france-map-viewport');
     let mapView={x:0,y:0,w:760,h:690};
     const minW=190;
-    function applyMapView(){map.setAttribute('viewBox',[mapView.x,mapView.y,mapView.w,mapView.h].join(' '));}
+    function applyMapView(){
+      map.setAttribute('viewBox',[mapView.x,mapView.y,mapView.w,mapView.h].join(' '));
+      const scale=mapView.w/760;
+      map.querySelectorAll('.mission-pin').forEach(pin=>{
+        const circle=pin.querySelector('circle');
+        const label=pin.querySelector('text');
+        const x=Number(pin.dataset.x), y=Number(pin.dataset.y);
+        if(circle) circle.setAttribute('r',(4.2*scale).toFixed(3));
+        if(label){
+          label.setAttribute('x',(x+9*scale).toFixed(3));
+          label.setAttribute('y',(y-9*scale).toFixed(3));
+          label.style.fontSize=(12*scale).toFixed(2)+'px';
+          label.style.strokeWidth=(4*scale).toFixed(2)+'px';
+        }
+      });
+    }
     function zoomMap(factor,cx=mapView.x+mapView.w/2,cy=mapView.y+mapView.h/2){
       const newW=Math.max(minW,Math.min(760,mapView.w*factor));
       const newH=newW*(690/760);
@@ -1824,7 +1839,7 @@ loadEditableSection('./content/kosciol.json', data => {
       listFrag.append(btn);
 
       const [x,y]=project(item.lat,item.lon);
-      const g=document.createElementNS(ns,'g'); g.setAttribute('class','mission-pin'); g.setAttribute('tabindex','0'); g.setAttribute('role','button'); g.setAttribute('aria-label',item.city); g.dataset.missionKey=key;
+      const g=document.createElementNS(ns,'g'); g.setAttribute('class','mission-pin'); g.setAttribute('tabindex','0'); g.setAttribute('role','button'); g.setAttribute('aria-label',item.city); g.dataset.missionKey=key; g.dataset.x=x; g.dataset.y=y;
       const circle=document.createElementNS(ns,'circle'); circle.setAttribute('cx',x); circle.setAttribute('cy',y); circle.setAttribute('r','4.2');
       const label=document.createElementNS(ns,'text'); label.setAttribute('x',x+9); label.setAttribute('y',y-9); label.textContent=item.city;
       g.append(circle,label);
@@ -1834,6 +1849,7 @@ loadEditableSection('./content/kosciol.json', data => {
       pins.append(g);
     });
     list.replaceChildren(listFrag);
+    applyMapView();
   }catch(error){
     console.error('Loading Misje Francja:',error);
     list.textContent='Nie udało się wczytać listy miejscowości.';
