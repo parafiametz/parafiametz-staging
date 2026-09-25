@@ -1738,7 +1738,7 @@ loadEditableSection('./content/kosciol.json', data => {
       } else {
         locations.forEach((loc,index)=>{
           const block=document.createElement('div'); block.className='mission-location';
-          if(locations.length>1){const strong=document.createElement('strong'); strong.textContent='Miejsce '+(index+1); block.append(strong);}
+          if(locations.length>1){const strong=document.createElement('strong'); strong.textContent=loc.name||('Miejsce '+(index+1)); block.append(strong);}
           const p=document.createElement('p'); p.className='mission-address'; p.textContent=loc.address||'Adres do uzupełnienia'; block.append(p);
           const links=document.createElement('div'); links.className='mission-links';
           if(loc.address){
