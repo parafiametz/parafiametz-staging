@@ -316,6 +316,25 @@
   }
 
   /* Editable Contact layout */
+  #sec-home,
+  #sec-msze,
+  #sec-misja,
+  #sec-sakramenty,
+  #sec-kosciol{
+    width:calc(100vw - 280px - 112px);
+    max-width:none;
+  }
+  #sec-home .lede{
+    max-width:none;
+  }
+  #sec-home .fact-row{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));
+  }
+  #sec-home .fact-pill{
+    width:auto;
+  }
+
   #sec-kontakt{
     width:calc(100vw - 280px - 112px);
     max-width:none;
@@ -612,9 +631,24 @@
     nav.menu{ display:none; width:100%; padding:0 12px 14px 12px; }
     nav.menu.open{ display:block; }
     .sidebar-foot{ display:none; }
-    .content{ padding:32px 22px 60px 22px; }
-    #sec-aktualnosci{ width:auto; }
-    #sec-kontakt{ width:auto; }
+    .content{ padding:32px 22px 60px 22px; max-width:none; width:100%; }
+    #sec-home,
+    #sec-msze,
+    #sec-aktualnosci,
+    #sec-misja,
+    #sec-sakramenty,
+    #sec-kosciol,
+    #sec-kontakt{
+      width:100%;
+      max-width:none;
+    }
+    #sec-home .lede,
+    #sec-msze .lede,
+    #sec-misja .lede,
+    #sec-sakramenty .lede,
+    #sec-kosciol .lede{
+      max-width:none;
+    }
     .contact-layout{ grid-template-columns:1fr; gap:24px; }
     .priests-panel{
       width:100%;
