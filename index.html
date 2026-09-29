@@ -1221,7 +1221,15 @@ function renderSafeRichText(container, value) {
       body.className = 'announcement-body align-' + alignment;
       renderSafeRichText(body, item.body);
       article.append(body);
-      requestAnimationFrame(() => {
+
+      // Aktualności sections are hidden until selected. Measuring scrollHeight while
+      // the section is hidden returns 0, which previously caused long articles to
+      // appear fully expanded without a toggle on some initial page loads.
+      const initAnnouncementToggle = () => {
+        if (!body.isConnected || body.scrollHeight === 0) return false;
+        if (body.dataset.toggleInitialized === 'true') return true;
+        body.dataset.toggleInitialized = 'true';
+
         if (body.scrollHeight > 430) {
           body.classList.add('is-collapsed');
           const toggle = document.createElement('button');
@@ -1236,7 +1244,14 @@ function renderSafeRichText(container, value) {
           });
           article.append(toggle);
         }
+        return true;
+      };
+
+      const visibilityObserver = new ResizeObserver(() => {
+        if (initAnnouncementToggle()) visibilityObserver.disconnect();
       });
+      visibilityObserver.observe(body);
+      requestAnimationFrame(initAnnouncementToggle);
       fragment.append(article);
     }
     if (!published.length) {
