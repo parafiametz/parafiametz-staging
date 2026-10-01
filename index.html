@@ -1489,6 +1489,8 @@ document.addEventListener('keydown', (event) => {
       empty.className = 'note';
       empty.textContent = 'Obecnie brak opublikowanych wydarzeń.';
       fragment.append(empty);
+    } else if (pastCount) {
+      fragment.append(pastFragment);
     }
 
     container.replaceChildren(fragment);
