@@ -298,6 +298,20 @@ content:
               format: html
               switcher: false
               media: false
+          - name: alignment
+            label: Wyrównanie treści
+            type: select
+            description: Dotyczy całej treści wydarzenia na stronie.
+            options:
+              values:
+                - name: left
+                  label: Do lewej
+                - name: center
+                  label: Wyśrodkowane
+                - name: right
+                  label: Do prawej
+                - name: justify
+                  label: Wyjustowane
           - name: image
             label: Zdjęcie
             type: image
