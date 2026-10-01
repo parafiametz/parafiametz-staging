@@ -586,6 +586,10 @@
     border-left:3px solid var(--gold-light);
   }
   .event-body a{ color:var(--burgundy); }
+  .event-body.align-left{ text-align:left; }
+  .event-body.align-center{ text-align:center; }
+  .event-body.align-right{ text-align:right; }
+  .event-body.align-justify{ text-align:justify; }
   .event-card p:last-child{ margin-bottom:0; }
 
   .image-lightbox{
@@ -1515,7 +1519,8 @@ document.addEventListener('keydown', (event) => {
       }
 
       const body = document.createElement('div');
-      body.className = 'event-body';
+      const alignment = ['center', 'right', 'justify'].includes(item.alignment) ? item.alignment : 'left';
+      body.className = 'event-body align-' + alignment;
       renderSafeRichText(body, item.body);
       article.append(body);
 
