@@ -501,18 +501,34 @@
   .announcement-body.align-justify{ text-align:justify; }
 
   /* Editable Wydarzenia */
+  #sec-wydarzenia > h2,
+  #sec-wydarzenia > .lede,
+  #sec-wydarzenia > .events-static-title,
+  #sec-wydarzenia > .events-upcoming-title{
+    max-width:900px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+  }
   .events-list{
-    display:grid;
-    grid-template-columns:repeat(2, minmax(0, 1fr));
-    gap:18px;
-    margin-top:28px;
+    display:block;
+    width:100%;
+    max-width:900px;
+    margin:28px auto 0;
   }
   .event-card{
+    width:100%;
     background:var(--paper);
     border:1px solid var(--line);
     border-radius:12px;
-    padding:20px;
+    padding:24px;
+    margin:0 0 20px;
     overflow:hidden;
+  }
+  .event-card > h3{
+    font-size:1.55rem;
+    line-height:1.25;
+    margin-bottom:8px;
   }
   .event-card img{
     display:block;
@@ -534,6 +550,21 @@
   .event-body{
     line-height:1.75;
     overflow-wrap:anywhere;
+  }
+  .event-body.is-collapsed{
+    max-height:22rem;
+    overflow:hidden;
+    position:relative;
+  }
+  .event-body.is-collapsed::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:5rem;
+    background:linear-gradient(transparent,var(--paper));
+    pointer-events:none;
   }
   .event-body > :first-child{ margin-top:0; }
   .event-body > :last-child{ margin-bottom:0; }
@@ -1479,6 +1510,34 @@ document.addEventListener('keydown', (event) => {
       body.className = 'event-body';
       renderSafeRichText(body, item.body);
       article.append(body);
+
+      const initEventToggle = () => {
+        if (!body.isConnected || body.scrollHeight === 0) return false;
+        if (body.dataset.toggleInitialized === 'true') return true;
+        body.dataset.toggleInitialized = 'true';
+
+        if (body.scrollHeight > 430) {
+          body.classList.add('is-collapsed');
+          const toggle = document.createElement('button');
+          toggle.type = 'button';
+          toggle.className = 'text-toggle';
+          toggle.textContent = 'Czytaj więcej';
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.addEventListener('click', () => {
+            const collapsed = body.classList.toggle('is-collapsed');
+            toggle.textContent = collapsed ? 'Czytaj więcej' : 'Zwiń';
+            toggle.setAttribute('aria-expanded', String(!collapsed));
+          });
+          article.append(toggle);
+        }
+        return true;
+      };
+
+      const eventVisibilityObserver = new ResizeObserver(() => {
+        if (initEventToggle()) eventVisibilityObserver.disconnect();
+      });
+      eventVisibilityObserver.observe(body);
+      requestAnimationFrame(initEventToggle);
 
       const isPast = cmsDateKey(item.date) && cmsDateKey(item.date) < todayKey;
       if (isPast) { pastFragment.append(article); pastCount++; } else { fragment.append(article); }
