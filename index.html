@@ -531,6 +531,26 @@
     color:var(--ink-soft);
     line-height:1.5;
   }
+  .event-body{
+    line-height:1.75;
+    overflow-wrap:anywhere;
+  }
+  .event-body > :first-child{ margin-top:0; }
+  .event-body > :last-child{ margin-bottom:0; }
+  .event-body h1,
+  .event-body h2,
+  .event-body h3{ margin-top:1.1em; }
+  .event-body h1{ font-size:1.75rem; }
+  .event-body h2{ font-size:1.45rem; }
+  .event-body h3{ font-size:1.2rem; }
+  .event-body ul,
+  .event-body ol{ margin:0.8em 0; padding-left:1.6em; }
+  .event-body blockquote{
+    margin:1em 0;
+    padding:0.2em 0 0.2em 1em;
+    border-left:3px solid var(--gold-light);
+  }
+  .event-body a{ color:var(--burgundy); }
   .event-card p:last-child{ margin-bottom:0; }
 
   .image-lightbox{
@@ -1455,10 +1475,9 @@ document.addEventListener('keydown', (event) => {
         article.append(meta);
       }
 
-      const body = document.createElement('p');
-      body.style.whiteSpace = 'pre-wrap';
-      body.style.overflowWrap = 'anywhere';
-      body.textContent = item.body;
+      const body = document.createElement('div');
+      body.className = 'event-body';
+      renderSafeRichText(body, item.body);
       article.append(body);
 
       const isPast = cmsDateKey(item.date) && cmsDateKey(item.date) < todayKey;
