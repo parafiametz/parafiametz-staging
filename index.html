@@ -788,6 +788,7 @@
   .france-map-wrap{position:relative;min-height:720px;display:flex;align-items:flex-start;justify-content:center;width:100%}
   .france-map{width:min(100%,1050px);max-width:none;height:auto;overflow:visible}
   .france-outline{fill:rgba(255,255,255,.22);stroke:var(--gold);stroke-width:2.4;vector-effect:non-scaling-stroke}
+  .mission-link{fill:none;stroke:var(--gold);stroke-width:2.2;stroke-linecap:round;vector-effect:non-scaling-stroke;opacity:.8;pointer-events:none}
   .mission-pin{cursor:pointer;outline:none}
   .mission-pin circle{fill:var(--burgundy);stroke:var(--paper);stroke-width:1.6;vector-effect:non-scaling-stroke;transform-box:fill-box;transform-origin:center;transition:transform .14s ease,fill .14s ease}
   .mission-pin:hover circle,.mission-pin:focus circle,.mission-pin.active circle{transform:scale(1.8);fill:var(--gold)}
@@ -1890,6 +1891,21 @@ loadEditableSection('./content/kosciol.json', data => {
     function safeHttpUrl(value){
       try{const u=new URL(String(value||'')); return /^https?:$/.test(u.protocol)?u.href:'';}catch{return '';}
     }
+    function showMissionLinks(item){
+      pins.querySelectorAll('.mission-link').forEach(el=>el.remove());
+      const group=String(item.linkGroup||'').trim();
+      if(!group) return;
+      const linked=items.filter(x=>String(x.linkGroup||'').trim()===group);
+      if(linked.length<2) return;
+      const points=linked.map(x=>project(x.lat,x.lon));
+      for(let i=0;i<points.length-1;i++){
+        const line=document.createElementNS(ns,'line');
+        line.setAttribute('class','mission-link');
+        line.setAttribute('x1',points[i][0]); line.setAttribute('y1',points[i][1]);
+        line.setAttribute('x2',points[i+1][0]); line.setAttribute('y2',points[i+1][1]);
+        pins.insertBefore(line,pins.firstChild);
+      }
+    }
     function showMissionInfo(item,key){
       document.querySelectorAll('.mission-city.active,.mission-pin.active').forEach(el=>el.classList.remove('active'));
       document.querySelectorAll('[data-mission-key="'+key+'"]').forEach(el=>el.classList.add('active'));
@@ -1914,10 +1930,12 @@ loadEditableSection('./content/kosciol.json', data => {
           infoBody.append(block);
         });
       }
+      showMissionLinks(item);
       infoBox.classList.add('open');
     }
     function closeMissionInfo(){
       infoBox.classList.remove('open');
+      pins.querySelectorAll('.mission-link').forEach(el=>el.remove());
       document.querySelectorAll('.mission-city.active,.mission-pin.active').forEach(el=>el.classList.remove('active'));
     }
     infoClose.addEventListener('click',closeMissionInfo);
