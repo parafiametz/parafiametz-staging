@@ -38,12 +38,13 @@
       "lat": 48.8,
       "lon": 2.42,
       "visible": true,
+      "linkGroup": "5",
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Église Notre-Dame",
           "address": "46 Rue Louis Blanc, 94140 Alfortville",
           "website": "https://parafiawalfortville.blogspot.com",
-          "verified": false
+          "verified": true
         }
       ]
     },
