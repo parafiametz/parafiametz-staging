@@ -55,9 +55,9 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Églis Saint-Rémi",
           "address": "1 Rue des Cordeliers, 80000 Amiens",
-          "verified": false
+          "verified": true
         }
       ]
     },
