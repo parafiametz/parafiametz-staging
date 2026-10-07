@@ -233,12 +233,13 @@
       "lat": 48.75,
       "lon": 2.51,
       "visible": true,
+      "linkGroup": "5",
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Paroisse de Boissy Saint Léger",
           "address": "1 Rue Mercière, 94470 Boissy-Saint-Léger",
           "website": "https://parafiawalfortville.blogspot.com",
-          "verified": false
+          "verified": true
         }
       ]
     },
