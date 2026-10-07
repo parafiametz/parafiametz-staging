@@ -509,6 +509,33 @@ content:
             label: Widoczne na stronie
             type: boolean
             default: true
+          - name: linkGroup
+            label: Grupa powiązań
+            type: select
+            required: false
+            description: Opcjonalnie. Miejscowości z tym samym numerem zostaną połączone linią na mapie po wybraniu jednej z nich.
+            options:
+              values:
+                - name: "1"
+                  label: Grupa 1
+                - name: "2"
+                  label: Grupa 2
+                - name: "3"
+                  label: Grupa 3
+                - name: "4"
+                  label: Grupa 4
+                - name: "5"
+                  label: Grupa 5
+                - name: "6"
+                  label: Grupa 6
+                - name: "7"
+                  label: Grupa 7
+                - name: "8"
+                  label: Grupa 8
+                - name: "9"
+                  label: Grupa 9
+                - name: "10"
+                  label: Grupa 10
           - name: locations
             label: Kościoły / miejsca Mszy
             description: Adresy i strony internetowe wyświetlane po kliknięciu miejscowości.
