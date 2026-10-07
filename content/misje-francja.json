@@ -753,9 +753,10 @@
       "lat": 43.3,
       "lon": 5.37,
       "visible": true,
+      "linkGroup": "2",
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Eglise ST Fortuné",
           "address": "426 Av. de Montolivet, 13012 Marseille",
           "verified": false
         }
