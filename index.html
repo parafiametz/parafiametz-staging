@@ -2003,7 +2003,30 @@ loadEditableSection('./content/kosciol.json', data => {
       mapView.y=Math.max(0,Math.min(690-mapView.h,drag.vy-(e.clientY-drag.y)/r.height*mapView.h));
       applyMapView();
     });
-    viewport.addEventListener('pointerup',()=>{drag=null;viewport.classList.remove('is-panning');});
+    viewport.addEventListener('pointerup',e=>{
+      const tap=drag && Math.hypot(e.clientX-drag.x,e.clientY-drag.y)<10;
+      drag=null;
+      viewport.classList.remove('is-panning');
+      if(!tap || (e.pointerType!=='touch' && e.pointerType!=='pen') || e.target.closest('.mission-pin')) return;
+
+      let nearest=null;
+      let nearestDistance=Infinity;
+      pins.querySelectorAll('.mission-pin').forEach(pin=>{
+        const circle=pin.querySelector('circle');
+        if(!circle) return;
+        const rect=circle.getBoundingClientRect();
+        const cx=rect.left+rect.width/2;
+        const cy=rect.top+rect.height/2;
+        const distance=Math.hypot(e.clientX-cx,e.clientY-cy);
+        if(distance<nearestDistance){
+          nearestDistance=distance;
+          nearest=pin;
+        }
+      });
+
+      /* Finger-friendly hit area without visually enlarging crowded map pins. */
+      if(nearest && nearestDistance<=30) nearest.dispatchEvent(new MouseEvent('click',{bubbles:true}));
+    });
     viewport.addEventListener('pointercancel',()=>{drag=null;viewport.classList.remove('is-panning');});
     items.forEach((item,index)=>{
       const key='m'+index;
