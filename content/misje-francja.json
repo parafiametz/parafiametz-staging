@@ -9,9 +9,10 @@
       "lat": 43.53,
       "lon": 5.45,
       "visible": true,
+      "linkGroup": "2",
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Église Saint-André",
           "address": "5 Av. André Magnan, 13100 Aix-en-Provence",
           "verified": false
         }
@@ -796,6 +797,7 @@
       "lat": 49.12,
       "lon": 6.18,
       "visible": true,
+      "linkGroup": "1",
       "locations": [
         {
           "name": "Kaplica Sainte-Croix",
@@ -809,8 +811,7 @@
           "website": "https://parafiametz.fr/",
           "verified": true
         }
-      ],
-      "linkGroup": "1"
+      ]
     },
     {
       "city": "Mondeville",
