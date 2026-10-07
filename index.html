@@ -790,13 +790,17 @@
   .france-outline{fill:rgba(255,255,255,.22);stroke:var(--gold);stroke-width:2.4;vector-effect:non-scaling-stroke}
   .mission-link{fill:none;stroke:var(--gold);stroke-width:2.2;stroke-linecap:round;vector-effect:non-scaling-stroke;opacity:.8;pointer-events:none}
   .mission-pin{cursor:pointer;outline:none}
-  .mission-pin circle{fill:var(--burgundy);stroke:var(--paper);stroke-width:1.6;vector-effect:non-scaling-stroke;transform-box:fill-box;transform-origin:center;transition:transform .14s ease,fill .14s ease}
-  .mission-pin:hover circle,.mission-pin:focus circle,.mission-pin.active circle{transform:scale(1.8);fill:var(--gold)}
+  .mission-hit{fill:transparent;stroke:none}
+  .mission-marker-icon{pointer-events:none}
+  .mission-church-body{fill:var(--burgundy);stroke:var(--paper);stroke-width:1.35;vector-effect:non-scaling-stroke;stroke-linejoin:round;transform-box:fill-box;transform-origin:center;transition:transform .14s ease,fill .14s ease}
+  .mission-church-cross{fill:none;stroke:var(--burgundy);stroke-width:1.55;vector-effect:non-scaling-stroke;stroke-linecap:round;transition:stroke .14s ease}
+  .mission-pin:hover .mission-church-body,.mission-pin:focus .mission-church-body,.mission-pin.active .mission-church-body{transform:scale(1.22);fill:var(--gold)}
+  .mission-pin:hover .mission-church-cross,.mission-pin:focus .mission-church-cross,.mission-pin.active .mission-church-cross{stroke:var(--gold)}
   .mission-pin text{font:600 12px 'Libre Franklin',sans-serif;fill:var(--burgundy-deep);paint-order:stroke;stroke:var(--paper);stroke-width:4px;stroke-linejoin:round;opacity:0;pointer-events:none;transition:opacity .12s}
   .mission-pin:hover text,.mission-pin:focus text,.mission-pin.active text{opacity:1}
   .mission-map-note{margin-top:14px;font-size:.78rem;color:var(--ink-soft);line-height:1.55}
   .mission-map-note a{color:var(--burgundy);font-weight:600}
-  @media(max-width:820px){.france-missions-layout{grid-template-columns:1fr}.france-map-wrap{order:-1;min-height:0}.mission-list-panel{max-height:360px}.mission-pin circle{r:5}.france-map{max-width:520px}}
+  @media(max-width:820px){.france-missions-layout{grid-template-columns:1fr}.france-map-wrap{order:-1;min-height:0}.mission-list-panel{max-height:360px}.france-map{max-width:520px}}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Church","name":"Parafia w Metz","url":"https://parafiametz.github.io/parafiametz-staging/","address":{"@type":"PostalAddress","streetAddress":"14, place Jeanne d'Arc","postalCode":"57000","addressLocality":"Metz","addressCountry":"FR"}}
@@ -1049,7 +1053,7 @@
               </svg>
               </div>
             </div>
-            <p class="mission-map-note">Najedź kursorem lub dotknij punktu, aby zobaczyć nazwę miejscowości. Lista została przygotowana na podstawie katalogu PolskiFR i będzie przez nas stopniowo weryfikowana. <a id="misje-source" href="https://polskifr.fr/koscioly/" target="_blank" rel="noopener noreferrer">Sprawdź źródło</a> · aktualizacja danych: <span id="misje-updated">25/09/2026</span>.</p>
+            <p class="mission-map-note">Najedź kursorem lub dotknij ikony kościoła, aby zobaczyć nazwę miejscowości. Lista została przygotowana na podstawie katalogu PolskiFR i będzie przez nas stopniowo weryfikowana. <a id="misje-source" href="https://polskifr.fr/koscioly/" target="_blank" rel="noopener noreferrer">Sprawdź źródło</a> · aktualizacja danych: <span id="misje-updated">25/09/2026</span>.</p>
           </div>
         </div>
       </section>
@@ -1953,20 +1957,22 @@ loadEditableSection('./content/kosciol.json', data => {
       map.setAttribute('viewBox',[mapView.x,mapView.y,mapView.w,mapView.h].join(' '));
       const scale=mapView.w/760;
       map.querySelectorAll('.mission-pin').forEach(pin=>{
-        const circle=pin.querySelector('circle');
+        const hit=pin.querySelector('.mission-hit');
+        const icon=pin.querySelector('.mission-marker-icon');
         const label=pin.querySelector('text');
         const x=Number(pin.dataset.x), y=Number(pin.dataset.y);
-        /* Keep a minimum SVG radius on mobile; CSS scaling compensates visually
-           without shrinking the hit target into sub-pixel territory. */
-        if(circle){
-          /* Keep pins roughly constant on-screen while allowing deep city-level zoom. */
-          const r=Math.max(.72,4.2*scale);
-          circle.setAttribute('r',r.toFixed(3));
-          circle.style.strokeWidth=Math.max(.38,1.6*scale).toFixed(2)+'px';
+        /* Keep the visible church marker roughly constant on-screen while zooming.
+           Mobile uses a slightly larger base icon so the church silhouette stays legible. */
+        const iconBase=window.matchMedia('(max-width:820px)').matches?1.6:.82;
+        if(icon) icon.setAttribute('transform','translate('+x+' '+y+') scale('+(iconBase*scale).toFixed(4)+')');
+        if(hit){
+          /* Invisible hit circle keeps direct taps comfortable; the 30px nearest-marker
+             fallback below still applies when the finger lands beside the icon. */
+          hit.setAttribute('r',Math.max(1.8,11*scale).toFixed(3));
         }
         if(label){
-          label.setAttribute('x',(x+Math.max(1.6,9*scale)).toFixed(3));
-          label.setAttribute('y',(y-Math.max(1.6,9*scale)).toFixed(3));
+          label.setAttribute('x',(x+Math.max(2.2,11*scale)).toFixed(3));
+          label.setAttribute('y',(y-Math.max(2.2,11*scale)).toFixed(3));
           label.style.fontSize=Math.max(2.1,12*scale).toFixed(2)+'px';
           label.style.strokeWidth=Math.max(.7,4*scale).toFixed(2)+'px';
         }
@@ -2012,9 +2018,9 @@ loadEditableSection('./content/kosciol.json', data => {
       let nearest=null;
       let nearestDistance=Infinity;
       pins.querySelectorAll('.mission-pin').forEach(pin=>{
-        const circle=pin.querySelector('circle');
-        if(!circle) return;
-        const rect=circle.getBoundingClientRect();
+        const hit=pin.querySelector('.mission-hit');
+        if(!hit) return;
+        const rect=hit.getBoundingClientRect();
         const cx=rect.left+rect.width/2;
         const cy=rect.top+rect.height/2;
         const distance=Math.hypot(e.clientX-cx,e.clientY-cy);
@@ -2039,9 +2045,13 @@ loadEditableSection('./content/kosciol.json', data => {
 
       const [x,y]=project(item.lat,item.lon);
       const g=document.createElementNS(ns,'g'); g.setAttribute('class','mission-pin'); g.setAttribute('tabindex','0'); g.setAttribute('role','button'); g.setAttribute('aria-label',item.city); g.dataset.missionKey=key; g.dataset.x=x; g.dataset.y=y;
-      const circle=document.createElementNS(ns,'circle'); circle.setAttribute('cx',x); circle.setAttribute('cy',y); circle.setAttribute('r','4.2');
-      const label=document.createElementNS(ns,'text'); label.setAttribute('x',x+9); label.setAttribute('y',y-9); label.textContent=item.city;
-      g.append(circle,label);
+      const hit=document.createElementNS(ns,'circle'); hit.setAttribute('class','mission-hit'); hit.setAttribute('cx',x); hit.setAttribute('cy',y); hit.setAttribute('r','11');
+      const icon=document.createElementNS(ns,'g'); icon.setAttribute('class','mission-marker-icon'); icon.setAttribute('transform','translate('+x+' '+y+') scale(.82)');
+      const body=document.createElementNS(ns,'path'); body.setAttribute('class','mission-church-body'); body.setAttribute('d','M-5.5 5V-1.2L0-5.2l5.5 4V5H2V1.2h-4V5Z');
+      const cross=document.createElementNS(ns,'path'); cross.setAttribute('class','mission-church-cross'); cross.setAttribute('d','M0-5.2V-9M-2-7.2H2');
+      icon.append(body,cross);
+      const label=document.createElementNS(ns,'text'); label.setAttribute('x',x+11); label.setAttribute('y',y-11); label.textContent=item.city;
+      g.append(hit,icon,label);
       g.addEventListener('mouseenter',()=>setActive(key,true)); g.addEventListener('mouseleave',()=>setActive(key,false));
       g.addEventListener('focus',()=>setActive(key,true)); g.addEventListener('blur',()=>setActive(key,false));
       g.addEventListener('click',()=>{btn.scrollIntoView({block:'nearest',behavior:'smooth'}); showMissionInfo(item,key);});
