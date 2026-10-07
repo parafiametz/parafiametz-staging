@@ -23,7 +23,15 @@
       "city": "Albertville",
       "lat": 45.68,
       "lon": 6.39,
-      "visible": true
+      "visible": true,
+      "linkGroup": "3",
+      "locations": [
+        {
+          "name": "Église Sainte Thérèse",
+          "address": "18 Av. Sainte-Thérèse, 73200 Albertville ",
+          "verified": true
+        }
+      ]
     },
     {
       "city": "Alfortville",
@@ -195,7 +203,15 @@
       "city": "Bassens",
       "lat": 45.58,
       "lon": 5.94,
-      "visible": true
+      "visible": true,
+      "linkGroup": "3",
+      "locations": [
+        {
+          "name": "Église Sainte-Thérèse",
+          "address": "1 Rue Sainte-Thérèse, 73000 Bassens ",
+          "verified": true
+        }
+      ]
     },
     {
       "city": "Besançon",
