@@ -517,25 +517,25 @@ content:
             options:
               values:
                 - name: "1"
-                  label: Grupa 1
+                  label: Grupa 1 — Metz ↔ Guénange (używana)
                 - name: "2"
-                  label: Grupa 2
+                  label: Grupa 2 — Aix-en-Provence ↔ Marseille (używana)
                 - name: "3"
-                  label: Grupa 3
+                  label: Grupa 3 — Albertville ↔ Bassens (używana)
                 - name: "4"
-                  label: Grupa 4
+                  label: Grupa 4 — Besançon ↔ Dijon (używana)
                 - name: "5"
-                  label: Grupa 5
+                  label: Grupa 5 — Alfortville ↔ Boissy-Saint-Léger (używana)
                 - name: "6"
-                  label: Grupa 6
+                  label: Grupa 6 — WOLNA
                 - name: "7"
-                  label: Grupa 7
+                  label: Grupa 7 — WOLNA
                 - name: "8"
-                  label: Grupa 8
+                  label: Grupa 8 — WOLNA
                 - name: "9"
-                  label: Grupa 9
+                  label: Grupa 9 — WOLNA
                 - name: "10"
-                  label: Grupa 10
+                  label: Grupa 10 — WOLNA
           - name: locations
             label: Kościoły / miejsca Mszy
             description: Adresy i strony internetowe wyświetlane po kliknięciu miejscowości.
