@@ -218,11 +218,12 @@
       "lat": 47.24,
       "lon": 6.02,
       "visible": true,
+      "linkGroup": "4",
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Chapelle des soeurs de la Charité de Ste Jeanne Antide Thouret",
           "address": "2 Rue des Martelots, 25000 Besançon",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -386,11 +387,12 @@
       "lat": 47.32,
       "lon": 5.04,
       "visible": true,
+      "linkGroup": "4",
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Chapelle Saint Joseph Cottolengo",
           "address": "63 Rue du Faubourg Raines, 21000 Dijon",
-          "verified": false
+          "verified": true
         }
       ]
     },
