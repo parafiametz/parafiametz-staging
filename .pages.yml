@@ -536,6 +536,26 @@ content:
                   label: Grupa 9 — WOLNA
                 - name: "10"
                   label: Grupa 10 — WOLNA
+                - name: "11"
+                  label: Grupa 11 — WOLNA
+                - name: "12"
+                  label: Grupa 12 — WOLNA
+                - name: "13"
+                  label: Grupa 13 — WOLNA
+                - name: "14"
+                  label: Grupa 14 — WOLNA
+                - name: "15"
+                  label: Grupa 15 — WOLNA
+                - name: "16"
+                  label: Grupa 16 — WOLNA
+                - name: "17"
+                  label: Grupa 17 — WOLNA
+                - name: "18"
+                  label: Grupa 18 — WOLNA
+                - name: "19"
+                  label: Grupa 19 — WOLNA
+                - name: "20"
+                  label: Grupa 20 — WOLNA
           - name: locations
             label: Kościoły / miejsca Mszy
             description: Adresy i strony internetowe wyświetlane po kliknięciu miejscowości.
