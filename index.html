@@ -792,10 +792,13 @@
   .mission-pin{cursor:pointer;outline:none}
   .mission-hit{fill:transparent;stroke:none}
   .mission-marker-icon{pointer-events:none}
-  .mission-church-body{fill:var(--burgundy);stroke:var(--paper);stroke-width:1.35;vector-effect:non-scaling-stroke;stroke-linejoin:round;transform-box:fill-box;transform-origin:center;transition:transform .14s ease,fill .14s ease}
-  .mission-church-cross{fill:none;stroke:var(--burgundy);stroke-width:1.55;vector-effect:non-scaling-stroke;stroke-linecap:round;transition:stroke .14s ease}
-  .mission-pin:hover .mission-church-body,.mission-pin:focus .mission-church-body,.mission-pin.active .mission-church-body{transform:scale(1.22);fill:var(--gold)}
-  .mission-pin:hover .mission-church-cross,.mission-pin:focus .mission-church-cross,.mission-pin.active .mission-church-cross{stroke:var(--gold)}
+  .mission-church-body{fill:var(--paper);stroke:var(--burgundy);stroke-width:1.55;vector-effect:non-scaling-stroke;stroke-linejoin:round;transition:stroke .14s ease,fill .14s ease}
+  .mission-church-cross,.mission-church-detail{fill:none;stroke:var(--burgundy);stroke-width:1.5;vector-effect:non-scaling-stroke;stroke-linecap:round;stroke-linejoin:round;transition:stroke .14s ease}
+  .mission-church-door{fill:var(--burgundy);stroke:none;transition:fill .14s ease}
+  .mission-pin:hover .mission-church-body,.mission-pin:focus .mission-church-body,.mission-pin.active .mission-church-body{stroke:var(--gold)}
+  .mission-pin:hover .mission-church-cross,.mission-pin:focus .mission-church-cross,.mission-pin.active .mission-church-cross,
+  .mission-pin:hover .mission-church-detail,.mission-pin:focus .mission-church-detail,.mission-pin.active .mission-church-detail{stroke:var(--gold)}
+  .mission-pin:hover .mission-church-door,.mission-pin:focus .mission-church-door,.mission-pin.active .mission-church-door{fill:var(--gold)}
   .mission-pin text{font:600 12px 'Libre Franklin',sans-serif;fill:var(--burgundy-deep);paint-order:stroke;stroke:var(--paper);stroke-width:4px;stroke-linejoin:round;opacity:0;pointer-events:none;transition:opacity .12s}
   .mission-pin:hover text,.mission-pin:focus text,.mission-pin.active text{opacity:1}
   .mission-map-note{margin-top:14px;font-size:.78rem;color:var(--ink-soft);line-height:1.55}
@@ -2047,9 +2050,12 @@ loadEditableSection('./content/kosciol.json', data => {
       const g=document.createElementNS(ns,'g'); g.setAttribute('class','mission-pin'); g.setAttribute('tabindex','0'); g.setAttribute('role','button'); g.setAttribute('aria-label',item.city); g.dataset.missionKey=key; g.dataset.x=x; g.dataset.y=y;
       const hit=document.createElementNS(ns,'circle'); hit.setAttribute('class','mission-hit'); hit.setAttribute('cx',x); hit.setAttribute('cy',y); hit.setAttribute('r','11');
       const icon=document.createElementNS(ns,'g'); icon.setAttribute('class','mission-marker-icon'); icon.setAttribute('transform','translate('+x+' '+y+') scale(.82)');
-      const body=document.createElementNS(ns,'path'); body.setAttribute('class','mission-church-body'); body.setAttribute('d','M-5.5 5V-1.2L0-5.2l5.5 4V5H2V1.2h-4V5Z');
-      const cross=document.createElementNS(ns,'path'); cross.setAttribute('class','mission-church-cross'); cross.setAttribute('d','M0-5.2V-9M-2-7.2H2');
-      icon.append(body,cross);
+      const body=document.createElementNS(ns,'path'); body.setAttribute('class','mission-church-body'); body.setAttribute('d','M-7 5V-2H-4V-5L-2.5-8L-1-5V-2H6V5Z');
+      const roof=document.createElementNS(ns,'path'); roof.setAttribute('class','mission-church-detail'); roof.setAttribute('d','M-1-2L2.2-4.5L6-2');
+      const detail=document.createElementNS(ns,'path'); detail.setAttribute('class','mission-church-detail'); detail.setAttribute('d','M-5.4-2V2M2.2-1V1.2M4.2-1V1.2');
+      const door=document.createElementNS(ns,'path'); door.setAttribute('class','mission-church-door'); door.setAttribute('d','M-5.4 5V1.2H-3.6V5Z');
+      const cross=document.createElementNS(ns,'path'); cross.setAttribute('class','mission-church-cross'); cross.setAttribute('d','M-2.5-8V-11M-4-9.5H-1');
+      icon.append(body,roof,detail,door,cross);
       const label=document.createElementNS(ns,'text'); label.setAttribute('x',x+11); label.setAttribute('y',y-11); label.textContent=item.city;
       g.append(hit,icon,label);
       g.addEventListener('mouseenter',()=>setActive(key,true)); g.addEventListener('mouseleave',()=>setActive(key,false));
