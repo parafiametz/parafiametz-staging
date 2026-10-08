@@ -1360,25 +1360,6 @@ function renderSafeRichText(container, value) {
       empty.textContent = 'Obecnie brak nowych aktualności.';
       fragment.append(empty);
     }
-    if (pastCount) {
-      const toggle = document.createElement('button');
-      toggle.type = 'button';
-      toggle.className = 'archive-toggle';
-      toggle.textContent = 'Minione wydarzenia (' + pastCount + ')';
-      toggle.setAttribute('aria-expanded', 'false');
-      const past = document.createElement('div');
-      past.className = 'past-events';
-      past.hidden = true;
-      const heading = document.createElement('h3');
-      heading.textContent = 'Minione wydarzenia';
-      past.append(heading, pastFragment);
-      toggle.addEventListener('click', () => {
-        past.hidden = !past.hidden;
-        toggle.setAttribute('aria-expanded', String(!past.hidden));
-        toggle.textContent = past.hidden ? 'Minione wydarzenia (' + pastCount + ')' : 'Ukryj minione wydarzenia';
-      });
-      fragment.append(toggle, past);
-    }
     container.replaceChildren(fragment);
   } catch (error) {
     container.textContent = 'Nie udało się wczytać ogłoszeń. Odśwież stronę lub spróbuj ponownie później.';
