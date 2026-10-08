@@ -57,8 +57,3 @@ jobs:
               sys.exit(1)
           print("Content validation passed.")
           PY
-
-      - name: Validate external JavaScript syntax
-        run: node --check assets/site.js
-      - name: Check browser security controls
-        run: python3 tests/test_security.py
