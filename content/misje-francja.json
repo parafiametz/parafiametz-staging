@@ -149,9 +149,9 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Chapelle Saint-Jean-Paul II",
           "address": "27 Rue Guy de la Vasselais, 28700 Auneau-Bleury-Saint-Symphorien",
-          "verified": false
+          "verified": true
         }
       ]
     },
