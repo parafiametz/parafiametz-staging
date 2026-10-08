@@ -159,7 +159,15 @@
       "city": "Auxerre",
       "lat": 47.8,
       "lon": 3.57,
-      "visible": true
+      "visible": true,
+      "linkGroup": "7",
+      "locations": [
+        {
+          "name": "Église Sainte-Geneviève",
+          "address": "85 Av. de Saint-Georges, 89000 Auxerre ",
+          "verified": true
+        }
+      ]
     },
     {
       "city": "Bagnolet",
