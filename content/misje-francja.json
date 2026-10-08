@@ -55,7 +55,7 @@
       "visible": true,
       "locations": [
         {
-          "name": "Églis Saint-Rémi",
+          "name": "Église Saint-Rémi",
           "address": "1 Rue des Cordeliers, 80000 Amiens",
           "verified": true
         }
@@ -160,7 +160,7 @@
       "lat": 47.8,
       "lon": 3.57,
       "visible": true,
-      "linkGroup": "7",
+      "linkGroup": "8",
       "locations": [
         {
           "name": "Église Sainte-Geneviève",
@@ -176,12 +176,13 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Église Notre-Dame de Pontmain",
           "address": "80 Av. de la République, 93170 Bagnolet",
           "website": "http://www.bagnolet.paris.parafia.info.pl",
-          "verified": false
+          "verified": true
         }
-      ]
+      ],
+      "linkGroup": "9"
     },
     {
       "city": "Baldersheim",
@@ -190,9 +191,9 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Église Saint-Pierre-et-Saint-Paul",
           "address": "Rue de l'Église, 68390 Baldersheim",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -203,12 +204,13 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Chapelle du Sacré-Cœur",
           "address": "40 Rue François Arago, 62620 Barlin",
           "website": "https://parafianoeux.blogspot.com/",
-          "verified": false
+          "verified": true
         }
-      ]
+      ],
+      "linkGroup": "10"
     },
     {
       "city": "Bassens",
@@ -260,9 +262,9 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
-          "address": "Pl. Pierre Renaudel, 33800 Bordeaux",
-          "verified": false
+          "name": "Abbatiale Sainte-Croix",
+          "address": "Place Pierre Renaudel, 33800 Bordeaux",
+          "verified": true
         }
       ]
     },
@@ -273,10 +275,26 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
-          "address": "20 Pl. Guynemer, 62700 Bruay-la-Buissière",
+          "name": "Chapelle polonaise de Bruay-la-Buissière",
+          "address": "20 Place Guynemer, 62700 Bruay-la-Buissière",
           "website": "https://www.tchr.fr/bruay-la-buissiere",
-          "verified": false
+          "verified": true
+        }
+      ],
+      "linkGroup": "11"
+    },
+    {
+      "city": "Brunoy",
+      "lat": 48.6975,
+      "lon": 2.5047,
+      "visible": true,
+      "linkGroup": "12",
+      "locations": [
+        {
+          "name": "Chapelle Notre-Dame de Sauvageon",
+          "address": "39 Rue de Cerçay, 91800 Brunoy",
+          "website": "https://pmk-dammarie.eu",
+          "verified": true
         }
       ]
     },
@@ -287,12 +305,13 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Église du Sacré-Cœur du Prado",
           "address": "15 Av. du Prado, 06400 Cannes",
           "website": "https://www.nicea-parafia.pl/",
-          "verified": false
+          "verified": true
         }
-      ]
+      ],
+      "linkGroup": "17"
     },
     {
       "city": "Carvin",
@@ -301,9 +320,9 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Salle Germinal",
           "address": "177 Rue Picasso, 62220 Carvin",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -311,13 +330,29 @@
       "city": "Châlette-sur-Loing",
       "lat": 48.01,
       "lon": 2.74,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "name": "Église Sainte-Thérèse de Vésines",
+          "address": "59B Rue Roger Salengro, 45120 Châlette-sur-Loing",
+          "verified": true
+        }
+      ],
+      "linkGroup": "20"
     },
     {
       "city": "Chantilly",
       "lat": 49.19,
       "lon": 2.47,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "name": "Église Saint-François",
+          "address": "24 Allée du Valois, 60500 Chantilly",
+          "verified": true
+        }
+      ],
+      "linkGroup": "14"
     },
     {
       "city": "Ciran",
@@ -326,9 +361,9 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
-          "address": "Pl. de l'Église, 37240 Ciran",
-          "verified": false
+          "name": "Église Saint-Jean-Baptiste",
+          "address": "Place de l'Église, 37240 Ciran",
+          "verified": true
         }
       ]
     },
@@ -336,7 +371,15 @@
       "city": "Clermont-Ferrand",
       "lat": 45.78,
       "lon": 3.09,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "name": "Mission Catholique Polonaise de Clermont-Ferrand",
+          "address": "8 Rue du Clos Four, 63100 Clermont-Ferrand",
+          "website": "https://pmkclermont.blogspot.com",
+          "verified": true
+        }
+      ]
     },
     {
       "city": "Comines",
@@ -345,10 +388,25 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Église Saints-Chrysole-et-Pierre",
           "address": "11 Grand Place, 59560 Comines",
           "website": "https://fr-fr.facebook.com/public/Polska-Parafia-Roubaix",
-          "verified": false
+          "verified": true
+        }
+      ],
+      "linkGroup": "13"
+    },
+    {
+      "city": "Compiègne",
+      "lat": 49.4179,
+      "lon": 2.8261,
+      "visible": true,
+      "linkGroup": "14",
+      "locations": [
+        {
+          "name": "Chapelle Jean-Paul II",
+          "address": "1 Av. de l'Europe, 60200 Compiègne",
+          "verified": true
         }
       ]
     },
@@ -359,12 +417,13 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Église Saint-Paul",
           "address": "118 Bd John Kennedy, 91100 Corbeil-Essonnes",
           "website": "https://pmk-dammarie.eu",
-          "verified": false
+          "verified": true
         }
-      ]
+      ],
+      "linkGroup": "12"
     },
     {
       "city": "Couëron",
@@ -373,10 +432,10 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
-          "address": "48A Rue de la Frémondière, 44220 Couëron",
+          "name": "Église Notre-Dame de Miséricorde",
+          "address": "48 Rue de la Frémondière, 44220 Couëron",
           "website": "http://pmk-coueron.eu",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -387,10 +446,10 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Église polonaise de Dammarie-les-Lys",
           "address": "81 Rue Adrien Châtelain, 77190 Dammarie-les-Lys",
           "website": "https://pmk-dammarie.eu",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -415,10 +474,10 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Église Saint-Stanislas",
           "address": "59 Cité Bruno, 62119 Dourges",
           "website": "https://www.polonia-dourges.fr/amicale-polonaise-dourges_fr.html",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -429,10 +488,29 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
-          "address": "Pl. Turenne, 59240 Dunkerque",
+          "name": "Église Notre-Dame-du-Sacré-Cœur",
+          "address": "Place Turenne, 59240 Dunkerque",
           "website": "https://fr-fr.facebook.com/public/Polska-Parafia-Roubaix",
-          "verified": false
+          "verified": true
+        }
+      ],
+      "linkGroup": "13"
+    },
+    {
+      "city": "Échirolles",
+      "lat": 45.1537,
+      "lon": 5.731,
+      "visible": true,
+      "locations": [
+        {
+          "name": "Église Sainte-Monique",
+          "address": "3 Rue de Lorraine, 38130 Échirolles",
+          "verified": true
+        },
+        {
+          "name": "Église Saint-Jean-Bosco",
+          "address": "12 Av. Paul Vaillant Couturier, 38130 Échirolles",
+          "verified": true
         }
       ]
     },
@@ -443,11 +521,12 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Église Sainte-Thérèse – communauté de Nétreville",
           "address": "18 Rue des Violettes, 27000 Évreux",
-          "verified": false
+          "verified": true
         }
-      ]
+      ],
+      "linkGroup": "15"
     },
     {
       "city": "Fréjus",
@@ -456,10 +535,10 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Église Saint-Roch",
           "address": "72 Rue Noël Garnier, 83600 Fréjus",
           "website": "https://paroissesaintraphael.fr/notre-dame-du-sacre-coeur",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -470,9 +549,9 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Presbytère Saint-Maurice",
           "address": "1 Rue de la Merle, 57800 Freyming-Merlebach",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -480,7 +559,16 @@
       "city": "Gleizé",
       "lat": 45.99,
       "lon": 4.7,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "name": "Lieu de célébration de la communauté polonaise de Gleizé",
+          "address": "4 Rue des Chères, 69400 Gleizé",
+          "website": "https://lyontrinite.com/pl/",
+          "verified": true
+        }
+      ],
+      "linkGroup": "16"
     },
     {
       "city": "Grimaud",
@@ -524,9 +612,9 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Église Sainte-Aldegonde",
           "address": "15 Rue François Bacquet, 59287 Guesnain",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -537,12 +625,13 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Mission Catholique Polonaise – Haillicourt",
           "address": "Rue du 8 Mai 1945, 62940 Haillicourt",
           "website": "https://www.tchr.fr/bruay-la-buissiere",
-          "verified": false
+          "verified": true
         }
-      ]
+      ],
+      "linkGroup": "11"
     },
     {
       "city": "Harnes",
@@ -551,10 +640,10 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Chapelle du Sacré-Cœur",
           "address": "19 Rue de Saint-Claude, 62440 Harnes",
           "website": "https://www.pmk-harnes.fr",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -565,12 +654,13 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Église polonaise de Houdain",
           "address": "Rue des Marronniers, 62150 Houdain",
           "website": "https://www.tchr.fr/bruay-la-buissiere",
-          "verified": false
+          "verified": true
         }
-      ]
+      ],
+      "linkGroup": "11"
     },
     {
       "city": "Issy-les-Moulineaux",
@@ -579,10 +669,10 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Séminaire Polonais de Paris",
           "address": "11 Rue Jules Guesde, 92130 Issy-les-Moulineaux",
           "website": "https://www.seminariumpolskie.fr",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -593,9 +683,22 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Église Sainte-Croix",
           "address": "1 Grand Rue, 54240 Jœuf",
-          "verified": false
+          "verified": true
+        }
+      ]
+    },
+    {
+      "city": "La Breille-les-Pins",
+      "lat": 47.341,
+      "lon": 0.078,
+      "visible": true,
+      "locations": [
+        {
+          "name": "Église Saint-Étienne",
+          "address": "14 Rue du Vau Chèvre, 49390 La Breille-les-Pins",
+          "verified": true
         }
       ]
     },
@@ -606,10 +709,10 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Maison de la Miséricorde Divine – Chapelle de la Miséricorde Divine",
           "address": "Rothère, 41300 La Ferté-Imbault",
           "website": "https://www.maisonmisericordedivine.com",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -620,12 +723,13 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
-          "address": "Pl. Jean-Baptiste Marcet, 42150 La Ricamarie",
+          "name": "Chapelle de l'Immaculée Conception",
+          "address": "Place Jean-Baptiste Marcet, 42150 La Ricamarie",
           "website": "http://www.ricamarie.parafia.info.pl",
-          "verified": false
+          "verified": true
         }
-      ]
+      ],
+      "linkGroup": "18"
     },
     {
       "city": "Le Blanc-Mesnil",
@@ -634,12 +738,13 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Église Saint-Charles-Borromée",
           "address": "107 Av. Normandie Niemen, 93150 Le Blanc-Mesnil",
           "website": "https://aulnaysousbois.pl",
-          "verified": false
+          "verified": true
         }
-      ]
+      ],
+      "linkGroup": "7"
     },
     {
       "city": "Le Chambon-Feugerolles",
@@ -654,9 +759,9 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Église Saint-Eugène",
           "address": "8 Rue Guynemer, 71200 Le Creusot",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -667,11 +772,12 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
-          "address": "17 Parv. Saint-Michel, 76600 Le Havre",
-          "verified": false
+          "name": "Église Saint-Michel",
+          "address": "17 Parvis Saint-Michel, 76600 Le Havre",
+          "verified": true
         }
-      ]
+      ],
+      "linkGroup": "15"
     },
     {
       "city": "Leforest",
@@ -680,10 +786,10 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Mission Catholique Polonaise – Leforest",
           "address": "43 Rue Léon Gambetta, 62790 Leforest",
           "website": "https://www.polonia-dourges.fr/amicale-polonaise-dourges_fr.html",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -694,9 +800,9 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
-          "address": "54 Rte de Béthune, 62300 Lens",
-          "verified": false
+          "name": "Église du Millénium – Sainte-Élisabeth / Notre-Dame de Częstochowa",
+          "address": "21 Route de Béthune, 62300 Lens",
+          "verified": true
         }
       ]
     },
@@ -707,9 +813,9 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Église Saint-Henri",
           "address": "Rue Fernand Darchicourt, 62820 Libercourt",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -720,9 +826,9 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Église Notre-Dame-de-Grâces",
           "address": "Rue Thiers, 62800 Liévin",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -733,12 +839,13 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
-          "address": "47 Rue de l'Hôpital Militaire, 59800 Lille",
+          "name": "Église Saint-Étienne",
+          "address": "47 Rue de l'Hôpital Militaire, 59000 Lille",
           "website": "https://fr-fr.facebook.com/public/Polska-Parafia-Roubaix",
-          "verified": false
+          "verified": true
         }
-      ]
+      ],
+      "linkGroup": "13"
     },
     {
       "city": "Lourdes",
@@ -747,9 +854,9 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Sanctuaire Notre-Dame de Lourdes",
           "address": "1 Av. Mgr Théas, 65100 Lourdes",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -760,12 +867,13 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Église de la Sainte-Trinité",
           "address": "111 Av. Jean Mermoz, 69008 Lyon",
           "website": "https://www.lyontrinite.com",
-          "verified": false
+          "verified": true
         }
-      ]
+      ],
+      "linkGroup": "16"
     },
     {
       "city": "Marles-les-Mines",
@@ -774,9 +882,9 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Mission Catholique Polonaise – Marles-les-Mines",
           "address": "10 Rue de Lille, 62540 Marles-les-Mines",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -788,10 +896,10 @@
       "linkGroup": "2",
       "locations": [
         {
-          "name": "Eglise ST Fortuné",
+          "name": "Église Saint-Fortuné",
           "address": "426 Av. de Montolivet, 13012 Marseille",
           "website": "https://polacywmarsylii.blogspot.com/",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -802,9 +910,9 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Église de la Nativité – Cité 7",
           "address": "Rue de Neuville Saint-Vaast, 62670 Mazingarbe",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -815,16 +923,17 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Lieu de célébration de la Mission Catholique Polonaise – Rue de Dourges",
           "address": "5000F Rue de Dourges, 62430 Méricourt",
-          "verified": false
+          "verified": true
         },
         {
-          "name": "Miejsce 2",
-          "address": "Rue de Vimy, 62680 Méricourt",
-          "verified": false
+          "name": "Chapelle Saint-André Bobola",
+          "address": "93 Rue de Vimy, 62680 Méricourt",
+          "verified": true
         }
-      ]
+      ],
+      "linkGroup": "19"
     },
     {
       "city": "Metz",
@@ -848,17 +957,33 @@
       ]
     },
     {
+      "city": "Monaco",
+      "lat": 43.7384,
+      "lon": 7.4246,
+      "visible": true,
+      "linkGroup": "17",
+      "locations": [
+        {
+          "name": "Église Sainte-Dévote",
+          "address": "1 Ruelle Sainte-Dévote, 98000 Monaco",
+          "website": "https://www.nicea-parafia.pl/",
+          "verified": true
+        }
+      ]
+    },
+    {
       "city": "Mondeville",
       "lat": 49.17,
       "lon": -0.32,
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
-          "address": "Rue des Roches, 14120 Mondeville",
-          "verified": false
+          "name": "Église Notre-Dame-des-Prés",
+          "address": "109 Rue des Roches, 14120 Mondeville",
+          "verified": true
         }
-      ]
+      ],
+      "linkGroup": "15"
     },
     {
       "city": "Mondragon",
@@ -867,9 +992,9 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Église Saint-Trophime",
           "address": "157 Rue Jean Jaurès, 84430 Mondragon",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -880,9 +1005,9 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
-          "address": "256 Av. de Strasbourg, 54000 Nancy",
-          "verified": false
+          "name": "Église Notre-Dame de Bonsecours",
+          "address": "173 Av. de Strasbourg, 54000 Nancy",
+          "verified": true
         }
       ]
     },
@@ -893,9 +1018,9 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
-          "address": "Pl. du Chanoine Heroux, 93330 Neuilly-sur-Marne",
-          "verified": false
+          "name": "Église Saint-Baudile",
+          "address": "Place du Chanoine Héroux, 93330 Neuilly-sur-Marne",
+          "verified": true
         }
       ]
     },
@@ -906,12 +1031,13 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Église Notre-Dame-de-France",
           "address": "9 Chemin du Fort du Mont Alban, 06300 Nice",
           "website": "https://www.nicea-parafia.pl/",
-          "verified": false
+          "verified": true
         }
-      ]
+      ],
+      "linkGroup": "17"
     },
     {
       "city": "Nœux-les-Mines",
@@ -920,12 +1046,13 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
-          "address": "8 Rue du Maréchal Foch, 62530 Nœux-les-Mines",
+          "name": "Chapelle de la Miséricorde Divine",
+          "address": "8 Place du Maréchal Foch, 62290 Nœux-les-Mines",
           "website": "https://parafianoeux.blogspot.com/",
-          "verified": false
+          "verified": true
         }
-      ]
+      ],
+      "linkGroup": "10"
     },
     {
       "city": "Oignies",
@@ -934,9 +1061,9 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Mission Catholique Polonaise – Oignies",
           "address": "1 Rue Pierre Brossolette, 62590 Oignies",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -947,11 +1074,12 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Chapelle Saint-Joseph",
           "address": "6 Rue Robert de Courtenay, 45000 Orléans",
-          "verified": false
+          "verified": true
         }
-      ]
+      ],
+      "linkGroup": "20"
     },
     {
       "city": "Osny",
@@ -960,9 +1088,9 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Chapelle de la Miséricorde Divine – Institution Saint-Stanislas",
           "address": "2 Rue des Patis, 95520 Osny",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -973,36 +1101,36 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Chapelle Saint-Yves de la Cité du Souvenir",
           "address": "11 Rue Saint-Yves, 75014 Paris",
-          "verified": false
+          "verified": true
         },
         {
-          "name": "Miejsce 2",
+          "name": "Église Notre-Dame de l'Assomption – Mission Catholique Polonaise",
           "address": "263bis Rue Saint-Honoré, 75001 Paris",
           "website": "http://www.paris.parafia.info.pl",
-          "verified": false
+          "verified": true
         },
         {
-          "name": "Miejsce 3",
+          "name": "Église de l'Immaculée-Conception",
           "address": "34 Rue du Rendez-Vous, 75012 Paris",
-          "verified": false
+          "verified": true
         },
         {
-          "name": "Miejsce 4",
+          "name": "Chapelle Notre-Dame de Belleville – Reine des Familles",
           "address": "3 Rue Rampal, 75019 Paris",
           "website": "https://www.parafiabelleville.fr",
-          "verified": false
+          "verified": true
         },
         {
-          "name": "Miejsce 5",
+          "name": "Chapelle de la Miséricorde Divine",
           "address": "22 Rue Legendre, 75017 Paris",
-          "verified": false
+          "verified": true
         },
         {
-          "name": "Miejsce 6",
+          "name": "Paroisse Sainte-Geneviève – communauté polonaise",
           "address": "18 Rue Claude Lorrain, 75016 Paris",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -1013,9 +1141,9 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
-          "address": "1 Bd Foch, 56800 Ploërmel",
-          "verified": false
+          "name": "Mission Catholique Polonaise de Ploërmel",
+          "address": "50 Rue Général Dubreton, 56800 Ploërmel",
+          "verified": true
         }
       ]
     },
@@ -1026,9 +1154,9 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
-          "address": "3 Pl. Saint-Martin, 17800 Pons",
-          "verified": false
+          "name": "Église Saint-Martin",
+          "address": "3 Place Saint-Martin, 17800 Pons",
+          "verified": true
         }
       ]
     },
@@ -1039,11 +1167,12 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Chapelle Notre-Dame de Częstochowa – chapelle polonaise",
           "address": "Rue des Capucines, 14420 Potigny",
-          "verified": false
+          "verified": true
         }
-      ]
+      ],
+      "linkGroup": "15"
     },
     {
       "city": "Pulversheim",
@@ -1052,10 +1181,10 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Église Saint-Jean",
           "address": "17 Rue d'Ensisheim, 68840 Pulversheim",
           "website": "https://polska-misja-rixheim-mulhouse.blogspot.com",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -1066,10 +1195,10 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Chapelle Sainte-Anne – Église Sainte-Jeanne-d'Arc",
           "address": "30 Rue Danton, 35700 Rennes",
           "website": "https://parafiarennes.blogspot.com",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -1080,10 +1209,10 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Église de l'Immaculée Conception",
           "address": "189 Rue de l'Île Napoléon, 68170 Rixheim",
           "website": "https://polska-misja-rixheim-mulhouse.blogspot.com",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -1094,12 +1223,13 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Église Saint-Joseph – Beaulieu",
           "address": "21 Rue de l'Église, 42230 Roche-la-Molière",
           "website": "http://www.ricamarie.parafia.info.pl",
-          "verified": false
+          "verified": true
         }
-      ]
+      ],
+      "linkGroup": "18"
     },
     {
       "city": "Ronchamp",
@@ -1108,9 +1238,9 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
-          "address": "Pl. Jean Lagelee, 70250 Ronchamp",
-          "verified": false
+          "name": "Église Notre-Dame-du-Bas",
+          "address": "Place Jean Lagelée, 70250 Ronchamp",
+          "verified": true
         }
       ]
     },
@@ -1121,12 +1251,13 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
-          "address": "128 Grande Rue, 59100 Roubaix",
+          "name": "Église Notre-Dame de Częstochowa",
+          "address": "128Ter Grande Rue, 59100 Roubaix",
           "website": "http://parafiaroubaix.id.st",
-          "verified": false
+          "verified": true
         }
-      ]
+      ],
+      "linkGroup": "13"
     },
     {
       "city": "Rouvroy",
@@ -1135,11 +1266,12 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
-          "address": "Pl. Antoine Blanchant, 62320 Rouvroy",
-          "verified": false
+          "name": "Église Saint-Louis",
+          "address": "Place Antoine Blanchant, 62320 Rouvroy",
+          "verified": true
         }
-      ]
+      ],
+      "linkGroup": "19"
     },
     {
       "city": "Saâcy-sur-Marne",
@@ -1148,9 +1280,9 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Église Saint-Jean-Baptiste",
           "address": "12 Rue de l'Église, 77730 Saâcy-sur-Marne",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -1161,12 +1293,13 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Église Saint-Denys de l'Estrée",
           "address": "53 Bd Jules Guesde, 93200 Saint-Denis",
           "website": "http://www.bagnolet.paris.parafia.info.pl",
-          "verified": false
+          "verified": true
         }
-      ]
+      ],
+      "linkGroup": "9"
     },
     {
       "city": "Saint-Étienne",
@@ -1175,9 +1308,9 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
-          "address": "2 Chem. des Chaux, 42000 Saint-Étienne",
-          "verified": false
+          "name": "Mission Catholique Polonaise de Saint-Étienne",
+          "address": "2 Chemin des Chaux, 42000 Saint-Étienne",
+          "verified": true
         }
       ]
     },
@@ -1188,16 +1321,16 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Chapelle Saint-François-de-Sales",
           "address": "8 Rue du Bordeau, 01630 Saint-Genis-Pouilly",
           "website": "https://polskamisja.fr",
-          "verified": false
+          "verified": true
         },
         {
-          "name": "Miejsce 2",
+          "name": "Église Saint-Pierre de Pouilly",
           "address": "25 Rue de l'Église, 01630 Saint-Genis-Pouilly",
           "website": "https://polskamisja.fr",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -1208,9 +1341,9 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
-          "address": "Pl. de la Liberté, 34430 Saint-Jean-de-Védas",
-          "verified": false
+          "name": "Église Saint-Jean-Baptiste",
+          "address": "Place de la Liberté, 34430 Saint-Jean-de-Védas",
+          "verified": true
         }
       ]
     },
@@ -1221,9 +1354,9 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
-          "address": "205-207, D235, 71410 Sanvignes-les-Mines",
-          "verified": false
+          "name": "Chapelle des Gautherets",
+          "address": "205-207 D235, 71410 Sanvignes-les-Mines",
+          "verified": true
         }
       ]
     },
@@ -1234,8 +1367,24 @@
       "visible": true,
       "locations": [
         {
-          "address": "72 Rue du Général Allix, 89100 Sens ",
-          "verified": false
+          "name": "Chapelle de l'Archevêché",
+          "address": "72 Rue du Général Allix, 89100 Sens",
+          "verified": true
+        }
+      ],
+      "linkGroup": "8"
+    },
+    {
+      "city": "Soissons",
+      "lat": 49.3817,
+      "lon": 3.3236,
+      "visible": true,
+      "linkGroup": "14",
+      "locations": [
+        {
+          "name": "Chapelle Saint-Crépin",
+          "address": "4 Rue de Vic-sur-Aisne, 02200 Soissons",
+          "verified": true
         }
       ]
     },
@@ -1246,9 +1395,9 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Mission Catholique Polonaise de Stiring-Wendel",
           "address": "86 Av. de la Libération, 57350 Stiring-Wendel",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -1259,10 +1408,10 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Église Notre-Dame-de-Lourdes",
           "address": "9 Rue du Hohwald, 67000 Strasbourg",
           "website": "https://www.polska-misja-katolicka-strasbourg.pl",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -1273,9 +1422,10 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
-          "address": "Imp. Cuneo, 83000 Toulon",
-          "verified": false
+          "name": "Église Sainte-Thérèse",
+          "address": "105 Bd Enseigne de Vaisseau Gués, 83100 Toulon",
+          "website": "https://saintetherese.frejustoulon.fr",
+          "verified": true
         }
       ]
     },
@@ -1286,10 +1436,24 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
-          "address": "290 Rte de Seysses, 31100 Toulouse",
+          "name": "Église de la Sainte-Trinité",
+          "address": "290 Route de Seysses, 31100 Toulouse",
           "website": "https://parafiatuluzapl.wordpress.com/",
-          "verified": false
+          "verified": true
+        }
+      ]
+    },
+    {
+      "city": "Tours",
+      "lat": 47.3941,
+      "lon": 0.6848,
+      "visible": true,
+      "linkGroup": "20",
+      "locations": [
+        {
+          "name": "Église Saint-Paul",
+          "address": "Place Saint-Paul, 37000 Tours",
+          "verified": true
         }
       ]
     },
@@ -1300,10 +1464,10 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Communauté catholique polonaise de Triel-sur-Seine",
           "address": "18 Rue de la Chapelle, 78510 Triel-sur-Seine",
           "website": "http://triel.parafia.fr/",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -1314,11 +1478,12 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Église Saint-Pantaléon",
           "address": "15 Rue Vauluisant, 10000 Troyes",
-          "verified": false
+          "verified": true
         }
-      ]
+      ],
+      "linkGroup": "8"
     },
     {
       "city": "Tucquegnieux",
@@ -1327,9 +1492,9 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Chapelle Sainte-Barbe",
           "address": "Rue Maurice et Gilbert Castel, 54640 Tucquegnieux",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -1337,7 +1502,15 @@
       "city": "Versailles",
       "lat": 48.8,
       "lon": 2.13,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "name": "Chapelle de l'Ermitage – communauté catholique polonaise",
+          "address": "21-23 Rue de l'Ermitage, 78000 Versailles",
+          "website": "https://wspolnotawersal.parafeo.pl",
+          "verified": true
+        }
+      ]
     },
     {
       "city": "Waziers",
@@ -1346,9 +1519,9 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Église Notre-Dame des Mineurs",
           "address": "927 Rue Lucien Moreau, 59119 Waziers",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -1359,10 +1532,10 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Église Notre-Dame-du-Rosaire",
           "address": "2 Rue Denis Papin, 68310 Wittelsheim",
           "website": "https://polska-misja-rixheim-mulhouse.blogspot.com",
-          "verified": false
+          "verified": true
         }
       ]
     }
