@@ -1898,6 +1898,7 @@ loadEditableSection('./content/kosciol.json', data => {
     function safeHttpUrl(value){
       try{const u=new URL(String(value||'')); return /^https?:$/.test(u.protocol)?u.href:'';}catch{return '';}
     }
+    let selectedMissionItem=null;
     function showMissionLinks(item){
       pins.querySelectorAll('.mission-link').forEach(el=>el.remove());
       const group=String(item.linkGroup||'').trim();
@@ -1913,7 +1914,15 @@ loadEditableSection('./content/kosciol.json', data => {
         pins.insertBefore(line,pins.firstChild);
       }
     }
+    function previewMissionLinks(item){
+      showMissionLinks(item);
+    }
+    function restoreMissionLinks(){
+      if(selectedMissionItem) showMissionLinks(selectedMissionItem);
+      else pins.querySelectorAll('.mission-link').forEach(el=>el.remove());
+    }
     function showMissionInfo(item,key){
+      selectedMissionItem=item;
       document.querySelectorAll('.mission-city.active,.mission-pin.active').forEach(el=>el.classList.remove('active'));
       document.querySelectorAll('[data-mission-key="'+key+'"]').forEach(el=>el.classList.add('active'));
       infoTitle.textContent=item.city;
@@ -1941,6 +1950,7 @@ loadEditableSection('./content/kosciol.json', data => {
       infoBox.classList.add('open');
     }
     function closeMissionInfo(){
+      selectedMissionItem=null;
       infoBox.classList.remove('open');
       pins.querySelectorAll('.mission-link').forEach(el=>el.remove());
       document.querySelectorAll('.mission-city.active,.mission-pin.active').forEach(el=>el.classList.remove('active'));
@@ -2041,8 +2051,10 @@ loadEditableSection('./content/kosciol.json', data => {
       const key='m'+index;
       const btn=document.createElement('button');
       btn.type='button'; btn.className='mission-city'; btn.textContent=item.city; btn.dataset.missionKey=key;
-      btn.addEventListener('mouseenter',()=>setActive(key,true)); btn.addEventListener('mouseleave',()=>setActive(key,false));
-      btn.addEventListener('focus',()=>setActive(key,true)); btn.addEventListener('blur',()=>setActive(key,false));
+      btn.addEventListener('mouseenter',()=>{setActive(key,true); previewMissionLinks(item);});
+      btn.addEventListener('mouseleave',()=>{setActive(key,false); restoreMissionLinks();});
+      btn.addEventListener('focus',()=>{setActive(key,true); previewMissionLinks(item);});
+      btn.addEventListener('blur',()=>{setActive(key,false); restoreMissionLinks();});
       btn.addEventListener('click',()=>showMissionInfo(item,key));
       listFrag.append(btn);
 
@@ -2058,8 +2070,10 @@ loadEditableSection('./content/kosciol.json', data => {
       icon.append(body,roof,detail,door,cross);
       const label=document.createElementNS(ns,'text'); label.setAttribute('x',x+11); label.setAttribute('y',y-11); label.textContent=item.city;
       g.append(hit,icon,label);
-      g.addEventListener('mouseenter',()=>setActive(key,true)); g.addEventListener('mouseleave',()=>setActive(key,false));
-      g.addEventListener('focus',()=>setActive(key,true)); g.addEventListener('blur',()=>setActive(key,false));
+      g.addEventListener('mouseenter',()=>{setActive(key,true); previewMissionLinks(item);});
+      g.addEventListener('mouseleave',()=>{setActive(key,false); restoreMissionLinks();});
+      g.addEventListener('focus',()=>{setActive(key,true); previewMissionLinks(item);});
+      g.addEventListener('blur',()=>{setActive(key,false); restoreMissionLinks();});
       g.addEventListener('click',()=>{btn.scrollIntoView({block:'nearest',behavior:'smooth'}); showMissionInfo(item,key);});
       pins.append(g);
     });
