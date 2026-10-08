@@ -652,6 +652,19 @@
     line-height:1;
     cursor:pointer;
   }
+  /* Clickable recurring community events */
+  #sec-wydarzenia .icon-item.is-clickable{cursor:pointer}
+  #sec-wydarzenia .icon-item.is-clickable:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+  .community-card-more{display:inline-block;margin-top:9px;font-size:.83rem;font-weight:600;color:var(--burgundy)}
+  .community-dialog{width:min(720px,calc(100vw - 32px));max-height:85vh;padding:0;border:1px solid var(--line);border-radius:14px;background:var(--paper);color:var(--ink);box-shadow:0 22px 80px rgba(0,0,0,.25);overflow:auto}
+  .community-dialog::backdrop{background:rgba(15,12,18,.68)}
+  .community-dialog-header{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;padding:26px 28px 18px}
+  .community-dialog-header h2{margin:0;color:var(--burgundy-deep);font-size:1.45rem;line-height:1.3}
+  .community-dialog-close{flex-shrink:0;display:grid;place-items:center;width:36px;height:36px;border:1px solid var(--line);border-radius:50%;background:transparent;color:var(--burgundy);font-size:26px;line-height:1;cursor:pointer}
+  .community-dialog-close:hover{background:rgba(122,22,38,.08)}
+  .community-dialog-body{padding:0 28px 28px}
+  .community-dialog-body > :first-child{margin-top:0}
+  @media(max-width:540px){.community-dialog-header{padding:20px 18px 16px}.community-dialog-body{padding:0 18px 22px}}
   .events-static-title{ margin-top:28px; }
   .events-upcoming-title{ margin-top:36px; }
   #sec-wydarzenia .icon-grid{
@@ -968,6 +981,13 @@
         <h3 class="events-static-title">Stałe elementy życia wspólnoty</h3>
         <div id="community-items" class="icon-grid" aria-live="polite"><p class="note">Wczytywanie informacji…</p></div>
 
+        <dialog id="community-dialog" class="community-dialog" aria-labelledby="community-dialog-title">
+          <div class="community-dialog-header">
+            <h2 id="community-dialog-title"></h2>
+            <button type="button" class="community-dialog-close" aria-label="Zamknij szczegóły">×</button>
+          </div>
+          <div id="community-dialog-body" class="event-body community-dialog-body"></div>
+        </dialog>
         <h3 class="events-upcoming-title">Nadchodzące i ostatnie wydarzenia</h3>
         <div id="events" class="events-list" aria-live="polite"><p class="note">Wczytywanie wydarzeń…</p></div>
       </section>
@@ -1424,6 +1444,24 @@ document.addEventListener('keydown', (event) => {
 
     const communityContainer = document.getElementById('community-items');
     const communityItems = Array.isArray(data.communityItems) ? data.communityItems : [];
+    const communityDialog = document.getElementById('community-dialog');
+    const communityDialogTitle = document.getElementById('community-dialog-title');
+    const communityDialogBody = document.getElementById('community-dialog-body');
+    const communityDialogClose = communityDialog?.querySelector('.community-dialog-close');
+    let communityDialogOpener = null;
+    if (communityDialog && communityDialogClose) {
+      communityDialogClose.addEventListener('click', () => communityDialog.close());
+      communityDialog.addEventListener('click', event => {
+        if (event.target !== communityDialog) return;
+        const rect = communityDialog.getBoundingClientRect();
+        if (event.clientX < rect.left || event.clientX > rect.right ||
+            event.clientY < rect.top || event.clientY > rect.bottom) communityDialog.close();
+      });
+      communityDialog.addEventListener('close', () => {
+        if (communityDialogOpener?.isConnected) communityDialogOpener.focus();
+        communityDialogOpener = null;
+      });
+    }
     const iconSvgs = {
       book: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5.5c2.8-.8 5.8-.2 9 1.8v12c-3.2-2-6.2-2.6-9-1.8z"/><path d="M21 5.5c-2.8-.8-5.8-.2-9 1.8v12c3.2-2 6.2-2.6 9-1.8z"/></svg>',
       coffee: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><path d="M6 2v3M10 2v3M14 2v3"/></svg>',
@@ -1451,6 +1489,34 @@ document.addEventListener('keydown', (event) => {
         body.textContent = typeof item.body === 'string' ? item.body : '';
         content.append(title, body);
 
+        if (communityDialog && item.expandable === true && typeof item.details === 'string') {
+          const detailsText = new DOMParser().parseFromString(item.details, 'text/html').body.textContent.trim();
+          if (detailsText) {
+            card.classList.add('is-clickable');
+            card.setAttribute('role', 'button');
+            card.tabIndex = 0;
+            card.setAttribute('aria-haspopup', 'dialog');
+            card.setAttribute('aria-label', 'Otwórz szczegóły: ' + (item.title || 'wydarzenie'));
+            const more = document.createElement('span');
+            more.className = 'community-card-more';
+            more.textContent = 'Czytaj więcej →';
+            content.append(more);
+            const openDetails = () => {
+              communityDialogTitle.textContent = item.title || 'Szczegóły wydarzenia';
+              renderSafeRichText(communityDialogBody, item.details);
+              communityDialogOpener = card;
+              communityDialog.showModal();
+              communityDialogClose.focus();
+            };
+            card.addEventListener('click', openDetails);
+            card.addEventListener('keydown', event => {
+              if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                openDetails();
+              }
+            });
+          }
+        }
         card.append(icon, content);
         communityFragment.append(card);
       }
