@@ -821,7 +821,9 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Church","name":"Parafia w Metz","url":"https://parafiametz.github.io/parafiametz-staging/","address":{"@type":"PostalAddress","streetAddress":"14, place Jeanne d'Arc","postalCode":"57000","addressLocality":"Metz","addressCountry":"FR"}}
 </script>
-</head>
+<style>
+.faith-library{max-width:1050px;margin:auto;padding:18px 0 55px}.faith-eyebrow{font-size:.72rem;letter-spacing:.15em;color:var(--gold);font-weight:700}.faith-library h2{font-size:clamp(2.1rem,5vw,3.2rem)}.faith-intro{max-width:690px;line-height:1.8;color:var(--ink-soft)}.faith-search-label{display:block;font-size:.8rem;margin:25px 0 8px}.faith-library input{width:100%;max-width:550px;padding:14px;border:1px solid var(--line);border-radius:10px;background:var(--paper);font:inherit}.faith-filters{display:flex;gap:9px;flex-wrap:wrap;margin:23px 0}.faith-filters button,.faith-reading>button{border:1px solid var(--line);background:var(--paper);border-radius:22px;padding:10px 15px;cursor:pointer;color:var(--ink);font:inherit;font-size:.82rem}.faith-filters button.selected{background:var(--burgundy);color:white}.faith-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:18px}.faith-article{display:flex;flex-direction:column;text-align:left;gap:15px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:26px;cursor:pointer;font:inherit;color:var(--ink);transition:transform .2s,border-color .2s}.faith-article:hover{transform:translateY(-3px);border-color:var(--gold)}.faith-article small{color:var(--gold);font-size:.7rem;letter-spacing:.08em}.faith-article strong{font-family:'Cormorant Garamond',serif;font-size:1.7rem;line-height:1.15;color:var(--burgundy-deep)}.faith-article span{line-height:1.6;color:var(--ink-soft);font-size:.85rem}.faith-article em{font-size:.83rem;color:var(--burgundy);font-style:normal;font-weight:700}.faith-reading{max-width:790px;margin-top:25px;line-height:1.85}.faith-reading h3{margin-top:30px;font-size:1.65rem}.faith-reading p{margin:12px 0}.faith-reading[hidden],#faith-empty[hidden],.faith-grid[hidden],.faith-filters[hidden]{display:none!important}@media(max-width:600px){.faith-library{padding:8px 0 35px}.faith-article{padding:19px}}
+</style></head>
 <body>
 
 <div class="shell">
@@ -857,6 +859,7 @@
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
           Wydarzenia
         </button>
+        <button data-section="dlaczego-wierze"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 5.5C6 4 9 4 12 6v14c-3-2-6-2-9-.5zM21 5.5c-3-1.5-6-1.5-9 .5v14c3-2 6-2 9-.5z"/></svg>Dlaczego wierzę?</button>
         <button data-section="misja">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l3 6 6 1-4.5 4.5L17.5 21 12 17.5 6.5 21l1-6.5L3 10l6-1z"/></svg>
           Nasza Misja
@@ -993,6 +996,23 @@
       </section>
 
       <!-- MISJA -->
+<section id="sec-dlaczego-wierze">
+<div class="faith-library">
+<p class="faith-eyebrow">BIBLIOTEKA WIARY I ROZUMU</p><h2>Dlaczego wierzę?</h2>
+<p class="faith-intro">Wiara nie musi być tylko rodzinną tradycją. Poznaj argumenty, źródła i pytania, które pomagają świadomie szukać prawdy.</p>
+<label class="faith-search-label" for="faith-search">Znajdź artykuł</label><input id="faith-search" type="search" placeholder="Szukaj tematu lub słowa…" autocomplete="off">
+<div class="faith-filters" aria-label="Kategorie"><button class="selected" data-faith-filter="all">Wszystkie</button><button data-faith-filter="nauka">Bóg i nauka</button><button data-faith-filter="jezus">Jezus Chrystus</button><button data-faith-filter="biblia">Biblia</button><button data-faith-filter="pytania">Trudne pytania</button></div>
+<div class="faith-grid"><button class="faith-article" data-faith-category="nauka" data-faith-article="dna"><small>BÓG I NAUKA · ARTYKUŁ 01</small><strong>Czy informacja w DNA wskazuje na inteligentnego projektanta?</strong><span>Stephen C. Meyer: argumenty, przesłanki i naukowe zastrzeżenia.</span><em>Przeczytaj artykuł →</em></button></div>
+<p id="faith-empty" hidden>Nie znaleziono artykułów. Spróbuj innego hasła lub kategorii.</p>
+<article id="faith-dna" class="faith-reading" hidden><button id="faith-back" type="button">← Wróć do biblioteki</button><p class="faith-eyebrow">BÓG I NAUKA · ARTYKUŁ 01</p><h2>Czy informacja w DNA wskazuje na inteligentnego projektanta?</h2><p><strong>Stephen C. Meyer i jego argument z informacji biologicznej</strong></p>
+<p>DNA przechowuje informację potrzebną komórkom do wytwarzania białek i regulowania procesów życiowych. Sekwencja nukleotydów ma znaczenie dla funkcji biologicznych. Skąd wzięły się pierwsze układy zdolne do przechowywania i wykorzystywania takiej informacji?</p>
+<h3>1. Argument Meyera: informacja i inteligencja</h3><p>W książce <i>Signature in the Cell</i> Meyer wskazuje, że z naszego doświadczenia znamy inteligentne przyczyny tworzące złożone, funkcjonalnie określone układy informacji. Proponuje więc inteligentny projekt jako wyjaśnienie pochodzenia pierwszej informacji biologicznej.</p>
+<h3>2. Problem pochodzenia życia</h3><p>Powstanie pierwszych systemów samopowielających się, kodowania informacji oraz współdziałania RNA, DNA i białek pozostaje aktywnym obszarem badań. Meyer podkreśla trudności wyjaśnienia tych procesów wyłącznie przez niekierowane reakcje chemiczne.</p>
+<h3>3. Czy jest to hipoteza naukowa?</h3><p>Zwolennicy inteligentnego projektu utrzymują, że wnioskują o przyczynie na podstawie obserwowanych cech świata przyrody, a nie na podstawie tekstu religijnego. Samo odwołanie do obserwacji nie wystarcza jednak, aby wyjaśnienie zostało uznane za dobrze potwierdzoną teorię naukową. Kluczowe są testowalne przewidywania, możliwość odróżnienia konkurencyjnych wyjaśnień i niezależne dowody.</p>
+<h3>4. Najważniejsze zastrzeżenia</h3><p>Krytycy wskazują, że analogia między DNA a kodem zaprojektowanym przez człowieka nie dowodzi wspólnego pochodzenia. Ewolucja, dobór naturalny, mutacje i procesy chemiczne potrafią generować i modyfikować informację biologiczną; badania nad abiogenezą dotyczą wcześniejszego etapu, którego szczegóły nadal nie są w pełni poznane. Nieznajomość mechanizmu nie stanowi sama w sobie dowodu projektu.</p>
+<h3>5. Co z tego wynika dla wiary?</h3><p>Argument Meyera jest propozycją filozoficzno-naukowego wnioskowania o pochodzeniu informacji biologicznej. Może być punktem wyjścia do rozmowy o istnieniu Stwórcy, ale nie stanowi naukowego dowodu istnienia Boga. Inteligentny projekt nie jest tożsamy z biblijnym kreacjonizmem ani z teorią ewolucji.</p>
+<h3>Do dalszej lektury</h3><p>Stephen C. Meyer, <i>Signature in the Cell</i> (2009); National Academies, <i>Science, Evolution, and Creationism</i> (2008). Kolejne opracowanie rozszerzy każdy argument o konkretne badania i odpowiedzi krytyków.</p></article>
+</div></section>
       <section id="sec-misja">
         <h2>Nasza Misja</h2>
         <p id="misja-lede" class="lede">Nasza wspólnota parafialna otacza opieką duszpasterską Polaków mieszkających w Metz i okolicach.</p>
@@ -1174,6 +1194,7 @@ sainte.segolene_metz@orange.fr</p>
     msze: ["Msze i nabożeństwa", "Godziny i miejsca sprawowania Mszy świętych oraz nabożeństw."],
     aktualnosci: ["Ogłoszenia Duszpasterskie", "Bieżące ogłoszenia i informacje z życia parafii."],
     wydarzenia: ["Wydarzenia", "Katecheza, spotkania i uroczystości naszej wspólnoty."],
+    "dlaczego-wierze": ["Dlaczego wierzę?", "Wiara, rozum i pytania, których nie trzeba się bać."],
     misja: ["Nasza Misja", "Duszpasterstwo Polaków w Metz i Lotaryngii."],
     sakramenty: ["Sakramenty", "Chrzest, Komunia, bierzmowanie, małżeństwo i spowiedź po polsku."],
     kosciol: ["Kościół Sainte-Ségolène", "Jeden z najstarszych kościołów parafialnych Metzu."],
@@ -2135,5 +2156,7 @@ loadEditableSection('./content/kosciol.json', data => {
 
 <!-- Cloudflare Web Analytics: pending privacy-exemption verification; intentionally inactive. -->
 <!-- Activation after verification: insert the official beacon script here, with data-cf-beacon='{"token":"60949a39f3c24e4c9291544cc2dd7267"}', and allow https://static.cloudflareinsights.com in script-src plus https://cloudflareinsights.com in connect-src. -->
-</body>
+<script>
+(()=>{const root=document.getElementById('sec-dlaczego-wierze');if(!root)return;const search=root.querySelector('#faith-search'),filters=root.querySelector('.faith-filters'),grid=root.querySelector('.faith-grid'),empty=root.querySelector('#faith-empty'),article=root.querySelector('#faith-dna'),card=root.querySelector('.faith-article');let category='all';function apply(){const match=(category==='all'||card.dataset.faithCategory===category)&&card.textContent.toLocaleLowerCase('pl').includes(search.value.trim().toLocaleLowerCase('pl'));card.hidden=!match;empty.hidden=match;}filters.addEventListener('click',e=>{const b=e.target.closest('[data-faith-filter]');if(!b)return;category=b.dataset.faithFilter;filters.querySelectorAll('button').forEach(x=>x.classList.toggle('selected',x===b));apply()});search.addEventListener('input',apply);card.addEventListener('click',()=>{grid.hidden=true;filters.hidden=true;search.parentElement.querySelector('.faith-search-label').hidden=true;search.hidden=true;empty.hidden=true;article.hidden=false;article.scrollIntoView({block:'start',behavior:'smooth'})});root.querySelector('#faith-back').addEventListener('click',()=>{article.hidden=true;grid.hidden=false;filters.hidden=false;search.hidden=false;root.querySelector('.faith-search-label').hidden=false;apply();root.scrollIntoView({block:'start',behavior:'smooth'})});})();
+</script></body>
 </html>
