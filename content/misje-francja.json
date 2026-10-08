@@ -80,12 +80,13 @@
       "lat": 48.95,
       "lon": 2.25,
       "visible": true,
+      "linkGroup": "6",
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Paroisse Sainte Bernadette",
           "address": "290 Av. Jean Jaurès, 95100 Argenteuil",
           "website": "https://www.facebook.com/p/Parafia-Polska-przy-Kosciele-Sw-Bernadetty-w-Argenteuil-100068488046409/",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -477,17 +478,18 @@
       "lat": 43.27,
       "lon": 6.52,
       "visible": true,
+      "linkGroup": "6",
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Église Saint-Michel",
           "address": "9 Pl. de l'Église, 83310 Grimaud",
           "website": "https://paroissesaintraphael.fr/notre-dame-du-sacre-coeur",
-          "verified": false
+          "verified": true
         },
         {
-          "name": "Miejsce 2",
+          "name": "Paroisse de Grimaud",
           "address": "10 Rue du Gacharel, 83310 Grimaud",
-          "verified": false
+          "verified": true
         }
       ]
     },
