@@ -115,9 +115,9 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Église Saint-François-d'Assise",
           "address": "8 Rue du Maréchal Foch, 57390 Audun-le-Tiche",
-          "verified": false
+          "verified": true
         }
       ]
     },
