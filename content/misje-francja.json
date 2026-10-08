@@ -80,7 +80,6 @@
       "lat": 48.95,
       "lon": 2.25,
       "visible": true,
-      "linkGroup": "6",
       "locations": [
         {
           "name": "Paroisse Sainte Bernadette",
@@ -575,7 +574,6 @@
       "lat": 43.27,
       "lon": 6.52,
       "visible": true,
-      "linkGroup": "6",
       "locations": [
         {
           "name": "Église Saint-Michel",
