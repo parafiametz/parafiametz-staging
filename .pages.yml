@@ -529,33 +529,33 @@ content:
                 - name: "6"
                   label: Grupa 6 — Argenteuil ↔ Grimaud (używana)
                 - name: "7"
-                  label: Grupa 7 — WOLNA
+                  label: Grupa 7 — Aulnay-sous-Bois ↔ Le Blanc-Mesnil (używana)
                 - name: "8"
-                  label: Grupa 8 — WOLNA
+                  label: Grupa 8 — Auxerre ↔ Sens ↔ Troyes (używana)
                 - name: "9"
-                  label: Grupa 9 — WOLNA
+                  label: Grupa 9 — Bagnolet ↔ Saint-Denis (używana)
                 - name: "10"
-                  label: Grupa 10 — WOLNA
+                  label: Grupa 10 — Barlin ↔ Nœux-les-Mines (używana)
                 - name: "11"
-                  label: Grupa 11 — WOLNA
+                  label: Grupa 11 — Bruay-la-Buissière ↔ Haillicourt ↔ Houdain (używana)
                 - name: "12"
-                  label: Grupa 12 — WOLNA
+                  label: Grupa 12 — Brunoy ↔ Corbeil-Essonnes (używana)
                 - name: "13"
-                  label: Grupa 13 — WOLNA
+                  label: Grupa 13 — Comines ↔ Dunkerque ↔ Lille ↔ Roubaix (używana)
                 - name: "14"
-                  label: Grupa 14 — WOLNA
+                  label: Grupa 14 — Chantilly ↔ Compiègne ↔ Soissons (używana)
                 - name: "15"
-                  label: Grupa 15 — WOLNA
+                  label: Grupa 15 — Évreux ↔ Le Havre ↔ Mondeville ↔ Potigny (używana)
                 - name: "16"
-                  label: Grupa 16 — WOLNA
+                  label: Grupa 16 — Gleizé ↔ Lyon (używana)
                 - name: "17"
-                  label: Grupa 17 — WOLNA
+                  label: Grupa 17 — Cannes ↔ Monaco ↔ Nice (używana)
                 - name: "18"
-                  label: Grupa 18 — WOLNA
+                  label: Grupa 18 — La Ricamarie ↔ Roche-la-Molière (używana)
                 - name: "19"
-                  label: Grupa 19 — WOLNA
+                  label: Grupa 19 — Méricourt ↔ Rouvroy (używana)
                 - name: "20"
-                  label: Grupa 20 — WOLNA
+                  label: Grupa 20 — Châlette-sur-Loing ↔ Orléans ↔ Tours (używana)
           - name: locations
             label: Kościoły / miejsca Mszy
             description: Adresy i strony internetowe wyświetlane po kliknięciu miejscowości.
