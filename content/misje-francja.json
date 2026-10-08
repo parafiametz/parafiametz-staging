@@ -68,10 +68,10 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Chapelle des Franciscains ou chapelle Perret",
           "address": "52 Av. Laplace, 94110 Arcueil",
           "website": "https://www.residence-etudiants-jp2.com",
-          "verified": false
+          "verified": true
         }
       ]
     },
