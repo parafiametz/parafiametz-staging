@@ -97,14 +97,14 @@
       "visible": true,
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Notre-Dame-de-la-Visitation",
           "address": "11 Rue Léon Blum, 59950 Auby",
-          "verified": false
+          "verified": true
         },
         {
-          "name": "Miejsce 2",
+          "name": "Chapelle Saint-Joseph",
           "address": "11 Pl. de l'Humanité, 59950 Auby",
-          "verified": false
+          "verified": true
         }
       ]
     },
