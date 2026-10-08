@@ -126,18 +126,19 @@
       "lat": 48.94,
       "lon": 2.49,
       "visible": true,
+      "linkGroup": "7",
       "locations": [
         {
-          "name": "Miejsce 1",
+          "name": "Église Saint-Joseph d'Aulnay-sous-Bois",
           "address": "46 Av. du Gros Peuplier, 93600 Aulnay-sous-Bois",
           "website": "https://aulnaysousbois.pl",
-          "verified": false
+          "verified": true
         },
         {
-          "name": "Miejsce 2",
+          "name": "Église Saint-Joseph",
           "address": "57 Av. de la Croix Blanche, 93600 Aulnay-sous-Bois",
           "website": "https://aulnaysousbois.pl",
-          "verified": false
+          "verified": true
         }
       ]
     },
