@@ -236,6 +236,20 @@ content:
             label: Opis
             type: text
             required: true
+          - name: expandable
+            label: Klikalne – otwórz szczegóły
+            description: Włącza okienko po kliknięciu, gdy opis szczegółowy jest uzupełniony.
+            type: boolean
+            default: false
+          - name: details
+            label: Pełny opis po kliknięciu
+            description: Opcjonalny tekst wyświetlany w okienku po kliknięciu.
+            type: rich-text
+            required: false
+            options:
+              format: html
+              switcher: false
+              media: false
           - name: icon
             label: Ikona
             type: select
