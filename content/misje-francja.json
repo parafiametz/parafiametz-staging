@@ -1231,7 +1231,13 @@
       "city": "Sens",
       "lat": 48.2,
       "lon": 3.28,
-      "visible": true
+      "visible": true,
+      "locations": [
+        {
+          "address": "72 Rue du Général Allix, 89100 Sens ",
+          "verified": false
+        }
+      ]
     },
     {
       "city": "Stiring-Wendel",
