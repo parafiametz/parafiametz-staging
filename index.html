@@ -823,6 +823,20 @@
 </script>
 <style>
 .faith-library{max-width:1050px;margin:auto;padding:18px 0 55px}.faith-eyebrow{font-size:.72rem;letter-spacing:.15em;color:var(--gold);font-weight:700}.faith-library h2{font-size:clamp(2.1rem,5vw,3.2rem)}.faith-intro{max-width:690px;line-height:1.8;color:var(--ink-soft)}.faith-search-label{display:block;font-size:.8rem;margin:25px 0 8px}.faith-search-label[hidden]{display:none!important}.faith-library input{width:100%;max-width:550px;padding:14px;border:1px solid var(--line);border-radius:10px;background:var(--paper);font:inherit}.faith-filters{display:flex;gap:9px;flex-wrap:wrap;margin:23px 0}.faith-filters button,.faith-reading>button{border:1px solid var(--line);background:var(--paper);border-radius:22px;padding:10px 15px;cursor:pointer;color:var(--ink);font:inherit;font-size:.82rem}.faith-filters button.selected{background:var(--burgundy);color:white}.faith-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:18px}.faith-article{display:flex;flex-direction:column;text-align:left;gap:15px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:26px;cursor:pointer;font:inherit;color:var(--ink);transition:transform .2s,border-color .2s}.faith-article:hover{transform:translateY(-3px);border-color:var(--gold)}.faith-article small{color:var(--gold);font-size:.7rem;letter-spacing:.08em}.faith-article strong{font-family:'Cormorant Garamond',serif;font-size:1.7rem;line-height:1.15;color:var(--burgundy-deep)}.faith-article span{line-height:1.6;color:var(--ink-soft);font-size:.85rem}.faith-article em{font-size:.83rem;color:var(--burgundy);font-style:normal;font-weight:700}.faith-reading{max-width:790px;margin-top:25px;line-height:1.85}.faith-reading h3{margin-top:30px;font-size:1.65rem}.faith-reading p{margin:12px 0}.faith-reading[hidden],#faith-empty[hidden],.faith-grid[hidden],.faith-filters[hidden]{display:none!important}@media(max-width:600px){.faith-library{padding:8px 0 35px}.faith-article{padding:19px}}
+</style><style id="faith-search-v2">
+#sec-zrozumiec-wiare .faith-result-count{
+  max-width:1020px;margin:14px auto 0;color:var(--ink-soft);font-size:.87rem;
+}
+#sec-zrozumiec-wiare .faith-result-count[hidden],
+#sec-zrozumiec-wiare .faith-article .faith-search-preview[hidden]{display:none!important}
+#sec-zrozumiec-wiare .faith-article .faith-search-preview{
+  display:block;padding:12px 15px;border-left:3px solid var(--gold);
+  border-radius:0 8px 8px 0;background:var(--cream-soft);
+  color:var(--ink);line-height:1.65;font-size:.89rem;overflow-wrap:anywhere;
+}
+#sec-zrozumiec-wiare .faith-search-preview mark{
+  background:#f6de83;color:#382b15;border-radius:3px;padding:0 2px;
+}
 </style><style id="faith-article-v2">.faith-article-head{padding-top:27px}.faith-article-head h2{max-width:820px;line-height:1.08}.faith-deck{font-size:1.2rem;color:var(--ink-soft)}.faith-meta{font-size:.78rem;color:var(--ink-soft)}.faith-key{border-left:4px solid var(--gold);background:var(--cream-soft);padding:18px 22px;border-radius:0 10px 10px 0;margin:25px 0}.faith-key p{margin-bottom:0}.faith-toc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:22px;margin:28px 0}.faith-toc strong{grid-column:1/-1}.faith-toc a{font-size:.85rem;text-decoration:none;color:var(--burgundy)}.faith-toc a:hover{text-decoration:underline}.faith-reading .faith-chapter{display:block!important;padding:18px 0;border-bottom:1px solid var(--line);scroll-margin-top:15px}.faith-chapter p{line-height:1.9}.faith-qa{margin:18px 0;padding-left:18px;border-left:2px solid var(--gold-light)}.faith-qa h4{margin-bottom:5px;color:var(--burgundy-deep)}.faith-sources ol{padding-left:22px}.faith-sources li{list-style:decimal;line-height:1.7;margin:9px 0}.faith-sources a{color:var(--burgundy)}.faith-article[hidden]{display:none!important}@media(max-width:600px){.faith-toc{grid-template-columns:1fr;padding:16px}.faith-deck{font-size:1rem}}</style><style id="faith-full-width-fix">
 /* Match the expanded, centered layout of the other staging sections. */
 #sec-zrozumiec-wiare{
@@ -2766,15 +2780,141 @@ loadEditableSection('./content/kosciol.json', data => {
   const bySlug = new Map(cards.map(card => [card.dataset.faithSlug, card]));
   let category = 'all';
 
+  // Search runs entirely in the browser. Index the actual article bodies, not just the cards.
+  function normalizeWord(word) {
+    return word.toLocaleLowerCase('pl').normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '').replace(/ł/g, 'l');
+  }
+
+  function wordTokens(text) {
+    return Array.from(text.matchAll(/[\p{L}\p{N}]+/gu), match => ({
+      text: match[0],
+      normalized: normalizeWord(match[0]),
+      index: match.index
+    }));
+  }
+
+  // Irregular/short Polish forms cannot reliably be handled by suffix rules.
+  const wordFamilies = new Map();
+  [
+    ['zlo', 'zla', 'zlu', 'zlem', 'zle', 'zly', 'zlego', 'zlemu', 'zlej', 'zlym', 'zlych', 'zlymi'],
+    ['bog', 'boga', 'bogu', 'bogiem', 'boze', 'bozy', 'boza', 'bozej', 'bozego', 'bozym', 'bozych'],
+    ['milosc', 'milosci', 'miloscia']
+  ].forEach(forms => forms.forEach(form => wordFamilies.set(form, forms[0])));
+
+  // Lightweight matching of typical inflected forms; no external search service.
+  const endings = ['eniami', 'owaniami', 'owaniem', 'owania', 'owanie', 'owaniu',
+    'eniem', 'enia', 'enie', 'eniu', 'aniem', 'ania', 'anie', 'aniu',
+    'owego', 'owemu', 'owych', 'owymi', 'owej', 'ami', 'ach',
+    'ego', 'emu', 'owi', 'iem', 'owym', 'owy', 'owa', 'owe',
+    'ych', 'ymi', 'ami', 'om', 'ow', 'em', 'ie', 'ia', 'iu',
+    'a', 'e', 'y', 'i', 'u', 'o'];
+  function wordRoot(word) {
+    if (wordFamilies.has(word)) return wordFamilies.get(word);
+    const ending = endings.find(suffix => word.endsWith(suffix) && word.length - suffix.length >= 4);
+    return ending ? word.slice(0, -ending.length) : word;
+  }
+
+  function wordsMatch(queryWord, articleWord) {
+    if (queryWord === articleWord) return true;
+    if (wordFamilies.has(queryWord) && wordFamilies.get(queryWord) === wordFamilies.get(articleWord)) return true;
+    if (queryWord.length < 4 || articleWord.length < 4) return false;
+    // Keep prefix matching conservative to prevent very short, unrelated hits.
+    if (articleWord.startsWith(queryWord) && articleWord.length - queryWord.length <= 5) return true;
+    const queryRoot = wordRoot(queryWord);
+    return queryRoot.length >= 4 && queryRoot === wordRoot(articleWord);
+  }
+
+  const resultCount = document.createElement('p');
+  resultCount.className = 'faith-result-count';
+  resultCount.setAttribute('role', 'status');
+  resultCount.setAttribute('aria-live', 'polite');
+  resultCount.hidden = true;
+  grid.before(resultCount);
+
+  const searchIndex = cards.map(card => {
+    const article = root.querySelector('#faith-' + card.dataset.faithArticle);
+    const title = card.querySelector('strong')?.textContent || '';
+    const summary = card.querySelector('span')?.textContent || '';
+    const chunks = article
+      ? Array.from(article.querySelectorAll('p, h3, h4, li'))
+          .map(node => node.textContent.replace(/\s+/g, ' ').trim())
+          .filter(text => text.length >= 15)
+          .map(text => ({ text, tokens: wordTokens(text) }))
+      : [];
+    const words = wordTokens(title + ' ' + summary + ' ' + (article?.textContent || ''))
+      .map(token => token.normalized);
+    const preview = document.createElement('span');
+    preview.className = 'faith-search-preview';
+    preview.hidden = true;
+    card.insertBefore(preview, card.querySelector('em'));
+    return { card, words, chunks, preview };
+  });
+
+  function renderSearchPreview(entry, terms) {
+    const { preview, chunks } = entry;
+    let best = null;
+    for (const chunk of chunks) {
+      const hits = chunk.tokens.filter(token => terms.some(term => wordsMatch(term, token.normalized)));
+      if (!hits.length) continue;
+      const coverage = terms.filter(term => hits.some(hit => wordsMatch(term, hit.normalized))).length;
+      const score = coverage * 100 + Math.min(hits.length, 3) * 4 + (chunk.text.length > 75 ? 5 : 0);
+      if (!best || score > best.score) best = { ...chunk, hits, score };
+    }
+    if (!best) {
+      preview.hidden = true;
+      preview.replaceChildren();
+      return;
+    }
+
+    const first = best.hits[0];
+    let start = Math.max(0, first.index - 65);
+    let end = Math.min(best.text.length, first.index + first.text.length + 145);
+    // Avoid splitting the words at snippet boundaries.
+    while (start > 0 && !/\s/.test(best.text[start - 1])) start--;
+    while (end < best.text.length && !/\s/.test(best.text[end])) end++;
+    const excerpt = best.text.slice(start, end);
+    const fragment = document.createDocumentFragment();
+    if (start) fragment.append('…');
+    let last = 0;
+    for (const token of wordTokens(excerpt)) {
+      if (!terms.some(term => wordsMatch(term, token.normalized))) continue;
+      fragment.append(document.createTextNode(excerpt.slice(last, token.index)));
+      const mark = document.createElement('mark');
+      mark.textContent = token.text;
+      fragment.append(mark);
+      last = token.index + token.text.length;
+    }
+    fragment.append(document.createTextNode(excerpt.slice(last)));
+    if (end < best.text.length) fragment.append('…');
+    preview.replaceChildren(fragment);
+    preview.hidden = false;
+  }
+
   function apply() {
+    const terms = [...new Set(wordTokens(search.value.trim()).map(token => token.normalized))];
     let visibleCount = 0;
-    cards.forEach(card => {
-      const visible = (category === 'all' || card.dataset.faithCategory === category)
-        && card.textContent.toLocaleLowerCase('pl').includes(search.value.trim().toLocaleLowerCase('pl'));
-      card.hidden = !visible;
-      if (visible) visibleCount++;
+    searchIndex.forEach(entry => {
+      const visible = (category === 'all' || entry.card.dataset.faithCategory === category)
+        && terms.every(term => entry.words.some(word => wordsMatch(term, word)));
+      entry.card.hidden = !visible;
+      entry.preview.hidden = true;
+      if (visible) {
+        visibleCount++;
+        if (terms.length) renderSearchPreview(entry, terms);
+      }
     });
     empty.hidden = visibleCount !== 0;
+    empty.textContent = category !== 'all'
+      ? 'Brak wyników w tej kategorii. Wybierz „Wszystkie” lub zmień hasło.'
+      : 'Nie znaleziono artykułów. Spróbuj innego hasła.';
+    resultCount.hidden = !terms.length;
+    if (terms.length) {
+      const noun = visibleCount === 1 ? 'artykuł'
+        : (visibleCount % 10 >= 2 && visibleCount % 10 <= 4 && (visibleCount % 100 < 12 || visibleCount % 100 > 14))
+          ? 'artykuły' : 'artykułów';
+      resultCount.textContent = 'Znaleziono ' + visibleCount + ' ' + noun + '.';
+    }
   }
 
   function showLibrary(scroll = false) {
@@ -2796,6 +2936,7 @@ loadEditableSection('./content/kosciol.json', data => {
     filters.hidden = true;
     search.hidden = true;
     searchLabel.hidden = true;
+    resultCount.hidden = true;
     empty.hidden = true;
     if (scroll) selected.scrollIntoView({block:'start',behavior:'smooth'});
   }
