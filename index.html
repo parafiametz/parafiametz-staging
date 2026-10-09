@@ -935,6 +935,26 @@
   outline:3px solid var(--gold);
   outline-offset:3px;
 }
+</style><style id="faith-vertical-list">
+/* Single-column, centered article list for the Dlaczego wierzę library. */
+#sec-dlaczego-wierze .faith-grid {
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  width:100%;
+  max-width:1020px;
+  margin:26px auto 0;
+  gap:16px;
+}
+#sec-dlaczego-wierze .faith-grid .faith-article {
+  width:100%;
+  min-width:0;
+}
+#sec-dlaczego-wierze .faith-grid .faith-article[hidden] {
+  display:none!important;
+}
+@media(max-width:600px) {
+  #sec-dlaczego-wierze .faith-grid { gap:12px; margin-top:20px; }
+}
 </style></head>
 <body>
 
