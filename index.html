@@ -990,6 +990,42 @@
 #sec-dlaczego-wierze #faith-atheist-salvation[hidden]{display:none!important}
 @media(max-width:900px){#sec-dlaczego-wierze #faith-atheist-salvation{max-width:100%}}
 @media(max-width:600px){#faith-atheist-salvation .faith-chapter p{font-size:1rem}}
+</style><style id="faith-permalink-style">
+#sec-dlaczego-wierze .faith-reading > .faith-share {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:40px;
+  margin-left:10px;
+  padding:10px 15px;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:var(--paper);
+  color:var(--burgundy);
+  font:inherit;
+  font-size:.82rem;
+  cursor:pointer;
+}
+#sec-dlaczego-wierze .faith-bottom-nav {gap:12px;flex-wrap:wrap;}
+#sec-dlaczego-wierze .faith-bottom-nav .faith-share {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:44px;
+  padding:11px 20px;
+  border:1px solid var(--line);
+  border-radius:24px;
+  background:var(--paper);
+  color:var(--burgundy);
+  font:inherit;
+  font-size:.88rem;
+  cursor:pointer;
+}
+#sec-dlaczego-wierze .faith-share:hover {background:var(--cream-soft);border-color:var(--gold);}
+#sec-dlaczego-wierze .faith-share:focus-visible {outline:3px solid var(--gold);outline-offset:3px;}
+@media(max-width:600px) {
+  #sec-dlaczego-wierze .faith-reading > .faith-share {margin-left:0;margin-top:8px;}
+}
 </style></head>
 <body>
 
@@ -1169,10 +1205,11 @@
 <p class="faith-intro">Wiara nie musi być tylko rodzinną tradycją. Poznaj argumenty, źródła i pytania, które pomagają świadomie szukać prawdy.</p>
 <label class="faith-search-label" for="faith-search">Znajdź artykuł</label><input id="faith-search" type="search" placeholder="Szukaj tematu lub słowa…" autocomplete="off">
 <div class="faith-filters" aria-label="Kategorie"><button class="selected" data-faith-filter="all">Wszystkie</button><button data-faith-filter="nauka">Bóg i nauka</button><button data-faith-filter="jezus">Jezus Chrystus</button><button data-faith-filter="biblia">Biblia</button><button data-faith-filter="pytania">Trudne pytania</button></div>
-<div class="faith-grid"><button class="faith-article" data-faith-category="nauka" data-faith-article="dna"><small>BÓG I NAUKA · ARTYKUŁ 01</small><strong>Czy DNA może być śladem Stwórcy?</strong><span>Proste przykłady z codziennego życia i pytanie o początek życia.</span><em>Przeczytaj artykuł →</em></button><button class="faith-article" data-faith-category="nauka" data-faith-article="flew"><small>BÓG I NAUKA · ARTYKUŁ 02</small><strong>Nie wierzył w Boga. Dlaczego zmienił zdanie?</strong><span>Prawdziwa historia Antony’ego Flewa i pytania, które kazały mu spojrzeć na świat inaczej.</span><em>Przeczytaj artykuł →</em></button><button class="faith-article" data-faith-category="jezus" data-faith-article="jesus-history"><small>JEZUS CHRYSTUS · ARTYKUŁ 01</small><strong>Jezus z Nazaretu – postać historyczna</strong><span>Co wiemy o Jezusie z dawnych źródeł — także żydowskich i rzymskich?</span><em>Przeczytaj artykuł →</em></button><button class="faith-article" data-faith-category="jezus" data-faith-article="resurrection"><small>JEZUS CHRYSTUS · ARTYKUŁ 02</small><strong>Od strachu do odwagi. Co zmieniło uczniów Jezusa?</strong><span>Piotr, Paweł, pierwsi świadkowie i pytanie o zmartwychwstanie.</span><em>Przeczytaj artykuł →</em></button><button class="faith-article" data-faith-category="biblia" data-faith-article="bible-reliability"><small>BIBLIA · ARTYKUŁ 01</small><strong>Dlaczego możemy ufać Biblii?</strong><span>Cztery sposoby badania dawnych tekstów i odkrycia archeologów, które pomagają poznać ich świat.</span><em>Przeczytaj artykuł →</em></button><button class="faith-article" data-faith-category="pytania" data-faith-article="suffering"><small>TRUDNE PYTANIA · ARTYKUŁ 01</small><strong>Jeśli Bóg nas kocha, dlaczego pozwala cierpieć niewinnym?</strong><span>Cierpienie dzieci, trudne opowieści Starego Testamentu i droga do zrozumienia Boga przez Jezusa.</span><em>Przeczytaj artykuł →</em></button><button class="faith-article" data-faith-category="pytania" data-faith-article="atheist-salvation"><small>TRUDNE PYTANIA · ARTYKUŁ 02</small><strong>Czy można być dobrym człowiekiem bez Boga? A czy można zostać zbawionym?</strong><span>Czy uczciwy ateista może trafić do nieba? Co Kościół naprawdę mówi o sumieniu, dobrych uczynkach i Bożym miłosierdziu?</span><em>Przeczytaj artykuł →</em></button></div>
+<div class="faith-grid"><button class="faith-article" data-faith-category="nauka" data-faith-article="dna" data-faith-slug="czy-dna-moze-byc-sladem-stworcy"><small>BÓG I NAUKA · ARTYKUŁ 01</small><strong>Czy DNA może być śladem Stwórcy?</strong><span>Proste przykłady z codziennego życia i pytanie o początek życia.</span><em>Przeczytaj artykuł →</em></button><button class="faith-article" data-faith-category="nauka" data-faith-article="flew" data-faith-slug="antony-flew-dlaczego-zmienil-zdanie"><small>BÓG I NAUKA · ARTYKUŁ 02</small><strong>Nie wierzył w Boga. Dlaczego zmienił zdanie?</strong><span>Prawdziwa historia Antony’ego Flewa i pytania, które kazały mu spojrzeć na świat inaczej.</span><em>Przeczytaj artykuł →</em></button><button class="faith-article" data-faith-category="jezus" data-faith-article="jesus-history" data-faith-slug="jezus-z-nazaretu-postac-historyczna"><small>JEZUS CHRYSTUS · ARTYKUŁ 01</small><strong>Jezus z Nazaretu – postać historyczna</strong><span>Co wiemy o Jezusie z dawnych źródeł — także żydowskich i rzymskich?</span><em>Przeczytaj artykuł →</em></button><button class="faith-article" data-faith-category="jezus" data-faith-article="resurrection" data-faith-slug="od-strachu-do-odwagi"><small>JEZUS CHRYSTUS · ARTYKUŁ 02</small><strong>Od strachu do odwagi. Co zmieniło uczniów Jezusa?</strong><span>Piotr, Paweł, pierwsi świadkowie i pytanie o zmartwychwstanie.</span><em>Przeczytaj artykuł →</em></button><button class="faith-article" data-faith-category="biblia" data-faith-article="bible-reliability" data-faith-slug="dlaczego-mozemy-ufac-biblii"><small>BIBLIA · ARTYKUŁ 01</small><strong>Dlaczego możemy ufać Biblii?</strong><span>Cztery sposoby badania dawnych tekstów i odkrycia archeologów, które pomagają poznać ich świat.</span><em>Przeczytaj artykuł →</em></button><button class="faith-article" data-faith-category="pytania" data-faith-article="suffering" data-faith-slug="dlaczego-bog-pozwala-cierpiec-niewinnym"><small>TRUDNE PYTANIA · ARTYKUŁ 01</small><strong>Jeśli Bóg nas kocha, dlaczego pozwala cierpieć niewinnym?</strong><span>Cierpienie dzieci, trudne opowieści Starego Testamentu i droga do zrozumienia Boga przez Jezusa.</span><em>Przeczytaj artykuł →</em></button><button class="faith-article" data-faith-category="pytania" data-faith-article="atheist-salvation" data-faith-slug="czy-ateista-moze-byc-zbawiony"><small>TRUDNE PYTANIA · ARTYKUŁ 02</small><strong>Czy można być dobrym człowiekiem bez Boga? A czy można zostać zbawionym?</strong><span>Czy uczciwy ateista może trafić do nieba? Co Kościół naprawdę mówi o sumieniu, dobrych uczynkach i Bożym miłosierdziu?</span><em>Przeczytaj artykuł →</em></button></div>
 <p id="faith-empty" hidden>Nie znaleziono artykułów. Spróbuj innego hasła lub kategorii.</p>
 <article id="faith-dna" class="faith-reading" hidden>
 <button id="faith-back" type="button">← Wróć do biblioteki</button>
+<button type="button" class="faith-share" data-faith-share="czy-dna-moze-byc-sladem-stworcy" aria-label="Kopiuj bezpośredni link do artykułu">Kopiuj link do artykułu</button>
 <header class="faith-article-head">
 <p class="faith-eyebrow">BÓG I NAUKA · ARTYKUŁ 01</p>
 <h2>Czy DNA może być śladem Stwórcy?</h2>
@@ -1187,10 +1224,11 @@
 <ol><li>Stephen C. Meyer, <i>Signature in the Cell: DNA and the Evidence for Intelligent Design</i> (2009) — książka, od której zaczęliśmy.</li><li>National Academies, <i>Science, Evolution, and Creationism</i> (2008) — inne spojrzenie na ewolucję i inteligentny projekt.</li></ol>
 <p><small>Ważne: część przedstawionych tu wniosków jest interpretacją Meyera, z którą wielu naukowców się nie zgadza. Samo DNA nie jest dowodem istnienia Boga.</small></p>
 </section>
-<div class="faith-bottom-nav"><button type="button" class="faith-back">← Wróć do biblioteki</button></div>
+<div class="faith-bottom-nav"><button type="button" class="faith-back">← Wróć do biblioteki</button><button type="button" class="faith-share" data-faith-share="czy-dna-moze-byc-sladem-stworcy" aria-label="Kopiuj bezpośredni link do artykułu">Kopiuj link do artykułu</button></div>
 </article>
 <article id="faith-flew" class="faith-reading" hidden>
 <button type="button" class="faith-back">← Wróć do biblioteki</button>
+<button type="button" class="faith-share" data-faith-share="antony-flew-dlaczego-zmienil-zdanie" aria-label="Kopiuj bezpośredni link do artykułu">Kopiuj link do artykułu</button>
 <header class="faith-article-head"><p class="faith-eyebrow">BÓG I NAUKA · ARTYKUŁ 02</p><h2>Nie wierzył w Boga. Dlaczego zmienił zdanie?</h2><p class="faith-deck">Przez dziesiątki lat Antony Flew bronił ateizmu. Później uznał, że istnieją powody, aby wierzyć w Stwórcę. Co go przekonało?</p><p class="faith-meta">Na podstawie książki „Bóg istnieje” · około 8 minut czytania</p></header>
 <aside class="faith-key"><strong>O czym jest ten artykuł?</strong><p>Nie o cudownym nawróceniu ani o człowieku, który nagle został katolikiem. To prawdziwa historia zmiany poglądów i trzy pytania: skąd prawa przyrody, dlaczego wszechświat nadaje się do życia oraz jak pojawiło się samo życie.</p></aside>
 <nav class="faith-toc" aria-label="Spis treści"><strong>Czytaj po kolei lub wybierz temat</strong><a href="#faith-flew-part-1">1. Człowiek, który mówił: „Nie wierzę”</a><a href="#faith-flew-part-2">2. Zasada, której nie chciał porzucić</a><a href="#faith-flew-part-3">3. Kto ustalił zasady działania świata?</a><a href="#faith-flew-part-4">4. Świat, w którym można żyć</a><a href="#faith-flew-part-5">5. A skąd wzięło się samo życie?</a><a href="#faith-flew-part-6">6. Czy Flew został chrześcijaninem?</a><a href="#faith-flew-part-7">7. Co z tej historii zostaje dla nas?</a><a href="#faith-flew-part-8">Źródła i ważna uwaga</a></nav>
@@ -1201,19 +1239,21 @@
 <li><a href="https://digitalcommons.liberty.edu/lts_fac_pubs/331/" rel="noopener noreferrer" target="_blank">Gary R. Habermas — omówienie późniejszego stanowiska Flewa</a>.</li>
 <li><a href="https://www.patheos.com/blogs/religionprof/2007/12/there-is-a-god.html" rel="noopener noreferrer" target="_blank">James F. McGrath — dyskusja o książce i sporach dotyczących jej autorstwa</a>.</li>
 </ol><p><small>Uwaga redakcyjna: książka powstała we współpracy z Royem Abrahamem Varghese, a zakres samodzielnego udziału Flewa w jej napisaniu był przedmiotem publicznej dyskusji. Sam Flew potwierdzał jednak zmianę swojego stanowiska wobec istnienia Boga. Wspomniane argumenty są filozoficznymi interpretacjami ustaleń nauki, nie naukowymi dowodami istnienia Stwórcy.</small></p></section>
-<div class="faith-bottom-nav"><button type="button" class="faith-back">← Wróć do biblioteki</button></div>
+<div class="faith-bottom-nav"><button type="button" class="faith-back">← Wróć do biblioteki</button><button type="button" class="faith-share" data-faith-share="antony-flew-dlaczego-zmienil-zdanie" aria-label="Kopiuj bezpośredni link do artykułu">Kopiuj link do artykułu</button></div>
 </article>
 <article id="faith-jesus-history" class="faith-reading" hidden>
 <button type="button" class="faith-back">← Wróć do biblioteki</button>
+<button type="button" class="faith-share" data-faith-share="jezus-z-nazaretu-postac-historyczna" aria-label="Kopiuj bezpośredni link do artykułu">Kopiuj link do artykułu</button>
 <header class="faith-article-head"><p class="faith-eyebrow">JEZUS CHRYSTUS · ARTYKUŁ 01</p><h2>Jezus z Nazaretu – postać historyczna</h2><p class="faith-deck">Czy Jezus naprawdę żył? Co mówią o Nim nie tylko Ewangelie, lecz także pisarze żydowscy i rzymscy?</p><p class="faith-meta">Historia i źródła starożytne · około 9 minut czytania</p></header>
 <aside class="faith-key"><strong>Najważniejsza myśl</strong><p>Nie trzeba zaczynać od wiary w cuda, żeby uznać Jezusa za postać historyczną. Wiemy o Nim także z tekstów ludzi, którzy nie byli chrześcijanami. Zobaczmy, co naprawdę napisali — bez dopowiadania im więcej, niż możemy wyczytać.</p></aside>
 <nav class="faith-toc" aria-label="Spis treści"><strong>Czytaj po kolei lub wybierz temat</strong><a href="#faith-history-part-1">1. Czy Jezus naprawdę żył?</a><a href="#faith-history-part-2">2. A jeśli ktoś nie uznaje Biblii?</a><a href="#faith-history-part-3">3. Żydowski historyk wspomina Jezusa</a><a href="#faith-history-part-4">4. Co napisał o Jezusie rzymski historyk?</a><a href="#faith-history-part-5">5. List urzędnika, który nie wiedział, co zrobić z chrześcijanami</a><a href="#faith-history-part-6">6. A co z synem cieśli z Nazaretu?</a><a href="#faith-history-part-7">7. Co możemy uznać za historycznie dobrze potwierdzone?</a><a href="#faith-history-part-8">8. Dlaczego warto o tym wiedzieć?</a><a href="#faith-history-part-9">Źródła i dalsza lektura</a></nav>
 <section class="faith-chapter" id="faith-history-part-1"><h3>1. Czy Jezus naprawdę żył?</h3><p>Wyobraź sobie, że ktoś mówi: „Skąd wiesz, że Jezus w ogóle istniał? Przecież napisano o Nim w Biblii”. To uczciwe pytanie. Zanim zaczniemy mówić o cudach czy zmartwychwstaniu, warto odpowiedzieć na prostszą rzecz: <strong>czy Jezus z Nazaretu był prawdziwym człowiekiem, który żył w konkretnym miejscu i czasie?</strong></p><p>Odpowiedź historyków brzmi: tak. Wśród badaczy starożytności istnienie Jezusa nie budzi poważnych wątpliwości. Nie oznacza to, że zgadzają się oni we wszystkim, co o Nim napisano. Oznacza, że istnieją dobre historyczne powody, aby uznać Go za rzeczywistą postać.</p><p>Jezus żył w I wieku, w żydowskim środowisku Galilei i Judei, w świecie pod panowaniem Rzymu. Był znany jako nauczyciel, zgromadził uczniów i został ukrzyżowany za rządów Poncjusza Piłata. Przyjrzyjmy się, skąd to wiemy.</p></section><section class="faith-chapter" id="faith-history-part-2"><h3>2. A jeśli ktoś nie uznaje Biblii?</h3><p>Zwykle pierwszym źródłem informacji o Jezusie są cztery Ewangelie. Są to teksty chrześcijańskie. Czy historyk może z nich korzystać? Oczywiście — podobnie jak z kroniki napisanej przez zwolennika króla albo wspomnień żołnierza. Trzeba tylko pamiętać, że autor patrzył na wydarzenia z własnej perspektywy.</p><p>Ewangelie powstały kilkadziesiąt lat po działalności Jezusa. Najstarsze zachowane pisma chrześcijańskie to jednak <strong>listy św. Pawła</strong>, pisane już około dwudziestu lat po Jego śmierci. Paweł znał ludzi należących do najwcześniejszej wspólnoty, w tym Piotra oraz Jakuba, nazywanego bratem Pańskim (por. Ga 1,18–19).</p><p>To ważne: opowieść o Jezusie nie pojawiła się dopiero kilka stuleci później. Krążyła wśród ludzi żyjących niedługo po Jego śmierci.</p></section><section class="faith-chapter" id="faith-history-part-3"><h3>3. Żydowski historyk wspomina Jezusa</h3><p>Pierwszy świadek spoza chrześcijaństwa to <strong>Józef Flawiusz</strong>. Był żydowskim historykiem żyjącym w I wieku. Około roku 93–94 napisał dzieło o historii swojego narodu.</p><p>W pewnym miejscu opisuje śmierć Jakuba i przedstawia go jako brata Jezusa, „zwanego Chrystusem” (Dawne dzieje Izraela, księga XX, 200). Nie pisze tego jako wyznania wiary. Po prostu wskazuje, o którego Jakuba chodzi.</p><div class="faith-key"><strong>Dlaczego to ważne?</strong><p>Józef Flawiusz nie był chrześcijańskim ewangelistą. A jednak jego tekst zawiera wzmiankę o Jezusie rozpoznawalnym dla ówczesnych ludzi.</p></div><p>W innym fragmencie, w księdze XVIII, Józef również opisuje Jezusa. Ten tekst budzi większe spory, ponieważ zachowana wersja zawiera sformułowania, które mogły zostać później zmienione przez chrześcijańskich kopistów. Dlatego lepiej nie traktować całego fragmentu jako bezdyskusyjnego świadectwa.</p></section><section class="faith-chapter" id="faith-history-part-4"><h3>4. Co napisał o Jezusie rzymski historyk?</h3><p>Drugim ważnym autorem jest <strong>Tacyt</strong> — rzymski senator i historyk. Około roku 116 opisywał wydarzenia po wielkim pożarze Rzymu w 64 roku. Wspomina, że cesarz Neron obwinił chrześcijan.</p><p>Przy tej okazji Tacyt wyjaśnia, skąd wzięła się ich nazwa: od Chrystusa, który został stracony za panowania cesarza Tyberiusza, gdy Judeą zarządzał Poncjusz Piłat (<i>Roczniki</i>, XV, 44).</p><p><strong>Dlaczego to istotne?</strong> Tacyt nie był chrześcijaninem. Pisał o tej grupie z wyraźną niechęcią. Nie chciał przekonywać czytelników do wiary w Jezusa. A mimo to łączy Chrystusa z konkretnym czasem, miejscem i rzymskim urzędnikiem.</p><p>Historycy dyskutują, skąd Tacyt zaczerpnął te wiadomości. Jego relacja została zapisana kilkadziesiąt lat po śmierci Jezusa i nie jest sprawozdaniem naocznego świadka.</p></section><section class="faith-chapter" id="faith-history-part-5"><h3>5. List urzędnika, który nie wiedział, co zrobić z chrześcijanami</h3><p>Około roku 112 <strong>Pliniusz Młodszy</strong>, rzymski urzędnik zarządzający prowincją, napisał do cesarza Trajana. Pytał, jak postępować z ludźmi oskarżanymi o bycie chrześcijanami.</p><p>Z jego listu dowiadujemy się, że chrześcijanie zbierali się na modlitwę i śpiewali pieśni ku czci Chrystusa, traktując Go jak Boga (Listy X, 96).</p><p>Pliniusz nie opowiada szczegółów życia Jezusa. Jego list potwierdza jednak, że już na początku II wieku istniały wspólnoty, które oddawały Chrystusowi cześć — i że władze rzymskie wiedziały o ich istnieniu.</p><p>To nie jest dowód na wszystkie wydarzenia opisane w Ewangeliach. To kolejny, niezależny obraz świata, w którym chrześcijaństwo rzeczywiście się rozwijało.</p></section><section class="faith-chapter" id="faith-history-part-6"><h3>6. A co z synem cieśli z Nazaretu?</h3><p>Jezus nie był cesarzem, dowódcą armii ani właścicielem wielkich pałaców. Według Ewangelii wychowywał się w Nazarecie, a Jego rodzinę łączono z pracą rzemieślniczą (Mk 6,3; Mt 13,55).</p><p>O większości zwyczajnych ludzi z tamtych czasów nie wiemy dziś prawie nic. Nie zostawiali po sobie inskrypcji na pomnikach, monet ze swoim wizerunkiem ani urzędowych kronik.</p><p><strong>Dlatego niezwykłe jest to, że o Jezusie, człowieku spoza rzymskich elit, powstało tak wiele wczesnych tekstów i że wspominają Go także autorzy niezwiązani z Jego wyznawcami.</strong></p><p>Czasem można usłyszeć, że mamy o Nim „więcej dowodów niż o wszystkich ówczesnych cesarzach”. Takie porównanie jest przesadzone. O władcach zachowały się nie tylko teksty, lecz także monety, inskrypcje i inne zabytki. Samo liczenie wzmianek też nie mówi jeszcze, jak wiarygodne są poszczególne relacje.</p></section><section class="faith-chapter" id="faith-history-part-7"><h3>7. Co możemy uznać za historycznie dobrze potwierdzone?</h3><p>Zebrane źródła pozwalają z dużą pewnością stwierdzić, że <strong>Jezus istniał, był żydowskim nauczycielem działającym w I wieku, miał uczniów i został stracony przez ukrzyżowanie za Poncjusza Piłata</strong>. Po Jego śmierci bardzo wcześnie pojawił się ruch ludzi przekonanych, że jest On kimś wyjątkowym.</p><p>Nie znamy z taką samą pewnością wszystkich szczegółów Jego dzieciństwa, dokładnej kolejności wypowiedzianych słów ani dat każdego wydarzenia. Nawet dzień Jego śmierci jest przedmiotem badań.</p><p>A co ze zmartwychwstaniem? Historyk może badać to, że pierwsi uczniowie głosili, iż Jezus zmartwychwstał, oraz jak szybko rozeszło się to przekonanie. <strong>To nie jest jednak to samo, co naukowe udowodnienie samego cudu.</strong> Pytanie o zmartwychwstanie zasługuje na osobny artykuł.</p></section><section class="faith-chapter" id="faith-history-part-8"><h3>8. Dlaczego warto o tym wiedzieć?</h3><p>Jeśli ktoś powie Ci: „Jezus to tylko legenda”, nie musisz wdawać się w kłótnię. Możesz spokojnie odpowiedzieć, że wspominają Go zarówno chrześcijańskie pisma z I wieku, jak i późniejsze dzieła żydowskiego i rzymskiego historyka.</p><p>To jeszcze nie odpowiada na pytanie, <strong>kim Jezus naprawdę jest</strong>. Ale pozwala zrobić pierwszy krok: rozmawiamy o człowieku, który żył w historii, a nie o bohaterze wymyślonym wiele wieków później.</p><p>Jego życie i śmierć pozostawiły ślad, który można badać również bez wcześniejszego przyjęcia wiary chrześcijańskiej.</p></section>
 <section class="faith-chapter faith-sources" id="faith-history-part-9"><h3>Źródła i dalsza lektura</h3><p>Jeżeli chcesz sprawdzić przytoczone informacje, poniżej są konkretne miejsca w dawnych tekstach i opracowania historyczne. Nie musisz ich znać, żeby zrozumieć artykuł.</p><ol><li><a href="https://lexundria.com/j_aj/20.200/wst" target="_blank" rel="noopener noreferrer">Józef Flawiusz, Dawne dzieje Izraela XX, 200 — wzmianka o Jakubie, bracie Jezusa</a></li><li><a href="https://www.perseus.tufts.edu/hopper/text?doc=Tac.+Ann.+15.44" target="_blank" rel="noopener noreferrer">Tacyt, Roczniki XV, 44 — Chrystus i Poncjusz Piłat</a></li><li><a href="https://sourcebooks.web.fordham.edu/ancient/pliny-trajan1.asp" target="_blank" rel="noopener noreferrer">Pliniusz Młodszy, Listy X, 96–97 — chrześcijanie w dokumentach rzymskich</a></li><li><a href="https://academic.oup.com/book/60034/chapter/513641505" target="_blank" rel="noopener noreferrer">Oxford Academic — analiza autentyczności świadectwa Józefa Flawiusza</a></li><li><a href="https://www.cambridge.org/core/journals/new-testament-studies/article/dating-the-death-of-jesus-memory-and-the-religious-imagination/0458FC0CA55BEF810BCC411AC2765860" target="_blank" rel="noopener noreferrer">Cambridge University Press — o datowaniu śmierci Jezusa</a></li><li><a href="https://www.cambridge.org/core/books/abs/what-can-we-know-about-jesus/what-can-we-learn-from-early-christian-writings-outside-the-gospels/7B2F4B2F2A7A40B3E66C4A9D1DB6DD00" target="_blank" rel="noopener noreferrer">Cambridge University Press — o wczesnych listach Pawła</a></li></ol><p><small>Nota: „źródło niezależne od chrześcijaństwa” nie musi oznaczać informacji pochodzącej od naocznego świadka. Wiarygodność każdego świadectwa trzeba oceniać oddzielnie.</small></p></section>
-<div class="faith-bottom-nav"><button type="button" class="faith-back">← Wróć do biblioteki</button></div>
+<div class="faith-bottom-nav"><button type="button" class="faith-back">← Wróć do biblioteki</button><button type="button" class="faith-share" data-faith-share="jezus-z-nazaretu-postac-historyczna" aria-label="Kopiuj bezpośredni link do artykułu">Kopiuj link do artykułu</button></div>
 </article>
 <article id="faith-resurrection" class="faith-reading" hidden>
 <button type="button" class="faith-back">← Wróć do biblioteki</button>
+<button type="button" class="faith-share" data-faith-share="od-strachu-do-odwagi" aria-label="Kopiuj bezpośredni link do artykułu">Kopiuj link do artykułu</button>
 <header class="faith-article-head">
 <p class="faith-eyebrow">JEZUS CHRYSTUS · ARTYKUŁ 02</p>
 <h2>Od strachu do odwagi. Co zmieniło uczniów Jezusa?</h2>
@@ -1290,10 +1330,11 @@
 <li><a href="https://academic.oup.com/book/32420/chapter-abstract/268731506" target="_blank" rel="noopener noreferrer">David L. Eastman, The Many Deaths of Peter and Paul (Oxford University Press, 2019) — krytyczna analiza tradycji męczeństwa</a></li></ol>
 <p><small>Uwaga redakcyjna: wczesne świadectwa potwierdzają, że uczniowie wierzyli w zmartwychwstanie i głosili je. Ich wiara, cierpienie i rozwój wspólnot stanowią argumenty w dyskusji, ale same nie są niezależnym naukowym dowodem nadprzyrodzonego wydarzenia.</small></p>
 </section>
-<div class="faith-bottom-nav"><button type="button" class="faith-back">← Wróć do biblioteki</button></div>
+<div class="faith-bottom-nav"><button type="button" class="faith-back">← Wróć do biblioteki</button><button type="button" class="faith-share" data-faith-share="od-strachu-do-odwagi" aria-label="Kopiuj bezpośredni link do artykułu">Kopiuj link do artykułu</button></div>
 </article>
 <article id="faith-bible-reliability" class="faith-reading" hidden>
 <button type="button" class="faith-back">← Wróć do biblioteki</button>
+<button type="button" class="faith-share" data-faith-share="dlaczego-mozemy-ufac-biblii" aria-label="Kopiuj bezpośredni link do artykułu">Kopiuj link do artykułu</button>
 <header class="faith-article-head"><p class="faith-eyebrow">BIBLIA · ARTYKUŁ 01</p><h2>Dlaczego możemy ufać Biblii?</h2>
 <p class="faith-deck">Co sprawdzają historycy, co odkrywają archeolodzy i dlaczego starożytne teksty warto czytać uważnie, a nie na ślepo?</p>
 <p class="faith-meta">Starożytne teksty i archeologia · około 12 minut czytania</p></header>
@@ -1349,10 +1390,11 @@
 <li><a href="https://www.imj.org.il/en/exhibitions/voice-desert" target="_blank" rel="noopener noreferrer">Israel Museum — Zwój Izajasza znad Morza Martwego</a></li>
 <li><a href="https://www.nationalgeographic.com/history/article/fall-of-jericho-oldest-city-bible-archeology" target="_blank" rel="noopener noreferrer">National Geographic — datowanie murów Jerycha i trudności z relacją Jozuego</a></li></ol>
 <p><small>Nota redakcyjna: zgodność wybranych danych historycznych nie jest dowodem na prawdziwość wszystkich opisów biblijnych ani na Boże natchnienie tekstu. Metody interpretacji nie są czterema niezależnymi testami potwierdzającymi prawdziwość każdej relacji: pomagają rozumieć tekst, jego powstanie i otoczenie.</small></p></section>
-<div class="faith-bottom-nav"><button type="button" class="faith-back">← Wróć do biblioteki</button></div>
+<div class="faith-bottom-nav"><button type="button" class="faith-back">← Wróć do biblioteki</button><button type="button" class="faith-share" data-faith-share="dlaczego-mozemy-ufac-biblii" aria-label="Kopiuj bezpośredni link do artykułu">Kopiuj link do artykułu</button></div>
 </article>
 <article id="faith-suffering" class="faith-reading" hidden>
 <button type="button" class="faith-back">← Wróć do biblioteki</button>
+<button type="button" class="faith-share" data-faith-share="dlaczego-bog-pozwala-cierpiec-niewinnym" aria-label="Kopiuj bezpośredni link do artykułu">Kopiuj link do artykułu</button>
 <header class="faith-article-head">
 <p class="faith-eyebrow">TRUDNE PYTANIA · ARTYKUŁ 01</p>
 <h2>Jeśli Bóg nas kocha, dlaczego pozwala cierpieć niewinnym?</h2>
@@ -1446,10 +1488,11 @@
 <li><a href="https://bible.usccb.org/bible/mark/15" target="_blank" rel="noopener noreferrer">Ewangelia Marka 15,34 — wołanie Jezusa na krzyżu</a></li></ol>
 <p><small>Nota redakcyjna: tekst jest chrześcijańską próbą odpowiedzi na problem zła, a nie dowodem na to, dlaczego doszło do konkretnej tragedii. Rozważanie trudnych fragmentów Biblii wymaga uwzględnienia ich kontekstu historycznego i literackiego.</small></p>
 </section>
-<div class="faith-bottom-nav"><button type="button" class="faith-back">← Wróć do biblioteki</button></div>
+<div class="faith-bottom-nav"><button type="button" class="faith-back">← Wróć do biblioteki</button><button type="button" class="faith-share" data-faith-share="dlaczego-bog-pozwala-cierpiec-niewinnym" aria-label="Kopiuj bezpośredni link do artykułu">Kopiuj link do artykułu</button></div>
 </article>
 <article id="faith-atheist-salvation" class="faith-reading" hidden>
 <button type="button" class="faith-back">← Wróć do biblioteki</button>
+<button type="button" class="faith-share" data-faith-share="czy-ateista-moze-byc-zbawiony" aria-label="Kopiuj bezpośredni link do artykułu">Kopiuj link do artykułu</button>
 <header class="faith-article-head">
 <p class="faith-eyebrow">TRUDNE PYTANIA · ARTYKUŁ 02</p>
 <h2>Czy można być dobrym człowiekiem bez Boga? A czy można zostać zbawionym?</h2>
@@ -1542,7 +1585,7 @@
 <li><a href="https://bible.usccb.org/bible/john/14" target="_blank" rel="noopener noreferrer">J 14,6 — Chrystus jako droga do Ojca</a></li></ol>
 <p><small>Nota redakcyjna: artykuł przedstawia nauczanie Kościoła katolickiego. Ostatecznej oceny konkretnego człowieka, jego sumienia i wiecznego losu nie można wyprowadzić wyłącznie z jego deklarowanej przynależności religijnej lub jej braku. Możliwość zbawienia nie jest równoznaczna z jego gwarancją.</small></p>
 </section>
-<div class="faith-bottom-nav"><button type="button" class="faith-back">← Wróć do biblioteki</button></div>
+<div class="faith-bottom-nav"><button type="button" class="faith-back">← Wróć do biblioteki</button><button type="button" class="faith-share" data-faith-share="czy-ateista-moze-byc-zbawiony" aria-label="Kopiuj bezpośredni link do artykułu">Kopiuj link do artykułu</button></div>
 </article>
 </div></section>
       <section id="sec-misja">
@@ -1740,31 +1783,31 @@ sainte.segolene_metz@orange.fr</p>
   const heroTitle = document.getElementById('hero-title');
   const heroTag = document.getElementById('hero-tag');
 
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const target = btn.dataset.section;
+  function selectSection(target, fromHistory = false) {
+    const btn = document.querySelector('nav.menu button[data-section="' + target + '"]');
+    const section = document.getElementById('sec-' + target);
+    if (!btn || !section || !titles[target]) return;
+    buttons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    sections.forEach(s => s.classList.remove('active'));
+    section.classList.add('active');
+    heroTitle.textContent = titles[target][0];
+    heroTag.textContent = titles[target][1];
+    hero.classList.toggle('compact', target !== 'home');
+    document.querySelector('nav.menu').classList.remove('open');
+    if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
+    if (!fromHistory && location.hash !== '#' + target) {
+      history.pushState(null, '', '#' + target);
+    }
+    if (!fromHistory) window.scrollTo({top:0, behavior:'smooth'});
+  }
 
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      sections.forEach(s => s.classList.remove('active'));
-      document.getElementById('sec-' + target).classList.add('active');
-
-      heroTitle.textContent = titles[target][0];
-      heroTag.textContent = titles[target][1];
-      hero.classList.toggle('compact', target !== 'home');
-
-      document.querySelector('nav.menu').classList.remove('open');
-      if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
-      if (location.hash !== '#' + target) history.pushState(null, '', '#' + target);
-      window.scrollTo({top:0, behavior:'smooth'});
-    });
-  });
+  buttons.forEach(btn => btn.addEventListener('click', () => selectSection(btn.dataset.section)));
 
   function openSectionFromHash() {
-    const target = location.hash.slice(1);
-    const button = target ? document.querySelector('nav.menu button[data-section="' + target + '"]') : null;
-    if (button) button.click();
+    const raw = location.hash.slice(1);
+    const target = raw.startsWith('dlaczego-wierze/') ? 'dlaczego-wierze' : raw;
+    if (target) selectSection(target, true);
   }
   window.addEventListener('hashchange', openSectionFromHash);
   window.addEventListener('popstate', openSectionFromHash);
@@ -2689,15 +2732,121 @@ loadEditableSection('./content/kosciol.json', data => {
 <!-- Cloudflare Web Analytics: pending privacy-exemption verification; intentionally inactive. -->
 <!-- Activation after verification: insert the official beacon script here, with data-cf-beacon='{"token":"60949a39f3c24e4c9291544cc2dd7267"}', and allow https://static.cloudflareinsights.com in script-src plus https://cloudflareinsights.com in connect-src. -->
 <script>
-(()=>{const root=document.getElementById('sec-dlaczego-wierze');if(!root)return;
-const search=root.querySelector('#faith-search'),filters=root.querySelector('.faith-filters'),grid=root.querySelector('.faith-grid'),empty=root.querySelector('#faith-empty'),searchLabel=root.querySelector('.faith-search-label');
-const cards=Array.from(root.querySelectorAll('.faith-article')),articles=Array.from(root.querySelectorAll('article.faith-reading'));let category='all';
-function apply(){let count=0;cards.forEach(card=>{const visible=(category==='all'||card.dataset.faithCategory===category)&&card.textContent.toLocaleLowerCase('pl').includes(search.value.trim().toLocaleLowerCase('pl'));card.hidden=!visible;if(visible)count++});empty.hidden=count!==0;}
-function back(){articles.forEach(article=>article.hidden=true);grid.hidden=false;filters.hidden=false;search.hidden=false;searchLabel.hidden=false;apply();root.scrollIntoView({block:'start',behavior:'smooth'});}
-filters.addEventListener('click',event=>{const b=event.target.closest('[data-faith-filter]');if(!b)return;category=b.dataset.faithFilter;filters.querySelectorAll('button').forEach(x=>x.classList.toggle('selected',x===b));apply()});
-search.addEventListener('input',apply);
-grid.addEventListener('click',event=>{const card=event.target.closest('[data-faith-article]');if(!card)return;const chosen=root.querySelector('#faith-'+card.dataset.faithArticle);if(!chosen)return;articles.forEach(a=>a.hidden=a!==chosen);grid.hidden=true;filters.hidden=true;search.hidden=true;searchLabel.hidden=true;empty.hidden=true;chosen.scrollIntoView({block:'start',behavior:'smooth'});});
-root.querySelectorAll('#faith-back,.faith-back').forEach(btn=>btn.addEventListener('click',back));
+(()=>{
+  const root = document.getElementById('sec-dlaczego-wierze');
+  if (!root) return;
+  const search = root.querySelector('#faith-search');
+  const filters = root.querySelector('.faith-filters');
+  const grid = root.querySelector('.faith-grid');
+  const empty = root.querySelector('#faith-empty');
+  const searchLabel = root.querySelector('.faith-search-label');
+  const cards = Array.from(root.querySelectorAll('.faith-article'));
+  const articles = Array.from(root.querySelectorAll('article.faith-reading'));
+  const prefix = '#dlaczego-wierze/';
+  const bySlug = new Map(cards.map(card => [card.dataset.faithSlug, card]));
+  let category = 'all';
+
+  function apply() {
+    let visibleCount = 0;
+    cards.forEach(card => {
+      const visible = (category === 'all' || card.dataset.faithCategory === category)
+        && card.textContent.toLocaleLowerCase('pl').includes(search.value.trim().toLocaleLowerCase('pl'));
+      card.hidden = !visible;
+      if (visible) visibleCount++;
+    });
+    empty.hidden = visibleCount !== 0;
+  }
+
+  function showLibrary(scroll = false) {
+    articles.forEach(article => { article.hidden = true; });
+    grid.hidden = false;
+    filters.hidden = false;
+    search.hidden = false;
+    searchLabel.hidden = false;
+    apply();
+    if (scroll) root.scrollIntoView({block:'start',behavior:'smooth'});
+  }
+
+  function showArticle(card, scroll = false) {
+    if (!card) { showLibrary(scroll); return; }
+    const selected = root.querySelector('#faith-' + card.dataset.faithArticle);
+    if (!selected) { showLibrary(scroll); return; }
+    articles.forEach(article => { article.hidden = article !== selected; });
+    grid.hidden = true;
+    filters.hidden = true;
+    search.hidden = true;
+    searchLabel.hidden = true;
+    empty.hidden = true;
+    if (scroll) selected.scrollIntoView({block:'start',behavior:'smooth'});
+  }
+
+  function showCurrentRoute() {
+    if (!location.hash.startsWith('#dlaczego-wierze')) return;
+    const slug = location.hash.startsWith(prefix) ? location.hash.slice(prefix.length) : '';
+    const card = bySlug.get(slug);
+    if (card) {
+      showArticle(card, true);
+    } else {
+      showLibrary(false);
+    }
+  }
+
+  function backToLibrary() {
+    if (location.hash !== '#dlaczego-wierze') history.pushState(null, '', '#dlaczego-wierze');
+    showLibrary(true);
+  }
+
+  filters.addEventListener('click', event => {
+    const button = event.target.closest('[data-faith-filter]');
+    if (!button) return;
+    category = button.dataset.faithFilter;
+    filters.querySelectorAll('button').forEach(b => b.classList.toggle('selected',b===button));
+    apply();
+  });
+  search.addEventListener('input', apply);
+
+  grid.addEventListener('click', event => {
+    const card = event.target.closest('[data-faith-article]');
+    if (!card) return;
+    history.pushState(null, '', prefix + card.dataset.faithSlug);
+    showArticle(card,true);
+  });
+
+  root.querySelectorAll('#faith-back,.faith-back').forEach(button => {
+    button.addEventListener('click', backToLibrary);
+  });
+
+  // A chapter click scrolls within the open article while preserving its shareable URL.
+  root.querySelectorAll('.faith-toc a[href^="#"]').forEach(link => {
+    link.addEventListener('click', event => {
+      const targetId = link.getAttribute('href').slice(1);
+      const chapter = document.getElementById(targetId);
+      if (!chapter || !root.contains(chapter)) return;
+      event.preventDefault();
+      chapter.scrollIntoView({block:'start',behavior:'smooth'});
+    });
+  });
+
+  root.addEventListener('click', async event => {
+    const button = event.target.closest('[data-faith-share]');
+    if (!button) return;
+    const shareUrl = location.origin + location.pathname + location.search + prefix + button.dataset.faithShare;
+    try {
+      if (!navigator.clipboard || !navigator.clipboard.writeText) throw new Error('Clipboard unavailable');
+      await navigator.clipboard.writeText(shareUrl);
+      button.textContent = 'Link skopiowany ✓';
+      window.setTimeout(() => { button.textContent = 'Kopiuj link do artykułu'; }, 2500);
+    } catch {
+      window.prompt('Skopiuj adres artykułu:', shareUrl);
+    }
+  });
+
+  // Navigation within the site, direct links on load, and browser Back/Forward.
+  document.querySelector('nav.menu button[data-section="dlaczego-wierze"]')
+    ?.addEventListener('click', () => showLibrary(false));
+  window.addEventListener('hashchange', showCurrentRoute);
+  window.addEventListener('popstate', showCurrentRoute);
+  showCurrentRoute();
 })();
 </script></body>
 </html>
