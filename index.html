@@ -955,6 +955,26 @@
 @media(max-width:600px) {
   #sec-dlaczego-wierze .faith-grid { gap:12px; margin-top:20px; }
 }
+</style><style id="faith-suffering-reading">
+#sec-dlaczego-wierze #faith-suffering{width:100%;max-width:1020px;margin:28px auto 0;text-align:left}
+#faith-suffering .faith-chapter{display:block!important;padding:24px 0;border-bottom:1px solid var(--line);scroll-margin-top:18px}
+#faith-suffering .faith-chapter p{font-size:1.025rem;line-height:1.9;text-align:justify;hyphens:auto;text-justify:inter-word}
+#faith-suffering .faith-chapter h3{font-size:clamp(1.55rem,2.5vw,2rem)}
+#faith-suffering .faith-deck{max-width:900px;line-height:1.65;text-align:justify;hyphens:auto}
+#faith-suffering .faith-key p{text-align:justify;hyphens:auto}
+#faith-suffering .faith-back{border:1px solid var(--line);background:var(--paper);border-radius:22px;padding:10px 15px;cursor:pointer;color:var(--ink);font:inherit;font-size:.82rem}
+#faith-suffering .faith-chapter .faith-key{margin:22px 0}
+#faith-suffering .faith-sources ol{padding-left:22px}
+#faith-suffering .faith-sources li{list-style:decimal;line-height:1.7;margin:10px 0;text-align:justify;hyphens:auto}
+#faith-suffering .faith-sources a{color:var(--burgundy);overflow-wrap:anywhere}
+#faith-suffering .faith-stages{display:grid;grid-template-columns:1fr;gap:12px;margin:22px 0 25px}
+#faith-suffering .faith-stage{display:flex;gap:16px;padding:19px 22px;border:1px solid var(--line);border-radius:12px;background:var(--paper)}
+#faith-suffering .faith-stage-mark{display:inline-grid;flex-shrink:0;place-items:center;width:40px;height:40px;border:1px solid var(--gold);border-radius:50%;color:var(--burgundy);font-weight:700;font-size:.8rem}
+#faith-suffering .faith-stage strong{font-size:1rem;color:var(--burgundy-deep)}
+#faith-suffering .faith-stage p{margin:8px 0 0;font-size:.94rem}
+#sec-dlaczego-wierze #faith-suffering[hidden]{display:none!important}
+@media(max-width:900px){#sec-dlaczego-wierze #faith-suffering{max-width:100%}}
+@media(max-width:600px){#faith-suffering .faith-chapter p{font-size:1rem}#faith-suffering .faith-stage{padding:14px;gap:12px}#faith-suffering .faith-stage-mark{width:32px;height:32px}}
 </style></head>
 <body>
 
@@ -1134,7 +1154,7 @@
 <p class="faith-intro">Wiara nie musi być tylko rodzinną tradycją. Poznaj argumenty, źródła i pytania, które pomagają świadomie szukać prawdy.</p>
 <label class="faith-search-label" for="faith-search">Znajdź artykuł</label><input id="faith-search" type="search" placeholder="Szukaj tematu lub słowa…" autocomplete="off">
 <div class="faith-filters" aria-label="Kategorie"><button class="selected" data-faith-filter="all">Wszystkie</button><button data-faith-filter="nauka">Bóg i nauka</button><button data-faith-filter="jezus">Jezus Chrystus</button><button data-faith-filter="biblia">Biblia</button><button data-faith-filter="pytania">Trudne pytania</button></div>
-<div class="faith-grid"><button class="faith-article" data-faith-category="nauka" data-faith-article="dna"><small>BÓG I NAUKA · ARTYKUŁ 01</small><strong>Czy DNA może być śladem Stwórcy?</strong><span>Proste przykłady z codziennego życia i pytanie o początek życia.</span><em>Przeczytaj artykuł →</em></button><button class="faith-article" data-faith-category="nauka" data-faith-article="flew"><small>BÓG I NAUKA · ARTYKUŁ 02</small><strong>Nie wierzył w Boga. Dlaczego zmienił zdanie?</strong><span>Prawdziwa historia Antony’ego Flewa i pytania, które kazały mu spojrzeć na świat inaczej.</span><em>Przeczytaj artykuł →</em></button><button class="faith-article" data-faith-category="jezus" data-faith-article="jesus-history"><small>JEZUS CHRYSTUS · ARTYKUŁ 01</small><strong>Jezus z Nazaretu – postać historyczna</strong><span>Co wiemy o Jezusie z dawnych źródeł — także żydowskich i rzymskich?</span><em>Przeczytaj artykuł →</em></button><button class="faith-article" data-faith-category="jezus" data-faith-article="resurrection"><small>JEZUS CHRYSTUS · ARTYKUŁ 02</small><strong>Od strachu do odwagi. Co zmieniło uczniów Jezusa?</strong><span>Piotr, Paweł, pierwsi świadkowie i pytanie o zmartwychwstanie.</span><em>Przeczytaj artykuł →</em></button><button class="faith-article" data-faith-category="biblia" data-faith-article="bible-reliability"><small>BIBLIA · ARTYKUŁ 01</small><strong>Dlaczego możemy ufać Biblii?</strong><span>Cztery sposoby badania dawnych tekstów i odkrycia archeologów, które pomagają poznać ich świat.</span><em>Przeczytaj artykuł →</em></button></div>
+<div class="faith-grid"><button class="faith-article" data-faith-category="nauka" data-faith-article="dna"><small>BÓG I NAUKA · ARTYKUŁ 01</small><strong>Czy DNA może być śladem Stwórcy?</strong><span>Proste przykłady z codziennego życia i pytanie o początek życia.</span><em>Przeczytaj artykuł →</em></button><button class="faith-article" data-faith-category="nauka" data-faith-article="flew"><small>BÓG I NAUKA · ARTYKUŁ 02</small><strong>Nie wierzył w Boga. Dlaczego zmienił zdanie?</strong><span>Prawdziwa historia Antony’ego Flewa i pytania, które kazały mu spojrzeć na świat inaczej.</span><em>Przeczytaj artykuł →</em></button><button class="faith-article" data-faith-category="jezus" data-faith-article="jesus-history"><small>JEZUS CHRYSTUS · ARTYKUŁ 01</small><strong>Jezus z Nazaretu – postać historyczna</strong><span>Co wiemy o Jezusie z dawnych źródeł — także żydowskich i rzymskich?</span><em>Przeczytaj artykuł →</em></button><button class="faith-article" data-faith-category="jezus" data-faith-article="resurrection"><small>JEZUS CHRYSTUS · ARTYKUŁ 02</small><strong>Od strachu do odwagi. Co zmieniło uczniów Jezusa?</strong><span>Piotr, Paweł, pierwsi świadkowie i pytanie o zmartwychwstanie.</span><em>Przeczytaj artykuł →</em></button><button class="faith-article" data-faith-category="biblia" data-faith-article="bible-reliability"><small>BIBLIA · ARTYKUŁ 01</small><strong>Dlaczego możemy ufać Biblii?</strong><span>Cztery sposoby badania dawnych tekstów i odkrycia archeologów, które pomagają poznać ich świat.</span><em>Przeczytaj artykuł →</em></button><button class="faith-article" data-faith-category="pytania" data-faith-article="suffering"><small>TRUDNE PYTANIA · ARTYKUŁ 01</small><strong>Jeśli Bóg nas kocha, dlaczego pozwala cierpieć niewinnym?</strong><span>Cierpienie dzieci, trudne opowieści Starego Testamentu i droga do zrozumienia Boga przez Jezusa.</span><em>Przeczytaj artykuł →</em></button></div>
 <p id="faith-empty" hidden>Nie znaleziono artykułów. Spróbuj innego hasła lub kategorii.</p>
 <article id="faith-dna" class="faith-reading" hidden>
 <button id="faith-back" type="button">← Wróć do biblioteki</button>
@@ -1314,6 +1334,103 @@
 <li><a href="https://www.imj.org.il/en/exhibitions/voice-desert" target="_blank" rel="noopener noreferrer">Israel Museum — Zwój Izajasza znad Morza Martwego</a></li>
 <li><a href="https://www.nationalgeographic.com/history/article/fall-of-jericho-oldest-city-bible-archeology" target="_blank" rel="noopener noreferrer">National Geographic — datowanie murów Jerycha i trudności z relacją Jozuego</a></li></ol>
 <p><small>Nota redakcyjna: zgodność wybranych danych historycznych nie jest dowodem na prawdziwość wszystkich opisów biblijnych ani na Boże natchnienie tekstu. Metody interpretacji nie są czterema niezależnymi testami potwierdzającymi prawdziwość każdej relacji: pomagają rozumieć tekst, jego powstanie i otoczenie.</small></p></section>
+<div class="faith-bottom-nav"><button type="button" class="faith-back">← Wróć do biblioteki</button></div>
+</article>
+<article id="faith-suffering" class="faith-reading" hidden>
+<button type="button" class="faith-back">← Wróć do biblioteki</button>
+<header class="faith-article-head">
+<p class="faith-eyebrow">TRUDNE PYTANIA · ARTYKUŁ 01</p>
+<h2>Jeśli Bóg nas kocha, dlaczego pozwala cierpieć niewinnym?</h2>
+<p class="faith-deck">Cierpienie dzieci, trudne obrazy Boga w Starym Testamencie i trzy sposoby rozumienia Jego nauki. Czy da się pogodzić miłość Boga z bólem świata?</p>
+<p class="faith-meta">Wiara, cierpienie i rozumienie Pisma · około 13–15 minut czytania</p>
+</header>
+<aside class="faith-key"><strong>Ważne, zanim zaczniemy</strong><p>Nie znamy przyczyny każdego cierpienia. Nie będziemy tłumaczyć tragedii cudzą winą ani twierdzić, że Bóg potrzebuje śmierci niewinnych, żeby czegoś nauczyć innych. Przyjrzymy się temu, co chrześcijaństwo naprawdę mówi o złu — i czego nie potrafi do końca wyjaśnić.</p></aside>
+<nav class="faith-toc" aria-label="Spis treści"><strong>Przeczytaj całość lub wybierz rozdział</strong><a href="#faith-suffering-part-1">1. Pytanie, którego nie da się zbyć jednym zdaniem</a>
+<a href="#faith-suffering-part-2">2. Czy cierpienie jest karą za grzechy?</a>
+<a href="#faith-suffering-part-3">3. Skąd bierze się zło, skoro Bóg stworzył dobry świat?</a>
+<a href="#faith-suffering-part-4">4. Hiob: człowiek, który miał odwagę pytać Boga</a>
+<a href="#faith-suffering-part-5">5. Dlaczego Bóg Starego Testamentu czasem wydaje się tak surowy?</a>
+<a href="#faith-suffering-part-6">6. A co z opowieściami, w których Bóg nakazuje przemoc?</a>
+<a href="#faith-suffering-part-7">7. Co zmienia Jezus?</a>
+<a href="#faith-suffering-part-8">8. Skoro Bóg może wszystko, dlaczego po prostu nie zatrzyma tragedii?</a>
+<a href="#faith-suffering-part-9">9. Czy cierpienie czyni nas lepszymi?</a>
+<a href="#faith-suffering-part-10">10. Co powiedzieć człowiekowi, który właśnie cierpi?</a>
+<a href="#faith-suffering-part-11">11. Czy więc można nadal wierzyć w dobrego Boga?</a><a href="#faith-suffering-sources">Źródła i fragmenty Biblii</a></nav>
+<section class="faith-chapter" id="faith-suffering-part-1"><h3>1. Pytanie, którego nie da się zbyć jednym zdaniem</h3>
+<p>Wyobraź sobie rodziców siedzących przy szpitalnym łóżku dziecka. Lekarze robią wszystko, co potrafią. Rodzice modlą się, proszą o pomoc, mają nadzieję. A choroba nie ustępuje.</p>
+<p>W takim momencie pytanie „Dlaczego Bóg na to pozwala?” nie jest zabawą w filozofię. To wołanie człowieka, który kocha i nie rozumie, dlaczego cierpi ktoś niewinny.</p>
+<p>Jeśli Bóg jest dobry, dlaczego nie zapobiega tragediom? Jeśli jest wszechmogący, dlaczego nie powstrzymuje przemocy, chorób i katastrof? <strong>To jedne z najtrudniejszych pytań, jakie można postawić chrześcijańskiej wierze.</strong></p>
+<p>Nie będziemy udawać, że istnieje prosta odpowiedź, która sprawi, że cierpienie stanie się zrozumiałe. Możemy jednak sprawdzić, czego Biblia naprawdę uczy o złu, jak zmieniało się rozumienie Boga i jak na cierpienie reagował sam Jezus.</p></section>
+<section class="faith-chapter" id="faith-suffering-part-2"><h3>2. Czy cierpienie jest karą za grzechy?</h3>
+<p>Gdy wydarzy się coś złego, niektórzy od razu pytają: „Czym ten człowiek sobie na to zasłużył?”. Takie myślenie jest stare jak świat. Łatwiej uwierzyć, że istnieje prosty rachunek: dobrzy dostają nagrodę, źli ponoszą karę.</p>
+<p>Ale spróbuj powiedzieć rodzicom chorego niemowlęcia, że ich dziecko cierpi za jakieś przewinienie. Czy naprawdę takiego Boga głosił Jezus?</p>
+<p>W Ewangelii Jana uczniowie widzą człowieka niewidomego od urodzenia i pytają, kto zawinił: on czy jego rodzice. <strong>Jezus odrzuca oba te oskarżenia</strong> (J 9,1–3). Gdy innym razem mówi o ludziach zabitych przez zawalenie się wieży, nie uznaje ich za większych grzeszników od pozostałych (Łk 13,1–5).</p>
+<div class="faith-key"><strong>Co warto zapamiętać?</strong><p>Z samego faktu, że komuś przydarzyło się nieszczęście, nie wolno wyciągać wniosku, że Bóg go ukarał. Zwłaszcza cierpienia dziecka nie należy tłumaczyć winą dziecka ani jego rodziców.</p></div></section>
+<section class="faith-chapter" id="faith-suffering-part-3"><h3>3. Skąd bierze się zło, skoro Bóg stworzył dobry świat?</h3>
+<p>Istnieją cierpienia, których źródło widać od razu. Ktoś krzywdzi drugiego, oszukuje, wywołuje wojnę, porzuca potrzebującego. Tutaj ważna jest <strong>ludzka wolność</strong>: możemy kochać i pomagać, ale możemy też wybierać zło.</p>
+<p>Nie oznacza to, że wolność tłumaczy wszystko. Przecież trzęsienie ziemi nie podejmuje złej decyzji. Nowotwór u dziecka nie powstaje dlatego, że ktoś użył wolnej woli.</p>
+<p>Świat działa według praw przyrody. Dzięki nim istnieją życie, rozwój organizmów i możliwość przewidywania tego, co się wydarzy. Ale w świecie przyrody są także choroby, niebezpieczeństwa i katastrofy. <strong>Opisanie tych mechanizmów nie wyjaśnia jeszcze, dlaczego Bóg dopuszcza konkretną tragedię.</strong></p>
+<p>Katechizm mówi o świecie, który jeszcze nie osiągnął ostatecznej pełni, i odróżnia zło wynikające z ludzkich decyzji od cierpienia obecnego w przyrodzie. Nie podaje jednak szczegółowego powodu każdej śmierci czy każdej choroby.</p></section>
+<section class="faith-chapter" id="faith-suffering-part-4"><h3>4. Hiob: człowiek, który miał odwagę pytać Boga</h3>
+<p>W Starym Testamencie poznajemy Hioba — człowieka sprawiedliwego, którego spotyka seria nieszczęść. Traci bliskich, zdrowie i poczucie bezpieczeństwa.</p>
+<p>Przychodzą do niego znajomi. Zamiast po prostu przy nim być, próbują przekonać go, że skoro cierpi, musiał zrobić coś złego. Hiob nie zgadza się z tym. Pyta, skarży się i nie udaje, że wszystko rozumie.</p>
+<p>A pod koniec księgi Bóg gani przyjaciół za to, jak o Nim mówili (Hi 42,7). <strong>To niezwykle ważny obraz: człowiek cierpiący może zadawać trudne pytania, a pobożne, lecz krzywdzące tłumaczenia nie muszą być prawdą.</strong></p>
+<p>W Psalmie 13 autor również zwraca się do Boga z pytaniem, jak długo jeszcze będzie czuł się opuszczony. Biblia nie usuwa takich słów. Pozostawia w niej miejsce na płacz, gniew, wątpliwości i szukanie odpowiedzi.</p></section>
+<section class="faith-chapter" id="faith-suffering-part-5"><h3>5. Dlaczego Bóg Starego Testamentu czasem wydaje się tak surowy?</h3>
+<p>Tu pojawia się kolejne pytanie. W jednym miejscu czytamy o miłosierdziu, a w innym o potopie, wojnie, karze lub przemocy. Czy Bóg Starego Testamentu jest kimś innym niż kochający Ojciec, o którym mówi Jezus?</p>
+<p>Na jednym z naszych spotkań tematycznych ksiądz zaproponował pomocny obraz: <strong>człowiek dojrzewa i stopniowo uczy się rozumieć świat</strong>. Podobnie można wyobrazić sobie długą drogę, na której lud Izraela uczył się poznawać Boga.</p>
+<p>Nie chodzi o to, że Bóg najpierw był surowy, a później stał się dobry. Ani o to, że ludzie starożytni byli dosłownie dziećmi. <strong>To porównanie ma pokazać sposób uczenia się i dojrzewania, a nie trzy sztywne etapy historii.</strong></p>
+<div class="faith-stages">
+<div class="faith-stage"><span class="faith-stage-mark">01</span><div><strong>Poziom fizyczny — jak u małego dziecka</strong><p>Małe dziecko najpierw rozumie to, co może zobaczyć i odczuć: działanie i jego skutek, zakaz i konsekwencję. Podobnie dawne prawa często mówiły wprost o czynach oraz karach. Przykład „oko za oko” bywa dziś odczytywany jako zachęta do zemsty, ale w swoim dawnym kontekście stawiał też granicę odwetowi: kara nie miała przekraczać wyrządzonej szkody.</p></div></div>
+<div class="faith-stage"><span class="faith-stage-mark">02</span><div><strong>Poziom emocjonalny — jak u nastolatka</strong><p>Z czasem mocniej dochodzą do głosu przeżycia: lęk, gniew, żal, nadzieja i pragnienie sprawiedliwości. Psalmy pokazują cały ten wachlarz uczuć. Prorocy wołają, że Bogu nie wystarczają same obrzędy, gdy ludzie krzywdzą słabszych. Wiara nie jest już tylko przestrzeganiem zewnętrznych zasad; coraz wyraźniej chodzi o serce i stosunek do drugiego człowieka.</p></div></div>
+<div class="faith-stage"><span class="faith-stage-mark">03</span><div><strong>Poziom rozumny — dojrzała odpowiedzialność</strong><p>Dorosłość nie polega na braku uczuć, lecz na tym, że potrafimy je rozpoznawać i nie pozwalamy, by gniew decydował za nas. Uczymy się kierować rozumem, sumieniem i miłością. Jezus prowadzi ten obraz najdalej: nie tylko powstrzymaj zemstę, lecz próbuj także kochać nieprzyjaciela i modlić się za prześladowcę (Mt 5,38–48).</p></div></div>
+</div>
+<p><strong>Ważne zastrzeżenie:</strong> te trzy poziomy są obrazowym wyjaśnieniem zaczerpniętym z tematyki naszego spotkania parafialnego, a nie oficjalnym podziałem Biblii. W Starym Testamencie od początku są również miłość, mądrość i miłosierdzie; dojrzałość i niedojrzałość spotykamy w każdym wieku.</p></section>
+<section class="faith-chapter" id="faith-suffering-part-6"><h3>6. A co z opowieściami, w których Bóg nakazuje przemoc?</h3>
+<p>Nie da się uczciwie ominąć najtrudniejszych fragmentów. W Biblii są opowieści o zniszczeniu miast, śmierci całych społeczności i wojnach przedstawianych jako zgodne z wolą Boga. Czytając je dzisiaj, możemy odczuwać sprzeciw — zwłaszcza gdy wśród ofiar pojawiają się niewinni.</p>
+<p>Nie pomoże prosta odpowiedź: „Skoro jest to w Biblii, każda opisana przemoc musiała być dobra”. Biblia zawiera różne rodzaje tekstów, powstałe w dawnych czasach i kulturach. Ludzie opisywali swoje doświadczenia Boga językiem, którym dysponowali, także w świecie, gdzie wojna i odwet były codziennością.</p>
+<p>Benedykt XVI w dokumencie <i>Verbum Domini</i> przypomina, że Boże objawienie ukazywało się stopniowo, a Pismo przedstawia również dawne zwyczaje i przemoc, nie zawsze wyraźnie je potępiając. Te trudne strony trzeba czytać z uwzględnieniem historii, rodzaju tekstu oraz nauczania Chrystusa.</p>
+<p><strong>To nie rozwiązuje automatycznie każdego problematycznego wersetu.</strong> Szczegółowe pytanie, dlaczego dany tekst mówi o rozkazie Boga, wymaga osobnego zbadania. Na pewno nie wolno używać takich opisów jako usprawiedliwienia krzywdzenia ludzi dzisiaj.</p></section>
+<section class="faith-chapter" id="faith-suffering-part-7"><h3>7. Co zmienia Jezus?</h3>
+<p>Jeśli chcesz zobaczyć, jaki jest Bóg według chrześcijaństwa, spójrz na Jezusa. Gdy widzi chorych, nie wygłasza im wykładu o ich winach. Zbliża się do nich, uzdrawia i przywraca im miejsce wśród ludzi.</p>
+<p>Przy grobie swojego przyjaciela Łazarza Jezus płacze (J 11,33–35). Chociaż Ewangelia zaraz opowiada o wskrzeszeniu Łazarza, Jezus najpierw naprawdę przeżywa ból i smutek obecnych tam ludzi.</p>
+<p>Na krzyżu sam doświadcza cierpienia i opuszczenia. Woła słowami Psalmu 22: „Boże mój, Boże mój, czemuś Mnie opuścił?” (Mk 15,34).</p>
+<div class="faith-key"><strong>Co z tego wynika?</strong><p>Chrześcijaństwo nie przedstawia Boga wyłącznie jako kogoś, kto z bezpiecznej odległości obserwuje ludzkie łzy. W Jezusie pokazuje Boga, który wchodzi w ludzką historię, cierpi i nie odwraca się od cierpiących.</p></div>
+<p>To nadal nie mówi nam, dlaczego konkretne dziecko zachorowało. Ale zmienia obraz Boga: zamiast obojętnego sędziego widzimy kogoś, kto zna cierpienie od środka.</p></section>
+<section class="faith-chapter" id="faith-suffering-part-8"><h3>8. Skoro Bóg może wszystko, dlaczego po prostu nie zatrzyma tragedii?</h3>
+<p>To być może najtrudniejsze pytanie ze wszystkich. Nawet jeśli rozumiemy znaczenie ludzkiej wolności i praw przyrody, pozostaje sprzeciw: <strong>czy Bóg nie mógłby wyjątkowo uratować tej jednej osoby?</strong></p>
+<p>Chrześcijaństwo mówi, że Bóg może działać w świecie. Zarazem nie obiecuje, że każdy wierzący uniknie choroby, wypadku czy śmierci. Nie wiemy, dlaczego w jednym przypadku człowiek odzyskuje zdrowie, a w innym — mimo najlepszej opieki i modlitwy — nie.</p>
+<p>Można mieć nadzieję, że Bóg potrafi wyprowadzić dobro nawet z tego, co złe. Nie oznacza to jednak, że samo zło było potrzebne, że śmierć dziecka jest dobra lub że mamy prawo mówić rodzinie: „Bóg zrobił to po coś”.</p>
+<p><strong>Uczciwa odpowiedź brzmi: nie znamy pełnego wyjaśnienia, dlaczego Bóg dopuszcza każde konkretne cierpienie.</strong> Katechizm także nie daje jednej krótkiej odpowiedzi na tajemnicę zła.</p></section>
+<section class="faith-chapter" id="faith-suffering-part-9"><h3>9. Czy cierpienie czyni nas lepszymi?</h3>
+<p>Czasem słyszymy, że trudności uczą cierpliwości, współczucia lub odwagi. Bywa, że tak jest: człowiek po ciężkim doświadczeniu potrafi lepiej zrozumieć cudzy ból.</p>
+<p>Ale cierpienie może także niszczyć zdrowie, odbierać siły i pozostawiać długotrwałe rany. <strong>Nie wolno mówić, że ktoś musiał cierpieć, żeby stać się lepszym człowiekiem.</strong> W szczególności żadne dziecko nie musi zachorować po to, by nauczyć innych miłości.</p>
+<p>Jezus nie szukał cierpienia dla samego cierpienia. Pomagał chorym, karmił głodnych, stawał po stronie odrzuconych. Dlatego chrześcijańską odpowiedzią na cudzy ból powinno być przede wszystkim działanie: leczenie, opieka, obrona słabszych, wsparcie i obecność.</p>
+<p>Modlitwa nie zastępuje lekarza. Nadzieja nie zwalnia z obowiązku przeciwdziałania krzywdzie.</p></section>
+<section class="faith-chapter" id="faith-suffering-part-10"><h3>10. Co powiedzieć człowiekowi, który właśnie cierpi?</h3>
+<p>Kiedy ktoś straci dziecko, nie potrzebuje wykładu o wolnej woli ani o tym, jak działa wszechświat. Potrzebuje drugiego człowieka.</p>
+<p>Zamiast mówić „Bóg tak chciał”, „wszystko ma swój powód” albo „musisz się pogodzić”, lepiej powiedzieć: <strong>„Bardzo mi przykro. Jestem przy tobie. Czy mogę ci w czymś pomóc?”</strong></p>
+<p>Można zrobić zakupy, zawieźć do lekarza, posiedzieć w ciszy, wysłuchać bez poprawiania cudzych uczuć. Jeśli ktoś chce się modlić, można modlić się razem z nim. Jeśli ma do Boga żal, nie trzeba od razu go uciszać.</p>
+<p>Hiob potrzebował przyjaciół, którzy nie zamienią jego bólu w łatwą teorię. Tak samo często potrzebuje ich człowiek dzisiaj.</p></section>
+<section class="faith-chapter" id="faith-suffering-part-11"><h3>11. Czy więc można nadal wierzyć w dobrego Boga?</h3>
+<p>Można — ale nie dlatego, że znaleźliśmy odpowiedź na każdą tragedię. Wiara chrześcijańska nie jest obietnicą życia bez bólu. Jest zaufaniem, że zło i śmierć nie mają ostatniego słowa.</p>
+<p>Zmartwychwstanie Jezusa daje chrześcijanom nadzieję na życie silniejsze niż śmierć. Nie jest to zapłata, która unieważnia czyjeś cierpienie. Jest obietnicą, że Bóg nie opuszcza człowieka nawet tam, gdzie ludzkie siły i wyjaśnienia się kończą.</p>
+<p>Gdy wracamy do trudnych stron Starego Testamentu, możemy dostrzec opowieść o ludziach uczących się rozumieć sprawiedliwość, miłosierdzie i miłość. Dla chrześcijanina pełnią tego objawienia jest Jezus, który każe kochać nawet nieprzyjaciół.</p>
+<p><strong>Na koniec pozostawmy sobie dwa pytania:</strong> jakiego Boga widzę, kiedy czytam Biblię przez pryzmat Jezusa? I co mogę dziś zrobić, żeby ktoś cierpiący nie musiał być ze swoim bólem sam?</p></section>
+<section class="faith-chapter faith-sources" id="faith-suffering-sources">
+<h3>Źródła i fragmenty Biblii</h3><p>Artykuł odwołuje się do konkretnych fragmentów Pisma i dokumentów Kościoła. Możesz samodzielnie sprawdzić ich treść. Przykład trzech poziomów dojrzewania jest ilustracją nawiązującą do parafialnego spotkania tematycznego, nie oficjalną nauką o trzech etapach dziejów Izraela.</p>
+<ol><li><a href="https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_one/article_1/paragraph_4_the_creator.index.html" target="_blank" rel="noopener noreferrer">Katechizm Kościoła Katolickiego, punkty 309–314 i 324 — dlaczego istnieje zło oraz granice naszych odpowiedzi</a></li>
+<li><a href="https://www.vatican.va/content/benedict-xvi/en/apost_exhortations/documents/hf_ben-xvi_exh_20100930_verbum-domini.html" target="_blank" rel="noopener noreferrer">Benedykt XVI, Verbum Domini, punkt 42 — trudne i pełne przemocy strony Starego Testamentu</a></li>
+<li><a href="https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html" target="_blank" rel="noopener noreferrer">Sobór Watykański II, Dei Verbum, punkt 12 — jak czytać Biblię w kontekście jej epoki</a></li>
+<li><a href="https://bible.usccb.org/bible/john/9" target="_blank" rel="noopener noreferrer">Ewangelia Jana 9,1–3 — Jezus odrzuca oskarżenie o winę niewidomego i jego rodziców</a></li>
+<li><a href="https://bible.usccb.org/bible/luke/13" target="_blank" rel="noopener noreferrer">Ewangelia Łukasza 13,1–5 — tragedia nie oznacza większej winy ofiar</a></li>
+<li><a href="https://bible.usccb.org/bible/job/42" target="_blank" rel="noopener noreferrer">Księga Hioba 42,7–8 — Bóg gani przyjaciół Hioba za ich słowa</a></li>
+<li><a href="https://bible.usccb.org/bible/psalms/13" target="_blank" rel="noopener noreferrer">Psalm 13 — modlitwa człowieka cierpiącego i pełnego pytań</a></li>
+<li><a href="https://bible.usccb.org/bible/matthew/5" target="_blank" rel="noopener noreferrer">Ewangelia Mateusza 5,38–48 — od ograniczenia odwetu do miłości nieprzyjaciół</a></li>
+<li><a href="https://bible.usccb.org/bible/john/11" target="_blank" rel="noopener noreferrer">Ewangelia Jana 11 — Jezus płacze przy grobie Łazarza</a></li>
+<li><a href="https://bible.usccb.org/bible/mark/15" target="_blank" rel="noopener noreferrer">Ewangelia Marka 15,34 — wołanie Jezusa na krzyżu</a></li></ol>
+<p><small>Nota redakcyjna: tekst jest chrześcijańską próbą odpowiedzi na problem zła, a nie dowodem na to, dlaczego doszło do konkretnej tragedii. Rozważanie trudnych fragmentów Biblii wymaga uwzględnienia ich kontekstu historycznego i literackiego.</small></p>
+</section>
 <div class="faith-bottom-nav"><button type="button" class="faith-back">← Wróć do biblioteki</button></div>
 </article>
 </div></section>
