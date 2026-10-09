@@ -339,6 +339,23 @@ content:
             type: boolean
             default: false
 
+  - name: zrozumiec_wiare
+    label: Zrozumieć wiarę
+    type: file
+    path: content/zrozumiec-wiare.json
+    format: json
+    operations:
+      delete: false
+    fields:
+      - name: title
+        label: Nazwa sekcji
+        type: string
+        required: true
+      - name: intro
+        label: Wprowadzenie
+        type: text
+        required: true
+
   - name: misja
     label: Nasza Misja
     type: file
