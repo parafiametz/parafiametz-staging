@@ -305,13 +305,15 @@ content:
             description: Opcjonalnie.
           - name: body
             label: Opis
-            description: "Enter = nowy akapit. Shift+Enter = nowa linia. Zaznacz tekst, aby wyświetlić pasek formatowania: nagłówki, pogrubienie, kursywa, podkreślenie, listy punktowane i numerowane, cytat oraz link."
+            description: "Enter = nowy akapit. Shift+Enter = nowa linia. Zaznacz tekst, aby wyświetlić pasek formatowania: nagłówki, pogrubienie, kursywa, podkreślenie, listy punktowane i numerowane, cytat oraz link. Zdjęcia można wstawiać bezpośrednio między akapitami za pomocą opcji obrazu w edytorze. Oddzielne pole Zdjęcie pozostaje zdjęciem głównym wydarzenia."
             type: rich-text
             required: true
             options:
               format: html
               switcher: false
-              media: false
+              media: images
+              extensions: [jpg, jpeg, png, webp]
+              rename: safe
           - name: alignment
             label: Wyrównanie treści
             type: select
