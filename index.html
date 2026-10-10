@@ -564,6 +564,21 @@
     line-height:1.75;
     overflow-wrap:anywhere;
   }
+  .event-body img{
+    display:block;
+    width:auto;
+    max-width:100%;
+    max-height:540px;
+    height:auto;
+    object-fit:contain;
+    margin:1.25rem auto;
+    border-radius:9px;
+    cursor:zoom-in;
+  }
+  .event-body img:focus-visible{
+    outline:3px solid var(--gold-light);
+    outline-offset:3px;
+  }
   .event-body.is-collapsed{
     max-height:22rem;
     overflow:hidden;
@@ -1762,7 +1777,8 @@ sainte.segolene_metz@orange.fr</p>
     if (!raw) return '';
     try {
       const url = new URL(raw.replace(/^\/+/, ''), document.baseURI);
-      if (url.origin !== location.origin || !url.pathname.startsWith('/media/')) return '';
+      const mediaRoot = new URL('media/', document.baseURI);
+      if (url.origin !== mediaRoot.origin || !url.pathname.startsWith(mediaRoot.pathname)) return '';
       return url.href;
     } catch {
       return '';
@@ -1842,7 +1858,7 @@ sainte.segolene_metz@orange.fr</p>
 
 <script>
 // Pages CMS: content is stored separately from the page design.
-function renderSafeRichText(container, value) {
+function renderSafeRichText(container, value, { allowImages = false } = {}) {
   const raw = String(value || '');
 
   if (!/<[a-z][\s\S]*>/i.test(raw)) {
@@ -1869,6 +1885,32 @@ function renderSafeRichText(container, value) {
     }
 
     const tag = node.tagName.toLowerCase();
+
+    // Inline photos are opt-in for the event description only.
+    // Do not trust HTML attributes or external image URLs supplied by rich text.
+    if (tag === 'img') {
+      if (!allowImages) return document.createDocumentFragment();
+      const safeSrc = cmsMediaUrl(node.getAttribute('src') || '');
+      if (!safeSrc) return document.createDocumentFragment();
+
+      const img = document.createElement('img');
+      img.src = safeSrc;
+      img.alt = (node.getAttribute('alt') || '').trim();
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      img.tabIndex = 0;
+      img.setAttribute('role', 'button');
+      img.setAttribute('aria-label', 'Powiększ zdjęcie' + (img.alt ? ': ' + img.alt : ''));
+      img.addEventListener('click', () => openImageLightbox(img.src, img.alt));
+      img.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          openImageLightbox(img.src, img.alt);
+        }
+      });
+      img.addEventListener('error', () => img.remove(), { once: true });
+      return img;
+    }
 
     if (!allowedTags.has(tag)) {
       const fragment = document.createDocumentFragment();
@@ -2206,12 +2248,12 @@ document.addEventListener('keydown', (event) => {
       const body = document.createElement('div');
       const alignment = ['center', 'right', 'justify'].includes(item.alignment) ? item.alignment : 'left';
       body.className = 'event-body align-' + alignment;
-      renderSafeRichText(body, item.body);
+      renderSafeRichText(body, item.body, { allowImages: true });
       article.append(body);
 
       const initEventToggle = () => {
         if (!body.isConnected || body.scrollHeight === 0) return false;
-        if (body.dataset.toggleInitialized === 'true') return true;
+        if (body.scrollHeight <= 430 || body.dataset.toggleInitialized === 'true') return true;
         body.dataset.toggleInitialized = 'true';
 
         if (body.scrollHeight > 430) {
@@ -2231,6 +2273,12 @@ document.addEventListener('keydown', (event) => {
         return true;
       };
 
+      // Images load asynchronously and can push an initially short article
+      // past the collapse threshold after the first layout measurement.
+      body.querySelectorAll('img').forEach(img => {
+        img.addEventListener('load', initEventToggle, { once: true });
+        img.addEventListener('error', initEventToggle, { once: true });
+      });
       const eventVisibilityObserver = new ResizeObserver(() => {
         if (initEventToggle()) eventVisibilityObserver.disconnect();
       });
