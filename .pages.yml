@@ -341,6 +341,82 @@ content:
             type: boolean
             default: false
 
+  - name: zrozumiec_wiare_artykuly
+    label: Zrozumieć wiarę — kategorie i artykuły
+    type: file
+    path: content/zrozumiec-wiare-artykuly.json
+    format: json
+    operations:
+      delete: false
+    fields:
+      - name: categories
+        label: Kategorie
+        description: Dodawaj, usuwaj i zmieniaj kolejność kategorii. Identyfikator musi być unikalny i nie powinien się zmieniać, gdy korzystają z niego artykuły.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - name: id
+            label: Identyfikator (bez spacji i polskich znaków)
+            type: string
+            required: true
+          - name: title
+            label: Nazwa kategorii
+            type: string
+            required: true
+          - name: visible
+            label: Widoczna
+            type: boolean
+            default: true
+      - name: items
+        label: Artykuły
+        description: Dodawaj, edytuj, usuwaj i przeciągaj artykuły, aby ustawić kolejność. Wpisz identyfikator istniejącej kategorii.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - name: category
+            label: Identyfikator kategorii
+            type: string
+            required: true
+            description: Musi odpowiadać polu Identyfikator w kategorii powyżej.
+          - name: id
+            label: Identyfikator artykułu
+            type: string
+            required: true
+            description: Unikalny identyfikator techniczny bez spacji. Nie zmieniaj w istniejących artykułach.
+          - name: slug
+            label: Adres artykułu (slug)
+            type: string
+            required: true
+            description: Nie zmieniaj istniejącego adresu, aby wcześniejsze linki działały.
+          - name: title
+            label: Tytuł artykułu
+            type: string
+            required: true
+          - name: summary
+            label: Krótki opis na karcie
+            type: text
+            required: false
+          - name: body
+            label: Pełna treść artykułu
+            type: rich-text
+            required: true
+            options:
+              format: html
+              switcher: true
+              media: images
+              extensions: [jpg, jpeg, png, webp]
+              rename: safe
+          - name: visible
+            label: Widoczny na stronie
+            type: boolean
+            default: true
+
   - name: zrozumiec_wiare
     label: Zrozumieć wiarę
     type: file
