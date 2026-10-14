@@ -2965,9 +2965,32 @@ loadEditableSection('./content/kosciol.json', data => {
 <!-- Cloudflare Web Analytics: pending privacy-exemption verification; intentionally inactive. -->
 <!-- Activation after verification: insert the official beacon script here, with data-cf-beacon='{"token":"60949a39f3c24e4c9291544cc2dd7267"}', and allow https://static.cloudflareinsights.com in script-src plus https://cloudflareinsights.com in connect-src. -->
 <script>
-(()=>{
+(async()=>{
   const root = document.getElementById('sec-zrozumiec-wiare');
   if (!root) return;
+  // CMS source of truth; embedded articles remain as an offline fallback.
+  try {
+    const response = await fetch('content/zrozumiec-wiare-artykuly.json', {cache:'no-store'});
+    if (response.ok) {
+      const data = await response.json();
+      const safe = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+      const categoryList = Array.isArray(data.categories) ? data.categories.filter(c=>c.visible!==false && c.id && c.title) : [];
+      const categoryNames = new Map(categoryList.map(c=>[c.id,c.title]));
+      const visible = (Array.isArray(data.items)?data.items:[]).filter(a=>a.visible!==false && categoryNames.has(a.category) && a.id && a.slug && a.title);
+      const filterNode = root.querySelector('.faith-filters');
+      filterNode.innerHTML = '<button class="selected" data-faith-filter="all">Wszystkie</button>' + categoryList.map(c=>'<button data-faith-filter="'+safe(c.id)+'">'+safe(c.title)+'</button>').join('');
+      const gridNode = root.querySelector('.faith-grid');
+      gridNode.innerHTML = visible.map((a,index)=>'<button class="faith-article" data-faith-category="'+safe(a.category)+'" data-faith-article="'+safe(a.id)+'" data-faith-slug="'+safe(a.slug)+'"><small>'+safe(categoryNames.get(a.category)).toUpperCase()+' · ARTYKUŁ '+String(index+1).padStart(2,'0')+'</small><strong>'+safe(a.title)+'</strong><span>'+safe(a.summary)+'</span><em>Przeczytaj artykuł →</em></button>').join('');
+      root.querySelectorAll('article.faith-reading').forEach(node=>node.remove());
+      const holder = document.createElement('div');
+      holder.innerHTML = visible.map(a=>'<article id="faith-'+safe(a.id)+'" class="faith-reading" hidden>'+String(a.body||'')+'</article>').join('');
+      while(holder.firstChild) root.querySelector('.faith-library').appendChild(holder.firstChild);
+      root.querySelectorAll('article.faith-reading').forEach(article=>{
+        article.querySelectorAll('.faith-share').forEach(b=>b.dataset.faithShare=visible.find(a=>'faith-'+a.id===article.id)?.slug||'');
+      });
+    }
+  } catch (error) { console.warn('Faith CMS: using embedded fallback',error); }
+
   const search = root.querySelector('#faith-search');
   const filters = root.querySelector('.faith-filters');
   const grid = root.querySelector('.faith-grid');
