@@ -1057,7 +1057,7 @@
 }
 </style>
 <style id="locale-staging-style">
-.language-switch{position:fixed;right:18px;top:16px;z-index:30;display:flex;gap:6px;padding:5px;border-radius:32px;background:rgba(20,27,36,.76);border:1px solid rgba(245,239,222,.35);backdrop-filter:blur(6px)}
+.language-switch{position:fixed;right:18px;top:16px;z-index:1000;display:flex;gap:6px;padding:5px;border-radius:32px;background:rgba(20,27,36,.76);border:1px solid rgba(245,239,222,.35);backdrop-filter:blur(6px)}
 .language-switch a{width:39px;height:33px;display:flex;justify-content:center;align-items:center;border-radius:20px;border:1px solid transparent;text-decoration:none}
 .language-switch a:hover{background:rgba(255,255,255,.14)}
 .language-switch a[aria-current="true"]{border-color:var(--gold-light);background:rgba(210,174,99,.22)}
@@ -1067,10 +1067,9 @@
 .lang-flag-fr{background:linear-gradient(to right,#0055a4 33.33%,#fff 33.33%,#fff 66.66%,#ef4135 66.66%)}
 .lang-fr #sec-zrozumiec-wiare .faith-filters,.lang-fr #sec-zrozumiec-wiare .faith-grid,.lang-fr #sec-zrozumiec-wiare .faith-reading,.lang-fr #sec-zrozumiec-wiare #faith-search,.lang-fr #sec-zrozumiec-wiare .faith-search-label,.lang-fr #sec-zrozumiec-wiare #faith-empty{display:none!important}
 .faith-translation-notice{max-width:740px;margin:28px auto;padding:22px 25px;text-align:center;color:var(--ink-soft);background:var(--paper);border:1px solid var(--line);border-radius:10px;line-height:1.75}
-/* On small screens keep the controls inside the sticky dark header, not over the photo. */
-.brand{position:relative}
+/* The mobile sidebar stays sticky; the fixed flags sit over its dark top area. */
 @media(max-width:860px){
-  .language-switch{position:absolute;top:14px;right:15px;z-index:30}
+  .language-switch{position:fixed;top:14px;right:15px;z-index:1000}
   .brand-mark{padding-right:110px}
 }
 @media(max-width:360px){.brand-mark{padding-right:106px}.brand-name{font-size:1.21rem}}
@@ -1126,6 +1125,8 @@
 </style>
 </head>
 <body>
+<!-- Positioned outside the sidebar so its stacking context cannot hide the switch over the hero. -->
+<div class="language-switch" id="language-switch" role="group" aria-label="Wybór języka / Choix de langue"><a id="lang-pl" href="?lang=pl" lang="pl" hreflang="pl" aria-label="Polski" title="Polski"><span class="lang-flag lang-flag-pl" aria-hidden="true"></span></a><a id="lang-fr" href="?lang=fr" lang="fr" hreflang="fr" aria-label="Français" title="Français"><span class="lang-flag lang-flag-fr" aria-hidden="true"></span></a></div>
 
 <div class="shell">
 
@@ -1141,7 +1142,7 @@
           <div class="brand-sub">Sainte-Ségolène</div>
         </div>
       </div>
-      <div class="language-switch" id="language-switch" role="group" aria-label="Wybór języka / Choix de langue"><a id="lang-pl" href="?lang=pl" lang="pl" hreflang="pl" aria-label="Polski" title="Polski"><span class="lang-flag lang-flag-pl" aria-hidden="true"></span></a><a id="lang-fr" href="?lang=fr" lang="fr" hreflang="fr" aria-label="Français" title="Français"><span class="lang-flag lang-flag-fr" aria-hidden="true"></span></a></div>
+      
       <button class="menu-toggle" type="button" aria-label="Rozwiń menu" aria-expanded="false" aria-controls="main-menu">☰</button>
 
       <nav id="main-menu" class="menu" aria-label="Menu główne">
