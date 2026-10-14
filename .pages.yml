@@ -1203,3 +1203,23 @@ content:
         label: Źródło po francusku
         type: string
         required: false
+
+  - name: najblizsza_msza
+    label: Najbliższa Msza — lokalizacja lato / zima
+    type: file
+    path: content/najblizsza-msza.json
+    format: json
+    operations:
+      delete: false
+    fields:
+      - name: season
+        label: Miejsce niedzielnej Mszy
+        description: Zmienia miejsce wyróżnionej najbliższej niedzielnej Mszy na stronie głównej w obu językach. Godzina pozostaje 9:30. Przestaw ręcznie przy zmianie miejsca.
+        type: select
+        required: true
+        options:
+          values:
+            - name: summer
+              label: Wiosna / lato / jesień — kościół Sainte-Ségolène
+            - name: winter
+              label: Zima — kaplica Sainte-Croix

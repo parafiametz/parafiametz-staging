@@ -1075,6 +1075,55 @@
 }
 @media(max-width:360px){.brand-mark{padding-right:106px}.brand-name{font-size:1.21rem}}
 </style>
+
+<style id="next-sunday-mass-style">
+#next-sunday-mass[hidden],#next-sunday-mass-entrance[hidden]{display:none!important}
+#sec-home .next-sunday-mass{
+  margin:32px 0 15px;padding:27px 30px 29px;
+  background:linear-gradient(118deg,var(--paper),#fff5df);
+  border:1px solid rgba(169,130,44,.55);border-left:5px solid var(--gold);
+  border-radius:14px;box-shadow:0 5px 25px rgba(40,30,18,.055);
+}
+#sec-home .next-sunday-mass-kicker{
+  font:700 .77rem 'Libre Franklin',sans-serif;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--gold);margin:0 0 9px
+}
+#sec-home .next-sunday-mass h2{
+  margin:0 0 11px;color:var(--burgundy-deep);
+  font-size:clamp(1.95rem,3vw,2.65rem);line-height:1.13
+}
+#sec-home .next-sunday-mass-when{display:flex;flex-wrap:wrap;align-items:baseline;gap:7px 15px;margin:0 0 18px}
+#sec-home .next-sunday-mass-when time{
+  color:var(--burgundy);font-weight:700;
+  font-size:clamp(1.17rem,1.85vw,1.43rem);line-height:1.5
+}
+#sec-home .next-sunday-mass-time{
+  color:var(--burgundy-deep);font-weight:700;
+  font-size:clamp(1.4rem,2.35vw,1.85rem);line-height:1.3
+}
+#sec-home .next-sunday-mass-location{display:flex;flex-direction:column;gap:5px}
+#sec-home .next-sunday-mass-location strong{font-size:1.26rem;color:var(--ink);line-height:1.45}
+#sec-home .next-sunday-mass-location span{font-size:1.05rem;color:var(--ink-soft);line-height:1.55}
+#sec-home .next-sunday-mass-location small{font-size:.9rem;color:var(--ink-soft)}
+#sec-home .next-sunday-mass-route{
+  display:inline-flex;gap:10px;align-items:center;justify-content:center;
+  min-height:48px;padding:12px 21px;margin-top:22px;border-radius:9px;
+  background:var(--burgundy);color:var(--paper);font-size:.99rem;font-weight:700;
+  text-decoration:none;transition:background-color .15s ease
+}
+#sec-home .next-sunday-mass-route:hover{background:var(--burgundy-deep)}
+#sec-home .next-sunday-mass-route:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+#sec-home .next-sunday-mass + .fact-row{margin-top:22px}
+@media(max-width:600px){
+  #sec-home .next-sunday-mass{padding:22px 19px 24px;margin:25px 0 15px}
+  #sec-home .next-sunday-mass h2{font-size:2rem}
+  #sec-home .next-sunday-mass-when{flex-direction:column;gap:2px;margin-bottom:14px}
+  #sec-home .next-sunday-mass-when time{font-size:1.14rem}
+  #sec-home .next-sunday-mass-time{font-size:1.55rem}
+  #sec-home .next-sunday-mass-location strong{font-size:1.17rem}
+  #sec-home .next-sunday-mass-route{width:100%;margin-top:20px}
+}
+</style>
 </head>
 <body>
 
@@ -1159,6 +1208,27 @@
       <!-- HOME -->
       <section id="sec-home" class="active">
         <p id="home-lede" class="lede">Od dziesięcioleci Polacy mieszkający w Metz i okolicach Lotaryngii spotykają się tutaj, by modlić się, świętować i podtrzymywać więź z Ojczyzną — w języku, który jest im najbliższy.</p>
+
+
+        <!-- Sunday-only dynamic highlight; seasonal location is selected in PagesCMS. -->
+        <section id="next-sunday-mass" class="next-sunday-mass" aria-labelledby="next-sunday-mass-title" hidden>
+          <p class="next-sunday-mass-kicker" id="next-sunday-mass-kicker">Zapraszamy na Eucharystię</p>
+          <h2 id="next-sunday-mass-title">Najbliższa Msza święta w niedzielę</h2>
+          <div class="next-sunday-mass-when">
+            <time id="next-sunday-mass-date"></time>
+            <span class="next-sunday-mass-time" id="next-sunday-mass-time"></span>
+          </div>
+          <div class="next-sunday-mass-location">
+            <strong id="next-sunday-mass-place"></strong>
+            <span id="next-sunday-mass-address"></span>
+            <small id="next-sunday-mass-entrance" hidden></small>
+          </div>
+          <a id="next-sunday-mass-route" class="next-sunday-mass-route" href="#" target="_blank" rel="noopener noreferrer">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            <span id="next-sunday-mass-route-label">Wyznacz trasę</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </section>
 
         <div class="fact-row">
           <div class="fact-pill">
@@ -3367,5 +3437,83 @@ loadEditableSection(localeContentPath('kosciol'), data => {
   window.addEventListener('popstate', showCurrentRoute);
   showCurrentRoute();
 })();
-</script></body>
+</script>
+<script id="next-sunday-mass-script">
+(function(){
+  const card=document.getElementById('next-sunday-mass');
+  if(!card)return;
+  const locale=PAGE_LANG === 'fr' ? 'fr-FR' : 'pl-PL';
+  const trans=PAGE_LANG === 'fr' ? {
+    kicker:'Nous vous invitons à la messe',
+    title:'Prochaine messe du dimanche',
+    route:'Itinéraire',
+    summer:'Église Sainte-Ségolène',
+    winter:'Chapelle Sainte-Croix',
+    entrance:'Entrée par le portail 3A/B'
+  } : {
+    kicker:'Zapraszamy na Eucharystię',
+    title:'Najbliższa Msza święta w niedzielę',
+    route:'Wyznacz trasę',
+    summer:'Kościół Sainte-Ségolène',
+    winter:'Kaplica Sainte-Croix',
+    entrance:'Wejście przez bramę 3A/B'
+  };
+  const locations={
+    summer:{address:"14 place Jeanne d'Arc, 57000 Metz, France"},
+    winter:{address:"3 rue du Haut-de-Sainte-Croix, 57000 Metz, France"}
+  };
+  const massHour=9;
+  const massMinute=30;
+  const massClock=PAGE_LANG==='fr'?'9 h 30':'godz. 9:30';
+  const el=id=>document.getElementById('next-sunday-mass-'+id);
+  let season;
+  function nextSundayInMetz(){
+    // Date and local clock time must be resolved in Metz even for visitors abroad.
+    const current=new Intl.DateTimeFormat('en-GB',{
+      timeZone:'Europe/Paris',year:'numeric',month:'2-digit',day:'2-digit',
+      hour:'2-digit',minute:'2-digit',hourCycle:'h23'
+    }).formatToParts(new Date());
+    const val=k=>Number(current.find(part=>part.type===k)?.value);
+    const today=new Date(Date.UTC(val('year'),val('month')-1,val('day'),12));
+    let offset=(7-today.getUTCDay())%7;
+    if(offset===0 && (val('hour')*60+val('minute')) >= massHour*60+massMinute)offset=7;
+    return new Date(Date.UTC(val('year'),val('month')-1,val('day')+offset,12));
+  }
+  function render(){
+    if(!season)return;
+    const sunday=nextSundayInMetz();
+    const date=new Intl.DateTimeFormat(locale,{
+      timeZone:'UTC',weekday:'long',day:'numeric',month:'long',year:'numeric'
+    }).format(sunday);
+    const dateLabel=date.charAt(0).toLocaleUpperCase(locale)+date.slice(1);
+    const target=locations[season];
+    el('kicker').textContent=trans.kicker;
+    el('title').textContent=trans.title;
+    el('date').textContent=dateLabel;
+    el('date').dateTime=sunday.toISOString().slice(0,10);
+    el('time').textContent=massClock;
+    el('place').textContent=trans[season];
+    el('address').textContent=target.address;
+    const entrance=el('entrance');
+    entrance.hidden=season!=='winter';
+    entrance.textContent=season==='winter'?trans.entrance:'';
+    const link=el('route');
+    link.href='https://www.google.com/maps/dir/?api=1&destination='+encodeURIComponent(target.address);
+    el('route-label').textContent=trans.route;
+    card.hidden=false;
+  }
+  fetch('./content/najblizsza-msza.json',{cache:'no-store'})
+    .then(response=>{if(!response.ok)throw new Error('Mass settings: '+response.status);return response.json()})
+    .then(data=>{
+      if(data.season!=='summer' && data.season!=='winter')throw new Error('Invalid Mass location season');
+      season=data.season;
+      render();
+      // A page kept open across Sunday morning should advance to the following Sunday.
+      window.setInterval(render,60*1000);
+      window.addEventListener('focus',render);
+    })
+    .catch(error=>console.error('Loading next Sunday Mass:',error));
+})();
+</script>
+</body>
 </html>
