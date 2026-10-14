@@ -1,0 +1,22 @@
+{
+  "communityItems": [
+    {
+      "title": "Catéchèse pour les enfants",
+      "body": "Les samedis pendant la période scolaire, de 10 h à 12 h, à la Maison polonaise (parfois à l’église Sainte-Ségolène), hors vacances scolaires.",
+      "icon": "book",
+      "visible": true
+    },
+    {
+      "title": "Rencontre autour d’un café",
+      "body": "Après la messe du dimanche, à la Maison polonaise : un moment convivial pour échanger et renforcer les liens de la communauté.",
+      "icon": "coffee",
+      "visible": true
+    },
+    {
+      "title": "Célébrations liturgiques",
+      "body": "Noël, Pâques et les autres grandes fêtes sont célébrés ensemble, souvent avec des offices supplémentaires.",
+      "icon": "star",
+      "visible": true
+    }
+  ]
+}

@@ -2417,13 +2417,29 @@ document.addEventListener('keydown', (event) => {
     const data = await response.json();
 
     const communityContainer = document.getElementById('community-items');
-    const communityItems = Array.isArray(data.communityItems) ? data.communityItems : [];
+    // Scheduled events keep their original Polish text; translate only regular community items.
+    let communityItems = Array.isArray(data.communityItems) ? data.communityItems : [];
+    if (PAGE_LANG === 'fr') {
+      try {
+        const frResponse = await fetch('./content/fr/wydarzenia-stale.json', {cache:'no-store'});
+        if (!frResponse.ok) throw new Error('French regular events: ' + frResponse.status);
+        const translation = await frResponse.json();
+        if (!Array.isArray(translation.communityItems)) throw new Error('Invalid French regular events');
+        communityItems = translation.communityItems;
+      } catch (error) {
+        console.warn('French regular events unavailable, using Polish fallback',error);
+      }
+    }
+    const regularUi = PAGE_LANG === 'fr'
+      ? {more:'Lire la suite →',open:'Ouvrir les détails : ',fallback:'activité',title:'Détails de l’activité',empty:'Aucune activité régulière disponible.'}
+      : {more:'Czytaj więcej →',open:'Otwórz szczegóły: ',fallback:'wydarzenie',title:'Szczegóły wydarzenia',empty:'Brak stałych informacji.'};
     const communityDialog = document.getElementById('community-dialog');
     const communityDialogTitle = document.getElementById('community-dialog-title');
     const communityDialogBody = document.getElementById('community-dialog-body');
     const communityDialogClose = communityDialog?.querySelector('.community-dialog-close');
     let communityDialogOpener = null;
     if (communityDialog && communityDialogClose) {
+      if (PAGE_LANG === 'fr') communityDialogClose.setAttribute('aria-label','Fermer les détails');
       communityDialogClose.addEventListener('click', () => communityDialog.close());
       communityDialog.addEventListener('click', event => {
         if (event.target !== communityDialog) return;
@@ -2470,13 +2486,13 @@ document.addEventListener('keydown', (event) => {
             card.setAttribute('role', 'button');
             card.tabIndex = 0;
             card.setAttribute('aria-haspopup', 'dialog');
-            card.setAttribute('aria-label', 'Otwórz szczegóły: ' + (item.title || 'wydarzenie'));
+            card.setAttribute('aria-label', regularUi.open + (item.title || regularUi.fallback));
             const more = document.createElement('span');
             more.className = 'community-card-more';
-            more.textContent = 'Czytaj więcej →';
+            more.textContent = regularUi.more;
             content.append(more);
             const openDetails = () => {
-              communityDialogTitle.textContent = item.title || 'Szczegóły wydarzenia';
+              communityDialogTitle.textContent = item.title || regularUi.title;
               renderSafeRichText(communityDialogBody, item.details);
               communityDialogOpener = card;
               communityDialog.showModal();
@@ -2498,7 +2514,7 @@ document.addEventListener('keydown', (event) => {
       if (!communityFragment.childNodes.length) {
         const empty = document.createElement('p');
         empty.className = 'note';
-        empty.textContent = 'Brak stałych informacji.';
+        empty.textContent = regularUi.empty;
         communityFragment.append(empty);
       }
 
@@ -3502,11 +3518,11 @@ loadEditableSection(localeContentPath('kosciol'), data => {
     el('route-label').textContent=trans.route;
     card.hidden=false;
   }
-  fetch('./content/najblizsza-msza.json',{cache:'no-store'})
+  fetch('./content/strona-glowna.json',{cache:'no-store'})
     .then(response=>{if(!response.ok)throw new Error('Mass settings: '+response.status);return response.json()})
     .then(data=>{
-      if(data.season!=='summer' && data.season!=='winter')throw new Error('Invalid Mass location season');
-      season=data.season;
+      if(data.sundayMassSeason!=='summer' && data.sundayMassSeason!=='winter')throw new Error('Invalid Mass location season');
+      season=data.sundayMassSeason;
       render();
       // A page kept open across Sunday morning should advance to the following Sunday.
       window.setInterval(render,60*1000);
