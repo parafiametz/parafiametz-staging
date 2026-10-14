@@ -1,0 +1,55 @@
+{
+  "lede": "Le lieu de la messe dominicale en polonais varie selon la saison. Pensez à vérifier l’adresse avant de venir.",
+  "items": [
+    {
+      "title": "Dimanches et fêtes",
+      "icon": "clock",
+      "visible": true,
+      "rows": [
+        {
+          "label": "Horaire",
+          "text": "Messe en polonais à 9 h 30"
+        },
+        {
+          "label": "Printemps / été / automne",
+          "text": "Église Sainte-Ségolène, 14 place Jeanne d’Arc, Metz"
+        },
+        {
+          "label": "Hiver (fin novembre – Pâques)",
+          "text": "Chapelle Sainte-Croix, 3 rue du Haut-de-Sainte-Croix, Metz (entrée par le portail 3A/B)"
+        }
+      ]
+    },
+    {
+      "title": "Premier vendredi du mois",
+      "icon": "sun",
+      "visible": true,
+      "rows": [
+        {
+          "label": "Horaire",
+          "text": "Messe en polonais à 19 h 30, suivie de l’adoration du Saint-Sacrement"
+        }
+      ]
+    },
+    {
+      "title": "Confession",
+      "icon": "heart",
+      "visible": true,
+      "rows": [
+        {
+          "label": "",
+          "text": "Du mardi au samedi, avant et après chaque messe."
+        },
+        {
+          "label": "",
+          "text": "Chaque premier vendredi et premier samedi du mois, avant et après la messe."
+        },
+        {
+          "label": "",
+          "text": "Chaque dimanche, avant la messe."
+        }
+      ]
+    }
+  ],
+  "note": "Les horaires et lieux peuvent changer. Consultez les dernières annonces paroissiales (en polonais) ou contactez-nous pour confirmation."
+}

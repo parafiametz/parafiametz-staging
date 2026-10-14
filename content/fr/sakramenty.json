@@ -1,0 +1,42 @@
+{
+  "lede": "Les sacrements sont célébrés en polonais. Merci de nous contacter à l’avance pour convenir d’une date et connaître les formalités.",
+  "items": [
+    {
+      "title": "Baptême",
+      "icon": "baptism",
+      "body": "<p>Veuillez prendre contact suffisamment tôt et prévoir les documents nécessaires.</p>",
+      "visible": true
+    },
+    {
+      "title": "Première communion",
+      "icon": "person",
+      "body": "<p>Une préparation catéchétique des enfants est nécessaire.</p>",
+      "visible": true
+    },
+    {
+      "title": "Confirmation",
+      "icon": "sun",
+      "body": "<p>Proposée aux jeunes après une préparation adaptée.</p>",
+      "visible": true
+    },
+    {
+      "title": "Mariage",
+      "icon": "marriage",
+      "body": "<p>Un premier contact avec la paroisse est nécessaire, généralement plusieurs mois à l’avance.</p>",
+      "visible": true
+    },
+    {
+      "title": "Confession",
+      "icon": "baptism",
+      "body": "<p>Du mardi au samedi, avant et après chaque messe.</p><p>Chaque premier vendredi et premier samedi du mois, avant et après la messe.</p><p>Chaque dimanche, avant la messe.</p>",
+      "visible": true
+    },
+    {
+      "title": "Onction des malades",
+      "icon": "phone",
+      "body": "<p>Veuillez nous contacter par téléphone, notamment en cas d’urgence.</p>",
+      "visible": true
+    }
+  ],
+  "note": "Pour les démarches précises (actes, attestations de la paroisse de domicile en Pologne, etc.), contactez-nous par téléphone ou par e-mail : voir la rubrique Contact."
+}

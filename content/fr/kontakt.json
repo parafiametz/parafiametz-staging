@@ -1,0 +1,41 @@
+{
+  "lede": "Vous avez une question sur les messes, les sacrements ou la vie de notre communauté ? Contactez-nous.",
+  "contactItems": [
+    {
+      "title": "Téléphone et e-mail",
+      "body": "+33 3 87 75 43 88\nsainte.segolene_metz@orange.fr",
+      "icon": "phone",
+      "buttonLabel": "Nous écrire",
+      "buttonUrl": "mailto:sainte.segolene_metz@orange.fr",
+      "visible": true
+    },
+    {
+      "title": "Adresse postale",
+      "body": "14, rue des Capucins\n57000 Metz, France",
+      "icon": "mail",
+      "visible": true
+    },
+    {
+      "title": "Église Sainte-Ségolène",
+      "body": "14, place Jeanne d'Arc\n57000 Metz",
+      "icon": "church",
+      "visible": true
+    },
+    {
+      "title": "Chapelle Sainte-Croix (hiver)",
+      "body": "3, rue du Haut-de-Sainte-Croix\n57000 Metz",
+      "icon": "pin",
+      "visible": true
+    }
+  ],
+  "priestsTitle": "Prêtre accompagnateur",
+  "priests": [
+    {
+      "photo": "/media/images/ksiadz-jan.jpeg",
+      "firstName": "Jan",
+      "lastName": "Cetnar",
+      "visible": true
+    }
+  ],
+  "note": "Les coordonnées et les horaires sont donnés selon les dernières informations disponibles. En cas de doute, merci de nous contacter pour confirmation."
+}
