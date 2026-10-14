@@ -1055,7 +1055,22 @@
 @media(max-width:600px) {
   #sec-zrozumiec-wiare .faith-reading > .faith-share {margin-left:0;margin-top:8px;}
 }
-</style></head>
+</style>
+<style id="locale-staging-style">
+.language-switch{position:absolute;right:18px;top:16px;z-index:5;display:flex;gap:6px;padding:5px;border-radius:32px;background:rgba(20,27,36,.76);border:1px solid rgba(245,239,222,.35);backdrop-filter:blur(6px)}
+.language-switch a{width:39px;height:33px;display:flex;justify-content:center;align-items:center;border-radius:20px;border:1px solid transparent;text-decoration:none}
+.language-switch a:hover{background:rgba(255,255,255,.14)}
+.language-switch a[aria-current="true"]{border-color:var(--gold-light);background:rgba(210,174,99,.22)}
+.language-switch a:focus-visible{outline:3px solid white;outline-offset:2px}
+.lang-flag{display:block;width:24px;height:16px;border:1px solid #bcbcbc;border-radius:2px;box-shadow:0 1px 2px rgba(0,0,0,.25)}
+.lang-flag-pl{background:linear-gradient(to bottom,#fff 50%,#dc143c 50%)}
+.lang-flag-fr{background:linear-gradient(to right,#0055a4 33.33%,#fff 33.33%,#fff 66.66%,#ef4135 66.66%)}
+.lang-fr #sec-zrozumiec-wiare .faith-filters,.lang-fr #sec-zrozumiec-wiare .faith-grid,.lang-fr #sec-zrozumiec-wiare .faith-reading,.lang-fr #sec-zrozumiec-wiare #faith-search,.lang-fr #sec-zrozumiec-wiare .faith-search-label,.lang-fr #sec-zrozumiec-wiare #faith-empty{display:none!important}
+.faith-translation-notice{max-width:740px;margin:28px auto;padding:22px 25px;text-align:center;color:var(--ink-soft);background:var(--paper);border:1px solid var(--line);border-radius:10px;line-height:1.75}
+@media(max-width:860px){.language-switch{top:12px;right:12px}}
+@media(max-width:600px){.hero-inner{padding-top:66px!important}}
+</style>
+</head>
 <body>
 
 <div class="shell">
@@ -1125,6 +1140,7 @@
 
   <main>
     <div class="hero" id="hero">
+    <div class="language-switch" id="language-switch" role="group" aria-label="Wybór języka / Choix de langue"><a id="lang-pl" href="?lang=pl" lang="pl" hreflang="pl" aria-label="Polski" title="Polski"><span class="lang-flag lang-flag-pl" aria-hidden="true"></span></a><a id="lang-fr" href="?lang=fr" lang="fr" hreflang="fr" aria-label="Français" title="Français"><span class="lang-flag lang-flag-fr" aria-hidden="true"></span></a></div>
       <div class="hero-inner">
         <div class="hero-eyebrow">Parafia Metz</div>
         <h1 id="hero-title">Parafia w Metz</h1>
@@ -1907,6 +1923,82 @@ sainte.segolene_metz@orange.fr</p>
   </main>
 </div>
 
+
+<script id="site-locale">
+const PAGE_LANG = new URLSearchParams(location.search).get('lang') === 'fr' ? 'fr' : 'pl';
+const localeContentPath = name => './content/' + (PAGE_LANG === 'fr' ? 'fr/' : '') + name + '.json';
+document.documentElement.lang = PAGE_LANG;
+document.documentElement.classList.toggle('lang-fr',PAGE_LANG === 'fr');
+document.querySelectorAll('#language-switch a').forEach(link => {
+  const isCurrent = link.id === 'lang-' + PAGE_LANG;
+  link.setAttribute('aria-current',String(isCurrent));
+  const u = new URL(location.href);
+  if(link.id === 'lang-fr') u.searchParams.set('lang','fr');
+  else u.searchParams.delete('lang');
+  link.href = u.pathname + u.search + u.hash;
+});
+const localeStrings = {
+  'Adres jest jeszcze do uzupełnienia i weryfikacji.':'Adresse à compléter et à vérifier.',
+  'Miejsce ':'Lieu ', 'Adres do uzupełnienia':'Adresse à compléter',
+  'Wyznacz trasę':'Itinéraire','Strona internetowa':'Site web',
+  'Dane do weryfikacji przed podróżą.':'Informations à vérifier avant le déplacement.',
+  'Nie udało się wczytać listy miejscowości.':'Impossible de charger la liste des villes.'
+};
+const uiText = str => PAGE_LANG === 'fr' ? (localeStrings[str] || str) : str;
+if(PAGE_LANG === 'fr') {
+  const txt=(selector,value)=>{const el=document.querySelector(selector);if(el)el.textContent=value};
+  const navLabels={
+    home:'Accueil',msze:'Messes et célébrations',
+    aktualnosci:'Annonces paroissiales',wydarzenia:'Événements',
+    'zrozumiec-wiare':'Comprendre la foi',misja:'Notre mission',
+    sakramenty:'Sacrements',kosciol:'Église Sainte-Ségolène',
+    'misje-francja':'Missions polonaises en France',kontakt:'Contact'
+  };
+  Object.entries(navLabels).forEach(([section,value])=>{
+    const btn=document.querySelector('nav.menu button[data-section="'+section+'"]');
+    if(!btn)return;
+    const label=btn.querySelector('#faith-menu-label');
+    if(label){label.textContent=value;return}
+    const node=Array.from(btn.childNodes).reverse().find(n=>n.nodeType===Node.TEXT_NODE);
+    if(node)node.textContent=' '+value;
+  });
+  for(const section of ['msze','aktualnosci','wydarzenia','misja','sakramenty','kosciol','misje-francja','kontakt'])
+    txt('#sec-'+section+' > h2',navLabels[section]);
+  txt('.sidebar-foot strong','MESSE DU DIMANCHE');
+  const foot=document.querySelector('.sidebar-foot');
+  if(foot)Array.from(foot.childNodes).filter(n=>n.nodeType===Node.TEXT_NODE).forEach(n=>n.textContent=' 9 h 30 · en polonais ');
+  txt('.page-foot','Communauté catholique polonaise de Metz · Paroisse Sainte-Ségolène');
+  txt('.faith-eyebrow','BIBLIOTHÈQUE : FOI ET RAISON');
+  txt('#faith-section-title','Comprendre la foi');
+  txt('#faith-section-intro','La foi suscite des questions. Nous cherchons des réponses dans l’Écriture sainte, l’enseignement de l’Église, l’histoire et la raison.');
+  const lib=document.querySelector('#sec-zrozumiec-wiare .faith-library');
+  if(lib){const notice=document.createElement('p');notice.className='faith-translation-notice';
+    notice.textContent='Les articles sont en cours de traduction et de relecture. Ils seront proposés en français dès que les textes seront prêts. La version polonaise reste disponible.';
+    lib.append(notice);
+  }
+  txt('#aktualnosci-lede','Annonces paroissiales publiées en polonais.');
+  txt('#sec-wydarzenia > .lede','Rencontres, catéchèse et célébrations de notre communauté, publiées en polonais.');
+  txt('.events-static-title','Activités régulières de la communauté');
+  txt('.events-upcoming-title','Événements paroissiaux');
+  txt('.mission-map-note a','Voir la source');
+  const mapNote=document.querySelector('.mission-map-note');
+  if(mapNote){const nodes=Array.from(mapNote.childNodes).filter(n=>n.nodeType===Node.TEXT_NODE);
+    if(nodes[0])nodes[0].textContent='Survolez ou touchez une icône d’église pour afficher la ville. Ces données issues de PolskiFR sont vérifiées progressivement. ';
+    if(nodes[1])nodes[1].textContent=' · mise à jour : ';
+  }
+  const aria={
+    '#main-menu':'Navigation principale','.menu-toggle':'Ouvrir le menu',
+    '.mission-list-panel':'Liste des villes','#mission-info':'Informations sur la ville sélectionnée',
+    '#mission-info-close':'Fermer','.map-zoom-controls':'Zoom de la carte',
+    '#map-zoom-in':'Agrandir la carte','#map-zoom-out':'Réduire la carte',
+    '#map-zoom-reset':'Afficher toute la France'
+  };
+  Object.entries(aria).forEach(([selector,value])=>{const e=document.querySelector(selector);if(e)e.setAttribute('aria-label',value)});
+  document.title='Communauté catholique polonaise à Metz — Sainte-Ségolène';
+  const desc=document.querySelector('meta[name="description"]');
+  if(desc)desc.setAttribute('content','Messes en polonais à Metz, sacrements, catéchèse et vie de la communauté catholique polonaise en Lorraine.');
+}
+</script>
 <script>
   function cmsDateKey(value) {
     const raw = String(value || '').trim();
@@ -1967,6 +2059,19 @@ sainte.segolene_metz@orange.fr</p>
     }
   });
 
+
+  if(PAGE_LANG === 'fr') Object.assign(titles,{
+    home:['Communauté catholique polonaise à Metz','Foi et culture polonaise au sein de la paroisse Sainte-Ségolène.'],
+    msze:['Messes et célébrations','Horaires et lieux de célébrations en polonais.'],
+    aktualnosci:['Annonces paroissiales','Informations de la paroisse publiées en polonais.'],
+    wydarzenia:['Événements','Catéchèse, rencontres et célébrations de la communauté.'],
+    'zrozumiec-wiare':['Comprendre la foi','Foi, raison et questions essentielles.'],
+    misja:['Notre mission','Pastorale des Polonais à Metz et en Lorraine.'],
+    sakramenty:['Sacrements','Baptême, communion, confirmation, mariage et confession en polonais.'],
+    kosciol:['Église Sainte-Ségolène','L’une des plus anciennes églises paroissiales de Metz.'],
+    'misje-francja':['Missions polonaises en France','Trouvez des lieux de pastorale catholique polonaise en France.'],
+    kontakt:['Contact','Écrivez-nous, téléphonez-nous ou venez nous rencontrer.']
+  });
   const buttons = document.querySelectorAll('nav.menu button');
   const sections = document.querySelectorAll('.content section');
   const hero = document.getElementById('hero');
@@ -2477,7 +2582,7 @@ function cmsIcon(name, fallback = 'church') {
 
 (async function loadMassSchedule() {
   try {
-    const response = await fetch('./content/msze.json', {cache:'no-store'});
+    const response = await fetch(localeContentPath('msze'), {cache:'no-store'});
     if (!response.ok) throw new Error('Msze request failed: ' + response.status);
     const data = await response.json();
 
@@ -2527,7 +2632,7 @@ function cmsIcon(name, fallback = 'church') {
 
 (async function loadSacraments() {
   try {
-    const response = await fetch('./content/sakramenty.json', {cache:'no-store'});
+    const response = await fetch(localeContentPath('sakramenty'), {cache:'no-store'});
     if (!response.ok) throw new Error('Sakramenty request failed: ' + response.status);
     const data = await response.json();
 
@@ -2565,7 +2670,7 @@ function cmsIcon(name, fallback = 'church') {
 
 (async function loadContactPage() {
   try {
-    const response = await fetch('./content/kontakt.json', {cache:'no-store'});
+    const response = await fetch(localeContentPath('kontakt'), {cache:'no-store'});
     if (!response.ok) throw new Error('Kontakt request failed: ' + response.status);
     const data = await response.json();
 
@@ -2713,14 +2818,14 @@ async function loadEditableSection(path, apply) {
     apply(await response.json());
   } catch(error) { console.error('Loading editable section:',error); }
 }
-loadEditableSection('./content/strona-glowna.json', data => {
+loadEditableSection(localeContentPath('strona-glowna'), data => {
   setCmsText('home-lede',data.lede); setCmsText('home-mass-label',data.massLabel); setCmsText('home-mass-value',data.massValue);
   setCmsText('home-address-label',data.addressLabel); setCmsText('home-address-value',data.addressValue); setCmsText('home-contact-label',data.contactLabel); setCmsText('home-contact-value',data.contactValue);
   setCmsText('home-paragraph1',data.paragraph1); setCmsText('home-callout',data.callout);
   if (typeof data.paragraph2==='string') renderSafeRichText(document.getElementById('home-paragraph2'),data.paragraph2);
 });
 
-loadEditableSection('./content/zrozumiec-wiare.json', data => {
+loadEditableSection(localeContentPath('zrozumiec-wiare'), data => {
   if (typeof data.title === 'string' && data.title.trim()) {
     setCmsText('faith-section-title', data.title);
     setCmsText('faith-menu-label', data.title);
@@ -2728,10 +2833,10 @@ loadEditableSection('./content/zrozumiec-wiare.json', data => {
   }
   setCmsText('faith-section-intro', data.intro);
 });
-loadEditableSection('./content/misja.json', data => {
+loadEditableSection(localeContentPath('misja'), data => {
   setCmsText('misja-lede',data.lede); setCmsText('misja-paragraph1',data.paragraph1); setCmsText('misja-paragraph2',data.paragraph2); setCmsText('misja-callout',data.callout);
 });
-loadEditableSection('./content/kosciol.json', data => {
+loadEditableSection(localeContentPath('kosciol'), data => {
   setCmsText('kosciol-lede',data.lede); setCmsText('kosciol-paragraph1',data.paragraph1);
   if (typeof data.paragraph2==='string') renderSafeRichText(document.getElementById('kosciol-paragraph2'),data.paragraph2);
   setCmsText('kosciol-address-label',data.addressLabel); setCmsText('kosciol-address-value',data.addressValue); setCmsText('kosciol-patron-label',data.patronLabel); setCmsText('kosciol-patron-value',data.patronValue); setCmsText('kosciol-feast-label',data.feastLabel); setCmsText('kosciol-feast-value',data.feastValue);
@@ -2749,6 +2854,13 @@ loadEditableSection('./content/kosciol.json', data => {
     if(!response.ok) throw new Error('Misje Francja request failed');
     const data=await response.json();
     if(typeof data.lede==='string') document.getElementById('misje-francja-lede').textContent=data.lede;
+    if(PAGE_LANG === 'fr') {
+      try {
+        const trResponse=await fetch(localeContentPath('misje-francja'),{cache:'no-store'});
+        if(trResponse.ok){const translation=await trResponse.json();
+          if(typeof translation.lede==='string')document.getElementById('misje-francja-lede').textContent=translation.lede;}
+      }catch(err){console.warn('French map description:',err)}
+    }
     if(typeof data.updated==='string') document.getElementById('misje-updated').textContent=data.updated;
     if(typeof data.sourceUrl==='string' && /^https:\/\//i.test(data.sourceUrl)) document.getElementById('misje-source').href=data.sourceUrl;
     const items=(Array.isArray(data.items)?data.items:[]).filter(x=>x&&x.visible!==false&&typeof x.city==='string'&&Number.isFinite(Number(x.lat))&&Number.isFinite(Number(x.lon))).sort((a,b)=>a.city.localeCompare(b.city,'pl'));
@@ -2819,20 +2931,20 @@ loadEditableSection('./content/kosciol.json', data => {
       infoBody.replaceChildren();
       const locations=Array.isArray(item.locations)?item.locations:[];
       if(!locations.length){
-        const p=document.createElement('p'); p.className='mission-address'; p.textContent='Adres jest jeszcze do uzupełnienia i weryfikacji.'; infoBody.append(p);
+        const p=document.createElement('p'); p.className='mission-address'; p.textContent=uiText('Adres jest jeszcze do uzupełnienia i weryfikacji.'); infoBody.append(p);
       } else {
         locations.forEach((loc,index)=>{
           const block=document.createElement('div'); block.className='mission-location';
-          if(loc.name || locations.length>1){const strong=document.createElement('strong'); strong.textContent=loc.name||('Miejsce '+(index+1)); block.append(strong);}
-          const p=document.createElement('p'); p.className='mission-address'; p.textContent=loc.address||'Adres do uzupełnienia'; block.append(p);
+          if(loc.name || locations.length>1){const strong=document.createElement('strong'); strong.textContent=loc.name||(uiText('Miejsce ')+(index+1)); block.append(strong);}
+          const p=document.createElement('p'); p.className='mission-address'; p.textContent=loc.address||uiText('Adres do uzupełnienia'); block.append(p);
           const links=document.createElement('div'); links.className='mission-links';
           if(loc.address){
-            const route=document.createElement('a'); route.target='_blank'; route.rel='noopener noreferrer'; route.href='https://www.google.com/maps/dir/?api=1&destination='+encodeURIComponent(loc.address); route.textContent='Wyznacz trasę'; links.append(route);
+            const route=document.createElement('a'); route.target='_blank'; route.rel='noopener noreferrer'; route.href='https://www.google.com/maps/dir/?api=1&destination='+encodeURIComponent(loc.address); route.textContent=uiText('Wyznacz trasę'); links.append(route);
           }
           const website=safeHttpUrl(loc.website);
-          if(website){const a=document.createElement('a'); a.target='_blank'; a.rel='noopener noreferrer'; a.href=website; a.textContent='Strona internetowa'; links.append(a);}
+          if(website){const a=document.createElement('a'); a.target='_blank'; a.rel='noopener noreferrer'; a.href=website; a.textContent=uiText('Strona internetowa'); links.append(a);}
           block.append(links);
-          if(loc.verified!==true){const note=document.createElement('p'); note.className='mission-unverified'; note.textContent='Dane do weryfikacji przed podróżą.'; block.append(note);}
+          if(loc.verified!==true){const note=document.createElement('p'); note.className='mission-unverified'; note.textContent=uiText('Dane do weryfikacji przed podróżą.'); block.append(note);}
           infoBody.append(block);
         });
       }
@@ -2973,7 +3085,7 @@ loadEditableSection('./content/kosciol.json', data => {
     applyMapView();
   }catch(error){
     console.error('Loading Misje Francja:',error);
-    list.textContent='Nie udało się wczytać listy miejscowości.';
+    list.textContent=uiText('Nie udało się wczytać listy miejscowości.');
   }
 })();
 </script>
@@ -2984,6 +3096,7 @@ loadEditableSection('./content/kosciol.json', data => {
 (async()=>{
   const root = document.getElementById('sec-zrozumiec-wiare');
   if (!root) return;
+  if (PAGE_LANG === 'fr') return; // Wait for verified French article translations.
   // CMS source of truth; embedded articles remain as an offline fallback.
   try {
     const response = await fetch('content/zrozumiec-wiare-artykuly.json', {cache:'no-store'});
