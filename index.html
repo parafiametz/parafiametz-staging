@@ -2007,24 +2007,50 @@ const PAGE_LANG = new URLSearchParams(location.search).get('lang') === 'fr' ? 'f
 const localeContentPath = name => './content/' + (PAGE_LANG === 'fr' ? 'fr/' : '') + name + '.json';
 document.documentElement.lang = PAGE_LANG;
 document.documentElement.classList.toggle('lang-fr',PAGE_LANG === 'fr');
-// Rebuild switch URLs from the CURRENT route, not the route used on initial load.
-// SPA navigation uses history.pushState, so a one-time assignment creates stale links.
+// Always derive a language change from the currently visible section, not a stale link.
+// SPA navigation uses pushState and does not cause an ordinary hashchange event.
 const languageLinks = document.querySelectorAll('#language-switch a');
+function currentVisibleRoute() {
+  const active = document.querySelector('nav.menu button[data-section].active');
+  const section = active?.dataset.section ||
+    document.querySelector('.content > section.active')?.id?.replace(/^sec-/, '');
+  if (section) {
+    // Preserve links to individual Polish articles across a language change.
+    if (section === 'zrozumiec-wiare' && location.hash.startsWith('#zrozumiec-wiare/'))
+      return location.hash;
+    return '#' + section;
+  }
+  return location.hash || '#home';
+}
+function languageDestination(lang) {
+  const url = new URL(location.href);
+  if (lang === 'fr') url.searchParams.set('lang', 'fr');
+  else url.searchParams.delete('lang');
+  url.hash = currentVisibleRoute();
+  return url.pathname + url.search + url.hash;
+}
 function refreshLanguageLinks() {
   languageLinks.forEach(link => {
-    const isCurrent = link.id === 'lang-' + PAGE_LANG;
-    link.setAttribute('aria-current', String(isCurrent));
-    const url = new URL(location.href);
-    if (link.id === 'lang-fr') url.searchParams.set('lang', 'fr');
-    else url.searchParams.delete('lang');
-    link.href = url.pathname + url.search + url.hash;
+    link.setAttribute('aria-current', String(link.id === 'lang-' + PAGE_LANG));
+    link.href = languageDestination(link.id === 'lang-fr' ? 'fr' : 'pl');
   });
 }
 languageLinks.forEach(link => {
-  // Update just before navigation, including direct article links and Home.
-  link.addEventListener('click', refreshLanguageLinks);
   link.addEventListener('focus', refreshLanguageLinks);
-  link.addEventListener('pointerenter', refreshLanguageLinks);
+  link.addEventListener('pointerdown', refreshLanguageLinks);
+  link.addEventListener('contextmenu', refreshLanguageLinks);
+  link.addEventListener('click', event => {
+    // Calculate at click time, in case the current section changed since pointerdown.
+    const destination = languageDestination(link.id === 'lang-fr' ? 'fr' : 'pl');
+    refreshLanguageLinks();
+    if (event.defaultPrevented || event.button !== 0 ||
+        event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    // Avoid reloading the current language when the active flag is tapped.
+    if (link.id === 'lang-' + PAGE_LANG &&
+        destination === location.pathname + location.search + location.hash) return;
+    window.location.assign(destination);
+  });
 });
 window.addEventListener('hashchange', refreshLanguageLinks);
 window.addEventListener('popstate', refreshLanguageLinks);
