@@ -2858,7 +2858,8 @@ loadEditableSection(localeContentPath('kosciol'), data => {
       try {
         const trResponse=await fetch(localeContentPath('misje-francja'),{cache:'no-store'});
         if(trResponse.ok){const translation=await trResponse.json();
-          if(typeof translation.lede==='string')document.getElementById('misje-francja-lede').textContent=translation.lede;}
+          if(typeof translation.lede==='string')document.getElementById('misje-francja-lede').textContent=translation.lede;
+          if(typeof translation.sourceLabel==='string')document.getElementById('misje-source').textContent=translation.sourceLabel;}
       }catch(err){console.warn('French map description:',err)}
     }
     if(typeof data.updated==='string') document.getElementById('misje-updated').textContent=data.updated;
