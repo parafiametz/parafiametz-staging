@@ -1076,7 +1076,20 @@
 </style>
 
 <style id="next-sunday-mass-style">
-#next-sunday-mass[hidden],#next-sunday-mass-entrance[hidden]{display:none!important}
+#next-sunday-mass[hidden],#next-sunday-mass-entrance[hidden],
+#next-sunday-mass-cancellation[hidden],#next-sunday-mass-route[hidden],
+#next-sunday-mass-time[hidden],#next-sunday-mass-place[hidden],
+#next-sunday-mass-address[hidden]{display:none!important}
+#sec-home .next-sunday-mass[data-status="cancelled"]{
+  border-color:rgba(122,22,38,.45);border-left-color:var(--burgundy);
+  background:linear-gradient(118deg,#fff5ed,#f9eae6)
+}
+#sec-home .next-sunday-mass[data-status="cancelled"] .next-sunday-mass-kicker{color:var(--burgundy)}
+#sec-home .next-sunday-mass[data-status="unconfirmed"]{border-left-color:var(--burgundy)}
+#sec-home .next-sunday-mass-cancellation{
+  font-size:1.13rem;color:var(--burgundy-deep);font-weight:600;line-height:1.6;
+  max-width:660px;margin:10px auto 2px;white-space:pre-wrap
+}
 #sec-home .next-sunday-mass{
   margin:32px auto 15px;padding:27px 30px 29px;
   width:100%;max-width:900px;text-align:center;
@@ -1225,6 +1238,7 @@
             <span id="next-sunday-mass-address"></span>
             <small id="next-sunday-mass-entrance" hidden></small>
           </div>
+          <p id="next-sunday-mass-cancellation" class="next-sunday-mass-cancellation" role="status" hidden></p>
           <a id="next-sunday-mass-route" class="next-sunday-mass-route" href="#" target="_blank" rel="noopener noreferrer">
             <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
             <span id="next-sunday-mass-route-label">Wyznacz trasę</span>
@@ -3506,31 +3520,44 @@ loadEditableSection(localeContentPath('kosciol'), data => {
   if(!card)return;
   const locale=PAGE_LANG === 'fr' ? 'fr-FR' : 'pl-PL';
   const trans=PAGE_LANG === 'fr' ? {
-    kicker:'Nous vous invitons à la messe',
-    title:'Prochaine messe du dimanche',
-    route:'Itinéraire',
-    summer:'Église Sainte-Ségolène',
-    winter:'Chapelle Sainte-Croix',
-    entrance:'Entrée par le portail 3A/B'
+    kicker:'Nous vous invitons à la messe',title:'Prochaine messe du dimanche',
+    route:'Itinéraire',summer:'Église Sainte-Ségolène',winter:'Chapelle Sainte-Croix',
+    entrance:'Entrée par le portail 3A/B',
+    cancelledKicker:'Information paroissiale importante',
+    cancelledTitle:'Messe du dimanche annulée',
+    cancelledReason:'Motif : ',unspecified:'Motif non précisé. Veuillez contacter la paroisse pour plus de renseignements.',
+    unconfirmedTitle:'Messe du dimanche à confirmer',
+    unconfirmed:'La date de l’annulation n’est pas correctement renseignée. Veuillez consulter les annonces paroissiales ou nous contacter.'
   } : {
-    kicker:'Zapraszamy na Eucharystię',
-    title:'Najbliższa Msza święta w niedzielę',
-    route:'Wyznacz trasę',
-    summer:'Kościół Sainte-Ségolène',
-    winter:'Kaplica Sainte-Croix',
-    entrance:'Wejście przez bramę 3A/B'
+    kicker:'Zapraszamy na Eucharystię',title:'Najbliższa Msza święta w niedzielę',
+    route:'Wyznacz trasę',summer:'Kościół Sainte-Ségolène',winter:'Kaplica Sainte-Croix',
+    entrance:'Wejście przez bramę 3A/B',
+    cancelledKicker:'Ważna informacja parafialna',
+    cancelledTitle:'Msza święta w niedzielę odwołana',
+    cancelledReason:'Powód: ',unspecified:'Nie podano przyczyny odwołania. Szczegółowe informacje można uzyskać w parafii.',
+    unconfirmedTitle:'Niedzielna Msza święta — do potwierdzenia',
+    unconfirmed:'Nie podano prawidłowej daty odwołania. Sprawdź ogłoszenia duszpasterskie lub skontaktuj się z parafią.'
   };
   const locations={
     summer:{address:"14 place Jeanne d'Arc, 57000 Metz, France"},
     winter:{address:"3 rue du Haut-de-Sainte-Croix, 57000 Metz, France"}
   };
-  const massHour=9;
-  const massMinute=30;
+  const massHour=9,massMinute=30;
   const massClock=PAGE_LANG==='fr'?'9 h 30':'godz. 9:30';
   const el=id=>document.getElementById('next-sunday-mass-'+id);
-  let season;
+  let settings=null;
+  // PagesCMS dates can be written as DD/MM/YYYY or ISO; reject invalid/non-Sunday dates.
+  function cancellationDateKey(raw){
+    const value=String(raw||'').trim();
+    const eu=value.match(/^(\d{2})\/(\d{2})\/(\d{4})$/);
+    const iso=eu ? eu[3]+'-'+eu[2]+'-'+eu[1] : value;
+    if(!/^\d{4}-\d{2}-\d{2}$/.test(iso))return '';
+    const year=Number(iso.slice(0,4)),month=Number(iso.slice(5,7)),day=Number(iso.slice(8,10));
+    const date=new Date(Date.UTC(year,month-1,day,12));
+    return date.getUTCFullYear()===year && date.getUTCMonth()===month-1 &&
+      date.getUTCDate()===day && date.getUTCDay()===0 ? iso : '';
+  }
   function nextSundayInMetz(){
-    // Date and local clock time must be resolved in Metz even for visitors abroad.
     const current=new Intl.DateTimeFormat('en-GB',{
       timeZone:'Europe/Paris',year:'numeric',month:'2-digit',day:'2-digit',
       hour:'2-digit',minute:'2-digit',hourCycle:'h23'
@@ -3541,36 +3568,62 @@ loadEditableSection(localeContentPath('kosciol'), data => {
     if(offset===0 && (val('hour')*60+val('minute')) >= massHour*60+massMinute)offset=7;
     return new Date(Date.UTC(val('year'),val('month')-1,val('day')+offset,12));
   }
+  function displayMode(data,sundayKey){
+    if(data.sundayMassSeason==='summer'||data.sundayMassSeason==='winter')return data.sundayMassSeason;
+    if(data.sundayMassSeason!=='cancelled')return 'unconfirmed';
+    const dateKey=cancellationDateKey(data.sundayMassCancelledDate);
+    // An incomplete cancellation must not produce a false "confirmed mass".
+    if(!dateKey)return 'unconfirmed';
+    if(dateKey===sundayKey)return 'cancelled';
+    // The cancellation affects ONE Sunday only; never imply that later masses are cancelled.
+    return data.sundayMassReturnSeason==='winter'?'winter':'summer';
+  }
   function render(){
-    if(!season)return;
+    if(!settings)return;
     const sunday=nextSundayInMetz();
-    const date=new Intl.DateTimeFormat(locale,{
+    const sundayKey=sunday.toISOString().slice(0,10);
+    const status=displayMode(settings,sundayKey);
+    const label=new Intl.DateTimeFormat(locale,{
       timeZone:'UTC',weekday:'long',day:'numeric',month:'long',year:'numeric'
     }).format(sunday);
-    const dateLabel=date.charAt(0).toLocaleUpperCase(locale)+date.slice(1);
-    const target=locations[season];
-    el('kicker').textContent=trans.kicker;
-    el('title').textContent=trans.title;
-    el('date').textContent=dateLabel;
-    el('date').dateTime=sunday.toISOString().slice(0,10);
-    el('time').textContent=massClock;
-    el('place').textContent=trans[season];
-    el('address').textContent=target.address;
-    const entrance=el('entrance');
-    entrance.hidden=season!=='winter';
-    entrance.textContent=season==='winter'?trans.entrance:'';
-    const link=el('route');
-    link.href='https://www.google.com/maps/dir/?api=1&destination='+encodeURIComponent(target.address);
-    el('route-label').textContent=trans.route;
+    el('date').textContent=label.charAt(0).toLocaleUpperCase(locale)+label.slice(1);
+    el('date').dateTime=sundayKey;
+    card.dataset.status=status;
+    const isNormal=status==='summer'||status==='winter';
+    el('kicker').textContent=isNormal?trans.kicker:trans.cancelledKicker;
+    el('title').textContent=isNormal?trans.title:status==='cancelled'?trans.cancelledTitle:trans.unconfirmedTitle;
+    el('time').hidden=!isNormal;
+    el('place').hidden=!isNormal;
+    el('address').hidden=!isNormal;
+    el('entrance').hidden=status!=='winter';
+    el('route').hidden=!isNormal;
+    const note=el('cancellation');
+    note.hidden=isNormal;
+    if(isNormal){
+      const target=locations[status];
+      el('time').textContent=massClock;
+      el('place').textContent=trans[status];
+      el('address').textContent=target.address;
+      el('entrance').textContent=status==='winter'?trans.entrance:'';
+      el('route').href='https://www.google.com/maps/dir/?api=1&destination='+encodeURIComponent(target.address);
+      el('route-label').textContent=trans.route;
+      note.textContent='';
+    }else{
+      const reason=PAGE_LANG==='fr'
+        ?settings.sundayMassCancellationReasonFr
+        :settings.sundayMassCancellationReasonPl;
+      note.textContent=status==='cancelled'
+        ?(typeof reason==='string' && reason.trim()?trans.cancelledReason+reason.trim():trans.unspecified)
+        :trans.unconfirmed;
+      el('route').removeAttribute('href');
+    }
     card.hidden=false;
   }
   fetch('./content/strona-glowna.json',{cache:'no-store'})
     .then(response=>{if(!response.ok)throw new Error('Mass settings: '+response.status);return response.json()})
     .then(data=>{
-      if(data.sundayMassSeason!=='summer' && data.sundayMassSeason!=='winter')throw new Error('Invalid Mass location season');
-      season=data.sundayMassSeason;
+      settings=data;
       render();
-      // A page kept open across Sunday morning should advance to the following Sunday.
       window.setInterval(render,60*1000);
       window.addEventListener('focus',render);
     })

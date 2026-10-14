@@ -21,8 +21,8 @@ content:
         type: text
         required: true
       - name: sundayMassSeason
-        label: Miejsce niedzielnej Mszy — lato / zima
-        description: Przełącznik miejsca wyróżnionej Mszy niedzielnej w obu językach. Lato = kościół Sainte-Ségolène, zima = kaplica Sainte-Croix. Zmiana nie wpływa na stałe informacje o Mszach.
+        label: Najbliższa Msza niedzielna — miejsce lub odwołanie
+        description: Wybierz kościół, kaplicę albo „Msza odwołana”. Przy odwołaniu wypełnij datę konkretnej niedzieli i przyczynę. Po tej dacie wyróżniony blok automatycznie wraca do zwykłego miejsca wskazanego poniżej.
         type: select
         required: true
         options:
@@ -31,6 +31,37 @@ content:
               label: Lato — kościół Sainte-Ségolène
             - name: winter
               label: Zima — kaplica Sainte-Croix
+            - name: cancelled
+              label: Msza odwołana — podaj datę i przyczynę
+      - name: sundayMassCancelledDate
+        label: Data odwołanej niedzieli
+        description: Uzupełnij TYLKO przy opcji „Msza odwołana”. Odwołanie dotyczy wyłącznie tej niedzieli, nie każdej kolejnej. Data powinna wypadać w niedzielę. Bez prawidłowej daty strona pokaże informację o konieczności potwierdzenia Mszy zamiast wskazywać trasę.
+        type: date
+        required: false
+        options:
+          time: false
+          format: dd/MM/yyyy
+      - name: sundayMassCancellationReasonPl
+        label: Powód odwołania — po polsku
+        description: Wyświetlany tylko przy odwołanej niedzieli. Np. „Z powodu pielgrzymki parafialnej Msza święta nie odbędzie się”.
+        type: text
+        required: false
+      - name: sundayMassCancellationReasonFr
+        label: Motif de l’annulation — po francusku
+        description: Powód dla francuskiej wersji. Np. « La messe est annulée en raison du pèlerinage paroissial ». Jeśli pozostawisz puste, pojawi się informacja o niepodanej przyczynie.
+        type: text
+        required: false
+      - name: sundayMassReturnSeason
+        label: Zwykłe miejsce Mszy po odwołaniu
+        description: Gdzie normalnie odbywa się Msza w następnych niedzielach (i przed datą odwołania). Gdy wybrano „Msza odwołana”, po wskazanej dacie to miejsce pokaże się automatycznie.
+        type: select
+        required: true
+        options:
+          values:
+            - name: summer
+              label: Kościół Sainte-Ségolène
+            - name: winter
+              label: Kaplica Sainte-Croix
       - name: massLabel
         label: Etykieta Mszy
         type: string
