@@ -1,5 +1,9 @@
 {
   "lede": "Od dziesięcioleci Polacy mieszkający w Metz i okolicach Lotaryngii spotykają się tutaj, by modlić się, świętować i podtrzymywać więź z Ojczyzną — w języku, który jest im najbliższy.",
+  "sundayMassSeason": "cancelled",
+  "sundayMassCancelledDate": "18/10/2026",
+  "sundayMassCancellationReasonPl": "Test ogloszenia odwołane mszy. ",
+  "sundayMassReturnSeason": "summer",
   "massLabel": "MSZA NIEDZIELNA",
   "massValue": "godz. 9:30",
   "addressLabel": "ADRES",
@@ -8,10 +12,5 @@
   "contactValue": "+33 3 87 75 43 88",
   "paragraph1": "Parafia w Metz działa przy francuskiej parafii Sainte-Ségolène i od lat pozostaje duchowym domem dla polskiej diaspory w regionie. To miejsce, gdzie wiara łączy się z pielęgnowaniem języka i tradycji — od niedzielnej Eucharystii po sobotnią katechezę dla najmłodszych.",
   "callout": "Niezależnie od tego, czy mieszkasz w Metz od lat, czy dopiero się tu osiedliłeś — jesteś tu mile widziany. Zapraszamy do wspólnej modlitwy i do włączenia się w życie naszej wspólnoty.",
-  "paragraph2": "<p>Sprawdź godziny Mszy świętych w zakładce <em>Msze i nabożeństwa</em> lub skontaktuj się z nami bezpośrednio — chętnie odpowiemy na pytania dotyczące sakramentów, wydarzeń i życia parafialnego.</p>",
-  "sundayMassSeason": "summer",
-  "sundayMassCancelledDate": "",
-  "sundayMassCancellationReasonPl": "",
-  "sundayMassCancellationReasonFr": "",
-  "sundayMassReturnSeason": "summer"
+  "paragraph2": "<p>Sprawdź godziny Mszy świętych w zakładce <em>Msze i nabożeństwa</em> lub skontaktuj się z nami bezpośrednio — chętnie odpowiemy na pytania dotyczące sakramentów, wydarzeń i życia parafialnego.</p>"
 }
