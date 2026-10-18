@@ -459,6 +459,83 @@ content:
             type: boolean
             default: true
 
+
+  - name: zrozumiec_wiare_artykuly_fr
+    label: FR — Comprendre la foi — catégories et articles
+    type: file
+    path: content/fr/zrozumiec-wiare-artykuly.json
+    format: json
+    operations:
+      delete: false
+    fields:
+      - name: categories
+        label: Catégories
+        description: Gérez les catégories françaises. Conservez les identifiants identiques aux catégories polonaises.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - name: id
+            label: Identyfikator (bez spacji i polskich znaków)
+            type: string
+            required: true
+          - name: title
+            label: Nom de catégorie
+            type: string
+            required: true
+          - name: visible
+            label: Visible
+            type: boolean
+            default: true
+      - name: items
+        label: Articles
+        description: Gérez les traductions et leur ordre. Gardez les identifiants et les slugs identiques à la version polonaise pour préserver les liens.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - name: category
+            label: Identifiant de catégorie
+            type: string
+            required: true
+            description: Doit correspondre à un identifiant de catégorie ci-dessus.
+          - name: id
+            label: Identifiant technique de l’article
+            type: string
+            required: true
+            description: Identifiant unique sans espaces. Ne pas modifier pour un article existant.
+          - name: slug
+            label: Adresse de l’article (slug)
+            type: string
+            required: true
+            description: Ne pas modifier le slug existant afin de préserver les liens.
+          - name: title
+            label: Titre de l’article
+            type: string
+            required: true
+          - name: summary
+            label: Résumé de l’article
+            type: text
+            required: false
+          - name: body
+            label: Contenu complet en français
+            type: rich-text
+            required: true
+            options:
+              format: html
+              switcher: true
+              media: images
+              extensions: [jpg, jpeg, png, webp]
+              rename: safe
+          - name: visible
+            label: Visible sur le site
+            type: boolean
+            default: true
+
   - name: zrozumiec_wiare
     label: Zrozumieć wiarę
     type: file
