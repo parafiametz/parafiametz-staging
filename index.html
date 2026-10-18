@@ -1065,7 +1065,7 @@
 .lang-flag{display:block;width:24px;height:16px;border:1px solid #bcbcbc;border-radius:2px;box-shadow:0 1px 2px rgba(0,0,0,.25)}
 .lang-flag-pl{background:linear-gradient(to bottom,#fff 50%,#dc143c 50%)}
 .lang-flag-fr{background:linear-gradient(to right,#0055a4 33.33%,#fff 33.33%,#fff 66.66%,#ef4135 66.66%)}
-.lang-fr #sec-zrozumiec-wiare .faith-filters,.lang-fr #sec-zrozumiec-wiare .faith-grid,.lang-fr #sec-zrozumiec-wiare .faith-reading,.lang-fr #sec-zrozumiec-wiare #faith-search,.lang-fr #sec-zrozumiec-wiare .faith-search-label,.lang-fr #sec-zrozumiec-wiare #faith-empty{display:none!important}
+.lang-fr:not(.faith-fr-ready) #sec-zrozumiec-wiare .faith-filters,.lang-fr:not(.faith-fr-ready) #sec-zrozumiec-wiare .faith-grid,.lang-fr:not(.faith-fr-ready) #sec-zrozumiec-wiare .faith-reading,.lang-fr:not(.faith-fr-ready) #sec-zrozumiec-wiare #faith-search,.lang-fr:not(.faith-fr-ready) #sec-zrozumiec-wiare .faith-search-label,.lang-fr:not(.faith-fr-ready) #sec-zrozumiec-wiare #faith-empty{display:none!important}
 .faith-translation-notice{max-width:740px;margin:28px auto;padding:22px 25px;text-align:center;color:var(--ink-soft);background:var(--paper);border:1px solid var(--line);border-radius:10px;line-height:1.75}
 /* The mobile sidebar stays sticky; the fixed flags sit over its dark top area. */
 @media(max-width:860px){
@@ -2104,11 +2104,6 @@ if(PAGE_LANG === 'fr') {
   txt('.faith-eyebrow','BIBLIOTHÈQUE : FOI ET RAISON');
   txt('#faith-section-title','Comprendre la foi');
   txt('#faith-section-intro','La foi suscite des questions. Nous cherchons des réponses dans l’Écriture sainte, l’enseignement de l’Église, l’histoire et la raison.');
-  const lib=document.querySelector('#sec-zrozumiec-wiare .faith-library');
-  if(lib){const notice=document.createElement('p');notice.className='faith-translation-notice';
-    notice.textContent='Les articles sont en cours de traduction et de relecture. Ils seront proposés en français dès que les textes seront prêts. La version polonaise reste disponible.';
-    lib.append(notice);
-  }
   txt('#aktualnosci-lede','Annonces paroissiales publiées en polonais.');
   txt('#sec-wydarzenia > .lede','Rencontres, catéchèse et célébrations de notre communauté, publiées en polonais.');
   txt('.events-static-title','Activités régulières de la communauté');
@@ -3247,10 +3242,16 @@ loadEditableSection(localeContentPath('kosciol'), data => {
 (async()=>{
   const root = document.getElementById('sec-zrozumiec-wiare');
   if (!root) return;
-  if (PAGE_LANG === 'fr') return; // Wait for verified French article translations.
-  // CMS source of truth; embedded articles remain as an offline fallback.
+  const isFrench = PAGE_LANG === 'fr';
+  if (isFrench) {
+    root.querySelector('.faith-search-label').textContent = 'Rechercher un article';
+    root.querySelector('#faith-search').placeholder = 'Rechercher un sujet ou un mot…';
+    root.querySelector('.faith-filters').setAttribute('aria-label', 'Catégories');
+  }
+  // CMS is the source of truth. The embedded Polish articles are the offline fallback only for Polish.
   try {
-    const response = await fetch('content/zrozumiec-wiare-artykuly.json', {cache:'no-store'});
+    const response = await fetch(isFrench ? 'content/fr/zrozumiec-wiare-artykuly.json' : 'content/zrozumiec-wiare-artykuly.json', {cache:'no-store'});
+    if (!response.ok) throw new Error('Articles unavailable: ' + response.status);
     if (response.ok) {
       const data = await response.json();
       const safe = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -3258,9 +3259,9 @@ loadEditableSection(localeContentPath('kosciol'), data => {
       const categoryNames = new Map(categoryList.map(c=>[c.id,c.title]));
       const visible = (Array.isArray(data.items)?data.items:[]).filter(a=>a.visible!==false && categoryNames.has(a.category) && a.id && a.slug && a.title);
       const filterNode = root.querySelector('.faith-filters');
-      filterNode.innerHTML = '<button class="selected" data-faith-filter="all">Wszystkie</button>' + categoryList.map(c=>'<button data-faith-filter="'+safe(c.id)+'">'+safe(c.title)+'</button>').join('');
+      filterNode.innerHTML = '<button class="selected" data-faith-filter="all">'+(isFrench ? 'Tous' : 'Wszystkie')+'</button>' + categoryList.map(c=>'<button data-faith-filter="'+safe(c.id)+'">'+safe(c.title)+'</button>').join('');
       const gridNode = root.querySelector('.faith-grid');
-      gridNode.innerHTML = visible.map((a,index)=>'<button class="faith-article" data-faith-category="'+safe(a.category)+'" data-faith-article="'+safe(a.id)+'" data-faith-slug="'+safe(a.slug)+'"><small>'+safe(categoryNames.get(a.category)).toUpperCase()+' · ARTYKUŁ '+String(index+1).padStart(2,'0')+'</small><strong>'+safe(a.title)+'</strong><span>'+safe(a.summary)+'</span><em>Przeczytaj artykuł →</em></button>').join('');
+      gridNode.innerHTML = visible.map((a,index)=>'<button class="faith-article" data-faith-category="'+safe(a.category)+'" data-faith-article="'+safe(a.id)+'" data-faith-slug="'+safe(a.slug)+'"><small>'+safe(categoryNames.get(a.category)).toUpperCase()+(isFrench ? ' · ARTICLE ' : ' · ARTYKUŁ ')+String(index+1).padStart(2,'0')+'</small><strong>'+safe(a.title)+'</strong><span>'+safe(a.summary)+'</span><em>'+(isFrench ? 'Lire l’article →' : 'Przeczytaj artykuł →')+'</em></button>').join('');
       root.querySelectorAll('article.faith-reading').forEach(node=>node.remove());
       const holder = document.createElement('div');
       holder.innerHTML = visible.map(a=>'<article id="faith-'+safe(a.id)+'" class="faith-reading" hidden>'+String(a.body||'')+'</article>').join('');
@@ -3268,8 +3269,20 @@ loadEditableSection(localeContentPath('kosciol'), data => {
       root.querySelectorAll('article.faith-reading').forEach(article=>{
         article.querySelectorAll('.faith-share').forEach(b=>b.dataset.faithShare=visible.find(a=>'faith-'+a.id===article.id)?.slug||'');
       });
+      if (isFrench) document.documentElement.classList.add('faith-fr-ready');
     }
-  } catch (error) { console.warn('Faith CMS: using embedded fallback',error); }
+  } catch (error) {
+    console.warn('Faith CMS: articles could not be loaded', error);
+    if (isFrench) {
+      root.querySelectorAll('article.faith-reading').forEach(node=>node.remove());
+      root.querySelector('.faith-grid').innerHTML = '<p role="status">Les articles sont temporairement indisponibles en français. Veuillez réessayer plus tard.</p>';
+      root.querySelector('.faith-filters').hidden = true;
+      root.querySelector('#faith-search').hidden = true;
+      root.querySelector('.faith-search-label').hidden = true;
+      document.documentElement.classList.add('faith-fr-ready');
+      return;
+    }
+  }
 
   const search = root.querySelector('#faith-search');
   const filters = root.querySelector('.faith-filters');
@@ -3284,7 +3297,7 @@ loadEditableSection(localeContentPath('kosciol'), data => {
 
   // Search runs entirely in the browser. Index the actual article bodies, not just the cards.
   function normalizeWord(word) {
-    return word.toLocaleLowerCase('pl').normalize('NFD')
+    return word.toLocaleLowerCase(isFrench ? 'fr' : 'pl').normalize('NFD')
       .replace(/[\u0300-\u036f]/g, '').replace(/ł/g, 'l');
   }
 
@@ -3305,7 +3318,9 @@ loadEditableSection(localeContentPath('kosciol'), data => {
   ].forEach(forms => forms.forEach(form => wordFamilies.set(form, forms[0])));
 
   // Lightweight matching of typical inflected forms; no external search service.
-  const endings = ['eniami', 'owaniami', 'owaniem', 'owania', 'owanie', 'owaniu',
+  const endings = isFrench
+    ? ['issements', 'atrices', 'ations', 'ation', 'ements', 'ement', 'iennes', 'ienne', 'euses', 'euse', 'eaux', 'aux', 'ées', 'ée', 'és', 'es', 's']
+    : ['eniami', 'owaniami', 'owaniem', 'owania', 'owanie', 'owaniu',
     'eniem', 'enia', 'enie', 'eniu', 'aniem', 'ania', 'anie', 'aniu',
     'owego', 'owemu', 'owych', 'owymi', 'owej', 'ami', 'ach',
     'ego', 'emu', 'owi', 'iem', 'owym', 'owy', 'owa', 'owe',
@@ -3407,15 +3422,21 @@ loadEditableSection(localeContentPath('kosciol'), data => {
       }
     });
     empty.hidden = visibleCount !== 0;
-    empty.textContent = category !== 'all'
-      ? 'Brak wyników w tej kategorii. Wybierz „Wszystkie” lub zmień hasło.'
-      : 'Nie znaleziono artykułów. Spróbuj innego hasła.';
+    empty.textContent = isFrench
+      ? (category !== 'all'
+        ? 'Aucun résultat dans cette catégorie. Choisissez « Tous » ou modifiez votre recherche.'
+        : 'Aucun article trouvé. Essayez un autre mot.')
+      : (category !== 'all'
+        ? 'Brak wyników w tej kategorii. Wybierz „Wszystkie” lub zmień hasło.'
+        : 'Nie znaleziono artykułów. Spróbuj innego hasła.');
     resultCount.hidden = !terms.length;
     if (terms.length) {
       const noun = visibleCount === 1 ? 'artykuł'
         : (visibleCount % 10 >= 2 && visibleCount % 10 <= 4 && (visibleCount % 100 < 12 || visibleCount % 100 > 14))
           ? 'artykuły' : 'artykułów';
-      resultCount.textContent = 'Znaleziono ' + visibleCount + ' ' + noun + '.';
+      resultCount.textContent = isFrench
+        ? (visibleCount + (visibleCount === 1 ? ' article trouvé.' : ' articles trouvés.'))
+        : ('Znaleziono ' + visibleCount + ' ' + noun + '.');
     }
   }
 
@@ -3499,10 +3520,10 @@ loadEditableSection(localeContentPath('kosciol'), data => {
     try {
       if (!navigator.clipboard || !navigator.clipboard.writeText) throw new Error('Clipboard unavailable');
       await navigator.clipboard.writeText(shareUrl);
-      button.textContent = 'Link skopiowany ✓';
-      window.setTimeout(() => { button.textContent = 'Kopiuj link do artykułu'; }, 2500);
+      button.textContent = isFrench ? 'Lien copié ✓' : 'Link skopiowany ✓';
+      window.setTimeout(() => { button.textContent = isFrench ? 'Copier le lien de l’article' : 'Kopiuj link do artykułu'; }, 2500);
     } catch {
-      window.prompt('Skopiuj adres artykułu:', shareUrl);
+      window.prompt(isFrench ? 'Copiez l’adresse de l’article :' : 'Skopiuj adres artykułu:', shareUrl);
     }
   });
 
