@@ -9,7 +9,7 @@ media:
 
 content:
   - name: strona_glowna
-    label: Strona główna
+    label: PL — Strona główna
     type: file
     path: content/strona-glowna.json
     format: json
@@ -104,7 +104,7 @@ content:
           media: false
 
   - name: msze
-    label: Msze i nabożeństwa
+    label: PL — Msze i nabożeństwa
     type: file
     path: content/msze.json
     format: json
@@ -193,7 +193,7 @@ content:
         required: false
 
   - name: aktualnosci
-    label: Ogłoszenia Duszpasterskie
+    label: PL — Ogłoszenia Duszpasterskie
     type: file
     path: content/aktualnosci.json
     format: json
@@ -254,7 +254,7 @@ content:
             default: false
 
   - name: wydarzenia
-    label: Wydarzenia
+    label: PL — Wydarzenia
     type: file
     path: content/wydarzenia.json
     format: json
@@ -383,8 +383,25 @@ content:
             type: boolean
             default: false
 
+  - name: zrozumiec_wiare
+    label: PL — Zrozumieć wiarę — wprowadzenie
+    type: file
+    path: content/zrozumiec-wiare.json
+    format: json
+    operations:
+      delete: false
+    fields:
+      - name: title
+        label: Nazwa sekcji
+        type: string
+        required: true
+      - name: intro
+        label: Wprowadzenie
+        type: text
+        required: true
+
   - name: zrozumiec_wiare_artykuly
-    label: Zrozumieć wiarę — kategorie i artykuły
+    label: PL — Zrozumieć wiarę — artykuły i kategorie
     type: file
     path: content/zrozumiec-wiare-artykuly.json
     format: json
@@ -459,127 +476,8 @@ content:
             type: boolean
             default: true
 
-
-  # Francuskie artykuły są osobnymi plikami, dzięki czemu można otworzyć
-  # i edytować konkretny wpis, tak jak w zwykłej kolekcji postów.
-  - name: zrozumiec_wiare_artykuly_fr
-    label: Artykuły FR — Comprendre la foi
-    type: collection
-    path: content/fr/zrozumiec-wiare-articles
-    format: json
-    filename: "{id}.json"
-    view:
-      primary: title
-      fields: [title, category, visible]
-      sort: [title]
-      search: [title, summary]
-    operations:
-      create: false
-      rename: false
-      delete: false
-    fields:
-      - name: title
-        label: Tytuł artykułu po francusku
-        type: string
-        required: true
-      - name: summary
-        label: Krótki opis na francuskiej karcie
-        type: text
-        required: false
-      - name: category
-        label: Kategoria
-        type: select
-        required: true
-        options:
-          values:
-            - name: nauka
-              label: Dieu et la science
-            - name: jezus
-              label: Jésus-Christ
-            - name: biblia
-              label: La Bible
-            - name: pytania
-              label: Questions difficiles
-      - name: body
-        label: Pełna treść francuskiego artykułu
-        type: rich-text
-        required: true
-        options:
-          format: html
-          switcher: true
-          media: images
-          extensions: [jpg, jpeg, png, webp]
-          rename: safe
-      - name: visible
-        label: Widoczny na stronie francuskiej
-        type: boolean
-        default: true
-      - name: id
-        label: Identyfikator (bez zmian)
-        type: string
-        required: true
-        readonly: true
-      - name: slug
-        label: Link do artykułu (bez zmian)
-        type: string
-        required: true
-        readonly: true
-
-  - name: zrozumiec_wiare_kategorie_fr
-    label: Kategorie FR — Comprendre la foi
-    type: file
-    path: content/fr/zrozumiec-wiare-index.json
-    format: json
-    operations:
-      delete: false
-    fields:
-      - name: categories
-        label: Nazwy francuskich kategorii
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{title}"
-        fields:
-          - name: id
-            label: Identyfikator
-            type: string
-            required: true
-            readonly: true
-          - name: title
-            label: Nazwa kategorii po francusku
-            type: string
-            required: true
-          - name: visible
-            label: Widoczna na stronie
-            type: boolean
-            default: true
-      - name: items
-        label: Kolejność artykułów FR (identyfikatory)
-        description: Lista jest techniczna. Nie zmieniaj jej bez aktualizacji plików artykułów.
-        type: string
-        list: true
-        readonly: true
-
-  - name: zrozumiec_wiare
-    label: Zrozumieć wiarę
-    type: file
-    path: content/zrozumiec-wiare.json
-    format: json
-    operations:
-      delete: false
-    fields:
-      - name: title
-        label: Nazwa sekcji
-        type: string
-        required: true
-      - name: intro
-        label: Wprowadzenie
-        type: text
-        required: true
-
   - name: misja
-    label: Nasza Misja
+    label: PL — Nasza Misja
     type: file
     path: content/misja.json
     format: json
@@ -604,7 +502,7 @@ content:
         required: true
 
   - name: sakramenty
-    label: Sakramenty
+    label: PL — Sakramenty
     type: file
     path: content/sakramenty.json
     format: json
@@ -664,7 +562,7 @@ content:
         required: false
 
   - name: kosciol
-    label: Kościół Sainte-Ségolène
+    label: PL — Kościół Sainte-Ségolène
     type: file
     path: content/kosciol.json
     format: json
@@ -713,7 +611,7 @@ content:
         required: true
 
   - name: misje_francja
-    label: Polskie Misje we Francji
+    label: PL — Polskie Misje we Francji
     type: file
     path: content/misje-francja.json
     format: json
@@ -837,7 +735,7 @@ content:
                 default: false
 
   - name: kontakt
-    label: Kontakt
+    label: PL — Kontakt
     type: file
     path: content/kontakt.json
     format: json
@@ -1080,6 +978,185 @@ content:
         type: text
         required: false
 
+  - name: wydarzenia_stale_fr
+    label: FR — Wydarzenia — stałe elementy
+    type: file
+    path: content/fr/wydarzenia-stale.json
+    format: json
+    operations:
+      delete: false
+    fields:
+      - name: communityItems
+        label: Stałe elementy życia wspólnoty
+        description: Edytuj, dodawaj i przeciągaj elementy, aby zmienić ich kolejność na stronie.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - name: title
+            label: Tytuł
+            type: string
+            required: true
+          - name: body
+            label: Opis
+            type: text
+            required: true
+          - name: expandable
+            label: Klikalne – otwórz szczegóły
+            description: Włącza okienko po kliknięciu, gdy opis szczegółowy jest uzupełniony.
+            type: boolean
+            default: false
+          - name: details
+            label: Pełny opis po kliknięciu
+            description: Opcjonalny tekst wyświetlany w okienku po kliknięciu.
+            type: rich-text
+            required: false
+            options:
+              format: html
+              switcher: false
+              media: false
+          - name: icon
+            label: Ikona
+            type: select
+            required: true
+            options:
+              values:
+                - name: book
+                  label: Katecheza / książka
+                - name: coffee
+                  label: Kawa / spotkanie
+                - name: star
+                  label: Uroczystość / gwiazda
+                - name: calendar
+                  label: Kalendarz / termin
+                - name: cross
+                  label: Krzyż
+                - name: people
+                  label: Wspólnota
+                - name: church
+                  label: Kościół
+          - name: visible
+            label: Widoczne na stronie
+            type: boolean
+            default: true
+  - name: zrozumiec_wiare_fr
+    label: FR — Wiara: wprowadzenie
+    type: file
+    path: content/fr/zrozumiec-wiare.json
+    format: json
+    operations:
+      delete: false
+    fields:
+      - name: title
+        label: Nazwa sekcji
+        type: string
+        required: true
+      - name: intro
+        label: Wprowadzenie
+        type: text
+        required: true
+
+  - name: zrozumiec_wiare_kategorie_fr
+    label: FR — Wiara: kategorie
+    type: file
+    path: content/fr/zrozumiec-wiare-index.json
+    format: json
+    operations:
+      delete: false
+    fields:
+      - name: categories
+        label: Nazwy francuskich kategorii
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - name: id
+            label: Identyfikator
+            type: string
+            required: true
+            readonly: true
+          - name: title
+            label: Nazwa kategorii po francusku
+            type: string
+            required: true
+          - name: visible
+            label: Widoczna na stronie
+            type: boolean
+            default: true
+      - name: items
+        label: Kolejność artykułów FR (identyfikatory)
+        description: Lista jest techniczna. Nie zmieniaj jej bez aktualizacji plików artykułów.
+        type: string
+        list: true
+        readonly: true
+
+  - name: zrozumiec_wiare_artykuly_fr
+    label: FR — Wiara: artykuły
+    type: collection
+    path: content/fr/zrozumiec-wiare-articles
+    format: json
+    filename: "{id}.json"
+    view:
+      primary: title
+      fields: [title, category, visible]
+      sort: [title]
+      search: [title, summary]
+    operations:
+      create: false
+      rename: false
+      delete: false
+    fields:
+      - name: title
+        label: Tytuł artykułu po francusku
+        type: string
+        required: true
+      - name: summary
+        label: Krótki opis na francuskiej karcie
+        type: text
+        required: false
+      - name: category
+        label: Kategoria
+        type: select
+        required: true
+        options:
+          values:
+            - name: nauka
+              label: Dieu et la science
+            - name: jezus
+              label: Jésus-Christ
+            - name: biblia
+              label: La Bible
+            - name: pytania
+              label: Questions difficiles
+      - name: body
+        label: Pełna treść francuskiego artykułu
+        type: rich-text
+        required: true
+        options:
+          format: html
+          switcher: true
+          media: images
+          extensions: [jpg, jpeg, png, webp]
+          rename: safe
+      - name: visible
+        label: Widoczny na stronie francuskiej
+        type: boolean
+        default: true
+      - name: id
+        label: Identyfikator (bez zmian)
+        type: string
+        required: true
+        readonly: true
+      - name: slug
+        label: Link do artykułu (bez zmian)
+        type: string
+        required: true
+        readonly: true
+
   - name: misja_fr
     label: FR — Nasza misja
     type: file
@@ -1214,6 +1291,23 @@ content:
         type: string
         required: true
 
+  - name: misje_francja_fr
+    label: FR — Polskie Misje we Francji (opis)
+    type: file
+    path: content/fr/misje-francja.json
+    format: json
+    operations:
+      delete: false
+    fields:
+      - name: lede
+        label: Opis po francusku
+        type: text
+        required: true
+      - name: sourceLabel
+        label: Źródło po francusku
+        type: string
+        required: false
+
   - name: kontakt_fr
     label: FR — Kontakt
     type: file
@@ -1314,100 +1408,3 @@ content:
         type: text
         required: false
 
-  - name: zrozumiec_wiare_fr
-    label: FR — Zrozumieć wiarę — wprowadzenie
-    type: file
-    path: content/fr/zrozumiec-wiare.json
-    format: json
-    operations:
-      delete: false
-    fields:
-      - name: title
-        label: Nazwa sekcji
-        type: string
-        required: true
-      - name: intro
-        label: Wprowadzenie
-        type: text
-        required: true
-
-  - name: misje_francja_fr
-    label: FR — Polskie Misje we Francji (opis)
-    type: file
-    path: content/fr/misje-francja.json
-    format: json
-    operations:
-      delete: false
-    fields:
-      - name: lede
-        label: Opis po francusku
-        type: text
-        required: true
-      - name: sourceLabel
-        label: Źródło po francusku
-        type: string
-        required: false
-
-  - name: wydarzenia_stale_fr
-    label: FR — Wydarzenia — stałe elementy
-    type: file
-    path: content/fr/wydarzenia-stale.json
-    format: json
-    operations:
-      delete: false
-    fields:
-      - name: communityItems
-        label: Stałe elementy życia wspólnoty
-        description: Edytuj, dodawaj i przeciągaj elementy, aby zmienić ich kolejność na stronie.
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{title}"
-        fields:
-          - name: title
-            label: Tytuł
-            type: string
-            required: true
-          - name: body
-            label: Opis
-            type: text
-            required: true
-          - name: expandable
-            label: Klikalne – otwórz szczegóły
-            description: Włącza okienko po kliknięciu, gdy opis szczegółowy jest uzupełniony.
-            type: boolean
-            default: false
-          - name: details
-            label: Pełny opis po kliknięciu
-            description: Opcjonalny tekst wyświetlany w okienku po kliknięciu.
-            type: rich-text
-            required: false
-            options:
-              format: html
-              switcher: false
-              media: false
-          - name: icon
-            label: Ikona
-            type: select
-            required: true
-            options:
-              values:
-                - name: book
-                  label: Katecheza / książka
-                - name: coffee
-                  label: Kawa / spotkanie
-                - name: star
-                  label: Uroczystość / gwiazda
-                - name: calendar
-                  label: Kalendarz / termin
-                - name: cross
-                  label: Krzyż
-                - name: people
-                  label: Wspólnota
-                - name: church
-                  label: Kościół
-          - name: visible
-            label: Widoczne na stronie
-            type: boolean
-            default: true
