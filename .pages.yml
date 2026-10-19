@@ -400,17 +400,16 @@ content:
         type: text
         required: true
 
-  - name: zrozumiec_wiare_artykuly
-    label: PL — Zrozumieć wiarę — artykuły i kategorie
+  - name: zrozumiec_wiare_kategorie
+    label: PL — Zrozumieć wiarę — kategorie
     type: file
-    path: content/zrozumiec-wiare-artykuly.json
+    path: content/zrozumiec-wiare-index.json
     format: json
     operations:
       delete: false
     fields:
       - name: categories
-        label: Kategorie
-        description: Dodawaj, usuwaj i zmieniaj kolejność kategorii. Identyfikator musi być unikalny i nie powinien się zmieniać, gdy korzystają z niego artykuły.
+        label: Nazwy polskich kategorii
         type: object
         list:
           collapsible:
@@ -418,63 +417,87 @@ content:
             summary: "{title}"
         fields:
           - name: id
-            label: Identyfikator (bez spacji i polskich znaków)
+            label: Identyfikator
             type: string
             required: true
+            readonly: true
           - name: title
-            label: Nazwa kategorii
+            label: Nazwa kategorii po polsku
             type: string
             required: true
           - name: visible
-            label: Widoczna
+            label: Widoczna na stronie
             type: boolean
             default: true
       - name: items
-        label: Artykuły
-        description: Dodawaj, edytuj, usuwaj i przeciągaj artykuły, aby ustawić kolejność. Wpisz identyfikator istniejącej kategorii.
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{title}"
-        fields:
-          - name: category
-            label: Identyfikator kategorii
-            type: string
-            required: true
-            description: Musi odpowiadać polu Identyfikator w kategorii powyżej.
-          - name: id
-            label: Identyfikator artykułu
-            type: string
-            required: true
-            description: Unikalny identyfikator techniczny bez spacji. Nie zmieniaj w istniejących artykułach.
-          - name: slug
-            label: Adres artykułu (slug)
-            type: string
-            required: true
-            description: Nie zmieniaj istniejącego adresu, aby wcześniejsze linki działały.
-          - name: title
-            label: Tytuł artykułu
-            type: string
-            required: true
-          - name: summary
-            label: Krótki opis na karcie
-            type: text
-            required: false
-          - name: body
-            label: Pełna treść artykułu
-            type: rich-text
-            required: true
-            options:
-              format: html
-              switcher: true
-              media: images
-              extensions: [jpg, jpeg, png, webp]
-              rename: safe
-          - name: visible
-            label: Widoczny na stronie
-            type: boolean
-            default: true
+        label: Kolejność artykułów PL (identyfikatory)
+        description: Lista jest techniczna. Nie zmieniaj jej bez aktualizacji plików artykułów.
+        type: string
+        list: true
+        readonly: true
+
+  - name: zrozumiec_wiare_artykuly
+    label: PL — Zrozumieć wiarę — artykuły
+    type: collection
+    path: content/zrozumiec-wiare-articles
+    format: json
+    filename: "{id}.json"
+    view:
+      primary: title
+      fields: [title, category, visible]
+      sort: [title]
+      search: [title, summary]
+    operations:
+      create: false
+      rename: false
+      delete: false
+    fields:
+      - name: title
+        label: Tytuł artykułu
+        type: string
+        required: true
+      - name: summary
+        label: Krótki opis na karcie
+        type: text
+        required: false
+      - name: category
+        label: Kategoria
+        type: select
+        required: true
+        options:
+          values:
+            - name: nauka
+              label: Bóg i nauka
+            - name: jezus
+              label: Jezus Chrystus
+            - name: biblia
+              label: Biblia
+            - name: pytania
+              label: Trudne pytania
+      - name: body
+        label: Pełna treść artykułu
+        type: rich-text
+        required: true
+        options:
+          format: html
+          switcher: true
+          media: images
+          extensions: [jpg, jpeg, png, webp]
+          rename: safe
+      - name: visible
+        label: Widoczny na stronie
+        type: boolean
+        default: true
+      - name: id
+        label: Identyfikator (bez zmian)
+        type: string
+        required: true
+        readonly: true
+      - name: slug
+        label: Link do artykułu (bez zmian)
+        type: string
+        required: true
+        readonly: true
 
   - name: misja
     label: PL — Nasza Misja
@@ -1042,7 +1065,7 @@ content:
             type: boolean
             default: true
   - name: zrozumiec_wiare_fr
-    label: FR — Wiara: wprowadzenie
+    label: FR — Comprendre la foi — introduction
     type: file
     path: content/fr/zrozumiec-wiare.json
     format: json
@@ -1059,7 +1082,7 @@ content:
         required: true
 
   - name: zrozumiec_wiare_kategorie_fr
-    label: FR — Wiara: kategorie
+    label: FR — Comprendre la foi — catégories
     type: file
     path: content/fr/zrozumiec-wiare-index.json
     format: json
@@ -1095,7 +1118,7 @@ content:
         readonly: true
 
   - name: zrozumiec_wiare_artykuly_fr
-    label: FR — Wiara: artykuły
+    label: FR — Comprendre la foi — articles
     type: collection
     path: content/fr/zrozumiec-wiare-articles
     format: json
