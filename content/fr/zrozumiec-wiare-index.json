@@ -1,0 +1,37 @@
+{
+  "categories": [
+    {
+      "id": "nauka",
+      "title": "Dieu et la science",
+      "visible": true
+    },
+    {
+      "id": "jezus",
+      "title": "Jésus-Christ",
+      "visible": true
+    },
+    {
+      "id": "biblia",
+      "title": "La Bible",
+      "visible": true
+    },
+    {
+      "id": "pytania",
+      "title": "Questions difficiles",
+      "visible": true
+    }
+  ],
+  "items": [
+    "dna",
+    "flew",
+    "jesus-history",
+    "resurrection",
+    "jesus-advocate",
+    "messiah-prophecies",
+    "bible-reliability",
+    "suffering",
+    "atheist-salvation",
+    "cohabitation",
+    "god-origin"
+  ]
+}
