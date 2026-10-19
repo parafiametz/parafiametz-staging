@@ -3250,10 +3250,24 @@ loadEditableSection(localeContentPath('kosciol'), data => {
   }
   // CMS is the source of truth. The embedded Polish articles are the offline fallback only for Polish.
   try {
-    const response = await fetch(isFrench ? 'content/fr/zrozumiec-wiare-artykuly.json' : 'content/zrozumiec-wiare-artykuly.json', {cache:'no-store'});
+    const response = await fetch(isFrench ? 'content/fr/zrozumiec-wiare-index.json' : 'content/zrozumiec-wiare-artykuly.json', {cache:'no-store'});
     if (!response.ok) throw new Error('Articles unavailable: ' + response.status);
     if (response.ok) {
       const data = await response.json();
+      // Each French article is a separate PagesCMS entry. The manifest supplies
+      // category names and display order; articles are read directly from their files.
+      if (isFrench) {
+        if (!Array.isArray(data.items) || data.items.some(id => typeof id !== 'string' || !/^[a-z0-9-]+$/.test(id))) {
+          throw new Error('Invalid French article index');
+        }
+        data.items = await Promise.all(data.items.map(async id => {
+          const articleResponse = await fetch('content/fr/zrozumiec-wiare-articles/' + id + '.json', {cache:'no-store'});
+          if (!articleResponse.ok) throw new Error('French article unavailable: ' + id + ' (' + articleResponse.status + ')');
+          const article = await articleResponse.json();
+          if (!article || article.id !== id) throw new Error('French article ID mismatch: ' + id);
+          return article;
+        }));
+      }
       const safe = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
       const categoryList = Array.isArray(data.categories) ? data.categories.filter(c=>c.visible!==false && c.id && c.title) : [];
       const categoryNames = new Map(categoryList.map(c=>[c.id,c.title]));
