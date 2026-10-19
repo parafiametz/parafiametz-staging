@@ -1,0 +1,37 @@
+{
+  "categories": [
+    {
+      "id": "nauka",
+      "title": "Bóg i nauka",
+      "visible": true
+    },
+    {
+      "id": "jezus",
+      "title": "Jezus Chrystus",
+      "visible": true
+    },
+    {
+      "id": "biblia",
+      "title": "Biblia",
+      "visible": true
+    },
+    {
+      "id": "pytania",
+      "title": "Trudne pytania",
+      "visible": true
+    }
+  ],
+  "items": [
+    "dna",
+    "flew",
+    "jesus-history",
+    "resurrection",
+    "jesus-advocate",
+    "messiah-prophecies",
+    "bible-reliability",
+    "suffering",
+    "atheist-salvation",
+    "cohabitation",
+    "god-origin"
+  ]
+}
