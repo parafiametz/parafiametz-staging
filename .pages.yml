@@ -399,6 +399,14 @@ content:
         label: Wprowadzenie
         type: text
         required: true
+      - name: verse
+        label: Cytat biblijny — treść
+        type: text
+        required: false
+      - name: verseReference
+        label: Cytat biblijny — źródło
+        type: string
+        required: false
 
   - name: zrozumiec_wiare_kategorie
     label: PL — Zrozumieć wiarę — kategorie
@@ -1080,6 +1088,14 @@ content:
         label: Wprowadzenie
         type: text
         required: true
+      - name: verse
+        label: Cytat biblijny — treść
+        type: text
+        required: false
+      - name: verseReference
+        label: Cytat biblijny — źródło
+        type: string
+        required: false
 
   - name: zrozumiec_wiare_kategorie_fr
     label: FR — Comprendre la foi — catégories
