@@ -21,6 +21,29 @@
       ]
     },
     {
+      "title": "Msze po Francusku",
+      "icon": "clock",
+      "visible": true,
+      "rows": [
+        {
+          "label": "Wtorek",
+          "text": "Msza o 18:30 w kaplicy kościoła Sainte-Ségolène. Różaniec o 17:30."
+        },
+        {
+          "label": "Środa i czwartek",
+          "text": "Msza o 8:30 w kaplicy kościoła Sainte-Ségolène."
+        },
+        {
+          "label": "Piątek",
+          "text": "Nabożeństwo do Miłosierdzia Bożego o 15:00 w kaplicy Sainte-Croix. Msza o 15:30."
+        },
+        {
+          "label": "Sobota",
+          "text": "Msza o 8:30 w kaplicy Sainte-Croix."
+        }
+      ]
+    },
+    {
       "title": "Pierwszy piątek miesiąca",
       "icon": "sun",
       "visible": true,
