@@ -21,6 +21,29 @@
       ]
     },
     {
+      "title": "Messes en français",
+      "icon": "clock",
+      "visible": true,
+      "rows": [
+        {
+          "label": "Mardi",
+          "text": "Messe à 18 h 30 à la chapelle de l’église Sainte-Ségolène. Rosaire à 17 h 30."
+        },
+        {
+          "label": "Mercredi et jeudi",
+          "text": "Messe à 8 h 30 à la chapelle de l’église Sainte-Ségolène."
+        },
+        {
+          "label": "Vendredi",
+          "text": "Office de la Miséricorde divine à 15 h à la chapelle Sainte-Croix. Messe à 15 h 30."
+        },
+        {
+          "label": "Samedi",
+          "text": "Messe à 8 h 30 à la chapelle Sainte-Croix."
+        }
+      ]
+    },
+    {
       "title": "Premier vendredi du mois",
       "icon": "sun",
       "visible": true,
