@@ -1,8 +1,9 @@
 {
   "lede": "Od dziesięcioleci Polacy mieszkający w Metz i okolicach Lotaryngii spotykają się tutaj, by modlić się, świętować i podtrzymywać więź z Ojczyzną — w języku, który jest im najbliższy.",
   "sundayMassSeason": "cancelled",
-  "sundayMassCancelledDate": "25/10/2026",
+  "sundayMassCancelledDate": "01/11/2026",
   "sundayMassCancellationReasonPl": "Test ogloszenia odwołanej mszy. ",
+  "sundayMassCancellationReasonFr": "Test d'annulation de la messe",
   "sundayMassReturnSeason": "summer",
   "massLabel": "MSZA NIEDZIELNA",
   "massValue": "godz. 9:30",
