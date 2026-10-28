@@ -17,6 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Libre+Franklin:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+  .event-ongoing-badge{display:inline-block;margin:0 0 12px;padding:5px 11px;border:1px solid #60826c;border-radius:99px;color:#365d41;background:#edf5ec;font-size:.73rem;font-weight:700;letter-spacing:.02em;}
   :root{
     --cream:#F5EFDE;
     --cream-soft:#EFE7D2;
@@ -2578,7 +2579,7 @@ document.addEventListener('keydown', (event) => {
     }
 
     const items = Array.isArray(data.items) ? data.items : [];
-    const todayKey = new Date().toISOString().slice(0, 10);
+    const todayKey = new Intl.DateTimeFormat('sv-SE', {timeZone:'Europe/Paris',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
     const published = items
       .map((item, index) => ({ item, index }))
       .filter(({ item }) =>
@@ -2590,8 +2591,10 @@ document.addEventListener('keydown', (event) => {
       .sort((a, b) => {
         const aDate = cmsDateKey(a.item.date);
         const bDate = cmsDateKey(b.item.date);
-        const aFuture = aDate >= todayKey;
-        const bFuture = bDate >= todayKey;
+        const aEnd = cmsDateKey(a.item.endDate);
+        const bEnd = cmsDateKey(b.item.endDate);
+        const aFuture = (aEnd && aEnd >= aDate ? aEnd : aDate) >= todayKey;
+        const bFuture = (bEnd && bEnd >= bDate ? bEnd : bDate) >= todayKey;
 
         if (aFuture !== bFuture) return aFuture ? -1 : 1;
         if (aFuture && bFuture) return aDate.localeCompare(bDate) || b.index - a.index;
@@ -2635,7 +2638,11 @@ document.addEventListener('keydown', (event) => {
       const metaParts = [];
       if (typeof item.date === 'string') {
         const day = cmsDisplayDate(item.date);
-        if (day) metaParts.push(day);
+        if (day) {
+          const endKey = cmsDateKey(item.endDate);
+          const startKey = cmsDateKey(item.date);
+          metaParts.push(endKey && endKey > startKey ? day + ' – ' + cmsDisplayDate(item.endDate) : day);
+        }
       }
       if (typeof item.time === 'string' && item.time.trim()) metaParts.push(item.time.trim());
       if (typeof item.place === 'string' && item.place.trim()) metaParts.push(item.place.trim());
@@ -2687,7 +2694,17 @@ document.addEventListener('keydown', (event) => {
       eventVisibilityObserver.observe(body);
       requestAnimationFrame(initEventToggle);
 
-      const isPast = cmsDateKey(item.date) && cmsDateKey(item.date) < todayKey;
+      const startKey = cmsDateKey(item.date);
+      const rawEndKey = cmsDateKey(item.endDate);
+      const endKey = rawEndKey && rawEndKey >= startKey ? rawEndKey : startKey;
+      const isPast = endKey && endKey < todayKey;
+      const isOngoing = startKey && startKey <= todayKey && endKey >= todayKey && rawEndKey > startKey;
+      if (isOngoing) {
+        const status = document.createElement('span');
+        status.className = 'event-ongoing-badge';
+        status.textContent = PAGE_LANG === 'fr' ? 'En cours' : 'W trakcie';
+        title.after(status);
+      }
       if (isPast) { pastFragment.append(article); pastCount++; } else { fragment.append(article); }
     }
 
