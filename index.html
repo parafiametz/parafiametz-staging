@@ -2673,6 +2673,17 @@ document.addEventListener('keydown', (event) => {
           toggle.textContent = 'Czytaj więcej';
           toggle.setAttribute('aria-expanded', 'false');
           toggle.addEventListener('click', () => {
+            // Opening one event closes any previously expanded event.
+            if (body.classList.contains('is-collapsed')) {
+              container.querySelectorAll('.event-card .event-body:not(.is-collapsed)').forEach(otherBody => {
+                if (otherBody === body) return;
+                const otherToggle = otherBody.parentElement?.querySelector('.text-toggle');
+                if (!otherToggle) return;
+                otherBody.classList.add('is-collapsed');
+                otherToggle.textContent = 'Czytaj więcej';
+                otherToggle.setAttribute('aria-expanded', 'false');
+              });
+            }
             const collapsed = body.classList.toggle('is-collapsed');
             toggle.textContent = collapsed ? 'Czytaj więcej' : 'Zwiń';
             toggle.setAttribute('aria-expanded', String(!collapsed));
