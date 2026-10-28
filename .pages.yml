@@ -331,9 +331,18 @@ content:
             type: string
             required: true
           - name: date
-            label: Data
+            label: Data rozpoczęcia
             type: date
             required: true
+            description: Dla wydarzenia jednodniowego wystarczy ta data.
+            options:
+              time: false
+              format: dd/MM/yyyy
+          - name: endDate
+            label: Data zakończenia
+            type: date
+            required: false
+            description: Opcjonalna. Uzupełnij dla wydarzenia wielodniowego. Nie może być wcześniejsza niż data rozpoczęcia.
             options:
               time: false
               format: dd/MM/yyyy
