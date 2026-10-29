@@ -1,6 +1,9 @@
 {
   "lede": "Od dziesięcioleci Polacy mieszkający w Metz i okolicach Lotaryngii spotykają się tutaj, by modlić się, świętować i podtrzymywać więź z Ojczyzną — w języku, który jest im najbliższy.",
   "sundayMassSeason": "cancelled",
+  "sundayMassNoticeDate": "29/10/2026",
+  "sundayMassNoticePl": "TEST: W zwiazku z organizowanym Maratonem w Metz, moga byc znaczne utrudnienia z dojazdem. \nProsze wziac to pod uwage",
+  "sundayMassNoticeFr": "TEST: En cause du Marathon à Metz, on pourra avoir des difficultés d'accès à la messe. \nPrenez-le en consideration. ",
   "sundayMassCancelledDate": "01/11/2026",
   "sundayMassCancellationReasonPl": "Test ogloszenia odwołanej mszy. ",
   "sundayMassCancellationReasonFr": "Test d'annulation de la messe",
