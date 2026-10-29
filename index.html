@@ -3649,6 +3649,12 @@ loadEditableSection(localeContentPath('kosciol'), data => {
   }
   function displayMode(data,sundayKey){
     if(data.sundayMassSeason==='summer'||data.sundayMassSeason==='winter')return data.sundayMassSeason;
+    if(data.sundayMassSeason==='notice'){
+      // A missing or incorrect notice date must not silently display an ordinary Mass.
+      const dateKey=cancellationDateKey(data.sundayMassNoticeDate);
+      if(!dateKey)return 'unconfirmed';
+      return data.sundayMassReturnSeason==='winter'?'winter':'summer';
+    }
     if(data.sundayMassSeason!=='cancelled')return 'unconfirmed';
     const dateKey=cancellationDateKey(data.sundayMassCancelledDate);
     // An incomplete cancellation must not produce a false "confirmed mass".
@@ -3671,7 +3677,8 @@ loadEditableSection(localeContentPath('kosciol'), data => {
     const isNormal=status==='summer'||status==='winter';
     const noticeDate=cancellationDateKey(settings.sundayMassNoticeDate);
     const noticeText=PAGE_LANG==='fr'?settings.sundayMassNoticeFr:settings.sundayMassNoticePl;
-    const showNotice=isNormal && noticeDate===sundayKey && typeof noticeText==='string' && !!noticeText.trim();
+    const showNotice=isNormal && settings.sundayMassSeason==='notice' &&
+      noticeDate===sundayKey && typeof noticeText==='string' && !!noticeText.trim();
     card.dataset.notice=String(showNotice);
     el('notice').hidden=!showNotice;
     el('notice').textContent=showNotice?trans.noticeIntro+noticeText.trim():'';
