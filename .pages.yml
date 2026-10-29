@@ -33,6 +33,24 @@ content:
               label: Zima — kaplica Sainte-Croix
             - name: cancelled
               label: Msza odwołana — podaj datę i przyczynę
+      - name: sundayMassNoticeDate
+        label: Data niedzieli z utrudnieniami
+        description: Komunikat dotyczy wyłącznie tej niedzieli i znika automatycznie po rozpoczęciu następnej. Msza pozostaje zaplanowana normalnie. Ustaw również miejsce Mszy powyżej (lato/zima).
+        type: date
+        required: false
+        options:
+          time: false
+          format: dd/MM/yyyy
+      - name: sundayMassNoticePl
+        label: Ważna informacja o utrudnieniach — po polsku
+        description: Np. „Z powodu maratonu w Metz część ulic będzie zamknięta. Prosimy zaplanować dojazd wcześniej”. Bez tekstu komunikat nie pojawi się.
+        type: text
+        required: false
+      - name: sundayMassNoticeFr
+        label: Information sur les difficultés d’accès — po francusku
+        description: Tekst komunikatu dla francuskiej wersji strony.
+        type: text
+        required: false
       - name: sundayMassCancelledDate
         label: Data odwołanej niedzieli
         description: Uzupełnij TYLKO przy opcji „Msza odwołana”. Odwołanie dotyczy wyłącznie tej niedzieli, nie każdej kolejnej. Data powinna wypadać w niedzielę. Bez prawidłowej daty strona pokaże informację o konieczności potwierdzenia Mszy zamiast wskazywać trasę.
